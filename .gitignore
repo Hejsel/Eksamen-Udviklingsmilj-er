@@ -3,3 +3,6 @@ node_modules/
 
 # build output
 dist/
+
+# vscode mappen hvis der er flere liveservere
+.vscode/
