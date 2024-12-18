@@ -1,0 +1,25 @@
+{
+	"name": "eksamen-udviklingsmiljoer",
+	"version": "1.0.0",
+	"description": "Git er et **versionsstyringssystem**, der gør det muligt at holde styr på ændringer i filer og samarbejde effektivt i projekter. I denne README gennemgås:",
+	"main": "app.js",
+	"scripts": {
+		"dev": "npx tailwindcss -i ./src/css/style.css -o ./dist/styles.css --watch"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Hejsel/Eksamen-Udviklingsmiljoer.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Hejsel/Eksamen-Udviklingsmiljoer/issues"
+	},
+	"homepage": "https://github.com/Hejsel/Eksamen-Udviklingsmiljoer#readme",
+	"devDependencies": {
+		"autoprefixer": "^10.4.20",
+		"postcss": "^8.4.49",
+		"tailwindcss": "^3.4.17"
+	}
+}
