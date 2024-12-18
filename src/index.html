@@ -1,76 +1,74 @@
 <!DOCTYPE html>
 <html lang="da">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Velkommen til Serveren!</title>
-    <link href="../dist/styles.css" rel="stylesheet" />
-    <script src="/app.js" defer></script>
-  </head>
-  <body>
-    <header>
-      <h1 class="bg-slate-700git text-pik">Velkommen til min server!</h1>
-      <p>Serveren håndterer statiske filer og dynamisk indhold.</p>
-    </header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Velkommen til Serveren!</title>
+		<link href="/dist/styles.css" rel="stylesheet" />
+		<script src="/app.js" defer></script>
+	</head>
+	<body>
+		<header>
+			<h1 class="bg-slate-700git text-pik">Velkommen til min server!</h1>
+			<p>Serveren håndterer statiske filer og dynamisk indhold.</p>
+		</header>
 
-    <div class="flex h-40 items-center justify-between mx-8">
-      <h1 class="text-2xl text-center font-bold">Hej Tailwind!</h1>
-      <h1 class="text-2xl text-center font-bold">Hej Tailwind!</h1>
-      <h1 class="text-center text-2xl font-bold">Hej Tailwind!</h1>
-    </div>
+		<div class="flex h-40 items-center justify-between mx-8">
+			<h1 class="text-2xl text-center font-bold">Hej Tailwind!</h1>
+			<h1 class="text-2xl text-center font-bold">Hej Tailwind!</h1>
+			<h1 class="text-center text-2xl font-bold">Hej Tailwind!</h1>
+		</div>
 
-    <section>
-      <h2>Filer tilgængelige:</h2>
-      <ul>
-        <li><a href="/index.html">index.html</a> - Hjemmeside</li>
-        <li><a href="/style.css">style.css</a> - CSS styling</li>
-        <li><a href="/app.js">app.js</a> - JavaScript funktionalitet</li>
-      </ul>
-    </section>
+		<section>
+			<h2>Filer tilgængelige:</h2>
+			<ul>
+				<li><a href="/index.html">index.html</a> - Hjemmeside</li>
+				<li><a href="/style.css">style.css</a> - CSS styling</li>
+				<li><a href="/app.js">app.js</a> - JavaScript funktionalitet</li>
+			</ul>
+		</section>
 
-    <section class="mb-8">
-      <h2 class="text-2xl font-bold mb-4">Introduktion til Git</h2>
-      <p class="leading-relaxed">
-        Git er et versionskontrolsystem, der bruges til at spore ændringer i kode og samarbejde
-        mellem udviklere. Det giver dig mulighed for at arbejde sikkert på dit projekt uden at miste
-        historik over dine ændringer.
-      </p>
-    </section>
+		<section class="mb-8">
+			<h2 class="text-2xl font-bold mb-4">Introduktion til Git</h2>
+			<p class="leading-relaxed">
+				Git er et versionskontrolsystem, der bruges til at spore ændringer i kode og samarbejde mellem
+				udviklere. Det giver dig mulighed for at arbejde sikkert på dit projekt uden at miste historik over dine
+				ændringer.
+			</p>
+		</section>
 
-    <section class="mb-8">
-      <h2 class="text-2xl font-bold mb-4">Hvordan fungerer Git?</h2>
-      <div class="space-y-4">
-        <details class="bg-gray-200 p-4 rounded">
-          <summary class="cursor-pointer font-semibold">
-            1. Initialisering af et Git Repository
-          </summary>
-          <p class="mt-2 leading-relaxed">
-            Start med at køre <code>git init</code> i en mappe for at oprette et nyt repository.
-          </p>
-        </details>
-        <details class="bg-gray-200 p-4 rounded">
-          <summary class="cursor-pointer font-semibold">2. Tilføjelse af Filer</summary>
-          <p class="mt-2 leading-relaxed">
-            Brug <code>git add filnavn</code> for at tilføje filer til staging-området.
-          </p>
-        </details>
-        <details class="bg-gray-200 p-4 rounded">
-          <summary class="cursor-pointer font-semibold">3. Committe Ændringer</summary>
-          <p class="mt-2 leading-relaxed">
-            Gem ændringer med <code>git commit -m "Din besked"</code> for at oprette en commit.
-          </p>
-        </details>
-        <details class="bg-gray-200 p-4 rounded">
-          <summary class="cursor-pointer font-semibold">4. Push til Remote</summary>
-          <p class="mt-2 leading-relaxed">
-            Synkroniser lokalt arbejde til en fjernserver ved hjælp af <code>git push</code>.
-          </p>
-        </details>
-      </div>
-    </section>
+		<section class="mb-8">
+			<h2 class="text-2xl font-bold mb-4">Hvordan fungerer Git?</h2>
+			<div class="space-y-4">
+				<details class="bg-gray-200 p-4 rounded">
+					<summary class="cursor-pointer font-semibold">1. Initialisering af et Git Repository</summary>
+					<p class="mt-2 leading-relaxed">
+						Start med at køre <code>git init</code> i en mappe for at oprette et nyt repository.
+					</p>
+				</details>
+				<details class="bg-gray-200 p-4 rounded">
+					<summary class="cursor-pointer font-semibold">2. Tilføjelse af Filer</summary>
+					<p class="mt-2 leading-relaxed">
+						Brug <code>git add filnavn</code> for at tilføje filer til staging-området.
+					</p>
+				</details>
+				<details class="bg-gray-200 p-4 rounded">
+					<summary class="cursor-pointer font-semibold">3. Committe Ændringer</summary>
+					<p class="mt-2 leading-relaxed">
+						Gem ændringer med <code>git commit -m "Din besked"</code> for at oprette en commit.
+					</p>
+				</details>
+				<details class="bg-gray-200 p-4 rounded">
+					<summary class="cursor-pointer font-semibold">4. Push til Remote</summary>
+					<p class="mt-2 leading-relaxed">
+						Synkroniser lokalt arbejde til en fjernserver ved hjælp af <code>git push</code>.
+					</p>
+				</details>
+			</div>
+		</section>
 
-    <footer>
-      <p>Serveren kører på <strong>Node.js</strong>!</p>
-    </footer>
-  </body>
+		<footer>
+			<p>Serveren kører på <strong>Node.js</strong>!</p>
+		</footer>
+	</body>
 </html>
