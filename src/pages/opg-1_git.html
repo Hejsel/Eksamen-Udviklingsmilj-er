@@ -1,23 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Versionsstyring med Git og gruppearbejde</title>
-		<link href="/dist/styles.css" rel="stylesheet" />
-	</head>
-	<body>
-		<header>her skal nav være</header>
-		<main>
-			<h1 class="text-2xl bg-yellow-300 text-blue-600">Versionsstyring med Git og gruppearbejde</h1>
-			<p>hej</p>
-		</main>
-		<p>
-			Præsenter Git fra opsætning til generel brug. Uddyb processerne initialisering, staging og comitting.
-			Fænomenerne branching og merging skal også indgå i præsentationen. Begreberne cloning, pushing og pulling
-			samt brugen af et fælles serverbaseret repository skal detaljeres. Gennemgangen skal støttes med konkrete
-			eksempler på Git kommandoer og deres effekt. Du bør bruge uddrag fra egne projekter og opgaver som eksempler
-			i din gennemgang.
-		</p>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Versionsstyring med Git og gruppearbejde</title>
+    <link href="/dist/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>her skal nav være</header>
+    <main>
+      <div class="container">
+        <h1 class="text-2xl bg-yellow-300 text-blue-600">
+          Versionsstyring med Git og gruppearbejde
+        </h1>
+        <p>hej</p>
+      </div>
+      <p>
+        Præsenter Git fra opsætning til generel brug. Uddyb processerne initialisering, staging og
+        comitting. Fænomenerne branching og merging skal også indgå i præsentationen. Begreberne
+        cloning, pushing og pulling samt brugen af et fælles serverbaseret repository skal
+        detaljeres. Gennemgangen skal støttes med konkrete eksempler på Git kommandoer og deres
+        effekt. Du bør bruge uddrag fra egne projekter og opgaver som eksempler i din gennemgang.
+      </p>
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">Introduktion til Git</h2>
+        <p class="leading-relaxed">
+          Git er et versionskontrolsystem, der bruges til at spore ændringer i kode og samarbejde
+          mellem udviklere. Det giver dig mulighed for at arbejde sikkert på dit projekt uden at
+          miste historik over dine ændringer.
+        </p>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">Hvordan fungerer Git?</h2>
+        <div class="space-y-4">
+          <details class="bg-gray-200 p-4 rounded">
+            <summary class="cursor-pointer font-semibold">
+              1. Initialisering af et Git Repository
+            </summary>
+            <p class="mt-2 leading-relaxed">
+              Start med at køre <code>git init</code> i en mappe for at oprette et nyt repository.
+            </p>
+            <div>
+              <h2>Billedsprog:</h2>
+              <p>
+                Forestil dig, at du står med en tom pluksedel (en liste), som du gør klar til at
+                holde styr på, hvilke varer der skal plukkes.
+              </p>
+              <div>
+                <img src="/src/assets/images/git-1.png" alt="" />
+              </div>
+            </div>
+            <div>
+              <h2>I Git:</h2>
+              <p>
+                Når du initialiserer et repository med git init, opretter du en tom struktur, der
+                kan holde styr på ændringer i dit projekt. På dette tidspunkt er pluksedlen stadig
+                helt tom.
+              </p>
+              <div>
+                <img src="/src/assets/images/git-1.png" alt="" />
+              </div>
+            </div>
+          </details>
+          <details class="bg-gray-200 p-4 rounded">
+            <summary class="cursor-pointer font-semibold">2. Tilføjelse af Filer</summary>
+            <p class="mt-2 leading-relaxed">
+              Brug <code>git add filnavn</code> for at tilføje filer til staging-området.
+            </p>
+          </details>
+          <details class="bg-gray-200 p-4 rounded">
+            <summary class="cursor-pointer font-semibold">3. Committe Ændringer</summary>
+            <p class="mt-2 leading-relaxed">
+              Gem ændringer med <code>git commit -m "Din besked"</code> for at oprette en commit.
+            </p>
+          </details>
+          <details class="bg-gray-200 p-4 rounded">
+            <summary class="cursor-pointer font-semibold">4. Push til Remote</summary>
+            <p class="mt-2 leading-relaxed">
+              Synkroniser lokalt arbejde til en fjernserver ved hjælp af <code>git push</code>.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Serveren kører på <strong>Node.js</strong>!</p>
+    </footer>
+  </body>
 </html>
