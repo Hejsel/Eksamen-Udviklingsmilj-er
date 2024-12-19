@@ -183,20 +183,31 @@
         <div class="container">
         <h2 class="text-2xl font-bold mb-4">Hvordan fungerer Git?</h2>
         <div class="space-y-4">
-          <!-- Git Repository Initialisering -->
-          <details class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+          <details class="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col gap-8">
             <summary class="cursor-pointer font-semibold text-lg text-gray-800">
-              <span class="flex items-center gap-2">
-                <span
-                  class="bg-accent w-8 h-8 text-white rounded-full flex items-center justify-center"
-                >
-                  1
-                </span>
+              <p class="flex items-center gap-2 select-none before:content-['1'] before:bg-accent before:w-8 before:h-8 before:text-center before:rounded-full before:text-white">
                 Initialisering af et Git Repository
-              </span>
+              </p>
             </summary>
-            <div class="mt-4 pl-10 space-y-6">
-              <!-- Forklaring -->
+            <div class="flex gap-10">
+              <div class="flex-1">
+                <img
+                  src="/src/assets/images/git-init.webp"
+                  alt="Billedsprog for git init"
+                />
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-gray-700">Hvordan gør man?</h3>
+                <p class="mt-2 leading-relaxed text-gray-600">
+                  Start med at køre
+                  <code class="bg-gray-100 px-2 py-1 rounded text-sm">git init</code> i et projektmappe for
+                  at oprette et nyt repository.
+                </p>
+              </div>
+            </div>
+            
+            
+            <!-- <div class="mt-4 pl-10 space-y-6">
               <div>
                 <h3 class="text-xl font-semibold text-gray-700">Hvordan gør man?</h3>
                 <p class="mt-2 leading-relaxed text-gray-600">
@@ -205,7 +216,6 @@
                   at oprette et nyt repository.
                 </p>
               </div>
-              <!-- Billedsprog -->
               <div>
                 <h3 class="text-xl font-semibold text-gray-700">Billedsprog</h3>
                 <p class="mt-2 leading-relaxed text-gray-600">
@@ -220,7 +230,6 @@
                   />
                 </div>
               </div>
-              <!-- I Git -->
               <div>
                 <h3 class="text-xl font-semibold text-gray-700">I Git</h3>
                 <p class="mt-2 leading-relaxed text-gray-600">
@@ -237,337 +246,7 @@
                   />
                 </div>
               </div>
-            </div>
-          </details>
-          <details class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-            <summary class="cursor-pointer font-semibold text-lg text-gray-800">
-              <span class="flex items-center gap-2">
-                <span
-                  class="bg-accent w-8 h-8 text-white rounded-full flex items-center justify-center"
-                >
-                  1
-                </span>
-                Initialisering af et Git Repository
-              </span>
-            </summary>
-            <div class="mt-4 pl-10 space-y-6">
-              <!-- Forklaring -->
-              <div>
-                <h3 class="text-xl font-semibold text-gray-700">Hvordan gør man?</h3>
-                <p class="mt-2 leading-relaxed text-gray-600">
-                  Start med at køre
-                  <code class="bg-gray-100 px-2 py-1 rounded text-sm">git init</code> i en mappe for
-                  at oprette et nyt repository.
-                </p>
-              </div>
-              <!-- Billedsprog -->
-              <div>
-                <h3 class="text-xl font-semibold text-gray-700">Billedsprog</h3>
-                <p class="mt-2 leading-relaxed text-gray-600">
-                  Forestil dig, at du står med en tom pluksedel (en liste), som du gør klar til at
-                  holde styr på, hvilke varer der skal plukkes.
-                </p>
-                <div class="mt-4">
-                  <img
-                    class="rounded-lg shadow-md object-cover w-full max-w-md mx-auto"
-                    src="/src/assets/images/git-init.webp"
-                    alt="Billedsprog for git init"
-                  />
-                </div>
-              </div>
-              <!-- I Git -->
-              <div>
-                <h3 class="text-xl font-semibold text-gray-700">I Git</h3>
-                <p class="mt-2 leading-relaxed text-gray-600">
-                  Når du initialiserer et repository med
-                  <code class="bg-gray-100 px-2 py-1 rounded text-sm">git init</code>, opretter du
-                  en tom struktur, der kan holde styr på ændringer i dit projekt. På dette tidspunkt
-                  er pluksedlen stadig helt tom.
-                </p>
-                <div class="mt-4">
-                  <img
-                    class="rounded-lg shadow-md object-cover w-full max-w-md mx-auto"
-                    src="/src/assets/images/git-1.png"
-                    alt="Eksempel på Git Repository"
-                  />
-                </div>
-              </div>
-            </div>
-          </details>
-          <details class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-            <summary class="cursor-pointer font-semibold text-lg text-gray-800">
-              <span class="flex items-center gap-2">
-                <span
-                  class="bg-accent w-8 h-8 text-white rounded-full flex items-center justify-center"
-                >
-                  1
-                </span>
-                Initialisering af et Git Repository
-              </span>
-            </summary>
-            <div class="mt-4 pl-10 space-y-6">
-              <!-- Forklaring -->
-              <div>
-                <h3 class="text-xl font-semibold text-gray-700">Hvordan gør man?</h3>
-                <p class="mt-2 leading-relaxed text-gray-600">
-                  Start med at køre
-                  <code class="bg-gray-100 px-2 py-1 rounded text-sm">git init</code> i en mappe for
-                  at oprette et nyt repository.
-                </p>
-              </div>
-              <!-- Billedsprog -->
-              <div>
-                <h3 class="text-xl font-semibold text-gray-700">Billedsprog</h3>
-                <p class="mt-2 leading-relaxed text-gray-600">
-                  Forestil dig, at du står med en tom pluksedel (en liste), som du gør klar til at
-                  holde styr på, hvilke varer der skal plukkes.
-                </p>
-                <div class="mt-4">
-                  <img
-                    class="rounded-lg shadow-md object-cover w-full max-w-md mx-auto"
-                    src="/src/assets/images/git-init.webp"
-                    alt="Billedsprog for git init"
-                  />
-                </div>
-              </div>
-              <!-- I Git -->
-              <div>
-                <h3 class="text-xl font-semibold text-gray-700">I Git</h3>
-                <p class="mt-2 leading-relaxed text-gray-600">
-                  Når du initialiserer et repository med
-                  <code class="bg-gray-100 px-2 py-1 rounded text-sm">git init</code>, opretter du
-                  en tom struktur, der kan holde styr på ændringer i dit projekt. På dette tidspunkt
-                  er pluksedlen stadig helt tom.
-                </p>
-                <div class="mt-4">
-                  <img
-                    class="rounded-lg shadow-md object-cover w-full max-w-md mx-auto"
-                    src="/src/assets/images/git-1.png"
-                    alt="Eksempel på Git Repository"
-                  />
-                </div>
-              </div>
-            </div>
-          </details>
-          <details class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-            <summary class="cursor-pointer font-semibold text-lg text-gray-800">
-              <span class="flex items-center gap-2">
-                <span
-                  class="bg-accent w-8 h-8 text-white rounded-full flex items-center justify-center"
-                >
-                  1
-                </span>
-                Initialisering af et Git Repository
-              </span>
-            </summary>
-            <div class="mt-4 pl-10 space-y-6">
-              <!-- Forklaring -->
-              <div>
-                <h3 class="text-xl font-semibold text-gray-700">Hvordan gør man?</h3>
-                <p class="mt-2 leading-relaxed text-gray-600">
-                  Start med at køre
-                  <code class="bg-gray-100 px-2 py-1 rounded text-sm">git init</code> i en mappe for
-                  at oprette et nyt repository.
-                </p>
-              </div>
-              <!-- Billedsprog -->
-              <div>
-                <h3 class="text-xl font-semibold text-gray-700">Billedsprog</h3>
-                <p class="mt-2 leading-relaxed text-gray-600">
-                  Forestil dig, at du står med en tom pluksedel (en liste), som du gør klar til at
-                  holde styr på, hvilke varer der skal plukkes.
-                </p>
-                <div class="mt-4">
-                  <img
-                    class="rounded-lg shadow-md object-cover w-full max-w-md mx-auto"
-                    src="/src/assets/images/git-init.webp"
-                    alt="Billedsprog for git init"
-                  />
-                </div>
-              </div>
-              <!-- I Git -->
-              <div>
-                <h3 class="text-xl font-semibold text-gray-700">I Git</h3>
-                <p class="mt-2 leading-relaxed text-gray-600">
-                  Når du initialiserer et repository med
-                  <code class="bg-gray-100 px-2 py-1 rounded text-sm">git init</code>, opretter du
-                  en tom struktur, der kan holde styr på ændringer i dit projekt. På dette tidspunkt
-                  er pluksedlen stadig helt tom.
-                </p>
-                <div class="mt-4">
-                  <img
-                    class="rounded-lg shadow-md object-cover w-full max-w-md mx-auto"
-                    src="/src/assets/images/git-1.png"
-                    alt="Eksempel på Git Repository"
-                  />
-                </div>
-              </div>
-            </div>
-          </details>
-          <details class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-            <summary class="cursor-pointer font-semibold text-lg text-gray-800">
-              <span class="flex items-center gap-2">
-                <span
-                  class="bg-accent w-8 h-8 text-white rounded-full flex items-center justify-center"
-                >
-                  1
-                </span>
-                Initialisering af et Git Repository
-              </span>
-            </summary>
-            <div class="mt-4 pl-10 space-y-6">
-              <!-- Forklaring -->
-              <div>
-                <h3 class="text-xl font-semibold text-gray-700">Hvordan gør man?</h3>
-                <p class="mt-2 leading-relaxed text-gray-600">
-                  Start med at køre
-                  <code class="bg-gray-100 px-2 py-1 rounded text-sm">git init</code> i en mappe for
-                  at oprette et nyt repository.
-                </p>
-              </div>
-              <!-- Billedsprog -->
-              <div>
-                <h3 class="text-xl font-semibold text-gray-700">Billedsprog</h3>
-                <p class="mt-2 leading-relaxed text-gray-600">
-                  Forestil dig, at du står med en tom pluksedel (en liste), som du gør klar til at
-                  holde styr på, hvilke varer der skal plukkes.
-                </p>
-                <div class="mt-4">
-                  <img
-                    class="rounded-lg shadow-md object-cover w-full max-w-md mx-auto"
-                    src="/src/assets/images/git-init.webp"
-                    alt="Billedsprog for git init"
-                  />
-                </div>
-              </div>
-              <!-- I Git -->
-              <div>
-                <h3 class="text-xl font-semibold text-gray-700">I Git</h3>
-                <p class="mt-2 leading-relaxed text-gray-600">
-                  Når du initialiserer et repository med
-                  <code class="bg-gray-100 px-2 py-1 rounded text-sm">git init</code>, opretter du
-                  en tom struktur, der kan holde styr på ændringer i dit projekt. På dette tidspunkt
-                  er pluksedlen stadig helt tom.
-                </p>
-                <div class="mt-4">
-                  <img
-                    class="rounded-lg shadow-md object-cover w-full max-w-md mx-auto"
-                    src="/src/assets/images/git-1.png"
-                    alt="Eksempel på Git Repository"
-                  />
-                </div>
-              </div>
-            </div>
-          </details>
-          <details class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-            <summary class="cursor-pointer font-semibold text-lg text-gray-800">
-              <span class="flex items-center gap-2">
-                <span
-                  class="bg-accent w-8 h-8 text-white rounded-full flex items-center justify-center"
-                >
-                  1
-                </span>
-                Initialisering af et Git Repository
-              </span>
-            </summary>
-            <div class="mt-4 pl-10 space-y-6">
-              <!-- Forklaring -->
-              <div>
-                <h3 class="text-xl font-semibold text-gray-700">Hvordan gør man?</h3>
-                <p class="mt-2 leading-relaxed text-gray-600">
-                  Start med at køre
-                  <code class="bg-gray-100 px-2 py-1 rounded text-sm">git init</code> i en mappe for
-                  at oprette et nyt repository.
-                </p>
-              </div>
-              <!-- Billedsprog -->
-              <div>
-                <h3 class="text-xl font-semibold text-gray-700">Billedsprog</h3>
-                <p class="mt-2 leading-relaxed text-gray-600">
-                  Forestil dig, at du står med en tom pluksedel (en liste), som du gør klar til at
-                  holde styr på, hvilke varer der skal plukkes.
-                </p>
-                <div class="mt-4">
-                  <img
-                    class="rounded-lg shadow-md object-cover w-full max-w-md mx-auto"
-                    src="/src/assets/images/git-init.webp"
-                    alt="Billedsprog for git init"
-                  />
-                </div>
-              </div>
-              <!-- I Git -->
-              <div>
-                <h3 class="text-xl font-semibold text-gray-700">I Git</h3>
-                <p class="mt-2 leading-relaxed text-gray-600">
-                  Når du initialiserer et repository med
-                  <code class="bg-gray-100 px-2 py-1 rounded text-sm">git init</code>, opretter du
-                  en tom struktur, der kan holde styr på ændringer i dit projekt. På dette tidspunkt
-                  er pluksedlen stadig helt tom.
-                </p>
-                <div class="mt-4">
-                  <img
-                    class="rounded-lg shadow-md object-cover w-full max-w-md mx-auto"
-                    src="/src/assets/images/git-1.png"
-                    alt="Eksempel på Git Repository"
-                  />
-                </div>
-              </div>
-            </div>
-          </details>
-          <details class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-            <summary class="cursor-pointer font-semibold text-lg text-gray-800">
-              <span class="flex items-center gap-2">
-                <span
-                  class="bg-accent w-8 h-8 text-white rounded-full flex items-center justify-center"
-                >
-                  1
-                </span>
-                Initialisering af et Git Repository
-              </span>
-            </summary>
-            <div class="mt-4 pl-10 space-y-6">
-              <!-- Forklaring -->
-              <div>
-                <h3 class="text-xl font-semibold text-gray-700">Hvordan gør man?</h3>
-                <p class="mt-2 leading-relaxed text-gray-600">
-                  Start med at køre
-                  <code class="bg-gray-100 px-2 py-1 rounded text-sm">git init</code> i en mappe for
-                  at oprette et nyt repository.
-                </p>
-              </div>
-              <!-- Billedsprog -->
-              <div>
-                <h3 class="text-xl font-semibold text-gray-700">Billedsprog</h3>
-                <p class="mt-2 leading-relaxed text-gray-600">
-                  Forestil dig, at du står med en tom pluksedel (en liste), som du gør klar til at
-                  holde styr på, hvilke varer der skal plukkes.
-                </p>
-                <div class="mt-4">
-                  <img
-                    class="rounded-lg shadow-md object-cover w-full max-w-md mx-auto"
-                    src="/src/assets/images/git-init.webp"
-                    alt="Billedsprog for git init"
-                  />
-                </div>
-              </div>
-              <!-- I Git -->
-              <div>
-                <h3 class="text-xl font-semibold text-gray-700">I Git</h3>
-                <p class="mt-2 leading-relaxed text-gray-600">
-                  Når du initialiserer et repository med
-                  <code class="bg-gray-100 px-2 py-1 rounded text-sm">git init</code>, opretter du
-                  en tom struktur, der kan holde styr på ændringer i dit projekt. På dette tidspunkt
-                  er pluksedlen stadig helt tom.
-                </p>
-                <div class="mt-4">
-                  <img
-                    class="rounded-lg shadow-md object-cover w-full max-w-md mx-auto"
-                    src="/src/assets/images/git-1.png"
-                    alt="Eksempel på Git Repository"
-                  />
-                </div>
-              </div>
-            </div>
+            </div> -->
           </details>
         </div>
       </section>
