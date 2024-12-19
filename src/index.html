@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="da">
   <head>
+    <!-- Metadata og sideopsætning -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Titel og beskrivelse -->
     <title>Velkommen til Serveren!</title>
+
+    <!-- Favicon -->
+    <!-- Favicon -->
+
+    <!-- Eksterne stylesheets -->
     <link href="/dist/styles.css" rel="stylesheet" />
+    <!-- Eksterne scripts -->
     <script src="/src/js/loadComponents.js" defer></script>
     <script src="/src/js/activeLinks.js" defer></script>
   </head>
@@ -13,74 +21,113 @@
     <!-- HEADER som henter header.html ind på siden!!! -->
     <header id="header"></header>
 
-    <main class="p-0 mx-4 my-0">
-      <section class="mb-8">
-        <h2 class="mb-4 text-2xl font-bold">Introduktion til Git</h2>
-        <p class="leading-relaxed">
-          Git er et versionskontrolsystem, der bruges til at spore ændringer i kode og samarbejde
-          mellem udviklere. Det giver dig mulighed for at arbejde sikkert på dit projekt uden at
-          miste historik over dine ændringer.
+    <main class="container p-8 mx-auto text-gray-800 rounded-lg shadow-lg bg-gray-50">
+      <!-- Velkommen sektion -->
+      <section class="mb-12">
+        <h1 class="mb-6 text-5xl font-extrabold text-highlight">
+          Velkommen til eksamensprojektet i Udviklingsmiljøer
+        </h1>
+        <p class="text-lg leading-relaxed">
+          Denne hjemmeside er udarbejdet som en del af vores eksamen i faget Udviklingsmiljøer på
+          PBA Webudvikling. I stedet for en traditionel præsentation eller et PowerPoint, har vi
+          valgt at samle alt materialet i en moderne og interaktiv hjemmeside. Hjemmesiden er
+          struktureret, så hver opgave har sin egen side, hvor vi grundigt forklarer teorien,
+          demonstrerer praktiske eksempler og viser, hvordan de forskellige emner relaterer til
+          vores tidligere projekter og pensum.
         </p>
       </section>
 
-      <section class="mb-8">
-        <h2 class="mb-4 text-2xl font-bold">Hvordan fungerer Git?</h2>
-        <div class="space-y-4">
-          <details class="p-4 bg-gray-200 rounded">
-            <summary class="font-semibold cursor-pointer select-none">
-              1. Initialisering af et Git Repository
-            </summary>
-            <p class="mt-2 leading-relaxed">
-              Start med at køre <code>git init</code> i en mappe for at oprette et nyt repository.
+      <!-- Indhold -->
+      <section class="p-6 mb-12 bg-gray-100 rounded-lg shadow">
+        <h2 class="mb-4 text-3xl font-bold text-accent">Hvad indeholder hjemmesiden?</h2>
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div
+            class="p-4 transition border-l-4 rounded shadow bg-primary hover:shadow-lg border-accent"
+          >
+            <h3 class="text-xl font-semibold">Forside</h3>
+            <p>Introduktion til eksamen og formålet med hjemmesiden.</p>
+          </div>
+          <div
+            class="p-4 transition border-l-4 rounded shadow bg-primary hover:shadow-lg border-highlight"
+          >
+            <h3 class="text-xl font-semibold">Versionsstyring med Git</h3>
+            <p>Gennemgang af Git-kommandoer, branching, merging og brug i samarbejde.</p>
+          </div>
+          <div
+            class="p-4 transition border-l-4 rounded shadow bg-primary hover:shadow-lg border-accent"
+          >
+            <h3 class="text-xl font-semibold">Canvas</h3>
+            <p>
+              Beskrivelse af <code class="px-1 text-white rounded bg-dark">canvas</code> til
+              tegning, animationer og billedbehandling.
             </p>
-            <div>
-              <h2>Billedsprog:</h2>
-              <p>
-                Forestil dig, at du står med en tom pluksedel (en liste), som du gør klar til at
-                holde styr på, hvilke varer der skal plukkes.
-              </p>
-              <div>
-                <img src="/src/assets/images/git-1.png" alt="" />
-              </div>
-            </div>
-            <div>
-              <h2>I Git:</h2>
-              <p>
-                Når du initialiserer et repository med git init, opretter du en tom struktur, der
-                kan holde styr på ændringer i dit projekt. På dette tidspunkt er pluksedlen stadig
-                helt tom.
-              </p>
-              <div>
-                <img src="/src/assets/images/git-1.png" alt="" />
-              </div>
-            </div>
-          </details>
-          <details class="p-4 bg-gray-200 rounded">
-            <summary class="font-semibold cursor-pointer select-none">
-              2. Tilføjelse af Filer
-            </summary>
-            <p class="mt-2 leading-relaxed">
-              Brug <code>git add filnavn</code> for at tilføje filer til staging-området.
-            </p>
-          </details>
-          <details class="p-4 bg-gray-200 rounded">
-            <summary class="font-semibold cursor-pointer select-none">
-              3. Committe Ændringer
-            </summary>
-            <p class="mt-2 leading-relaxed">
-              Gem ændringer med <code>git commit -m "Din besked"</code> for at oprette en commit.
-            </p>
-          </details>
-          <details class="p-4 bg-gray-200 rounded">
-            <summary class="font-semibold cursor-pointer select-none">4. Push til Remote</summary>
-            <p class="mt-2 leading-relaxed">
-              Synkroniser lokalt arbejde til en fjernserver ved hjælp af <code>git push</code>.
-            </p>
-          </details>
+          </div>
+          <div
+            class="p-4 transition border-l-4 rounded shadow bg-primary hover:shadow-lg border-highlight"
+          >
+            <h3 class="text-xl font-semibold">Node.js</h3>
+            <p>Opsætning og anvendelse af Node.js, samt fordele og ulemper.</p>
+          </div>
+          <div
+            class="p-4 transition border-l-4 rounded shadow bg-primary hover:shadow-lg border-accent"
+          >
+            <h3 class="text-xl font-semibold">Moduler</h3>
+            <p>Brug og opbygning af moduler i JavaScript med eksempler.</p>
+          </div>
+          <div
+            class="p-4 transition border-l-4 rounded shadow bg-primary hover:shadow-lg border-highlight"
+          >
+            <h3 class="text-xl font-semibold">TypeScript</h3>
+            <p>Introduktion til TypeScript og forskellen fra JavaScript.</p>
+          </div>
+          <div
+            class="p-4 transition border-l-4 rounded shadow bg-primary hover:shadow-lg border-accent"
+          >
+            <h3 class="text-xl font-semibold">Regular Expressions og strengmetoder</h3>
+            <p>Præsentation af regular expressions og praktisk brug i webudvikling.</p>
+          </div>
+          <div
+            class="p-4 transition border-l-4 rounded shadow bg-primary hover:shadow-lg border-highlight"
+          >
+            <h3 class="text-xl font-semibold">Testning</h3>
+            <p>Fokus på unittests og introduktion til Jest som testværktøj.</p>
+          </div>
         </div>
       </section>
+
+      <!-- Hvordan er hjemmesiden bygget -->
+      <section class="p-6 mb-12 bg-gray-100 rounded-lg shadow">
+        <h2 class="mb-4 text-3xl font-bold text-accent">Hvordan er hjemmesiden bygget?</h2>
+        <ul class="pl-6 space-y-2 text-lg list-disc">
+          <li>Hjemmesiden er udviklet med fokus på brugervenlighed og enkel navigation.</li>
+          <li>
+            Vi har anvendt HTML, Tailwind og JavaScript, og alle kodeeksempler er direkte integreret
+            på siderne.
+          </li>
+          <li>Designet er responsivt og fungerer på både desktop og mobil.</li>
+          <li>
+            Hver opgaveside indeholder teoretisk gennemgang og praktiske eksempler, understøttet af
+            kode og forklaringer.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Udarbejdet af -->
+      <section class="p-6 bg-gray-100 rounded-lg shadow">
+        <h2 class="mb-4 text-3xl font-bold text-highlight">Udarbejdet af</h2>
+        <h3 class="text-2xl font-bold text-gray-800">Benjamin Hejsel & Emil Roed</h3>
+        <p class="mt-4 text-lg leading-relaxed">
+          Vi håber, at denne hjemmeside giver et klart indblik i vores arbejde, vores forståelse af
+          de faglige emner og vores evne til at anvende teorien i praksis. Gennem dette projekt har
+          vi arbejdet målrettet med at skabe en platform, der ikke blot præsenterer pensum på en
+          overskuelig måde, men som også viser vores tekniske færdigheder inden for webudvikling,
+          design og implementering af interaktive løsninger.
+        </p>
+      </section>
     </main>
-    <footer class="mx-4">
+
+    <!-- Footer -->
+    <footer class="py-4 text-center text-white bg-highlight">
       <p>Serveren kører på <strong>Node.js</strong>!</p>
     </footer>
   </body>
