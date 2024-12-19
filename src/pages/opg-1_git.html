@@ -6,163 +6,73 @@
     <title>Versionsstyring med Git og gruppearbejde</title>
     <link href="/dist/styles.css" rel="stylesheet" />
     <script src="/src/js/loadComponents.js" defer></script>
-    <!-- <script src="/src/js/activeLinks.js" defer></script> -->
+    <script src="/src/js/activeLinks.js" defer></script>
   </head>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const links = document.querySelectorAll("nav a");
-      links.forEach((link) => {
-        if (link.href === window.location.href) {
-          link.classList.add(
-            "text-accent",
-            "font-bold",
-            "border-b-2",
-            "border-accent",
-            "bg-gray-200"
-          );
-        }
-      });
-    });
-  </script>
   <body>
-    <header class="text-gray-600 body-font border-b-2 shadow-md shadow-gray-500">
-      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-          <img class="h-28 rounded-xl" src="/src/assets/images/webdev-logo.svg" alt="" />
-        </a>
-        <nav
-          class="md:ml-auto md:mr-auto flex font-semibold text-lg flex-wrap items-center justify-center"
-        >
-          <!-- Forside -->
-          <a
-            href="/src/index.html"
-            class="mr-5 cursor-pointer transition duration-300 transform hover:scale-110 hover:bg-highlight hover:text-white px-3 py-2 rounded-lg active:bg-accent active:text-white"
-          >
-            Forside
-          </a>
-
-          <!-- Git -->
-          <a
-            href="/src/pages/opg-1_git.html"
-            class="mr-5 cursor-pointer transition duration-300 transform hover:scale-110 hover:bg-gray-200 hover:text-gray-900 px-3 py-2 rounded-lg active:bg-accent active:text-white"
-          >
-            Git
-          </a>
-
-          <!-- Opgaver -->
-          <a
-            href="/src/pages/opg-2_canvas.html"
-            class="mr-5 cursor-pointer transition duration-300 transform hover:scale-110 hover:bg-dark hover:text-primary px-3 py-2 rounded-lg active:bg-accent active:text-white"
-          >
-            Opg 2
-          </a>
-          <a
-            href="/src/pages/opg-3_node.js.html"
-            class="mr-5 cursor-pointer transition duration-300 transform hover:scale-110 hover:bg-gray-200 hover:text-gray-900 px-3 py-2 rounded-lg active:bg-accent active:text-white"
-          >
-            Opg 3
-          </a>
-          <a
-            href="/src/pages/opg-4_moduler.html"
-            class="mr-5 cursor-pointer transition duration-300 transform hover:scale-110 hover:bg-gray-200 hover:text-gray-900 px-3 py-2 rounded-lg active:bg-accent active:text-white"
-          >
-            Opg 4
-          </a>
-          <a
-            href="/src/pages/opg-5_typescript.html"
-            class="mr-5 cursor-pointer transition duration-300 transform hover:scale-110 hover:bg-gray-200 hover:text-gray-900 px-3 py-2 rounded-lg active:bg-accent active:text-white"
-          >
-            Opg 5
-          </a>
-          <a
-            href="/src/pages/opg-6_regx-og-strengmetoder.html"
-            class="mr-5 cursor-pointer transition duration-300 transform hover:scale-110 hover:bg-gray-200 hover:text-gray-900 px-3 py-2 rounded-lg active:bg-accent active:text-white"
-          >
-            Opg 6
-          </a>
-        </nav>
-        <a
-          href="https://github.com/Hejsel/Eksamen-Udviklingsmiljoer"
-          target="_blank"
-          class="inline-flex items-center bg-accent border-0 py-2 px-5 rounded text-base text-primary mt-4 hover:bg-opacity-80 hover:text-white transition-transform transform hover:scale-105"
-        >
-          <span class="mr-2">Github</span>
-          <svg
-            class="w-6 h-6 text-primary hover:text-white"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M12 2C6.48 2 2 6.48 2 12c0 4.418 2.865 8.166 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.865-.014-1.698-2.782.603-3.369-1.34-3.369-1.34-.455-1.157-1.11-1.465-1.11-1.465-.908-.62.069-.608.069-.608 1.003.07 1.53 1.031 1.53 1.031.892 1.529 2.34 1.088 2.91.832.091-.647.35-1.087.636-1.337-2.22-.253-4.555-1.112-4.555-4.945 0-1.092.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.645 0 0 .84-.269 2.75 1.026A9.563 9.563 0 0112 6.845c.85.004 1.705.114 2.502.334 1.909-1.295 2.748-1.026 2.748-1.026.545 1.375.202 2.392.099 2.645.64.699 1.028 1.591 1.028 2.683 0 3.841-2.339 4.688-4.566 4.937.36.31.678.92.678 1.852 0 1.337-.012 2.415-.012 2.743 0 .268.18.58.688.482A10.02 10.02 0 0022 12c0-5.52-4.48-10-10-10z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </a>
-      </div>
-    </header>
+        <!-- HEADER som henter header.html ind på siden!!! -->
+    <header id="header"></header>
+    
     <main>
       <!-- Hero Section -->
       <section class="text-black body-font">
-        <div class="container mx-auto px-5 py-10">
+        <div class="container px-5 py-10 mx-auto">
           <!-- Tekstområde -->
-          <div class="text-center mb-10">
-            <h1 class="title-font tracking-wide sm:text-3xl md:text-5xl xl:text-6xl mb-4 font-bold">
+          <div class="mb-10 text-center">
+            <h1 class="mb-4 font-bold tracking-wide title-font sm:text-3xl md:text-5xl xl:text-6xl">
               Versionsstyring med Git og Gruppearbejde
             </h1>
-            <p class="mb-8 leading-relaxed opacity-70 max-w-2xl mx-auto">
+            <p class="max-w-2xl mx-auto mb-8 leading-relaxed opacity-70">
               Præsenter Git fra opsætning til generel brug. Uddyb processerne initialisering,
               staging og comitting. Branching og merging skal også dækkes. Inkluder cloning,
               pushing, pulling samt brug af et fælles serverbaseret repository.
             </p>
             <button
-              class="inline-flex text-white bg-accent py-2 px-5 focus:outline-none hover:bg-opacity-80 rounded text-sm"
+              class="inline-flex px-5 py-2 text-sm text-white rounded bg-accent focus:outline-none hover:bg-opacity-80"
             >
               Læs Mere
             </button>
           </div>
 
           <!-- Billedgrid -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
+          <div class="grid justify-center grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
             <img
-              class="object-cover object-center rounded-lg shadow-md max-w-full"
+              class="object-cover object-center max-w-full rounded-lg shadow-md"
               alt="git init"
               src="/src/assets/images/git-init.webp"
             />
             <img
-              class="object-cover object-center rounded-lg shadow-md max-w-full"
+              class="object-cover object-center max-w-full rounded-lg shadow-md"
               alt="git add"
               src="/src/assets/images/git-add.webp"
             />
             <img
-              class="object-cover object-center rounded-lg shadow-md max-w-full"
+              class="object-cover object-center max-w-full rounded-lg shadow-md"
               alt="git commit"
               src="/src/assets/images/git-commit.webp"
             />
             <img
-              class="object-cover object-center rounded-lg shadow-md max-w-full"
+              class="object-cover object-center max-w-full rounded-lg shadow-md"
               alt="git push"
               src="/src/assets/images/git-push.webp"
             />
             <img
-              class="object-cover object-center rounded-lg shadow-md max-w-full"
+              class="object-cover object-center max-w-full rounded-lg shadow-md"
               alt="git status"
               src="/src/assets/images/git-status.webp"
             />
             <img
-              class="object-cover object-center rounded-lg shadow-md max-w-full"
+              class="object-cover object-center max-w-full rounded-lg shadow-md"
               alt="git diff"
               src="/src/assets/images/git-diff.webp"
             />
             <img
-              class="object-cover object-center rounded-lg shadow-md max-w-full"
+              class="object-cover object-center max-w-full rounded-lg shadow-md"
               alt="git log"
               src="/src/assets/images/git-log.webp"
             />
             <img
-              class="object-cover object-center rounded-lg shadow-md max-w-full"
+              class="object-cover object-center max-w-full rounded-lg shadow-md"
               alt="git pull"
               src="/src/assets/images/git-pull.webp"
             />
@@ -170,8 +80,8 @@
         </div>
       </section>
 
-      <section class="mb-8 container text-center">
-        <h2 class="text-2xl font-bold mb-4">Introduktion til Git</h2>
+      <section class="container mb-8 text-center">
+        <h2 class="mb-4 text-2xl font-bold">Introduktion til Git</h2>
         <p class="leading-relaxed">
           Git er et versionskontrolsystem, der bruges til at spore ændringer i kode og samarbejde
           mellem udviklere. Det giver dig mulighed for at arbejde sikkert på dit projekt uden at
@@ -181,7 +91,7 @@
 
       <section class="mb-8">
         <div class="container">
-        <h2 class="text-2xl font-bold mb-4">Hvordan fungerer Git?</h2>
+        <h2 class="mb-4 text-2xl font-bold">Hvordan fungerer Git?</h2>
         <div class="space-y-4">
           <details class="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col gap-8">
             <summary class="cursor-pointer font-semibold text-lg text-gray-800">
@@ -200,7 +110,7 @@
                 <h3 class="text-xl font-semibold text-gray-700">Hvordan gør man?</h3>
                 <p class="mt-2 leading-relaxed text-gray-600">
                   Start med at køre
-                  <code class="bg-gray-100 px-2 py-1 rounded text-sm">git init</code> i et projektmappe for
+                  <code class="px-2 py-1 text-sm bg-gray-100 rounded">git init</code> i et projektmappe for
                   at oprette et nyt repository.
                 </p>
               </div>
@@ -224,7 +134,7 @@
                 </p>
                 <div class="mt-4">
                   <img
-                    class="rounded-lg shadow-md object-cover w-full max-w-md mx-auto"
+                    class="object-cover w-full max-w-md mx-auto rounded-lg shadow-md"
                     src="/src/assets/images/git-init.webp"
                     alt="Billedsprog for git init"
                   />
@@ -234,13 +144,13 @@
                 <h3 class="text-xl font-semibold text-gray-700">I Git</h3>
                 <p class="mt-2 leading-relaxed text-gray-600">
                   Når du initialiserer et repository med
-                  <code class="bg-gray-100 px-2 py-1 rounded text-sm">git init</code>, opretter du
+                  <code class="px-2 py-1 text-sm bg-gray-100 rounded">git init</code>, opretter du
                   en tom struktur, der kan holde styr på ændringer i dit projekt. På dette tidspunkt
                   er pluksedlen stadig helt tom.
                 </p>
                 <div class="mt-4">
                   <img
-                    class="rounded-lg shadow-md object-cover w-full max-w-md mx-auto"
+                    class="object-cover w-full max-w-md mx-auto rounded-lg shadow-md"
                     src="/src/assets/images/git-1.png"
                     alt="Eksempel på Git Repository"
                   />
