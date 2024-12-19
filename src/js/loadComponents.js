@@ -14,5 +14,6 @@ const loadComponent = (elementId, file) => {
 };
 
 // Indlæs komponenterne
+loadComponent("header", "./components/Header.html"); // Korrekt sti
 loadComponent("header", "../components/Header.html"); // Korrekt sti
 loadComponent("footer", "../components/Footer.html");
