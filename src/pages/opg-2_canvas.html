@@ -1,18 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Canvas</title>
-    <link href="/dist/styles.css" rel="stylesheet" />
-  </head>
-  <body>
-    <p>
-      Beskriv HTML-elementet &lt;canvas&gt; med dets overordnede formål. Beskriv både hvordan man
-      tegner statiske billeder på det (kom ind på både direkte og stitegning), og hvordan man laver
-      animationer. Fortæl ydermere om hvordan canvas kan bruges til billedbehandling og filmlavning.
-      Fragmenter af kode til illustration af dine overvejelser skal være en del af præsentationen.
-      Du bør bruge uddrag fra egne projekter og opgaver som eksempler i din gennemgang.
-    </p>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Canvas</title>
+		<link href="/dist/styles.css" rel="stylesheet" />
+		<script src="/src/js/loadComponents.js" defer></script>
+		<script src="/src/js/activeLinks.js" defer></script>
+		<script src="/src/js/pages/opg-2_canvas.js" defer></script>
+	</head>
+	<body>
+		<header id="header"></header>
+
+		<main>
+			<section class="text-black body-font">
+				<div class="container px-5 py-10 mx-auto">
+					<!-- Tekstområde -->
+					<div class="mb-10">
+						<h1
+							class="mb-4 font-bold tracking-wide title-font sm:text-3xl md:text-5xl xl:text-6xl text-center">
+							&lt;canvas&gt;
+						</h1>
+						<p class="max-w-2xl mx-auto mb-8 leading-relaxed opacity-70">
+							Beskriv HTML-elementet &lt;canvas&gt; med dets overordnede formål. Beskriv både hvordan man
+							tegner statiske billeder på det (kom ind på både direkte og stitegning), og hvordan man
+							laver animationer. Fortæl ydermere om hvordan canvas kan bruges til billedbehandling og
+							filmlavning. Fragmenter af kode til illustration af dine overvejelser skal være en del af
+							præsentationen. Du bør bruge uddrag fra egne projekter og opgaver som eksempler i din
+							gennemgang.
+						</p>
+					</div>
+
+					<div class="flex justify-center">
+						<canvas
+							id="staticDrawing"
+							width="999"
+							height="600"
+							class="border-solid border-spacing-3 black"></canvas>
+					</div>
+				</div>
+			</section>
+		</main>
+	</body>
 </html>
