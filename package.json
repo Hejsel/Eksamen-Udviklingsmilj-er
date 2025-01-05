@@ -1,10 +1,12 @@
 {
 	"name": "eksamen-udviklingsmiljoer",
 	"version": "1.0.0",
+	"type": "module",
 	"description": "Git er et **versionsstyringssystem**, der gør det muligt at holde styr på ændringer i filer og samarbejde effektivt i projekter. I denne README gennemgås:",
 	"main": "app.js",
 	"scripts": {
-		"dev": "npx tailwindcss -i ./src/css/style.css -o ./dist/styles.css --watch"
+		"dev": "npx tailwindcss -i ./src/css/style.css -o ./dist/styles.css --watch",
+		"start": "node server.mjs"
 	},
 	"repository": {
 		"type": "git",
