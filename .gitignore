@@ -6,3 +6,6 @@ dist/
 
 # vscode mappen hvis der er flere liveservere
 .vscode/
+
+# DS_store filen skal ikke med
+.DS_store/
