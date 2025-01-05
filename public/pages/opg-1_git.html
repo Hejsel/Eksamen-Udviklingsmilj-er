@@ -11,1149 +11,1203 @@
   </head>
 
   <body class="bg-primary">
-        <!-- HEADER som henter header.html ind på siden!!! -->
+    <!-- HEADER som henter header.html ind på siden!!! -->
     <header id="header"></header>
-    
+
     <main class="container">
-  
-<div id="carousel-container" class="relative overflow-hidden rounded-lg ">
-  <!-- Carousel-sektioner -->
-  <div id="carousel-sections" class="flex w-full transition-transform duration-500">
-    <!-- Slide 1 -->
-    <section id="what-is-git" class="flex-shrink-0 w-full py-12 text-white bg-gradient-to-r from-teal-500 to-teal-700">
-      <div class="container mx-auto text-center">
-        <h2 class="text-4xl font-extrabold">Hvad er Git?</h2>
-        <p class="max-w-2xl mx-auto mt-6 text-lg leading-relaxed">
-          1. Git er et distribueret versionsstyringssystem (VCS), der giver udviklere mulighed for at spore ændringer, samarbejde effektivt og arbejde offline.
-          I modsætning til traditionelle systemer gemmer Git snapshots af projektets tilstand. <br><br>
-                  2. Git er et kraftfuldt versionsstyringssystem (VCS), der bruges til at spore ændringer i filer og facilitere samarbejde i softwareprojekter. 
-        Git adskiller sig fra traditionelle versioneringssystemer ved at tage snapshots af dit projekt i stedet for at gemme forskelle mellem filer. 
-        Det betyder, at hver commit repræsenterer en komplet tilstand af projektet på det tidspunkt.
-        </p>
-      </div>
-      <div class="container grid grid-cols-1 gap-8 mx-auto mt-12 md:grid-cols-2">
-        <div>
-          <h3 class="text-2xl font-bold">Nøglefunktioner:</h3>
-          <ul class="pl-6 mt-4 space-y-3 list-disc">
-            <li><strong>Snapshots:</strong> Hele projektet gemmes som billeder af dets tilstand.</li>
-            <li><strong>Distribueret:</strong> Hver udvikler har en komplet kopi af projektet.</li>
-            <li><strong>Sikkerhed:</strong> Checksums forhindrer utilsigtede ændringer.</li>
-            <li><strong>Offline arbejde:</strong> Lokale handlinger kræver ikke en netværksforbindelse.</li>
-          </ul>
+      <div id="carousel-container" class="relative overflow-hidden rounded-lg">
+        <!-- Carousel-sektioner -->
+        <div id="carousel-sections" class="flex w-full transition-transform duration-500">
+          <!-- Slide 1 -->
+          <section
+            id="what-is-git"
+            class="flex-shrink-0 w-full py-12 text-white bg-gradient-to-r from-teal-500 to-teal-700"
+          >
+            <div class="container mx-auto text-center">
+              <h2 class="text-4xl font-extrabold">Hvad er Git?</h2>
+              <p class="max-w-2xl mx-auto mt-6 text-lg leading-relaxed">
+                1. Git er et distribueret versionsstyringssystem (VCS), der giver udviklere mulighed
+                for at spore ændringer, samarbejde effektivt og arbejde offline. I modsætning til
+                traditionelle systemer gemmer Git snapshots af projektets tilstand. <br /><br />
+                2. Git er et kraftfuldt versionsstyringssystem (VCS), der bruges til at spore
+                ændringer i filer og facilitere samarbejde i softwareprojekter. Git adskiller sig
+                fra traditionelle versioneringssystemer ved at tage snapshots af dit projekt i
+                stedet for at gemme forskelle mellem filer. Det betyder, at hver commit
+                repræsenterer en komplet tilstand af projektet på det tidspunkt.
+              </p>
+            </div>
+            <div class="container grid grid-cols-1 gap-8 mx-auto mt-12 md:grid-cols-2">
+              <div>
+                <h3 class="text-2xl font-bold">Nøglefunktioner:</h3>
+                <ul class="pl-6 mt-4 space-y-3 list-disc">
+                  <li>
+                    <strong>Snapshots:</strong> Hele projektet gemmes som billeder af dets tilstand.
+                  </li>
+                  <li>
+                    <strong>Distribueret:</strong> Hver udvikler har en komplet kopi af projektet.
+                  </li>
+                  <li><strong>Sikkerhed:</strong> Checksums forhindrer utilsigtede ændringer.</li>
+                  <li>
+                    <strong>Offline arbejde:</strong> Lokale handlinger kræver ikke en
+                    netværksforbindelse.
+                  </li>
+                </ul>
+              </div>
+              <div class="flex justify-center">
+                <img
+                  src="/src/assets/images/maxresdefault.jpg"
+                  alt="Illustration af Git"
+                  class="w-full max-w-md rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
+          </section>
+
+          <!-- Slide 2 -->
+          <section id="snapshots-vs-differences" class="flex-shrink-0 w-full py-12 bg-white">
+            <div class="container mx-auto text-center">
+              <h3 class="text-3xl font-bold">Snapshots vs. Differences</h3>
+              <p class="max-w-2xl mx-auto mt-6 text-lg leading-relaxed">
+                1.Git adskiller sig fra traditionelle versionsstyringssystemer ved at gemme
+                snapshots af hele projektet i stedet for forskelle mellem filer. <br />
+                <br />
+                2. Snapshots, ikke forskelle: Traditionelle systemer som Subversion gemmer ændringer
+                mellem filer (delta-baseret versionering). Git gemmer derimod snapshots af hele
+                projektets tilstand. Hvis en fil ikke ændres, opretter Git blot en reference til den
+                tidligere version.
+              </p>
+            </div>
+            <div class="container grid grid-cols-1 gap-8 mx-auto mt-12 md:grid-cols-2">
+              <figure class="text-center">
+                <img
+                  src="/src/assets/images/git-storing-data2.png"
+                  alt="Traditionelle forskelle"
+                  class="w-full max-w-md mx-auto rounded-lg shadow-lg"
+                />
+                <figcaption class="mt-2 text-gray-600">
+                  Traditionelle systemer gemmer kun forskelle mellem filer.
+                </figcaption>
+              </figure>
+              <figure class="text-center">
+                <img
+                  src="/src/assets/images/git-storing-version.png"
+                  alt="Snapshots af projektet"
+                  class="w-full max-w-md mx-auto rounded-lg shadow-lg"
+                />
+                <figcaption class="mt-2 text-gray-600">
+                  Git gemmer snapshots af hele projektets tilstand over tid.
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <!-- Slide 3 -->
+          <section id="centralized-vs-distributed" class="flex-shrink-0 w-full py-12 bg-gray-100">
+            <div class="container mx-auto text-center">
+              <h3 class="text-3xl font-bold">Centraliseret vs. Distribueret Versionsstyring</h3>
+              <p class="max-w-2xl mx-auto mt-6 text-lg leading-relaxed">
+                1. Git fungerer som et distribueret system, hvor hver udvikler har en komplet
+                historik. Dette står i kontrast til centraliserede systemer, der afhænger af en
+                enkelt server.
+                <br /><br />
+                2. <strong>Næsten alle handlinger er lokale:</strong> Git kræver normalt ikke en
+                netværksforbindelse for at udføre de fleste operationer. Dette gør det muligt at
+                arbejde offline, hvilket giver stor fleksibilitet og hastighed.
+              </p>
+            </div>
+            <div class="container grid grid-cols-1 gap-8 mx-auto mt-12 md:grid-cols-2">
+              <figure class="text-center">
+                <img
+                  src="/src/assets/images/git-Centralized-version-control-diagram.png"
+                  alt="Centraliseret system"
+                  class="w-full max-w-md mx-auto rounded-lg shadow-lg"
+                />
+                <figcaption class="mt-2 text-gray-600">
+                  Centraliseret versionskontrol kræver en central server.
+                </figcaption>
+              </figure>
+              <figure class="text-center">
+                <img
+                  src="/src/assets/images/git-Distributed-version-control-diagram.png"
+                  alt="Distribueret system"
+                  class="w-full max-w-md mx-auto rounded-lg shadow-lg"
+                />
+                <figcaption class="mt-2 text-gray-600">
+                  Distribueret versionskontrol giver hver udvikler fuld historik.
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <!-- Slide 4 -->
+          <section id="three-states" class="flex-shrink-0 w-full py-12 bg-teal-50">
+            <div class="container mx-auto text-center">
+              <h3 class="text-3xl font-bold text-teal-700">De Tre Tilstande i Git</h3>
+              <p class="max-w-2xl mx-auto mt-6 text-lg leading-relaxed">
+                Filer i Git kan være i tre hovedtilstande: Modified, Staged og Committed. Disse
+                tilstande repræsenterer, hvordan ændringer flyttes gennem Git-systemet.
+              </p>
+            </div>
+            <div class="container grid grid-cols-1 gap-8 mx-auto mt-12 md:grid-cols-2">
+              <div>
+                <ul class="pl-6 mt-4 space-y-3 text-gray-700 list-disc">
+                  <li>
+                    <strong>Modified:</strong> Filer er ændret, men endnu ikke klar til commit.
+                  </li>
+                  <li><strong>Staged:</strong> Ændringer er markeret til commit.</li>
+                  <li><strong>Committed:</strong> Ændringer er permanent gemt i Git-databasen.</li>
+                </ul>
+              </div>
+              <!-- Ekstra information -->
+              <div class="mt-6">
+                <h3 class="text-xl font-semibold text-blue-500">Fordele ved Git:</h3>
+                <ul class="mt-2 ml-6 text-gray-700 list-disc">
+                  <li>
+                    <strong>Høj hastighed:</strong> Lokale operationer er næsten øjeblikkelige, da
+                    historikken gemmes på din maskine.
+                  </li>
+                  <li>
+                    <strong>Integritet:</strong> Alt i Git er checksummet, hvilket betyder, at intet
+                    kan ændres uden, at Git opdager det.
+                  </li>
+                  <li>
+                    <strong>Sikkerhed:</strong> Det er svært at miste data, da næsten alle
+                    operationer kun tilføjer data til databasen.
+                  </li>
+                </ul>
+              </div>
+              <div class="flex justify-center">
+                <img
+                  src="/src/assets/images/git-working-tree.png"
+                  alt="Git tilstande"
+                  class="w-full max-w-md rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
+          </section>
         </div>
-        <div class="flex justify-center">
-          <img src="/src/assets/images/maxresdefault.jpg" alt="Illustration af Git" class="w-full max-w-md rounded-lg shadow-lg">
-        </div>
+
+        <!-- Navigationsknapper -->
+        <button
+          id="prev-btn"
+          class="absolute left-0 px-4 py-2 text-white transform -translate-y-1/2 bg-teal-600 rounded-l top-1/2"
+        >
+          ‹
+        </button>
+        <button
+          id="next-btn"
+          class="absolute right-0 px-4 py-2 text-white transform -translate-y-1/2 bg-teal-600 rounded-r top-1/2"
+        >
+          ›
+        </button>
       </div>
-    </section>
 
-    <!-- Slide 2 -->
-    <section id="snapshots-vs-differences" class="flex-shrink-0 w-full py-12 bg-white">
-      <div class="container mx-auto text-center">
-        <h3 class="text-3xl font-bold">Snapshots vs. Differences</h3>
-        <p class="max-w-2xl mx-auto mt-6 text-lg leading-relaxed">
-          1.Git adskiller sig fra traditionelle versionsstyringssystemer ved at gemme snapshots af hele projektet i stedet for forskelle mellem filer. <br> <br>
-        2. Snapshots, ikke forskelle: Traditionelle systemer som Subversion gemmer ændringer mellem filer (delta-baseret versionering). Git gemmer derimod snapshots af hele projektets tilstand. Hvis en fil ikke ændres, opretter Git blot en reference til den tidligere version.
-        </p>
-      </div>
-      <div class="container grid grid-cols-1 gap-8 mx-auto mt-12 md:grid-cols-2">
-        <figure class="text-center">
-          <img src="/src/assets/images/git-storing-data2.png" alt="Traditionelle forskelle" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
-          <figcaption class="mt-2 text-gray-600">Traditionelle systemer gemmer kun forskelle mellem filer.</figcaption>
-        </figure>
-        <figure class="text-center">
-          <img src="/src/assets/images/git-storing-version.png" alt="Snapshots af projektet" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
-          <figcaption class="mt-2 text-gray-600">Git gemmer snapshots af hele projektets tilstand over tid.</figcaption>
-        </figure>
-      </div>
-    </section>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const sections = document.getElementById("carousel-sections");
+          const prevButton = document.getElementById("prev-btn");
+          const nextButton = document.getElementById("next-btn");
 
-    <!-- Slide 3 -->
-    <section id="centralized-vs-distributed" class="flex-shrink-0 w-full py-12 bg-gray-100">
-      <div class="container mx-auto text-center">
-        <h3 class="text-3xl font-bold">Centraliseret vs. Distribueret Versionsstyring</h3>
-        <p class="max-w-2xl mx-auto mt-6 text-lg leading-relaxed">
-          1. Git fungerer som et distribueret system, hvor hver udvikler har en komplet historik. Dette står i kontrast til centraliserede systemer, der afhænger af en enkelt server.
-        <br><br>
-             2. <strong>Næsten alle handlinger er lokale:</strong> Git kræver normalt ikke en netværksforbindelse for at udføre de fleste operationer. 
-        Dette gør det muligt at arbejde offline, hvilket giver stor fleksibilitet og hastighed.
-        </p>
-      </div>
-      <div class="container grid grid-cols-1 gap-8 mx-auto mt-12 md:grid-cols-2">
-        <figure class="text-center">
-          <img src="/src/assets/images/git-Centralized-version-control-diagram.png" alt="Centraliseret system" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
-          <figcaption class="mt-2 text-gray-600">Centraliseret versionskontrol kræver en central server.</figcaption>
-        </figure>
-        <figure class="text-center">
-          <img src="/src/assets/images/git-Distributed-version-control-diagram.png" alt="Distribueret system" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
-          <figcaption class="mt-2 text-gray-600">Distribueret versionskontrol giver hver udvikler fuld historik.</figcaption>
-        </figure>
-      </div>
-    </section>
+          let currentIndex = 0;
+          const totalSlides = sections.children.length;
 
-    <!-- Slide 4 -->
-    <section id="three-states" class="flex-shrink-0 w-full py-12 bg-teal-50">
-      <div class="container mx-auto text-center">
-        <h3 class="text-3xl font-bold text-teal-700">De Tre Tilstande i Git</h3>
-        <p class="max-w-2xl mx-auto mt-6 text-lg leading-relaxed">
-          Filer i Git kan være i tre hovedtilstande: Modified, Staged og Committed. Disse tilstande repræsenterer, hvordan ændringer flyttes gennem Git-systemet.
-        </p>
-      </div>
-      <div class="container grid grid-cols-1 gap-8 mx-auto mt-12 md:grid-cols-2">
-        <div>
-          <ul class="pl-6 mt-4 space-y-3 text-gray-700 list-disc">
-            <li><strong>Modified:</strong> Filer er ændret, men endnu ikke klar til commit.</li>
-            <li><strong>Staged:</strong> Ændringer er markeret til commit.</li>
-            <li><strong>Committed:</strong> Ændringer er permanent gemt i Git-databasen.</li>
-          </ul>
-        </div>
-          <!-- Ekstra information -->
-  <div class="mt-6">
-    <h3 class="text-xl font-semibold text-blue-500">Fordele ved Git:</h3>
-    <ul class="mt-2 ml-6 text-gray-700 list-disc">
-      <li><strong>Høj hastighed:</strong> Lokale operationer er næsten øjeblikkelige, da historikken gemmes på din maskine.</li>
-      <li><strong>Integritet:</strong> Alt i Git er checksummet, hvilket betyder, at intet kan ændres uden, at Git opdager det.</li>
-      <li><strong>Sikkerhed:</strong> Det er svært at miste data, da næsten alle operationer kun tilføjer data til databasen.</li>
-    </ul>
-  </div>
-        <div class="flex justify-center">
-          <img src="/src/assets/images/git-working-tree.png" alt="Git tilstande" class="w-full max-w-md rounded-lg shadow-lg">
-        </div>
-      </div>
-    </section>
-  </div>
+          const updateCarousel = () => {
+            sections.style.transform = `translateX(-${currentIndex * 100}%)`;
+          };
 
-  <!-- Navigationsknapper -->
-  <button id="prev-btn" class="absolute left-0 px-4 py-2 text-white transform -translate-y-1/2 bg-teal-600 rounded-l top-1/2">
-    ‹
-  </button>
-  <button id="next-btn" class="absolute right-0 px-4 py-2 text-white transform -translate-y-1/2 bg-teal-600 rounded-r top-1/2">
-    ›
-  </button>
-</div>
+          prevButton.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+          });
 
-<script>
- document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.getElementById("carousel-sections");
-  const prevButton = document.getElementById("prev-btn");
-  const nextButton = document.getElementById("next-btn");
-
-  let currentIndex = 0;
-  const totalSlides = sections.children.length;
-
-  const updateCarousel = () => {
-    sections.style.transform = `translateX(-${currentIndex * 100}%)`;
-  };
-
-  prevButton.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-    updateCarousel();
-  });
-
-  nextButton.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    updateCarousel();
-  });
-});
-
-
-</script>
-
-
-
-
+          nextButton.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+          });
+        });
+      </script>
 
       <div class="py-6 text-white bg-accent">
-    <div class="container px-4 mx-auto text-center">
-      <h1 class="text-4xl font-bold">Git Cheat Sheet</h1>
-      <p class="mt-2 text-lg">En komplet guide til versionsstyring og samarbejde med Git</p>
-    </div>
-  </div>
+        <div class="container px-4 mx-auto text-center">
+          <h1 class="text-4xl font-bold">Git Cheat Sheet</h1>
+          <p class="mt-2 text-lg">En komplet guide til versionsstyring og samarbejde med Git</p>
+        </div>
+      </div>
 
-
-
-<!-- //TODO - Section: Git Configuration -->
-<section id="git-configuration" class="p-6 bg-white rounded-lg shadow-md">
-  <h2 class="text-2xl font-semibold text-blue-600">1. Git Konfiguration</h2>
-  <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
-    <!-- Tekst og fold-ud-kasser -->
-    <div class="flex-1">
-      <p class="mb-4 text-gray-700">
-        Git-konfiguration er det første skridt, når du begynder at arbejde med Git. Det hjælper med at identificere, hvem der laver ændringerne, og sikrer, 
-        at dine commits bliver korrekt mærket. Konfigurationen inkluderer indstillinger som dit navn, din e-mail og aktivering af terminalfarver. 
-        Disse indstillinger er globale, hvilket betyder, at de gælder for alle dine Git-projekter på maskinen.
-      </p>
-      <p class="mb-4 text-gray-700">
-        <strong>Hvorfor er det vigtigt?</strong> Når du arbejder på teams eller open source-projekter, gør korrekt konfiguration det nemt for andre at se, 
-        hvem der har lavet hvilke ændringer. Desuden forbedrer aktiveringen af farver i terminalen læsbarheden af kommandooutput.
-      </p>
-      <div class="space-y-4">
-        <!-- Opsætning af navn -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Opsætning af dit navn</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+      <!-- //TODO - Section: Git Configuration -->
+      <section id="git-configuration" class="p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-blue-600">1. Git Konfiguration</h2>
+        <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
+          <!-- Tekst og fold-ud-kasser -->
+          <div class="flex-1">
+            <p class="mb-4 text-gray-700">
+              Git-konfiguration er det første skridt, når du begynder at arbejde med Git. Det
+              hjælper med at identificere, hvem der laver ændringerne, og sikrer, at dine commits
+              bliver korrekt mærket. Konfigurationen inkluderer indstillinger som dit navn, din
+              e-mail og aktivering af terminalfarver. Disse indstillinger er globale, hvilket
+              betyder, at de gælder for alle dine Git-projekter på maskinen.
+            </p>
+            <p class="mb-4 text-gray-700">
+              <strong>Hvorfor er det vigtigt?</strong> Når du arbejder på teams eller open
+              source-projekter, gør korrekt konfiguration det nemt for andre at se, hvem der har
+              lavet hvilke ændringer. Desuden forbedrer aktiveringen af farver i terminalen
+              læsbarheden af kommandooutput.
+            </p>
+            <div class="space-y-4">
+              <!-- Opsætning af navn -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Opsætning af dit navn
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
 # Opsæt dit navn
 git config --global user.name "Dit Navn"
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Dit navn vil blive knyttet til hver commit, du laver, hvilket gør det nemt for andre at identificere dine ændringer.
-              <br><strong>Billedsprog:</strong> Forestil dig, at dit navn står som afsender i en fælles notesbog.
-            </p>
-          </div>
-        </details>
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Dit navn vil blive knyttet til hver commit, du
+                    laver, hvilket gør det nemt for andre at identificere dine ændringer.
+                    <br /><strong>Billedsprog:</strong> Forestil dig, at dit navn står som afsender
+                    i en fælles notesbog.
+                  </p>
+                </div>
+              </details>
 
-        <!-- Opsætning af e-mail -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Opsætning af din e-mail</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+              <!-- Opsætning af e-mail -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Opsætning af din e-mail
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
 # Opsæt din e-mail
 git config --global user.email "dinemail@example.com"
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Din e-mail bruges til at identificere dig i Git-historikken og er essentiel ved samarbejde.
-              <br><strong>Billedsprog:</strong> Det er som at tilføje dit visitkort i en rapport, så andre kan kontakte dig.
-            </p>
-          </div>
-        </details>
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Din e-mail bruges til at identificere dig i
+                    Git-historikken og er essentiel ved samarbejde. <br /><strong
+                      >Billedsprog:</strong
+                    >
+                    Det er som at tilføje dit visitkort i en rapport, så andre kan kontakte dig.
+                  </p>
+                </div>
+              </details>
 
-        <!-- Aktivering af farver -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Aktivering af farver i terminalen</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+              <!-- Aktivering af farver -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Aktivering af farver i terminalen
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
 # Aktivér farver i terminal-output
 git config --global color.ui auto
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Denne indstilling aktiverer farvekodning, hvilket gør Git-output mere læsbart i terminalen.
-              <br><strong>Billedsprog:</strong> Det svarer til at bruge farvede overstregningstuscher for at fremhæve nøglepunkter i dine noter.
-            </p>
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Denne indstilling aktiverer farvekodning, hvilket
+                    gør Git-output mere læsbart i terminalen. <br /><strong>Billedsprog:</strong>
+                    Det svarer til at bruge farvede overstregningstuscher for at fremhæve
+                    nøglepunkter i dine noter.
+                  </p>
+                </div>
+              </details>
+            </div>
           </div>
-        </details>
+
+          <!-- Plads til billede -->
+          <!-- //TODO - find login billeder!! -->
+          <div class="mt-6 md:mt-0 md:w-1/3">
+            1<img
+              src="/src/assets/images/git/git-1-clone-cd.png"
+              alt="Illustration af Git-staging"
+              class="w-full rounded shadow cursor-pointer"
+              onclick="openModal('/src/assets/images/git/git-1-clone-cd.png')"
+            />2
+            <img
+              src="/src/assets/images/git-5.png"
+              alt="Illustration af Git-staging"
+              class="w-full rounded shadow cursor-pointer"
+              onclick="openModal('/src/assets/images/git-5.png')"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Modal -->
+      <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75">
+        <div class="flex items-center justify-center w-full h-full">
+          <img id="modal-img" src="" alt="Stort billede" class="max-w-full max-h-full" />
+        </div>
+        <button
+          class="absolute px-3 py-2 text-white bg-red-600 rounded top-4 right-4"
+          onclick="closeModal()"
+        >
+          Luk
+        </button>
       </div>
-    </div>
+      <!-- SLUT -->
 
-    <!-- Plads til billede -->
-    <div class="mt-6 md:mt-0 md:w-1/3">
-      <img src="/src/assets/images/maxresdefault.jpg" alt="Illustration af Git-konfiguration" class="w-full rounded shadow">
-    </div>
-  </div>
-</section>
-
-<!-- SLUT -->
-
-<!-- Section: Starting a Project -->
-<section id="starting-project" class="p-6 bg-white rounded-lg shadow-md">
-  <h2 class="text-2xl font-semibold text-blue-600">2. Start Et Projekt</h2>
-  <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
-    <!-- Tekst og fold-ud-kasser -->
-    <div class="flex-1">
-      <p class="mb-4 text-gray-700">
-        Når du starter et projekt med Git, kan du enten initialisere et helt nyt repository eller klone et eksisterende. Initialisering skaber en lokal "dagbog" for at holde styr på ændringer, mens kloning kopierer en eksisterende "dagbog" med hele dens historik.
-      </p>
-      <p class="mb-4 text-gray-700">
-        <strong>Hvorfor er det vigtigt?</strong> Initialisering er nødvendigt for at starte versionsstyring af filer. Kloning er afgørende, når du vil samarbejde om eksisterende projekter eller bruge fælles skabeloner.
-      </p>
-      <div class="space-y-4">
-        <!-- Initialisering -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Initialisering af et nyt repository</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+      <!-- //TODO - Section: Starting a Project -->
+      <section id="starting-project" class="p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-blue-600">2. Start Et Projekt</h2>
+        <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
+          <!-- Tekst og fold-ud-kasser -->
+          <div class="flex-1">
+            <p class="mb-4 text-gray-700">
+              Når du starter et projekt med Git, kan du enten initialisere et helt nyt repository
+              eller klone et eksisterende. Initialisering skaber en lokal "dagbog" for at holde styr
+              på ændringer, mens kloning kopierer en eksisterende "dagbog" med hele dens historik.
+            </p>
+            <p class="mb-4 text-gray-700">
+              <strong>Hvorfor er det vigtigt?</strong> Initialisering er nødvendigt for at starte
+              versionsstyring af filer. Kloning er afgørende, når du vil samarbejde om eksisterende
+              projekter eller bruge fælles skabeloner.
+            </p>
+            <div class="space-y-4">
+              <!-- Initialisering -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Initialisering af et nyt repository
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
 # Initialiser et nyt repository
 git init
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Opretter en ny Git-dagbog (repository) i den aktuelle mappe. Dette gør det muligt at begynde at spore ændringer i projektet.
-              <br><strong>Billedsprog:</strong> Det er som at starte en helt ny notesbog for dine idéer.
-            </p>
-          </div>
-        </details>
-
-        <!-- Kloning -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Kloning af et eksisterende repository</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Opretter en ny Git-dagbog (repository) i den
+                    aktuelle mappe. Dette gør det muligt at begynde at spore ændringer i projektet.
+                    <br /><strong>Billedsprog:</strong> Det er som at starte en helt ny notesbog for
+                    dine idéer.
+                  </p>
+                </div>
+              </details>
+              <!-- //TODO - opretter git init (kopi fra det online/remote repo) fra bliver utomatisk tilføjet igennem clone direkte ned på din lokale maskine -->
+              <!-- Kloning -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Kloning af et eksisterende repository
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
 # Klon et repository fra en URL
 git clone [repository-URL]
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Kopierer en eksisterende Git-dagbog inklusive hele dens historik til din lokale maskine.
-              <br><strong>Billedsprog:</strong> Det svarer til at få en kopi af en vens notesbog med alle deres noter.
-            </p>
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Kopierer en eksisterende Git-dagbog inklusive hele
+                    dens historik til din lokale maskine. <br /><strong>Billedsprog:</strong> Det
+                    svarer til at få en kopi af en vens notesbog med alle deres noter.
+                  </p>
+                </div>
+              </details>
+            </div>
           </div>
-        </details>
+
+          <!-- Plads til billede -->
+          <div class="mt-6 md:mt-0 md:w-1/3">
+            1<img
+              src="/src/assets/images/git/git-1-clone-cd.png"
+              alt="Illustration af Git-staging"
+              class="w-full rounded shadow cursor-pointer"
+              onclick="openModal('/src/assets/images/git/git-1-clone-cd.png')"
+            />2
+            <img
+              src="/src/assets/images/git/git-1.1-clone-and-cd.png"
+              alt="Illustration af Git-staging"
+              class="w-full rounded shadow cursor-pointer"
+              onclick="openModal('/src/assets/images/git/git-1.1-clone-and-cd.png')"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Modal -->
+      <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75">
+        <div class="flex items-center justify-center w-full h-full">
+          <img id="modal-img" src="" alt="Stort billede" class="max-w-full max-h-full" />
+        </div>
+        <button
+          class="absolute px-3 py-2 text-white bg-red-600 rounded top-4 right-4"
+          onclick="closeModal()"
+        >
+          Luk
+        </button>
       </div>
-    </div>
+      <!-- SLUT -->
 
-    <!-- Plads til billede -->
-    <div class="mt-6 md:mt-0 md:w-1/3">
-      <img src="/src/assets/images/start-project.png" alt="Illustration af Git-projektstart" class="w-full rounded shadow">
-    </div>
-  </div>
-</section>
-
-<!-- Section: Staging and Snapshot -->
-<section id="staging-snapshot" class="p-6 bg-white rounded-lg shadow-md">
-  <h2 class="text-2xl font-semibold text-blue-600">3. Staging og Snapshot</h2>
-  <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
-    <!-- Tekst og fold-ud-kasser -->
-    <div class="flex-1">
-      <p class="mb-4 text-gray-700">
-        Staging-processen i Git hjælper dig med at vælge specifikke ændringer, der skal inkluderes i den næste "snapshot" eller commit. Dette giver dig kontrol over, hvilke filer eller ændringer der bliver gemt.
-      </p>
-      <p class="mb-4 text-gray-700">
-        <strong>Hvorfor er det vigtigt?</strong> Med staging kan du undgå at inkludere ufuldstændige eller utilsigtede ændringer i en commit. Dette gør det nemmere at holde din Git-historik ren og organiseret.
-      </p>
-      <div class="space-y-4">
-        <!-- Tilføj ændringer -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Tilføj ændringer til staging</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+      <!-- //TODO - Section: Staging and Snapshot -->
+      <section id="staging-snapshot" class="p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-blue-600">3. Staging og Snapshot</h2>
+        <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
+          <!-- Tekst og fold-ud-kasser -->
+          <div class="flex-1">
+            <p class="mb-4 text-gray-700">
+              Staging-processen i Git hjælper dig med at vælge specifikke ændringer, der skal
+              inkluderes i den næste "snapshot" eller commit. Dette giver dig kontrol over, hvilke
+              filer eller ændringer der bliver gemt.
+            </p>
+            <p class="mb-4 text-gray-700">
+              <strong>Hvorfor er det vigtigt?</strong> Med staging kan du undgå at inkludere
+              ufuldstændige eller utilsigtede ændringer i en commit. Dette gør det nemmere at holde
+              din Git-historik ren og organiseret.
+            </p>
+            <div class="space-y-4">
+              <!-- Tilføj ændringer -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Tilføj ændringer til staging
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
 # Tilføj specifikke filer til staging
 git add [filnavn]
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Flytter ændringer i specifikke filer til staging-området. Disse ændringer vil blive inkluderet i den næste commit.
-              <br><strong>Billedsprog:</strong> Det svarer til at lægge bestemte sider fra din notesbog i en mappe, der skal gemmes.
-            </p>
-          </div>
-        </details>
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Flytter ændringer i specifikke filer til
+                    staging-området. Disse ændringer vil blive inkluderet i den næste commit.
+                    <br /><strong>Billedsprog:</strong> Det svarer til at lægge bestemte sider fra
+                    din notesbog i en mappe, der skal gemmes.
+                  </p>
+                </div>
+              </details>
 
-        <!-- Status -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Se status på ændringer</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+              <!-- Status -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Se status på ændringer
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
 # Se status på dit repository
 git status
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Viser, hvilke filer der er ændret, tilføjet til staging eller klar til commit.
-              <br><strong>Billedsprog:</strong> Det er som at tjekke en pakkeliste, før du sender noget af sted.
-            </p>
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Viser, hvilke filer der er ændret, tilføjet til
+                    staging eller klar til commit. <br /><strong>Billedsprog:</strong> Det er som at
+                    tjekke en pakkeliste, før du sender noget af sted.
+                  </p>
+                </div>
+              </details>
+            </div>
           </div>
-        </details>
+          <!-- Plads til billede -->
+          <div class="mt-6 md:mt-0 md:w-1/3">
+            <img
+              src="/src/assets/images/git/git-be5-add-status.png"
+              alt="Illustration af Git-staging"
+              class="w-full rounded shadow cursor-pointer"
+              onclick="openModal('/src/assets/images/git/git-be5-add-status.png')"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Modal -->
+      <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75">
+        <div class="flex items-center justify-center w-full h-full">
+          <img id="modal-img" src="" alt="Stort billede" class="max-w-full max-h-full" />
+        </div>
+        <button
+          class="absolute px-3 py-2 text-white bg-red-600 rounded top-4 right-4"
+          onclick="closeModal()"
+        >
+          Luk
+        </button>
       </div>
-    </div>
+      <!-- SLUT -->
 
-    <!-- Plads til billede -->
-    <div class="mt-6 md:mt-0 md:w-1/3">
-      <img 
-        src="/src/assets/images/git-5.png" 
-        alt="Illustration af Git-staging" 
-        class="w-full rounded shadow cursor-pointer" 
-        onclick="openModal('/src/assets/images/git-5.png')"
-      >
-    </div>
-  </div>
-</section>
-
-<!-- Modal -->
-<div id="image-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75">
-  <div class="flex items-center justify-center w-full h-full">
-    <img id="modal-img" src="" alt="Stort billede" class="max-w-full max-h-full">
-  </div>
-  <button 
-    class="absolute px-3 py-2 text-white bg-red-600 rounded top-4 right-4"
-    onclick="closeModal()"
-  >
-    Luk
-  </button>
-</div>
-
-
-
-
-<!-- Section: Commit -->
-<section id="commit" class="p-6 bg-white rounded-lg shadow-md">
-  <h2 class="text-2xl font-semibold text-blue-600">4. Commit</h2>
-  <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
-    <!-- Tekst og fold-ud-kasser -->
-    <div class="flex-1">
-      <p class="mb-4 text-gray-700">
-        En commit gemmer ændringer i projektets historik. Hver commit markerer en ny milepæl og hjælper med at holde styr på projektets udvikling.
-      </p>
-      <p class="mb-4 text-gray-700">
-        <strong>Hvorfor er det vigtigt?</strong> Ved at bruge commits kan du vende tilbage til tidligere versioner og dokumentere ændringer. 
-        Dette gør det nemmere at samarbejde og fejlfinde.
-      </p>
-      <div class="space-y-4">
-        <!-- Opret en commit -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Opret en commit</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+      <!-- //TODO - Section: Commit og Log -->
+      <section id="commit" class="p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-blue-600">4. Commit</h2>
+        <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
+          <!-- Tekst og fold-ud-kasser -->
+          <div class="flex-1">
+            <p class="mb-4 text-gray-700">
+              En commit gemmer ændringer i projektets historik. Hver commit markerer en ny milepæl
+              og hjælper med at holde styr på projektets udvikling.
+            </p>
+            <p class="mb-4 text-gray-700">
+              <strong>Hvorfor er det vigtigt?</strong> Ved at bruge commits kan du vende tilbage til
+              tidligere versioner og dokumentere ændringer. Dette gør det nemmere at samarbejde og
+              fejlfinde.
+            </p>
+            <div class="space-y-4">
+              <!-- Opret en commit -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Opret en commit
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
 # Lav en commit med en besked
 git commit -m "Din besked"
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Gemmer de ændringer, der er i staging-området, som en ny version i historikken. Beskeden beskriver ændringerne.
-              <br><strong>Billedsprog:</strong> Tænk på det som at tage et billede af dit projekt og skrive en note om, hvad der blev ændret.
-            </p>
-          </div>
-        </details>
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Gemmer de ændringer, der er i staging-området, som
+                    en ny version i historikken. Beskeden beskriver ændringerne. <br /><strong
+                      >Billedsprog:</strong
+                    >
+                    Tænk på det som at tage et billede af dit projekt og skrive en note om, hvad der
+                    blev ændret.
+                  </p>
+                </div>
+              </details>
 
-        <!-- Se commit-historik -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Se commit-historik</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+              <!-- Se commit-historik -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Se commit-historik
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
 # Vis historik over commits
 git log
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Viser en liste over alle commits, deres hash-id'er, beskeder og tidsstempler. Dette hjælper med at forstå projektets udvikling.
-              <br><strong>Billedsprog:</strong> Det er som at bladre igennem en logbog med detaljerede noter om hver ændring.
-            </p>
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Viser en liste over alle commits, deres hash-id'er,
+                    beskeder og tidsstempler. Dette hjælper med at forstå projektets udvikling.
+                    <br /><strong>Billedsprog:</strong> Det er som at bladre igennem en logbog med
+                    detaljerede noter om hver ændring.
+                  </p>
+                </div>
+              </details>
+            </div>
           </div>
-        </details>
+
+          <!-- Plads til billede -->
+          <div class="mt-6 md:mt-0 md:w-1/3">
+            <img
+              src="/src/assets/images/git/git-be6-commit.png"
+              alt="Illustration af Git-staging"
+              class="w-full rounded shadow cursor-pointer"
+              onclick="openModal('/src/assets/images/git/git-be6-commit.png')"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Modal -->
+      <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75">
+        <div class="flex items-center justify-center w-full h-full">
+          <img id="modal-img" src="" alt="Stort billede" class="max-w-full max-h-full" />
+        </div>
+        <button
+          class="absolute px-3 py-2 text-white bg-red-600 rounded top-4 right-4"
+          onclick="closeModal()"
+        >
+          Luk
+        </button>
       </div>
-    </div>
+      <!-- SLUT -->
 
-    <!-- Plads til billede -->
-    <div class="mt-6 md:mt-0 md:w-1/3">
-      <img src="/src/assets/images/commit.png" alt="Illustration af Git commit" class="w-full rounded shadow">
-    </div>
-  </div>
-</section>
-
-
-<!-- Section: Branching og Merging -->
-<section id="branching-merging" class="p-6 bg-white rounded-lg shadow-md">
-  <h2 class="text-2xl font-semibold text-blue-600">5. Branching og Merging</h2>
-  <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
-    <!-- Tekst og fold-ud-kasser -->
-    <div class="flex-1">
-      <p class="mb-4 text-gray-700">
-        Branching giver dig mulighed for at arbejde på forskellige funktioner eller dele af projektet uden at påvirke hovedlinjen. Når arbejdet er færdigt, kan du merge det tilbage.
-      </p>
-      <p class="mb-4 text-gray-700">
-        <strong>Hvorfor er det vigtigt?</strong> Ved at oprette grene kan flere personer arbejde parallelt uden konflikt. Merging samler det hele igen, når arbejdet er klart.
-      </p>
-      <div class="space-y-4">
-        <!-- Opret en branch -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Opret en ny branch</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
-# Opret en ny branch
-git branch [branch-navn]
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Skaber en ny gren baseret på den nuværende version af projektet.
-              <br><strong>Billedsprog:</strong> Det er som at starte en ny linje i en notesbog for en specifik idé.
+      <!-- //TODO - Section: Push, Pull og Status -->
+      <section id="push-pull-status" class="p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-blue-600">5. Push og Status</h2>
+        <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
+          <!-- Tekst og fold-ud-kasser -->
+          <div class="flex-1">
+            <p class="mb-4 text-gray-700">
+              Push og pull er essentielle Git-kommandoer til at synkronisere dine lokale ændringer
+              med en fjernserver (remote repository) og hente nye ændringer fra andre
+              samarbejdspartnere. Kommandoen <code>git status</code> bruges til at få en oversigt
+              over dit nuværende repositories tilstand.
             </p>
-          </div>
-        </details>
-
-        <!-- Skift til branch -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Skift til en branch</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
-# Skift til en eksisterende branch
-git checkout [branch-navn]
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Flytter dit arbejdsområde til den valgte branch.
-              <br><strong>Billedsprog:</strong> Det svarer til at åbne en specifik side i notesbogen for at arbejde på den idé.
+            <p class="mb-4 text-gray-700">
+              <strong>Hvorfor er det vigtigt?</strong> Disse kommandoer sikrer, at dit arbejde er
+              opdateret, og at du undgår konflikter, når flere personer arbejder på det samme
+              projekt.
             </p>
-          </div>
-        </details>
-
-        <!-- Merge -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Merge en branch</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
-# Flet en branch ind i den nuværende
-git merge [branch-navn]
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Kombinerer ændringer fra en anden branch ind i den nuværende branch.
-              <br><strong>Billedsprog:</strong> Det er som at samle noter fra to sider i din notesbog til én.
-            </p>
-          </div>
-        </details>
-
-        <!-- Slet en branch -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Slet en branch</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
-# Slet en branch
-git branch -d [branch-navn]
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Fjerner en gren, der ikke længere er nødvendig, fra projektet.
-              <br><strong>Billedsprog:</strong> Det svarer til at rive en side ud af notesbogen, fordi den idé er afsluttet.
-            </p>
-          </div>
-        </details>
-      </div>
-    </div>
-
-    <!-- Plads til billede -->
-    <div class="mt-6 md:mt-0 md:w-1/3">
-      <img src="/src/assets/images/branching-merging.png" alt="Illustration af Branching og Merging" class="w-full rounded shadow">
-    </div>
-  </div>
-</section>
-
-<!-- Section: Remote Repositories -->
-<section id="remote-repositories" class="p-6 bg-white rounded-lg shadow-md">
-  <h2 class="text-2xl font-semibold text-blue-600">6. Remote Repositories</h2>
-  <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
-    <!-- Tekst og fold-ud-kasser -->
-    <div class="flex-1">
-      <p class="mb-4 text-gray-700">
-        Remote repositories giver dig mulighed for at synkronisere dit arbejde med fjernservere, hvilket gør det muligt at samarbejde med andre og sikkerhedskopiere dit arbejde.
-      </p>
-      <p class="mb-4 text-gray-700">
-        <strong>Hvorfor er det vigtigt?</strong> Fjernservere er essentielle for teamsamarbejde og sikrer, at alle arbejder på den samme version af projektet.
-      </p>
-      <div class="space-y-4">
-        <!-- Tilføj en fjernserver -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Tilføj en fjernserver</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
-# Tilføj en fjernserver
-git remote add origin [url]
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Forbinder dit lokale repository med en fjernserver, så du kan dele dit arbejde.
-              <br><strong>Billedsprog:</strong> Det svarer til at tilknytte din notesbog til en sky for sikkerhedskopiering.
-            </p>
-          </div>
-        </details>
-
-        <!-- Push ændringer -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Push ændringer</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+            <div class="space-y-4">
+              <!-- Push -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Push: Upload dine ændringer
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
 # Upload ændringer til fjernserveren
 git push origin main
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Sender dine commits fra det lokale repository til fjernserveren.
-              <br><strong>Billedsprog:</strong> Det er som at uploade filer til en delt mappe.
-            </p>
-          </div>
-        </details>
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Kommandoen <code>git push</code> sender dine
+                    commits fra den lokale branch til den tilsvarende branch på fjernserveren.
+                    <br /><strong>Billedsprog:</strong> Det er som at aflevere en pakke til posten,
+                    så den kan nå frem til destinationen.
+                  </p>
+                </div>
+              </details>
 
-        <!-- Pull ændringer -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Pull ændringer</summary>
+              <!-- Pull -->
+              <!-- <details class="border border-gray-300 rounded shadow">
+          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Pull: Hent ændringer fra fjernserver</summary>
           <div class="p-4">
             <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
-# Hent ændringer fra fjernserveren
+# Hent og slå ændringer sammen fra fjernserveren
 git pull origin main
             </pre>
             <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Opdaterer dit lokale repository med ændringer fra fjernserveren.
-              <br><strong>Billedsprog:</strong> Det er som at downloade de nyeste noter fra en delt mappe.
+              <strong>Forklaring:</strong> Kommandoen <code>git pull</code> henter ændringer fra fjernserveren og fusionerer dem med din lokale branch.
+              <br><strong>Billedsprog:</strong> Det er som at få opdaterede noter fra en ven, så dine egne er ajourført.
             </p>
           </div>
-        </details>
+        </details> -->
+
+              <!-- Status -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Status: Få et overblik
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+# Tjek status for dit repository
+git status
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Kommandoen <code>git status</code> viser en
+                    oversigt over ændrede filer, nye filer og staged filer. <br /><strong
+                      >Billedsprog:</strong
+                    >
+                    Det er som at læse et opslagstavle for at se, hvad der er blevet gjort, og hvad
+                    der mangler.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <!-- Plads til billede -->
+          <div class="mt-6 md:mt-0 md:w-1/3">
+            <img
+              src="/src/assets/images/git/git-be7-status-push-status.png"
+              alt="Illustration af Git-staging"
+              class="w-full rounded shadow cursor-pointer"
+              onclick="openModal('/src/assets/images/git/git-be7-status-push-status.png')"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Modal -->
+      <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75">
+        <div class="flex items-center justify-center w-full h-full">
+          <img id="modal-img" src="" alt="Stort billede" class="max-w-full max-h-full" />
+        </div>
+        <button
+          class="absolute px-3 py-2 text-white bg-red-600 rounded top-4 right-4"
+          onclick="closeModal()"
+        >
+          Luk
+        </button>
       </div>
-    </div>
+      <!-- SLUT -->
 
-    <!-- Plads til billede -->
-    <div class="mt-6 md:mt-0 md:w-1/3">
-      <img src="/src/assets/images/remote-repositories.png" alt="Illustration af Remote Repositories" class="w-full rounded shadow">
-    </div>
-  </div>
-</section>
+      <!-- //TODO - Section: Pull og Status -->
+      <section id="pull-status" class="p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-blue-600">6. Pull og Status</h2>
+        <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
+          <!-- Tekst og fold-ud-kasser -->
+          <div class="flex-1">
+            <p class="mb-4 text-gray-700">
+              Pull og status er afgørende kommandoer i Git, der hjælper dig med at holde dit lokale
+              arbejde synkroniseret med fjernserveren og giver dig overblik over ændringer i dit
+              repository.
+            </p>
+            <p class="mb-4 text-gray-700">
+              <strong>Hvorfor er det vigtigt?</strong> Ved at bruge <code>git pull</code> sikrer du,
+              at dit arbejde er opdateret med de seneste ændringer fra andre udviklere, mens
+              <code>git status</code> hjælper dig med at forstå dit repositories aktuelle tilstand.
+            </p>
+            <div class="space-y-4">
+              <!-- Pull -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Pull: Hent ændringer fra fjernserver
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+# Hent og slå ændringer sammen fra fjernserveren
+git pull origin main
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Kommandoen <code>git pull</code> henter nye
+                    ændringer fra fjernserveren og fusionerer dem med din lokale branch.
+                    <br /><strong>Billedsprog:</strong> Det er som at hente opdaterede noter fra en
+                    kollega, så du har de nyeste oplysninger.
+                  </p>
+                </div>
+              </details>
 
-<!-- Section: Konflikthåndtering -->
-<section id="conflicts" class="p-6 bg-white rounded-lg shadow-md">
-  <h2 class="text-2xl font-semibold text-blue-600">7. Konflikthåndtering</h2>
-  <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
-    <!-- Tekst og fold-ud-kasser -->
-    <div class="flex-1">
-      <p class="mb-4 text-gray-700">
-        Konflikter opstår, når flere personer ændrer de samme linjer i en fil. Git hjælper dig med at identificere og løse disse konflikter.
-      </p>
-      <p class="mb-4 text-gray-700">
-        <strong>Hvorfor er det vigtigt?</strong> Effektiv konflikthåndtering sikrer, at ingen ændringer går tabt, når flere arbejder på det samme projekt.
-      </p>
-      <div class="space-y-4">
-        <!-- Løs konflikt -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Løs konflikter</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+              <!-- Status -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Status: Få et overblik
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+# Tjek status for dit repository
+git status
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Kommandoen <code>git status</code> viser en
+                    oversigt over ændrede filer, nye filer og staged filer i dit repository.
+                    <br /><strong>Billedsprog:</strong> Det er som at læse et opslagstavle for at
+                    se, hvad der er gjort, og hvad der mangler.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <!-- Plads til billede -->
+          <div class="mt-6 md:mt-0 md:w-1/3">
+            1<img
+              src="/src/assets/images/git/git-be2-status-origin-main-use-pull.png"
+              alt="Illustration af Git-staging"
+              class="w-full rounded shadow cursor-pointer"
+              onclick="openModal('/src/assets/images/git/git-be2-status-origin-main-use-pull.png')"
+            />2
+            <img
+              src="/src/assets/images/git/git-be3-pull-is-used.png"
+              alt="Illustration af Git-staging"
+              class="w-full rounded shadow cursor-pointer"
+              onclick="openModal('/src/assets/images/git/git-be3-pull-is-used.png')"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Modal -->
+      <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75">
+        <div class="flex items-center justify-center w-full h-full">
+          <img id="modal-img" src="" alt="Stort billede" class="max-w-full max-h-full" />
+        </div>
+        <button
+          class="absolute px-3 py-2 text-white bg-red-600 rounded top-4 right-4"
+          onclick="closeModal()"
+        >
+          Luk
+        </button>
+      </div>
+      <!-- SLUT -->
+
+      <!-- Section: Branching og Merging -->
+      <section id="branching-merging" class="p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-blue-600">5. Branching og Merging</h2>
+        <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
+          <!-- Tekst og fold-ud-kasser -->
+          <div class="flex-1">
+            <p class="mb-4 text-gray-700">
+              Branching giver dig mulighed for at arbejde på forskellige funktioner eller dele af
+              projektet uden at påvirke hovedlinjen. Når arbejdet er færdigt, kan du merge det
+              tilbage.
+            </p>
+            <p class="mb-4 text-gray-700">
+              <strong>Hvorfor er det vigtigt?</strong> Ved at oprette grene kan flere personer
+              arbejde parallelt uden konflikt. Merging samler det hele igen, når arbejdet er klart.
+            </p>
+            <div class="space-y-4">
+              <!-- Opret en branch -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Opret en ny branch
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+# Opret en ny branch
+git branch [branch-navn]
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Skaber en ny gren baseret på den nuværende version
+                    af projektet. <br /><strong>Billedsprog:</strong> Det er som at starte en ny
+                    linje i en notesbog for en specifik idé.
+                  </p>
+                </div>
+              </details>
+
+              <!-- Skift til branch -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Skift til en branch
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+# Skift til en eksisterende branch
+git checkout [branch-navn]
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Flytter dit arbejdsområde til den valgte branch.
+                    <br /><strong>Billedsprog:</strong> Det svarer til at åbne en specifik side i
+                    notesbogen for at arbejde på den idé.
+                  </p>
+                </div>
+              </details>
+
+              <!-- Merge -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Merge en branch
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+# Flet en branch ind i den nuværende
+git merge [branch-navn]
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Kombinerer ændringer fra en anden branch ind i den
+                    nuværende branch. <br /><strong>Billedsprog:</strong> Det er som at samle noter
+                    fra to sider i din notesbog til én.
+                  </p>
+                </div>
+              </details>
+
+              <!-- Slet en branch -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Slet en branch
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+# Slet en branch
+git branch -d [branch-navn]
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Fjerner en gren, der ikke længere er nødvendig, fra
+                    projektet. <br /><strong>Billedsprog:</strong> Det svarer til at rive en side ud
+                    af notesbogen, fordi den idé er afsluttet.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <!-- Plads til billede -->
+          <div class="mt-6 md:mt-0 md:w-1/3">
+            <img
+              src="/src/assets/images/branching-merging.png"
+              alt="Illustration af Branching og Merging"
+              class="w-full rounded shadow"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Remote Repositories -->
+      <section id="remote-repositories" class="p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-blue-600">6. Remote Repositories</h2>
+        <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
+          <!-- Tekst og fold-ud-kasser -->
+          <div class="flex-1">
+            <p class="mb-4 text-gray-700">
+              Remote repositories giver dig mulighed for at synkronisere dit arbejde med
+              fjernservere, hvilket gør det muligt at samarbejde med andre og sikkerhedskopiere dit
+              arbejde.
+            </p>
+            <p class="mb-4 text-gray-700">
+              <strong>Hvorfor er det vigtigt?</strong> Fjernservere er essentielle for
+              teamsamarbejde og sikrer, at alle arbejder på den samme version af projektet.
+            </p>
+            <div class="space-y-4">
+              <!-- Tilføj en fjernserver -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Tilføj en fjernserver
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+# Tilføj en fjernserver
+git remote add origin [url]
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Forbinder dit lokale repository med en fjernserver,
+                    så du kan dele dit arbejde. <br /><strong>Billedsprog:</strong> Det svarer til
+                    at tilknytte din notesbog til en sky for sikkerhedskopiering.
+                  </p>
+                </div>
+              </details>
+
+              <!-- Push ændringer -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Push ændringer
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+# Upload ændringer til fjernserveren
+git push origin main
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Sender dine commits fra det lokale repository til
+                    fjernserveren. <br /><strong>Billedsprog:</strong> Det er som at uploade filer
+                    til en delt mappe.
+                  </p>
+                </div>
+              </details>
+
+              <!-- Pull ændringer -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Pull ændringer
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+# Hent ændringer fra fjernserveren
+git pull origin main
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Opdaterer dit lokale repository med ændringer fra
+                    fjernserveren. <br /><strong>Billedsprog:</strong> Det er som at downloade de
+                    nyeste noter fra en delt mappe.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <!-- Plads til billede -->
+          <div class="mt-6 md:mt-0 md:w-1/3">
+            <img
+              src="/src/assets/images/remote-repositories.png"
+              alt="Illustration af Remote Repositories"
+              class="w-full rounded shadow"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Konflikthåndtering -->
+      <section id="conflicts" class="p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-blue-600">7. Konflikthåndtering</h2>
+        <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
+          <!-- Tekst og fold-ud-kasser -->
+          <div class="flex-1">
+            <p class="mb-4 text-gray-700">
+              Konflikter opstår, når flere personer ændrer de samme linjer i en fil. Git hjælper dig
+              med at identificere og løse disse konflikter.
+            </p>
+            <p class="mb-4 text-gray-700">
+              <strong>Hvorfor er det vigtigt?</strong> Effektiv konflikthåndtering sikrer, at ingen
+              ændringer går tabt, når flere arbejder på det samme projekt.
+            </p>
+            <div class="space-y-4">
+              <!-- Løs konflikt -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Løs konflikter
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
 # Rediger konfliktmarkeringer i filen
 # Marker med <<<<< og =======
 git add [filnavn]
 git commit -m "Konflikt løst"
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Konfliktmarkeringer angiver, hvor ændringer overlapper. Rediger filen for at beholde de ønskede ændringer og commit.
-              <br><strong>Billedsprog:</strong> Det svarer til at samle noter fra to forskellige personer og flette dem sammen til én tekst.
-            </p>
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Konfliktmarkeringer angiver, hvor ændringer
+                    overlapper. Rediger filen for at beholde de ønskede ændringer og commit.
+                    <br /><strong>Billedsprog:</strong> Det svarer til at samle noter fra to
+                    forskellige personer og flette dem sammen til én tekst.
+                  </p>
+                </div>
+              </details>
+            </div>
           </div>
-        </details>
-      </div>
-    </div>
 
-    <!-- Plads til billede -->
-    <div class="mt-6 md:mt-0 md:w-1/3">
-      <img src="/src/assets/images/conflicts.png" alt="Illustration af Konflikthåndtering" class="w-full rounded shadow">
-    </div>
-  </div>
-</section>
+          <!-- Plads til billede -->
+          <div class="mt-6 md:mt-0 md:w-1/3">
+            <img
+              src="/src/assets/images/conflicts.png"
+              alt="Illustration af Konflikthåndtering"
+              class="w-full rounded shadow"
+            />
+          </div>
+        </div>
+      </section>
 
-<!-- Section: Ignorering af Filer -->
-<section id="ignoring-files" class="p-6 bg-white rounded-lg shadow-md">
-  <h2 class="text-2xl font-semibold text-blue-600">8. Ignorering af Filer</h2>
-  <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
-    <!-- Tekst og fold-ud-kasser -->
-    <div class="flex-1">
-      <p class="mb-4 text-gray-700">
-        Brug en `.gitignore`-fil til at ekskludere specifikke filer eller mapper fra Git. Dette er nyttigt til midlertidige filer eller følsomme data.
-      </p>
-      <p class="mb-4 text-gray-700">
-        <strong>Hvorfor er det vigtigt?</strong> Ved at ignorere irrelevante filer kan du holde dit repository organiseret og undgå at inkludere uønskede data.
-      </p>
-      <div class="space-y-4">
-        <!-- Eksempel på .gitignore -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Eksempel på .gitignore</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+      <!-- Section: Ignorering af Filer -->
+      <section id="ignoring-files" class="p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-blue-600">8. Ignorering af Filer</h2>
+        <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
+          <!-- Tekst og fold-ud-kasser -->
+          <div class="flex-1">
+            <p class="mb-4 text-gray-700">
+              Brug en `.gitignore`-fil til at ekskludere specifikke filer eller mapper fra Git.
+              Dette er nyttigt til midlertidige filer eller følsomme data.
+            </p>
+            <p class="mb-4 text-gray-700">
+              <strong>Hvorfor er det vigtigt?</strong> Ved at ignorere irrelevante filer kan du
+              holde dit repository organiseret og undgå at inkludere uønskede data.
+            </p>
+            <div class="space-y-4">
+              <!-- Eksempel på .gitignore -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Eksempel på .gitignore
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
 # Ignorer logs og midlertidige filer
 logs/
 *.tmp
 .env
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Denne .gitignore-fil udelukker mapper som `logs/`, filer med `.tmp`-endelse og `.env`-filer fra versionering.
-              <br><strong>Billedsprog:</strong> Det er som at sætte et "Ikke til opbevaring"-mærke på ting, du ikke ønsker at gemme i din notesbog.
-            </p>
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Denne .gitignore-fil udelukker mapper som `logs/`,
+                    filer med `.tmp`-endelse og `.env`-filer fra versionering. <br /><strong
+                      >Billedsprog:</strong
+                    >
+                    Det er som at sætte et "Ikke til opbevaring"-mærke på ting, du ikke ønsker at
+                    gemme i din notesbog.
+                  </p>
+                </div>
+              </details>
+            </div>
           </div>
-        </details>
-      </div>
-    </div>
 
-    <!-- Plads til billede -->
-    <div class="mt-6 md:mt-0 md:w-1/3">
-      <img src="/src/assets/images/ignoring-files.png" alt="Illustration af Ignorering af Filer" class="w-full rounded shadow">
-    </div>
-  </div>
-</section>
+          <!-- Plads til billede -->
+          <div class="mt-6 md:mt-0 md:w-1/3">
+            <img
+              src="/src/assets/images/ignoring-files.png"
+              alt="Illustration af Ignorering af Filer"
+              class="w-full rounded shadow"
+            />
+          </div>
+        </div>
+      </section>
 
-
-<!-- Section: Git Commands -->
-<section id="git-commands" class="p-6 bg-white rounded-lg shadow-md">
-  <h2 class="text-2xl font-semibold text-blue-600">4. Git Kommandoer</h2>
-  <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
-    <!-- Tekst og fold-ud-kasser -->
-    <div class="flex-1">
-      <p class="mb-4 text-gray-700">
-        I Git har du mange værktøjer til at administrere ændringer og snapshots. Disse kommandoer hjælper dig med at styre, uploade og sammenligne ændringer effektivt.
-      </p>
-      <p class="mb-4 text-gray-700">
-        <strong>Hvorfor er de vigtige?</strong> Kommandoer som <code>git reset</code>, <code>git diff</code>, og <code>git commit</code> giver dig kontrol over, hvordan ændringer administreres i dit projekt.
-      </p>
-      <div class="space-y-4">
-        <!-- Reset -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Fortryd staging af filer</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+      <!-- Section: Git Commands -->
+      <section id="git-commands" class="p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-blue-600">4. Git Kommandoer</h2>
+        <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
+          <!-- Tekst og fold-ud-kasser -->
+          <div class="flex-1">
+            <p class="mb-4 text-gray-700">
+              I Git har du mange værktøjer til at administrere ændringer og snapshots. Disse
+              kommandoer hjælper dig med at styre, uploade og sammenligne ændringer effektivt.
+            </p>
+            <p class="mb-4 text-gray-700">
+              <strong>Hvorfor er de vigtige?</strong> Kommandoer som <code>git reset</code>,
+              <code>git diff</code>, og <code>git commit</code> giver dig kontrol over, hvordan
+              ændringer administreres i dit projekt.
+            </p>
+            <div class="space-y-4">
+              <!-- Reset -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Fortryd staging af filer
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
 # Fjern filer fra staging
 git reset [file]
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Fjerner en fil fra staging-området uden at miste ændringer i working directory.
-              <br><strong>Billedsprog:</strong> Det svarer til at tage noget ud af en pakkeliste, men stadig have det klar til næste forsendelse.
-            </p>
-          </div>
-        </details>
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Fjerner en fil fra staging-området uden at miste
+                    ændringer i working directory. <br /><strong>Billedsprog:</strong> Det svarer
+                    til at tage noget ud af en pakkeliste, men stadig have det klar til næste
+                    forsendelse.
+                  </p>
+                </div>
+              </details>
 
-        <!-- Diff -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Se ændringer, der ikke er staged</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+              <!-- Diff -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Se ændringer, der ikke er staged
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
 # Vis ændringer siden sidste commit
 git diff
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Viser forskelle mellem working directory og den seneste commit. Dette hjælper med at se, hvad der er ændret, men ikke staged.
-              <br><strong>Billedsprog:</strong> Det er som at sammenligne to udgaver af et udkast for at se, hvad der er tilføjet eller slettet.
-            </p>
-          </div>
-        </details>
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Viser forskelle mellem working directory og den
+                    seneste commit. Dette hjælper med at se, hvad der er ændret, men ikke staged.
+                    <br /><strong>Billedsprog:</strong> Det er som at sammenligne to udgaver af et
+                    udkast for at se, hvad der er tilføjet eller slettet.
+                  </p>
+                </div>
+              </details>
 
-        <!-- Diff Staged -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Se ændringer, der er staged</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+              <!-- Diff Staged -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Se ændringer, der er staged
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
 # Vis ændringer i staging-området
 git diff --staged
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Viser forskelle mellem staging-området og den seneste commit. Dette hjælper med at verificere, hvad der bliver committed.
-              <br><strong>Billedsprog:</strong> Det svarer til at dobbelttjekke indholdet af en pakkeliste, før du sender pakken af sted.
-            </p>
-          </div>
-        </details>
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Viser forskelle mellem staging-området og den
+                    seneste commit. Dette hjælper med at verificere, hvad der bliver committed.
+                    <br /><strong>Billedsprog:</strong> Det svarer til at dobbelttjekke indholdet af
+                    en pakkeliste, før du sender pakken af sted.
+                  </p>
+                </div>
+              </details>
 
-        <!-- Commit -->
-        <details class="border border-gray-300 rounded shadow">
-          <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">Lav en commit med en besked</summary>
-          <div class="p-4">
-            <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
+              <!-- Commit -->
+              <details class="border border-gray-300 rounded shadow">
+                <summary class="p-4 font-semibold bg-gray-100 cursor-pointer">
+                  Lav en commit med en besked
+                </summary>
+                <div class="p-4">
+                  <pre class="p-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
 # Commit staged ændringer med en besked
 git commit -m "[beskrivende besked]"
-            </pre>
-            <p class="mt-2 text-gray-600">
-              <strong>Forklaring:</strong> Gemmer de ændringer, der er staged, som et snapshot i Git-historikken, og tilføjer en besked for at beskrive ændringerne.
-              <br><strong>Billedsprog:</strong> Det er som at gemme en ny version af en rapport og skrive en note om, hvad der blev ændret.
-            </p>
-          </div>
-        </details>
-      </div>
-    </div>
-
-    <!-- Plads til billede -->
-    <div class="mt-6 md:mt-0 md:w-1/3">
-      <img src="/src/assets/images/git-commands.png" alt="Illustration af Git kommandoer" class="w-full rounded shadow">
-    </div>
-  </div>
-</section>
-
-    <!-- Sektion: Initialisering -->
-    <!-- <section id="init" class="p-6 bg-white rounded-lg shadow-md">
-      <h2 class="text-2xl font-semibold text-accent">2. Initialisering</h2>
-      <p class="mt-4">Initialiser et nyt repository eller klon et eksisterende:</p>
-      <pre class="p-4 mt-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
-git init
-git clone [url]
-      </pre>
-      <p class="mt-4 text-gray-600"><strong>Forklaring:</strong> Brug `git init` for at starte fra bunden, eller `git clone` for at arbejde på et eksisterende projekt.</p>
-    </section> -->
-
-    <!-- Sektion: Staging og Snapshot -->
-    <!-- <section id="staging-snapshot" class="p-6 bg-white rounded-lg shadow-md">
-      <h2 class="text-2xl font-semibold text-accent">3. Staging og Snapshot</h2>
-      <p class="mt-4">Flyt ændringer til staging-området:</p>
-      <pre class="p-4 mt-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
-git add [filnavn]
-git reset [filnavn]
-git status
-      </pre>
-      <p class="mt-4 text-gray-600"><strong>Tip:</strong> Staging er som at vælge ændringer, før de gemmes i historikken.</p>
-    </section> -->
-
-    <!-- Sektion: Commit -->
-    <!-- <section id="commit" class="p-6 bg-white rounded-lg shadow-md">
-      <h2 class="text-2xl font-semibold text-accent">4. Commit</h2>
-      <p class="mt-4">Gem ændringer i Git-historikken:</p>
-      <pre class="p-4 mt-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
-git commit -m "Din besked"
-git log
-      </pre>
-      <p class="mt-4 text-gray-600"><strong>Forklaring:</strong> En commit er en gemt version af dit projekt med en beskrivende besked.</p>
-    </section> -->
-
-    <!-- Sektion: Branching og Merging -->
-    <!-- <section id="branching-merging" class="p-6 bg-white rounded-lg shadow-md">
-      <h2 class="text-2xl font-semibold text-accent">5. Branching og Merging</h2>
-      <p class="mt-4">Arbejd parallelt på forskellige dele af projektet:</p>
-      <pre class="p-4 mt-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
-git branch [branch-navn]
-git checkout [branch-navn]
-git merge [branch-navn]
-git branch -d [branch-navn]
-      </pre>
-      <p class="mt-4 text-gray-600"><strong>Forklaring:</strong> Branching skaber nye grene, og merging samler dem igen.</p>
-    </section> -->
-
-    <!-- Sektion: Remote Repositories -->
-    <section id="remote" class="p-6 bg-white rounded-lg shadow-md">
-      <h2 class="text-2xl font-semibold text-accent">6. Remote Repositories</h2>
-      <p class="mt-4">Synkroniser dit arbejde med fjernservere:</p>
-      <pre class="p-4 mt-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
-git remote add origin [url]
-git push origin main
-git pull origin main
-      </pre>
-      <p class="mt-4 text-gray-600"><strong>Tip:</strong> Fjernservere gør det muligt at dele og samarbejde på projekter.</p>
-    </section>
-
-    <!-- Sektion: Konflikthåndtering -->
-    <section id="conflicts" class="p-6 bg-white rounded-lg shadow-md">
-      <h2 class="text-2xl font-semibold text-accent">7. Konflikthåndtering</h2>
-      <p class="mt-4">Løs konflikter, når flere ændrer samme filer:</p>
-      <pre class="p-4 mt-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
-# Rediger konfliktfiler markeret med <<<<< og =======
-git add [filnavn]
-git commit -m "Konflikt løst"
-      </pre>
-      <p class="mt-4 text-gray-600"><strong>Forklaring:</strong> Læs konfliktmarkeringerne og vælg de ønskede ændringer.</p>
-    </section>
-
-    <!-- Sektion: Ignorering -->
-    <section id="ignoring" class="p-6 bg-white rounded-lg shadow-md">
-      <h2 class="text-2xl font-semibold text-accent">8. Ignorering af Filer</h2>
-      <p class="mt-4">Udelad specifikke filer fra versionsstyring:</p>
-      <pre class="p-4 mt-4 overflow-x-auto text-gray-200 bg-gray-900 rounded">
-# Eksempel på .gitignore
-logs/
-*.tmp
-.env
-      </pre>
-      <p class="mt-4 text-gray-600"><strong>Tip:</strong> Brug `.gitignore` for midlertidige filer eller følsomme data.</p>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="py-4 text-center text-white bg-gray-800">
-    <p>Udarbejdet som en guide til Git. Læs mere på <a href="https://git-scm.com/" class="underline text-accent">den officielle Git-side</a>.</p>
-  </footer>
-</body>
-</html>
-
-      
-<!DOCTYPE html>
-<html lang="da">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Git Cheat Sheet</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="font-sans text-gray-800 bg-gray-50">
-
-  <!-- HEADER -->
-  <header class="py-8 text-white bg-gray-800">
-    <div class="container mx-auto text-center">
-      <h1 class="text-4xl font-bold">Git Cheat Sheet</h1>
-      <p class="mt-2 text-lg">En guide til Git med forklaringer og fold-ud bokse</p>
-    </div>
-  </header>
-
-  <!-- MAIN -->
-  <main class="container mx-auto my-8 space-y-8">
-    <!-- Opsætning -->
-    <section class="p-6 bg-white rounded-lg shadow-md">
-      <details class="group">
-        <summary class="flex items-center justify-between text-lg font-medium cursor-pointer">
-          <span>1. Opsætning</span>
-          <span class="transition-transform transform group-open:rotate-180">▼</span>
-        </summary>
-        <div class="flex items-start gap-6 mt-4">
-          <div class="flex-1">
-            <p>Før du starter med Git, skal du konfigurere dine globale indstillinger:</p>
-            <pre class="p-4 bg-gray-100 rounded-lg">
-# Opsæt dit navn
-git config --global user.name "Dit Navn"
-
-# Opsæt din e-mail
-git config --global user.email "dinemail@example.com"
-
-# Aktiver farver
-git config --global color.ui auto
-            </pre>
-            <p class="mt-2"><strong>Tip:</strong> Gør dine commits personlige og lette at identificere.</p>
-          </div>
-          <div class="flex-1">
-            <img src="/src/assets/images/git-config.png" alt="Opsætning af Git" class="rounded-lg shadow-md">
-          </div>
-        </div>
-      </details>
-    </section>
-
-    <!-- Initialisering -->
-    <section class="p-6 bg-white rounded-lg shadow-md">
-      <details class="group">
-        <summary class="flex items-center justify-between text-lg font-medium cursor-pointer">
-          <span>2. Initialisering</span>
-          <span class="transition-transform transform group-open:rotate-180">▼</span>
-        </summary>
-        <div class="flex items-start gap-6 mt-4">
-          <div class="flex-1">
-            <p>Start et projekt med Git:</p>
-            <pre class="p-4 bg-gray-100 rounded-lg">
-# Initialiser et nyt repository
-git init
-
-# Klon et eksisterende repository
-git clone [url]
-            </pre>
-            <p class="mt-2"><strong>Forklaring:</strong> `git init` starter et nyt projekt, mens `git clone` kopierer et eksisterende.</p>
-          </div>
-          <div class="flex-1">
-            <img src="/src/assets/images/git-init.png" alt="Initialisering af Git" class="rounded-lg shadow-md">
-          </div>
-        </div>
-      </details>
-    </section>
-
-    <!-- Staging -->
-    <section class="p-6 bg-white rounded-lg shadow-md">
-      <details class="group">
-        <summary class="flex items-center justify-between text-lg font-medium cursor-pointer">
-          <span>3. Staging og Snapshot</span>
-          <span class="transition-transform transform group-open:rotate-180">▼</span>
-        </summary>
-        <div class="flex items-start gap-6 mt-4">
-          <div class="flex-1">
-            <p>Vælg ændringer til commit:</p>
-            <pre class="p-4 bg-gray-100 rounded-lg">
-# Tilføj filer til staging
-git add [filnavn]
-
-# Fjern filer fra staging
-git reset [filnavn]
-
-# Tjek status
-git status
-            </pre>
-            <p class="mt-2"><strong>Forklaring:</strong> Staging forbereder dine ændringer til commit.</p>
-          </div>
-          <div class="flex-1">
-            <img src="/src/assets/images/git-add.png" alt="Staging i Git" class="rounded-lg shadow-md">
-          </div>
-        </div>
-      </details>
-    </section>
-
-    <!-- Commit -->
-    <section class="p-6 bg-white rounded-lg shadow-md">
-      <details class="group">
-        <summary class="flex items-center justify-between text-lg font-medium cursor-pointer">
-          <span>4. Commit</span>
-          <span class="transition-transform transform group-open:rotate-180">▼</span>
-        </summary>
-        <div class="flex items-start gap-6 mt-4">
-          <div class="flex-1">
-            <p>Gem ændringer med en commit:</p>
-            <pre class="p-4 bg-gray-100 rounded-lg">
-# Lav en commit
-git commit -m "Commit-besked"
-
-# Se historik
-git log
-            </pre>
-            <p class="mt-2"><strong>Tip:</strong> Brug meningsfulde commit-beskeder.</p>
-          </div>
-          <div class="flex-1">
-            <img src="/src/assets/images/git-commit.png" alt="Commit i Git" class="rounded-lg shadow-md">
-          </div>
-        </div>
-      </details>
-    </section>
-
-    <!-- Branching -->
-    <section class="p-6 bg-white rounded-lg shadow-md">
-      <details class="group">
-        <summary class="flex items-center justify-between text-lg font-medium cursor-pointer">
-          <span>5. Branching og Merging</span>
-          <span class="transition-transform transform group-open:rotate-180">▼</span>
-        </summary>
-        <div class="flex items-start gap-6 mt-4">
-          <div class="flex-1">
-            <p>Arbejd på forskellige dele af dit projekt parallelt:</p>
-            <pre class="p-4 bg-gray-100 rounded-lg">
-# Opret en branch
-git branch [branch-navn]
-
-# Skift branch
-git checkout [branch-navn]
-
-# Flet branches
-git merge [branch-navn]
-            </pre>
-            <p class="mt-2"><strong>Forklaring:</strong> Branching gør det nemt at arbejde parallelt.</p>
-          </div>
-          <div class="flex-1">
-            <img src="/src/assets/images/git-branch.png" alt="Branching i Git" class="rounded-lg shadow-md">
-          </div>
-        </div>
-      </details>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="py-6 text-white bg-gray-800">
-    <div class="container mx-auto text-center">
-      <p>Udarbejdet som en guide til Git.</p>
-    </div>
-  </footer>
-</body>
-</html>
-
-
-
-      
-      <!-- Hero Section -->
-      <section class="text-black body-font">
-        <div class="container px-5 py-10 mx-auto">
-          <!-- Tekstområde -->
-          <div class="mb-10 text-center">
-            <h1 class="mb-4 font-bold tracking-wide title-font sm:text-3xl md:text-5xl xl:text-6xl">
-              Versionsstyring med Git og Gruppearbejde
-            </h1>
-            <p class="max-w-2xl mx-auto mb-8 leading-relaxed opacity-70">
-              Præsenter Git fra opsætning til generel brug. Uddyb processerne initialisering,
-              staging og comitting. Branching og merging skal også dækkes. Inkluder cloning,
-              pushing, pulling samt brug af et fælles serverbaseret repository.
-            </p>
-            <button
-              class="inline-flex px-5 py-2 text-sm text-white rounded bg-accent focus:outline-none hover:bg-opacity-80"
-            >
-              Læs Mere
-            </button>
-          </div>
-
-          <!-- Billedgrid -->
-          <!-- <div class="grid justify-center grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
-            <img
-              class="object-cover object-center max-w-full rounded-lg shadow-md"
-              alt="git init"
-              src="/src/assets/images/git-init.webp"
-            />
-            <img
-              class="object-cover object-center max-w-full rounded-lg shadow-md"
-              alt="git add"
-              src="/src/assets/images/git-add.webp"
-            />
-            <img
-              class="object-cover object-center max-w-full rounded-lg shadow-md"
-              alt="git commit"
-              src="/src/assets/images/git-commit.webp"
-            />
-            <img
-              class="object-cover object-center max-w-full rounded-lg shadow-md"
-              alt="git push"
-              src="/src/assets/images/git-push.webp"
-            />
-            <img
-              class="object-cover object-center max-w-full rounded-lg shadow-md"
-              alt="git status"
-              src="/src/assets/images/git-status.webp"
-            />
-            <img
-              class="object-cover object-center max-w-full rounded-lg shadow-md"
-              alt="git diff"
-              src="/src/assets/images/git-diff.webp"
-            />
-            <img
-              class="object-cover object-center max-w-full rounded-lg shadow-md"
-              alt="git log"
-              src="/src/assets/images/git-log.webp"
-            />
-            <img
-              class="object-cover object-center max-w-full rounded-lg shadow-md"
-              alt="git pull"
-              src="/src/assets/images/git-pull.webp"
-            />
-          </div> -->
-          <div class="flex justify-center">
-            <img src="/src/assets/images/maxresdefault.jpg" alt="">
-          </div>
-        </div>
-      </section>
-
-      <section class="container mb-8 text-center">
-        <h2 class="mb-4 text-2xl font-bold">Introduktion til Git</h2>
-        <p class="leading-relaxed">
-          Git er et versionskontrolsystem, der bruges til at spore ændringer i kode og samarbejde
-          mellem udviklere. Det giver dig mulighed for at arbejde sikkert på dit projekt uden at
-          miste historik over dine ændringer.
-        </p>
-      </section>
-
-      <section class="mb-8 select-none">
-        <div class="container">
-        <h2 class="mb-4 text-2xl font-bold">Hvordan fungerer Git?</h2>
-        <div class="space-y-4">
-          <details class="flex flex-col gap-8 p-6 bg-white border border-gray-200 rounded-lg shadow-md">
-            <summary class="text-lg font-semibold text-gray-800 cursor-pointer">
-              <h2 class="flex items-center gap-2 select-none before:content-['1'] before:bg-accent before:w-8 before:h-8 before:text-center before:rounded-full before:text-white">
-                Initialisering af et Git Repository
-              </h2>
-            </summary>
-            <div class="flex flex-col gap-8">
-              <div class="flex gap-10">
-                <div class="flex-1">
-                  <img
-                    src="/src/assets/images/git-init.webp"
-                    alt="Billedsprog for git init"
-                  />
-                </div>
-                <div class="flex-1">
-                  <h3 class="text-xl font-semibold text-gray-700">Hvordan gør man?</h3>
-                  <p class="mt-2 leading-relaxed text-gray-600">
-                    Start med at køre
-                    <code class="px-2 py-1 text-sm bg-gray-700 rounded text-gray-50">git init</code> i roden af en lokalt projektmappe for
-                    at oprette et nyt repository.
-                    <br>
-                    <br>
-                    Det svarer til at du står med en tom pluksedel som du skal udfylde med en liste af varer.
-                    <br>
-                    <br>
-                    I vores tilfæde er det ikke varer, men kode.
+            </pre
+                  >
+                  <p class="mt-2 text-gray-600">
+                    <strong>Forklaring:</strong> Gemmer de ændringer, der er staged, som et snapshot
+                    i Git-historikken, og tilføjer en besked for at beskrive ændringerne.
+                    <br /><strong>Billedsprog:</strong> Det er som at gemme en ny version af en
+                    rapport og skrive en note om, hvad der blev ændret.
                   </p>
                 </div>
-              </div>
+              </details>
             </div>
-          </details>
-        </div>
-      </section>
+          </div>
 
-      <section class="mb-8 select-none">
-        <div class="container">
-        <h2 class="mb-4 text-2xl font-bold">Hvordan fungerer Git?</h2>
-        <div class="space-y-4">
-          <details class="flex flex-col gap-8 p-6 bg-white border border-gray-200 rounded-lg shadow-md">
-            <summary class="text-lg font-semibold text-gray-800 cursor-pointer">
-              <h2 class="flex items-center gap-2 select-none before:content-['2'] before:bg-accent before:w-8 before:h-8 before:text-center before:rounded-full before:text-white">
-                Staging (git add)
-              </h2>
-            </summary>
-            <div class="flex flex-col gap-8">
-              <div class="flex gap-10">
-                <div class="flex-1">
-                  <img
-                    src="/src/assets/images/git-init.webp"
-                    alt="Billedsprog for git init"
-                  />
-                </div>
-                <div class="flex-1">
-                  <h3 class="text-xl font-semibold text-gray-700">Hvordan gør man?</h3>
-                  <p class="mt-2 leading-relaxed text-gray-600">
-                    Med <code class="px-2 py-1 text-sm bg-gray-700 rounded text-gray-50">git add</code> markerer du ændringer, der skal med i den næste commit. Disse ændringer placeres i "staging area", 
-                    <br>
-                    <br>
-                    Det svarer til at man begynder at skrive varer på pluksedlen. Dette kan være:
-                    <br>
-                    <br>
-                    <ul class="flex flex-col gap-4 ml-5">
-                      <li class="list-disc">Nye kodefiler og mapper, som bliver tilføjet til listen.</li>
-                      <li class="list-disc">Ændringer i eksisterende kodefiler eller placeringen af dem.</li>
-                      <li class="list-disc">Sletning af kodefiler eller mapper, der ikke længere skal bruges.</li>
-                    </ul>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </details>
+          <!-- Plads til billede -->
+          <div class="mt-6 md:mt-0 md:w-1/3">
+            <img
+              src="/src/assets/images/git-commands.png"
+              alt="Illustration af Git kommandoer"
+              class="w-full rounded shadow"
+            />
+          </div>
         </div>
       </section>
     </main>
+
+    <!-- FOOTER -->
+    <footer class="py-4 text-center text-white bg-gray-800">
+      <p>
+        Udarbejdet som en guide til Git. Læs mere på
+        <a href="https://git-scm.com/" class="underline text-accent">den officielle Git-side</a>.
+      </p>
+    </footer>
+
     <!-- Footer -->
     <footer class="py-4 text-center text-white bg-accent">
       <p>Serveren kører på <strong>Node.js</strong>!</p>

@@ -9,3 +9,6 @@ dist/
 
 # DS_store filen skal ikke med
 .DS_store/
+
+# lokal test mappe med filer som ikke skal med
+test/
