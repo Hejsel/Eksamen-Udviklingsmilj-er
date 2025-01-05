@@ -6,6 +6,7 @@
 	"main": "app.js",
 	"scripts": {
 		"dev": "npx tailwindcss -i ./src/css/style.css -o ./dist/styles.css --watch",
+		"build": "tsc --outDir ./dist/js",
 		"start": "node server.mjs"
 	},
 	"repository": {
