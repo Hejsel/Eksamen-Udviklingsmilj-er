@@ -1,18 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Moduler</title>
-		<link href="/dist/styles.css" rel="stylesheet" />
-	</head>
-	<body>
-		<p>
-			Fortæl generelt om formålet med moduler i softwareudvikling. Beskriv dernæst konkret hvordan moduler
-			opbygges og anvendes i JavaScript. Kom ind på forskellen på CommonJS- og EcmaScript-moduler. Nævn bl.a.
-			mulighederne for at omdøbe modulelementer. Fragmenter af kode til illustration af dine overvejelser skal
-			være en del af præsentationen. Du bør bruge uddrag fra egne projekter og opgaver som eksempler i din
-			gennemgang.
-		</p>
-	</body>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moduler</title>
+    <link href="/dist/styles.css" rel="stylesheet" />
+    <script src="/src/js/loadComponents.js" defer></script>
+    <script src="/src/js/activeLinks.js" defer></script>
+  </head>
+
+  <body>
+    <!-- HEADER som henter header.html ind på siden!!! -->
+    <header id="header"></header>
+
+    <main>
+      <!-- Header -->
+      <div class="p-6 text-white bg-blue-600">
+        <div class="container mx-auto">
+          <h1 class="text-3xl font-bold">Moduler i Softwareudvikling</h1>
+          <p class="mt-2 text-lg">
+            En dybdegående gennemgang af formål, typer og anvendelse af moduler i JavaScript
+          </p>
+        </div>
+        <p>
+          Fortæl generelt om formålet med moduler i softwareudvikling. Beskriv dernæst konkret
+          hvordan moduler opbygges og anvendes i JavaScript. Kom ind på forskellen på CommonJS- og
+          EcmaScript-moduler. Nævn bl.a. mulighederne for at omdøbe modulelementer. Fragmenter af
+          kode til illustration af dine overvejelser skal være en del af præsentationen. Du bør
+          bruge uddrag fra egne projekter og opgaver som eksempler i din gennemgang.
+        </p>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="py-4 text-center text-white bg-accent">
+      <p>Serveren kører på <strong>Node.js</strong>!</p>
+    </footer>
+  </body>
 </html>

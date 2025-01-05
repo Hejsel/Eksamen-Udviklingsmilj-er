@@ -1,17 +1,1750 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Node.js</title>
-		<link href="/dist/styles.css" rel="stylesheet" />
-	</head>
-	<body>
-		<p>
-			Præsenter Node.js, herunder hvordan det sættes op og anvendes. Beskriv hvordan Node.js adskiller sig som
-			udviklingsmiljø fra browsere. Nævn fordele og ulemper. Skitser hvordan man opsætter en server vha. Node.js.
-			Fragmenter af kode til illustration af dine overvejelser skal være en del af præsentationen. Du bør bruge
-			uddrag fra egne projekter og opgaver som eksempler i din gennemgang.
-		</p>
-	</body>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="/dist/styles.css" rel="stylesheet" />
+    <script src="/src/js/loadComponents.js" defer></script>
+    <script src="/src/js/activeLinks.js" defer></script>
+  </head>
+  <body>
+    <!-- //TODO - HEADER som henter header.html ind på siden!!! -->
+    <header id="header"></header>
+
+    <!-- //TODO - MAIN -->
+    <main class="container">
+      <!-- //TODO - Hero Section -->
+      <section class="text-black body-font">
+        <div class="container px-5 py-10 mx-auto">
+          <!-- Tekstområde -->
+          <div class="mb-10 text-center">
+            <h1 class="mb-4 font-bold tracking-wide title-font sm:text-3xl md:text-5xl xl:text-6xl">
+              Opgave 3 - Node.js
+            </h1>
+            <p class="max-w-2xl mx-auto mb-8 leading-relaxed opacity-70">
+              Præsenter Node.js, herunder hvordan det sættes op og anvendes. Beskriv hvordan Node.js
+              adskiller sig som udviklingsmiljø fra browsere. Nævn fordele og ulemper. Skitser
+              hvordan man opsætter en server vha. Node.js. Fragmenter af kode til illustration af
+              dine overvejelser skal være en del af præsentationen. Du bør bruge uddrag fra egne
+              projekter og opgaver som eksempler i din gennemgang.
+            </p>
+
+            <a
+              class="inline-flex px-5 py-2 text-sm text-white rounded bg-accent focus:outline-none hover:bg-opacity-80"
+              href="https://nodejs.org/en"
+              target="_blank"
+              >nodejs.org</a
+            >
+
+            <br /><br />
+            <div class="flex justify-center">
+              <img
+                src="/src/assets/images/nodejs-1-logo-png-transparent.png"
+                style="width: 300px"
+                alt=""
+              />
+            </div>
+            <br /><br />
+            <h1 class="mb-4 text-4xl font-bold">Node.js – Introduktion</h1>
+            <p class="max-w-2xl mx-auto mb-8 leading-relaxed opacity-70">
+              Node.js er en JavaScript-runtime, der kører uden for browseren og er specielt velegnet
+              til server-side programmering. Her ser vi på, hvordan man sætter det op, og hvordan
+              det adskiller sig fra browsere. <br />
+              Node.js er en JavaScript-runtime, der gør det muligt at bruge JavaScript til
+              server-side programmering. Det er kendt for sin hurtighed og effektivitet.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- //TODO - Indtroduktion til NODE.JS -->
+      <section class="py-8 bg-gray-100 dark:bg-gray-800">
+        <div class="container px-4 mx-auto">
+          <h2 class="mb-4 text-2xl font-semibold text-gray-800 dark:text-gray-200">
+            Node.js Introduktion
+          </h2>
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <!-- Definition Box -->
+            <div class="p-6 bg-white rounded-lg shadow-lg dark:bg-gray-700">
+              <h3 class="mb-3 text-xl font-semibold text-gray-800 dark:text-gray-200">
+                Definition
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                <strong>Hvad er Node.js?</strong> Node.js er en open-source platform, der tillader
+                udviklere at køre JavaScript uden for en browser. Det er især designet til at bygge
+                skalerbare og hurtige netværksapplikationer, såsom API'er, chatsystemer og real-time
+                applikationer.
+              </p>
+              <p class="mt-2 text-gray-600 dark:text-gray-300">
+                <strong>Hvilken teknologi bygger det på?</strong> Node.js er baseret på Chrome's V8
+                JavaScript-motor, som er en kraftfuld og hurtig JavaScript-motor udviklet af Google.
+                Denne motor oversætter JavaScript til maskinkode, hvilket gør Node.js utroligt
+                hurtigt til at udføre kode.
+              </p>
+              <p class="mt-2 text-gray-600 dark:text-gray-300">
+                <strong>Open-source og cross-platform:</strong> Node.js er tilgængeligt gratis for
+                alle og fungerer på flere operativsystemer, herunder Windows, macOS og Linux. Dette
+                gør det attraktivt for udvikling i forskellige miljøer.
+              </p>
+            </div>
+
+            <!-- Purpose Box -->
+            <div class="p-6 bg-white rounded-lg shadow-lg dark:bg-gray-700">
+              <h3 class="mb-3 text-xl font-semibold text-gray-800 dark:text-gray-200">Formål</h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                <strong>Hovedidéen bag Node.js:</strong> Traditionelt blev JavaScript primært brugt
+                til at skabe interaktive elementer på klientens side (frontend). Node.js udvider
+                JavaScripts anvendelsesområde til serveren (backend), hvilket gør det muligt at
+                bruge det samme sprog på begge sider af applikationen.
+              </p>
+              <p class="mt-2 text-gray-600 dark:text-gray-300">
+                <strong>Hvorfor bruge JavaScript på serveren?</strong>
+              </p>
+              <ul class="text-gray-600 list-disc list-inside dark:text-gray-300">
+                <li>
+                  <strong>Konsistens:</strong> Med JavaScript på både klient- og serversiden kan
+                  udviklere arbejde med én kodebase, hvilket reducerer kompleksiteten og øger
+                  udviklingshastigheden.
+                </li>
+                <li>
+                  <strong>Community:</strong> JavaScript er allerede et populært sprog, og Node.js
+                  bygger på denne popularitet og fællesskabets støtte.
+                </li>
+              </ul>
+              <p class="mt-2 text-gray-600 dark:text-gray-300">
+                <strong>Hvad muliggør Node.js?</strong> Node.js er ideel til applikationer, der
+                kræver:
+              </p>
+              <ul class="text-gray-600 list-disc list-inside dark:text-gray-300">
+                <li>Hurtig behandling af data: På grund af dets non-blocking I/O-model.</li>
+                <li>Real-time interaktion: Som chatsystemer eller live-notifikationer.</li>
+                <li>Letvægtede og skalerbare systemer: Perfekt til microservices-arkitektur.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Illustration Section -->
+          <div class="p-6 mt-8 bg-white rounded-lg shadow-lg dark:bg-gray-700">
+            <h3 class="mb-3 text-xl font-semibold text-gray-800 dark:text-gray-200">
+              Visualisering
+            </h3>
+            <p class="mb-4 text-gray-600 dark:text-gray-300">
+              "Tænk på Node.js som en motor, der driver serveren ved hjælp af JavaScript, ligesom en
+              bilmotor driver en bil – hurtig, effektiv og pålidelig."
+            </p>
+            <img
+              src="/path-to-diagram.png"
+              alt="Node.js vs Traditionelle Servere"
+              class="w-full rounded-lg shadow-md"
+            />
+            <p class="mt-4 text-center text-gray-600 dark:text-gray-300">
+              Node.js bruges af virksomheder som Netflix, LinkedIn og Uber til at håndtere millioner
+              af samtidige brugere.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- //TODO - NODE.JS Historie -->
+      <section class="p-8 m-5 rounded-lg shadow-lg bg-gradient-to-b from-gray-100 to-gray-200">
+        <h2 class="mb-8 text-4xl font-extrabold text-center text-gray-800">
+          Node.js: Historie og Fordele
+        </h2>
+
+        <details
+          class="mb-6 transition-shadow duration-200 bg-white border border-gray-300 rounded-lg shadow hover:shadow-md"
+        >
+          <summary
+            class="flex items-center p-4 text-2xl font-semibold text-gray-800 cursor-pointer hover:text-accent"
+          >
+            <span class="mr-2 text-2xl">📖</span>
+            Historie: Hvornår og hvorfor blev Node.js skabt?
+          </summary>
+          <div class="p-4 text-lg leading-relaxed text-gray-700 rounded-b-lg bg-gray-50">
+            <p>
+              Node.js blev introduceret i <strong>2009</strong> af <strong>Ryan Dahl</strong>, som
+              ønskede at løse problemer med ineffektive servere. På det tidspunkt brugte servere som
+              Apache en tråd pr. forbindelse, hvilket gjorde dem langsomme og svære at skalere.
+            </p>
+            <p>
+              Med inspiration fra Google Chromes hurtige <strong>V8-motor</strong> og en
+              begivenhedsdreven tilgang skabte Ryan Dahl Node.js, der kunne håndtere tusindvis af
+              forbindelser uden at blokere.
+            </p>
+            <p>
+              <strong>Billedsprog:</strong> Tænk på traditionelle servere som én tjener, der kun kan
+              tage imod én kunde ad gangen. Node.js er som en buffét, hvor kunder kan betjene sig
+              selv uden at vente på tjeneren.
+            </p>
+          </div>
+        </details>
+
+        <!-- Hvorfor er Node.js godt -->
+        <details
+          class="mb-6 transition-shadow duration-200 bg-white border border-gray-300 rounded-lg shadow hover:shadow-md"
+        >
+          <summary
+            class="flex items-center p-4 text-2xl font-semibold text-gray-800 cursor-pointer hover:text-accent"
+          >
+            <span class="mr-2 text-2xl">⭐</span>
+            Hvorfor er Node.js godt?
+          </summary>
+          <div class="p-4 text-lg leading-relaxed text-gray-700 rounded-b-lg bg-gray-50">
+            <ul class="pl-6 list-disc">
+              <li>
+                <strong>Asynkronitet:</strong> Node.js bruger en event-loop, der gør det muligt at
+                håndtere tusindvis af forbindelser samtidigt. Dette gør det hurtigt og effektivt.
+              </li>
+              <li>
+                <strong>JavaScript overalt:</strong> Du kan bruge samme sprog til frontend og
+                backend, hvilket forenkler udviklingen.
+              </li>
+              <li>
+                <strong>Hurtighed:</strong> V8-motoren oversætter JavaScript til maskinkode, hvilket
+                gør det ekstremt hurtigt.
+              </li>
+              <li>
+                <strong>Stor økosystem:</strong> Med millioner af NPM-pakker kan du nemt finde
+                løsninger og tilføje funktionalitet til dine projekter.
+              </li>
+            </ul>
+            <p class="mt-4">
+              <strong>Billedsprog:</strong> Forestil dig Node.js som en motorvej med flere spor
+              (event-loop). Mens traditionelle servere er som en landevej med én bane, der skaber
+              kø.
+            </p>
+          </div>
+        </details>
+
+        <!-- Hvornår er Node.js bedst -->
+        <details
+          class="mb-6 transition-shadow duration-200 bg-white border border-gray-300 rounded-lg shadow hover:shadow-md"
+        >
+          <summary
+            class="flex items-center p-4 text-2xl font-semibold text-gray-800 cursor-pointer hover:text-accent"
+          >
+            <span class="mr-2 text-2xl">📈</span>
+            Hvornår er Node.js bedst at bruge?
+          </summary>
+          <div class="p-4 text-lg leading-relaxed text-gray-700 rounded-b-lg bg-gray-50">
+            <ul class="pl-6 list-disc">
+              <li>
+                <strong>Realtidsapplikationer:</strong> Som chatapps, live-notifikationer og
+                multiplayer-spil.
+              </li>
+              <li><strong>API'er:</strong> Hurtige og skalerbare RESTful eller GraphQL API'er.</li>
+              <li>
+                <strong>Streaming-tjenester:</strong> Håndtering af data i realtid, som
+                videostreaming eller musik.
+              </li>
+              <li>
+                <strong>Mikrotjenester:</strong> Byg små, uafhængige tjenester, der kan skaleres
+                individuelt.
+              </li>
+            </ul>
+            <p class="mt-4">
+              <strong>Billedsprog:</strong> Tænk på Node.js som en effektiv postcentral, der hurtigt
+              sorterer pakker og sender dem videre (API'er og realtidsdata).
+            </p>
+          </div>
+        </details>
+
+        <!-- Konklusion -->
+        <details
+          class="mb-6 transition-shadow duration-200 bg-white border border-gray-300 rounded-lg shadow hover:shadow-md"
+        >
+          <summary
+            class="flex items-center p-4 text-2xl font-semibold text-gray-800 cursor-pointer hover:text-accent"
+          >
+            <span class="mr-2 text-2xl">✅</span>
+            Konklusion
+          </summary>
+          <div class="p-4 text-lg leading-relaxed text-gray-700 rounded-b-lg bg-gray-50">
+            <p>
+              Node.js er et kraftfuldt værktøj til moderne udvikling. Det kombinerer hastighed,
+              effektivitet og fleksibilitet, hvilket gør det til et ideelt valg for udviklere, der
+              arbejder med skalerbare applikationer. Dets event-drevne arkitektur og brugervenlige
+              økosystem har gjort det til en favorit blandt udviklere verden over.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section id="server-setup" class="p-6 bg-gray-100 rounded-lg shadow-lg dark:bg-gray-800">
+        <!-- < class="container px-4 mx-auto"> -->
+        <h2 class="mb-4 text-3xl font-bold text-accent">Opsætning af Node.js</h2>
+        <p class="mb-4 text-lg leading-relaxed text-gray-800 dark:text-gray-200">
+          Sådan sætter du Node.js op på din computer og bygger din første server:
+        </p>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <!-- Installation Box -->
+          <div class="p-6 bg-white rounded-lg shadow dark:bg-gray-700">
+            <h3 class="mb-3 text-xl font-semibold text-gray-800 dark:text-gray-200">
+              1. Installation
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Besøg den officielle hjemmeside for
+              <a href="https://nodejs.org" target="_blank" class="underline text-accent">Node.js</a>
+              og download den nyeste version. Følg installationsguiden for dit operativsystem.
+            </p>
+            <p class="mt-4 text-gray-600 dark:text-gray-300">
+              Efter installationen, kontroller versionen ved at køre:
+            </p>
+            <pre class="p-4 bg-gray-800 rounded text-gray-50">node -v</pre>
+            <p class="mt-2 text-gray-600 dark:text-gray-300">
+              Dette viser den installerede Node.js-version.
+            </p>
+          </div>
+
+          <!-- Global Configuration Box -->
+          <div class="p-6 bg-white rounded-lg shadow dark:bg-gray-700">
+            <h3 class="mb-3 text-xl font-semibold text-gray-800 dark:text-gray-200">
+              2. Global Konfiguration
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Indstil dit brugernavn og e-mail globalt:
+            </p>
+            <pre class="p-4 bg-gray-800 rounded text-gray-50">
+npm set init-author-name "Your Name"
+npm set init-author-email "youremail@example.com"</pre
+            >
+            <p class="mt-2 text-gray-600 dark:text-gray-300">
+              Disse oplysninger bruges som metadata i nye projekter.
+            </p>
+          </div>
+        </div>
+
+        <!-- Lokal Projektopsætning -->
+        <div class="p-6 mt-6 bg-white rounded-lg shadow dark:bg-gray-700">
+          <h3 class="mb-3 text-xl font-semibold text-gray-800 dark:text-gray-200">
+            3. Opret et Lokalt Projekt
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Naviger til din projektmappe og initialiser et nyt Node.js-projekt:
+          </p>
+          <pre class="p-4 bg-gray-800 rounded text-gray-50">
+mkdir my-node-app
+cd my-node-app
+npm init -y</pre
+          >
+          <p class="mt-2 text-gray-600 dark:text-gray-300">
+            Dette opretter en <code>package.json</code>-fil med standardindstillinger.
+          </p>
+        </div>
+
+        <!-- Installation af NPM Pakker -->
+        <div class="p-6 mt-6 bg-white rounded-lg shadow dark:bg-gray-700">
+          <h3 class="mb-3 text-xl font-semibold text-gray-800 dark:text-gray-200">
+            4. Installation af Pakker
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Installer nødvendige pakker globalt eller lokalt:
+          </p>
+          <ul class="text-gray-600 list-disc list-inside dark:text-gray-300">
+            <li>Global installation: <code>npm install -g [pakke-navn]</code></li>
+            <li>Lokal installation: <code>npm install [pakke-navn]</code></li>
+          </ul>
+          <p class="mt-2 text-gray-600 dark:text-gray-300">
+            Global installation bruges typisk til CLI-værktøjer, mens lokal installation er til
+            projektpakker.
+          </p>
+        </div>
+      </section>
+
+      <br /><br />
+
+      <section class="p-8 rounded-lg shadow-lg bg-gradient-to-b from-gray-100 to-gray-200">
+        <h2 class="mb-8 text-4xl font-extrabold text-center text-gray-800">
+          Forstå Kommunikation mellem Klient og Server
+        </h2>
+
+        <!-- Klient og server interaktion -->
+        <details
+          class="mb-6 transition-shadow duration-200 bg-white border border-gray-300 rounded-lg shadow hover:shadow-md"
+        >
+          <summary
+            class="flex items-center p-4 text-2xl font-semibold text-gray-800 cursor-pointer hover:text-accent"
+          >
+            <span class="mr-2 text-2xl">👤</span>
+            1. Hvad er klienten, og hvordan fungerer den?
+          </summary>
+          <div class="p-4 text-lg leading-relaxed text-gray-700 rounded-b-lg bg-gray-50">
+            <p>
+              <strong>Klient:</strong><br />
+              Klienten er typisk en webbrowser (f.eks. Chrome, Firefox eller Safari), som brugeren
+              interagerer med. Klienten sender anmodninger til serveren for at få adgang til data
+              eller ressourcer.
+            </p>
+            <p>
+              <strong>Hvordan fungerer den?</strong><br />
+              - Brugeren indtaster en URL i browserens adressefelt.<br />
+              - Browseren opretter en HTTP-anmodning og sender den til serveren.<br />
+              - Serveren returnerer et svar, som browseren viser som en webside.
+            </p>
+            <p>
+              <strong>Billedsprog:</strong> Tænk på klienten som en kunde i en butik. Kunden beder
+              om en vare (websiden), som butikken (serveren) leverer.
+            </p>
+          </div>
+        </details>
+
+        <!-- Kommunikation med serveren -->
+        <details
+          class="mb-6 transition-shadow duration-200 bg-white border border-gray-300 rounded-lg shadow hover:shadow-md"
+        >
+          <summary
+            class="flex items-center p-4 text-2xl font-semibold text-gray-800 cursor-pointer hover:text-accent"
+          >
+            <span class="mr-2 text-2xl">📡</span>
+            2. Hvordan kommunikerer klienten med serveren?
+          </summary>
+          <div class="p-4 text-lg leading-relaxed text-gray-700 rounded-b-lg bg-gray-50">
+            <p>
+              <strong>HTTP-protokollen:</strong><br />
+              Klient og server kommunikerer via HTTP-protokollen (Hypertext Transfer Protocol).
+              Denne protokol definerer, hvordan anmodninger og svar formateres og overføres.
+            </p>
+            <p>
+              <strong>Vigtige trin i kommunikationen:</strong><br />
+              - Klienten sender en HTTP-anmodning (GET, POST, osv.).<br />
+              - Serveren behandler anmodningen og sender et HTTP-svar med statuskode (f.eks. 200 OK
+              eller 404 Not Found) og data.
+            </p>
+            <p>
+              <strong>Billedsprog:</strong> Tænk på HTTP som postvæsenet, der leverer beskeder
+              mellem afsenderen (klienten) og modtageren (serveren).
+            </p>
+          </div>
+        </details>
+
+        <!-- Teknisk forståelse -->
+        <details
+          class="mb-6 transition-shadow duration-200 bg-white border border-gray-300 rounded-lg shadow hover:shadow-md"
+        >
+          <summary
+            class="flex items-center p-4 text-2xl font-semibold text-gray-800 cursor-pointer hover:text-accent"
+          >
+            <span class="mr-2 text-2xl">⚙️</span>
+            3. Vigtige tekniske aspekter at forstå
+          </summary>
+          <div class="p-4 text-lg leading-relaxed text-gray-700 rounded-b-lg bg-gray-50">
+            <ul class="pl-6 list-disc">
+              <li>
+                <strong>IP-adresser:</strong> Servere identificeres via IP-adresser, som er deres
+                "telefonnummer" på internettet.
+              </li>
+              <li>
+                <strong>Ports:</strong> Angiver specifikke indgange til serveren (f.eks. port 80 til
+                HTTP og port 443 til HTTPS).
+              </li>
+              <li>
+                <strong>DNS:</strong> Oversætter domænenavne (f.eks. www.google.com) til
+                IP-adresser.
+              </li>
+              <li>
+                <strong>Protokoller:</strong> Forståelse af HTTP og HTTPS er afgørende for at sikre
+                sikker og korrekt kommunikation.
+              </li>
+            </ul>
+            <p>
+              <strong>Billedsprog:</strong> Tænk på IP-adresser som adresser på breve, porte som
+              specifikke postkasser, og DNS som en telefonbog, der finder den rigtige adresse
+              baseret på et navn.
+            </p>
+          </div>
+        </details>
+
+        <!-- Forståelse for fejlfinding -->
+        <details
+          class="mb-6 transition-shadow duration-200 bg-white border border-gray-300 rounded-lg shadow hover:shadow-md"
+        >
+          <summary
+            class="flex items-center p-4 text-2xl font-semibold text-gray-800 cursor-pointer hover:text-accent"
+          >
+            <span class="mr-2 text-2xl">🚫</span>
+            4. Hvordan håndteres fejl og gør det hele robust?
+          </summary>
+          <div class="p-4 text-lg leading-relaxed text-gray-700 rounded-b-lg bg-gray-50">
+            <p>
+              <strong>Fejlhåndtering:</strong><br />
+              Når klienten sender en forkert anmodning eller serveren ikke kan finde en ressource,
+              returneres statuskoder som:<br />
+              - <code>404 Not Found</code>: Ressourcen findes ikke.<br />
+              - <code>500 Internal Server Error</code>: Der opstod en fejl på serveren.<br />
+            </p>
+            <p>
+              <strong>Best practices:</strong><br />
+              - Log fejl til konsollen for at identificere problemer.<br />
+              - Returnér brugerdefinerede fejlsider for en bedre brugeroplevelse.<br />
+              - Sikr, at serveren altid svarer med relevante statuskoder.
+            </p>
+            <p>
+              <strong>Billedsprog:</strong> Tænk på statuskoder som trafikskilte, der informerer om
+              vejen frem eller advarer om forhindringer.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section class="p-6 bg-gray-100 rounded-lg shadow">
+        <h2 class="mb-6 text-4xl font-bold text-accent">HTTP-statuskoder og Serverinteraktion</h2>
+
+        <!-- Introduktion -->
+        <p class="mb-6 text-lg leading-relaxed text-gray-700">
+          HTTP-statuskoder er trecifrede tal, som servere returnerer for at angive status for en
+          klients anmodning. De hjælper klienter og servere med at kommunikere effektivt, og de er
+          afgørende for fejlfinding og optimering.
+        </p>
+
+        <!-- Start server-knap -->
+        <div class="mb-6 text-center">
+          <button
+            id="start-server"
+            class="px-6 py-2 font-bold text-white transition duration-300 bg-blue-500 rounded-lg shadow hover:bg-blue-700"
+          >
+            Start serveren
+          </button>
+          <div id="server-output" class="hidden p-4 mt-4 bg-gray-200 border rounded-lg shadow">
+            <p id="server-message" class="text-lg leading-relaxed text-gray-700"></p>
+          </div>
+        </div>
+
+        <!-- Navigation knapper -->
+        <div id="navigation-section" class="hidden mb-6 text-center">
+          <p class="mb-4 text-lg text-gray-700">Naviger til en side for at se statuskoden:</p>
+          <button
+            data-url="/"
+            class="px-6 py-2 font-bold text-white transition duration-300 bg-green-500 rounded-lg shadow navigate-btn hover:bg-green-700"
+          >
+            Gå til Hjemmesiden
+          </button>
+          <button
+            data-url="/about"
+            class="px-6 py-2 font-bold text-white transition duration-300 bg-yellow-500 rounded-lg shadow navigate-btn hover:bg-yellow-700"
+          >
+            Gå til Om-siden
+          </button>
+          <button
+            data-url="/404"
+            class="px-6 py-2 font-bold text-white transition duration-300 bg-red-500 rounded-lg shadow navigate-btn hover:bg-red-700"
+          >
+            Gå til en ugyldig side
+          </button>
+          <button
+            data-url="/redirect"
+            class="px-6 py-2 font-bold text-white transition duration-300 bg-purple-500 rounded-lg shadow navigate-btn hover:bg-purple-700"
+          >
+            Simuler Omdirigering
+          </button>
+        </div>
+
+        <!-- Statuskode output -->
+        <div id="status-output" class="hidden p-4 bg-gray-200 border rounded-lg shadow">
+          <p id="status-message" class="text-lg leading-relaxed text-gray-700"></p>
+        </div>
+
+        <!-- Eksempler på brug af fs -->
+        <details class="mb-6">
+          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+            <span class="before:content-['\1F4C4'] before:mr-2"></span>
+            Eksempel: Brug af fs til at hente HTML-sider
+          </summary>
+          <div class="mt-4 text-lg leading-relaxed text-gray-700">
+            <pre class="p-4 mb-4 text-sm bg-gray-800 rounded text-gray-50">
+<span class="text-green-400">// Importer nødvendige moduler</span>
+const http = require("http");
+const fs = require("fs");
+
+<span class="text-green-400">// Opret server</span>
+const server = http.createServer((req, res) => {
+  const filePath = req.url === "/" ? "index.html" : req.url.substring(1);
+
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      res.writeHead(404, { "Content-Type": "text/html" });
+      res.end("<h1>404 Not Found</h1>");
+    } else {
+      res.writeHead(200, { "Content-Type": "text/html" });
+      res.end(data);
+    }
+  });
+});
+
+server.listen(3000, () => {
+  console.log("Server kører på http://localhost:3000");
+});
+      </pre>
+            <p>
+              <strong>Forklaring:</strong><br />
+              Dette eksempel viser, hvordan <code>fs</code> bruges til at læse HTML-sider fra
+              serverens filsystem og levere dem til klienten.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <script>
+        // Start server simulation
+        document.getElementById("start-server").addEventListener("click", () => {
+          const output = document.getElementById("server-output");
+          const message = document.getElementById("server-message");
+          const navigation = document.getElementById("navigation-section");
+
+          message.textContent = "Serveren er startet på http://localhost:3000";
+          console.log("Serveren er startet på http://localhost:3000");
+          output.classList.remove("hidden");
+          navigation.classList.remove("hidden");
+        });
+
+        // Navigation simulation
+        document.querySelectorAll(".navigate-btn").forEach((button) => {
+          button.addEventListener("click", () => {
+            const url = button.dataset.url;
+            const output = document.getElementById("status-output");
+            const message = document.getElementById("status-message");
+
+            // Simuler serverrespons baseret på URL
+            switch (url) {
+              case "/":
+                message.textContent = "200 OK: Du har navigeret til hjemmesiden.";
+                console.log("200 OK: Du har navigeret til hjemmesiden.");
+                break;
+              case "/about":
+                message.textContent = "200 OK: Du har navigeret til Om-siden.";
+                console.log("200 OK: Du har navigeret til Om-siden.");
+                break;
+              case "/404":
+                message.textContent = "404 Not Found: Den ønskede side blev ikke fundet.";
+                console.log("404 Not Found: Den ønskede side blev ikke fundet.");
+                break;
+              case "/redirect":
+                message.textContent = "301 Moved Permanently: Du er blevet omdirigeret.";
+                console.log("301 Moved Permanently: Du er blevet omdirigeret.");
+                break;
+              default:
+                message.textContent = "500 Internal Server Error: Uventet serverfejl.";
+                console.log("500 Internal Server Error: Uventet serverfejl.");
+            }
+
+            output.classList.remove("hidden");
+          });
+        });
+      </script>
+      <section class="p-6 bg-gray-100 rounded-lg shadow">
+        <h2 class="mb-6 text-4xl font-bold text-accent">HTTP-statuskoder og Serverinteraktion</h2>
+
+        <!-- Introduktion -->
+        <p class="mb-6 text-lg leading-relaxed text-gray-700">
+          HTTP-statuskoder er trecifrede tal, som servere returnerer for at angive status for en
+          klients anmodning. De hjælper klienter og servere med at kommunikere effektivt, og de er
+          afgørende for fejlfinding og optimering.
+        </p>
+
+        <!-- Start server-knap -->
+        <div class="mb-6 text-center">
+          <button
+            id="start-server"
+            class="px-6 py-2 font-bold text-white transition duration-300 bg-blue-500 rounded-lg shadow hover:bg-blue-700"
+          >
+            Start serveren
+          </button>
+          <div id="server-output" class="hidden p-4 mt-4 bg-gray-200 border rounded-lg shadow">
+            <p id="server-message" class="text-lg leading-relaxed text-gray-700"></p>
+          </div>
+        </div>
+
+        <!-- Navigation knapper -->
+        <div id="navigation-section" class="hidden mb-6 text-center">
+          <p class="mb-4 text-lg text-gray-700">Naviger til en side for at se statuskoden:</p>
+          <button
+            data-url="/"
+            class="px-6 py-2 font-bold text-white transition duration-300 bg-green-500 rounded-lg shadow navigate-btn hover:bg-green-700"
+          >
+            Gå til Hjemmesiden
+          </button>
+          <button
+            data-url="/about"
+            class="px-6 py-2 font-bold text-white transition duration-300 bg-yellow-500 rounded-lg shadow navigate-btn hover:bg-yellow-700"
+          >
+            Gå til Om-siden
+          </button>
+          <button
+            data-url="/404"
+            class="px-6 py-2 font-bold text-white transition duration-300 bg-red-500 rounded-lg shadow navigate-btn hover:bg-red-700"
+          >
+            Gå til en ugyldig side
+          </button>
+        </div>
+
+        <!-- Statuskode output -->
+        <div id="status-output" class="hidden p-4 bg-gray-200 border rounded-lg shadow">
+          <p id="status-message" class="text-lg leading-relaxed text-gray-700"></p>
+        </div>
+
+        <!-- Eksempler på brug af fs -->
+        <details class="mb-6">
+          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+            <span class="before:content-['\1F4C4'] before:mr-2"></span>
+            Eksempel: Brug af fs til at hente HTML-sider
+          </summary>
+          <div class="mt-4 text-lg leading-relaxed text-gray-700">
+            <pre class="p-4 mb-4 text-sm bg-gray-800 rounded text-gray-50">
+<span class="text-green-400">// Importer nødvendige moduler</span>
+const http = require("http");
+const fs = require("fs");
+
+<span class="text-green-400">// Opret server</span>
+const server = http.createServer((req, res) => {
+  const filePath = req.url === "/" ? "index.html" : req.url.substring(1);
+
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      res.writeHead(404, { "Content-Type": "text/html" });
+      res.end("<h1>404 Not Found</h1>");
+    } else {
+      res.writeHead(200, { "Content-Type": "text/html" });
+      res.end(data);
+    }
+  });
+});
+
+server.listen(3000, () => {
+  console.log("Server kører på http://localhost:3000");
+});
+      </pre>
+            <p>
+              <strong>Forklaring:</strong><br />
+              Dette eksempel viser, hvordan <code>fs</code> bruges til at læse HTML-sider fra
+              serverens filsystem og levere dem til klienten.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <script>
+        // Start server simulation
+        document.getElementById("start-server").addEventListener("click", () => {
+          const output = document.getElementById("server-output");
+          const message = document.getElementById("server-message");
+          const navigation = document.getElementById("navigation-section");
+
+          message.textContent = "Serveren er startet på http://localhost:3000";
+          output.classList.remove("hidden");
+          navigation.classList.remove("hidden");
+        });
+
+        // Navigation simulation
+        document.querySelectorAll(".navigate-btn").forEach((button) => {
+          button.addEventListener("click", () => {
+            const url = button.dataset.url;
+            const output = document.getElementById("status-output");
+            const message = document.getElementById("status-message");
+
+            // Simuler serverrespons baseret på URL
+            switch (url) {
+              case "/":
+                message.textContent = "200 OK: Du har navigeret til hjemmesiden.";
+                break;
+              case "/about":
+                message.textContent = "200 OK: Du har navigeret til Om-siden.";
+                break;
+              case "/404":
+                message.textContent = "404 Not Found: Den ønskede side blev ikke fundet.";
+                break;
+              default:
+                message.textContent = "500 Internal Server Error: Uventet serverfejl.";
+            }
+
+            output.classList.remove("hidden");
+          });
+        });
+      </script>
+      <section class="p-6 bg-gray-100 rounded-lg shadow">
+        <h2 class="mb-6 text-4xl font-bold text-accent">HTTP-statuskoder og Serverinteraktion</h2>
+
+        <!-- Introduktion -->
+        <p class="mb-6 text-lg leading-relaxed text-gray-700">
+          HTTP-statuskoder er trecifrede tal, som servere returnerer for at angive status for en
+          klients anmodning. De hjælper klienter og servere med at kommunikere effektivt, og de er
+          afgørende for fejlfinding og optimering.
+        </p>
+
+        <!-- Start server-knap -->
+        <div class="mb-6 text-center">
+          <button
+            id="start-server"
+            class="px-6 py-2 font-bold text-white transition duration-300 bg-blue-500 rounded-lg shadow hover:bg-blue-700"
+          >
+            Start serveren
+          </button>
+          <div id="server-output" class="hidden p-4 mt-4 bg-gray-200 border rounded-lg shadow">
+            <p id="server-message" class="text-lg leading-relaxed text-gray-700"></p>
+          </div>
+        </div>
+
+        <!-- Interaktive knapper til statuskoder -->
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <button
+            data-status="200"
+            class="px-6 py-2 font-bold text-white transition duration-300 bg-green-500 rounded-lg shadow status-btn hover:bg-green-700"
+          >
+            200 OK
+          </button>
+          <button
+            data-status="404"
+            class="px-6 py-2 font-bold text-white transition duration-300 bg-red-500 rounded-lg shadow status-btn hover:bg-red-700"
+          >
+            404 Not Found
+          </button>
+          <button
+            data-status="301"
+            class="px-6 py-2 font-bold text-white transition duration-300 bg-yellow-500 rounded-lg shadow status-btn hover:bg-yellow-700"
+          >
+            301 Moved Permanently
+          </button>
+          <button
+            data-status="500"
+            class="px-6 py-2 font-bold text-white transition duration-300 bg-purple-500 rounded-lg shadow status-btn hover:bg-purple-700"
+          >
+            500 Internal Server Error
+          </button>
+        </div>
+
+        <!-- Statuskode output -->
+        <div id="status-output" class="hidden p-4 bg-gray-200 border rounded-lg shadow">
+          <p id="status-message" class="text-lg leading-relaxed text-gray-700"></p>
+        </div>
+
+        <!-- Eksempler på brug af fs -->
+        <details class="mb-6">
+          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+            <span class="before:content-['\1F4C4'] before:mr-2"></span>
+            Eksempel: Brug af fs til at hente HTML-sider
+          </summary>
+          <div class="mt-4 text-lg leading-relaxed text-gray-700">
+            <pre class="p-4 mb-4 text-sm bg-gray-800 rounded text-gray-50">
+<span class="text-green-400">// Importer nødvendige moduler</span>
+const http = require("http");
+const fs = require("fs");
+
+<span class="text-green-400">// Opret server</span>
+const server = http.createServer((req, res) => {
+  const filePath = req.url === "/" ? "index.html" : req.url.substring(1);
+
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      res.writeHead(404, { "Content-Type": "text/html" });
+      res.end("<h1>404 Not Found</h1>");
+    } else {
+      res.writeHead(200, { "Content-Type": "text/html" });
+      res.end(data);
+    }
+  });
+});
+
+server.listen(3000, () => {
+  console.log("Server kører på http://localhost:3000");
+});
+      </pre>
+            <p>
+              <strong>Forklaring:</strong><br />
+              Dette eksempel viser, hvordan <code>fs</code> bruges til at læse HTML-sider fra
+              serverens filsystem og levere dem til klienten.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <script>
+        // Start server simulation
+        document.getElementById("start-server").addEventListener("click", () => {
+          const output = document.getElementById("server-output");
+          const message = document.getElementById("server-message");
+
+          message.textContent = "Serveren er startet på http://localhost:3000";
+          output.classList.remove("hidden");
+        });
+
+        // Tilføj event listeners til status-knapperne
+        document.querySelectorAll(".status-btn").forEach((button) => {
+          button.addEventListener("click", () => {
+            const status = button.dataset.status;
+            const output = document.getElementById("status-output");
+            const message = document.getElementById("status-message");
+
+            // Skift besked baseret på statuskode
+            switch (status) {
+              case "200":
+                message.textContent = "200 OK: Anmodningen blev behandlet med succes.";
+                break;
+              case "404":
+                message.textContent = "404 Not Found: Den ønskede ressource blev ikke fundet.";
+                break;
+              case "301":
+                message.textContent =
+                  "301 Moved Permanently: Ressourcen er permanent flyttet til en ny placering.";
+                break;
+              case "500":
+                message.textContent = "500 Internal Server Error: Der opstod en serverfejl.";
+                break;
+              default:
+                message.textContent = "Uventet statuskode.";
+            }
+
+            output.classList.remove("hidden");
+          });
+        });
+      </script>
+
+      <section class="p-6 bg-gray-100 rounded-lg shadow">
+        <h2 class="mb-6 text-4xl font-bold text-accent">HTTP-statuskoder</h2>
+
+        <!-- Introduktion -->
+        <p class="mb-6 text-lg leading-relaxed text-gray-700">
+          HTTP-statuskoder er trecifrede tal, som servere returnerer for at angive status for en
+          klients anmodning. De hjælper klienter og servere med at kommunikere effektivt, og de er
+          afgørende for fejlfinding og optimering.
+        </p>
+
+        <!-- Tabelvisning -->
+        <table class="w-full mb-6 text-left border-collapse">
+          <thead>
+            <tr class="bg-gray-200">
+              <th class="px-4 py-2">Kategori</th>
+              <th class="px-4 py-2">Statuskode</th>
+              <th class="px-4 py-2">Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 1xx - Informationskoder -->
+            <tr class="transition duration-300 hover:bg-blue-100">
+              <td class="px-4 py-2 font-bold text-blue-600">1xx</td>
+              <td class="px-4 py-2">100 Continue</td>
+              <td class="px-4 py-2">Klienten kan fortsætte med at sende anmodningen.</td>
+            </tr>
+            <tr class="transition duration-300 hover:bg-blue-100">
+              <td class="px-4 py-2 font-bold text-blue-600">1xx</td>
+              <td class="px-4 py-2">101 Switching Protocols</td>
+              <td class="px-4 py-2">Serveren skifter til en ny protokol.</td>
+            </tr>
+
+            <!-- 2xx - Succes -->
+            <tr class="transition duration-300 hover:bg-green-100">
+              <td class="px-4 py-2 font-bold text-green-600">2xx</td>
+              <td class="px-4 py-2">200 OK</td>
+              <td class="px-4 py-2">Anmodningen blev behandlet med succes.</td>
+            </tr>
+            <tr class="transition duration-300 hover:bg-green-100">
+              <td class="px-4 py-2 font-bold text-green-600">2xx</td>
+              <td class="px-4 py-2">201 Created</td>
+              <td class="px-4 py-2">En ny ressource blev oprettet.</td>
+            </tr>
+
+            <!-- 3xx - Omdirigering -->
+            <tr class="transition duration-300 hover:bg-yellow-100">
+              <td class="px-4 py-2 font-bold text-yellow-600">3xx</td>
+              <td class="px-4 py-2">301 Moved Permanently</td>
+              <td class="px-4 py-2">Ressourcen er permanent flyttet til en ny placering.</td>
+            </tr>
+            <tr class="transition duration-300 hover:bg-yellow-100">
+              <td class="px-4 py-2 font-bold text-yellow-600">3xx</td>
+              <td class="px-4 py-2">307 Temporary Redirect</td>
+              <td class="px-4 py-2">Ressourcen er midlertidigt flyttet.</td>
+            </tr>
+
+            <!-- 4xx - Klientfejl -->
+            <tr class="transition duration-300 hover:bg-red-100">
+              <td class="px-4 py-2 font-bold text-red-600">4xx</td>
+              <td class="px-4 py-2">404 Not Found</td>
+              <td class="px-4 py-2">Den ønskede ressource blev ikke fundet.</td>
+            </tr>
+            <tr class="transition duration-300 hover:bg-red-100">
+              <td class="px-4 py-2 font-bold text-red-600">4xx</td>
+              <td class="px-4 py-2">400 Bad Request</td>
+              <td class="px-4 py-2">Anmodningen var forkert formateret.</td>
+            </tr>
+
+            <!-- 5xx - Serverfejl -->
+            <tr class="transition duration-300 hover:bg-purple-100">
+              <td class="px-4 py-2 font-bold text-purple-600">5xx</td>
+              <td class="px-4 py-2">500 Internal Server Error</td>
+              <td class="px-4 py-2">Der opstod en serverfejl.</td>
+            </tr>
+            <tr class="transition duration-300 hover:bg-purple-100">
+              <td class="px-4 py-2 font-bold text-purple-600">5xx</td>
+              <td class="px-4 py-2">503 Service Unavailable</td>
+              <td class="px-4 py-2">Serveren er midlertidigt utilgængelig.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Interaktiv knap til server -->
+        <div class="text-center">
+          <button
+            id="start-server"
+            class="px-6 py-2 mb-6 font-bold text-white transition duration-300 bg-blue-500 rounded-lg shadow hover:bg-blue-700"
+          >
+            Start serveren
+          </button>
+          <div id="server-output" class="hidden p-4 bg-gray-200 border rounded-lg shadow">
+            <p class="text-lg leading-relaxed text-gray-700">
+              Serveren er startet på <code>http://localhost:3000</code>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Eksempler på brug af fs -->
+        <details class="mb-6">
+          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+            <span class="before:content-['\1F4C4'] before:mr-2"></span>
+            Eksempel: Brug af fs til at hente HTML-sider
+          </summary>
+          <div class="mt-4 text-lg leading-relaxed text-gray-700">
+            <pre class="p-4 mb-4 text-sm bg-gray-800 rounded text-gray-50">
+<span class="text-green-400">// Importer nødvendige moduler</span>
+const http = require("http");
+const fs = require("fs");
+
+<span class="text-green-400">// Opret server</span>
+const server = http.createServer((req, res) => {
+  const filePath = req.url === "/" ? "index.html" : req.url.substring(1);
+
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      res.writeHead(404, { "Content-Type": "text/html" });
+      res.end("<h1>404 Not Found</h1>");
+    } else {
+      res.writeHead(200, { "Content-Type": "text/html" });
+      res.end(data);
+    }
+  });
+});
+
+server.listen(3000, () => {
+  console.log("Server kører på http://localhost:3000");
+});
+      </pre>
+            <p>
+              <strong>Forklaring:</strong><br />
+              Dette eksempel viser, hvordan <code>fs</code> bruges til at læse HTML-sider fra
+              serverens filsystem og levere dem til klienten.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <script>
+        document.getElementById("start-server").addEventListener("click", () => {
+          const output = document.getElementById("server-output");
+          output.classList.remove("hidden");
+        });
+      </script>
+
+      <section class="p-6 bg-gray-100 rounded-lg shadow">
+        <h2 class="mb-6 text-4xl font-bold text-accent">HTTP-statuskoder</h2>
+
+        <!-- Introduktion -->
+        <p class="mb-6 text-lg leading-relaxed text-gray-700">
+          HTTP-statuskoder er trecifrede tal, som servere returnerer for at angive status for en
+          klients anmodning. De hjælper klienter og servere med at kommunikere effektivt, og de er
+          afgørende for fejlfinding og optimering.
+        </p>
+
+        <!-- Interaktive knapper til statuskoder -->
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <button
+            data-status="200"
+            class="px-6 py-2 font-bold text-white transition duration-300 bg-green-500 rounded-lg shadow status-btn hover:bg-green-700"
+          >
+            200 OK
+          </button>
+          <button
+            data-status="404"
+            class="px-6 py-2 font-bold text-white transition duration-300 bg-red-500 rounded-lg shadow status-btn hover:bg-red-700"
+          >
+            404 Not Found
+          </button>
+          <button
+            data-status="301"
+            class="px-6 py-2 font-bold text-white transition duration-300 bg-yellow-500 rounded-lg shadow status-btn hover:bg-yellow-700"
+          >
+            301 Moved Permanently
+          </button>
+          <button
+            data-status="500"
+            class="px-6 py-2 font-bold text-white transition duration-300 bg-purple-500 rounded-lg shadow status-btn hover:bg-purple-700"
+          >
+            500 Internal Server Error
+          </button>
+        </div>
+
+        <!-- Statuskode output -->
+        <div id="status-output" class="hidden p-4 bg-gray-200 border rounded-lg shadow">
+          <p id="status-message" class="text-lg leading-relaxed text-gray-700"></p>
+        </div>
+
+        <!-- Eksempler på brug af fs -->
+        <details class="mb-6">
+          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+            <span class="before:content-['\1F4C4'] before:mr-2"></span>
+            Eksempel: Brug af fs til at hente HTML-sider
+          </summary>
+          <div class="mt-4 text-lg leading-relaxed text-gray-700">
+            <pre class="p-4 mb-4 text-sm bg-gray-800 rounded text-gray-50">
+<span class="text-green-400">// Importer nødvendige moduler</span>
+const http = require("http");
+const fs = require("fs");
+
+<span class="text-green-400">// Opret server</span>
+const server = http.createServer((req, res) => {
+  const filePath = req.url === "/" ? "index.html" : req.url.substring(1);
+
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      res.writeHead(404, { "Content-Type": "text/html" });
+      res.end("<h1>404 Not Found</h1>");
+    } else {
+      res.writeHead(200, { "Content-Type": "text/html" });
+      res.end(data);
+    }
+  });
+});
+
+server.listen(3000, () => {
+  console.log("Server kører på http://localhost:3000");
+});
+      </pre>
+            <p>
+              <strong>Forklaring:</strong><br />
+              Dette eksempel viser, hvordan <code>fs</code> bruges til at læse HTML-sider fra
+              serverens filsystem og levere dem til klienten.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <script>
+        // Tilføj event listeners til status-knapperne
+        document.querySelectorAll(".status-btn").forEach((button) => {
+          button.addEventListener("click", () => {
+            const status = button.dataset.status;
+            const output = document.getElementById("status-output");
+            const message = document.getElementById("status-message");
+
+            // Skift besked baseret på statuskode
+            switch (status) {
+              case "200":
+                message.textContent = "200 OK: Anmodningen blev behandlet med succes.";
+                break;
+              case "404":
+                message.textContent = "404 Not Found: Den ønskede ressource blev ikke fundet.";
+                break;
+              case "301":
+                message.textContent =
+                  "301 Moved Permanently: Ressourcen er permanent flyttet til en ny placering.";
+                break;
+              case "500":
+                message.textContent = "500 Internal Server Error: Der opstod en serverfejl.";
+                break;
+              default:
+                message.textContent = "Uventet statuskode.";
+            }
+
+            output.classList.remove("hidden");
+          });
+        });
+      </script>
+
+      <!-- //TODO - KODE forklaring SECTION -->
+      <section class="p-6 bg-gray-100 rounded-lg shadow">
+        <h2 class="mb-6 text-4xl font-bold text-accent">Node.js Server: Opdelt Forklaring</h2>
+
+        <!-- //TODO - punkt 1. - Importer nødvendige moduler -->
+        <details class="mb-6">
+          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+            <span class="before:content-['\1F4D6'] before:mr-2"></span>
+            1. Importer nødvendige moduler
+          </summary>
+
+          <div class="mt-4 text-lg leading-relaxed text-gray-700">
+            <pre class="p-4 mb-4 text-sm bg-gray-800 rounded text-gray-50">
+<span class="text-green-400">// Importer nødvendige moduler</span>
+const http = require("http");
+const fs = require("fs");
+      </pre>
+            <p>
+              <strong>Hvad sker der her?</strong><br />
+              <code>http</code>: Bruges til at oprette en HTTP-server.<br />
+              <code>fs</code>: Bruges til at læse og skrive filer fra systemet.
+            </p>
+            <p>
+              <strong>Billedsprog:</strong> Tænk på <code>http</code> som murstenene, der bruges til
+              at bygge en server. <code>fs</code> er bibliotekaren, der finder filer til serveren.
+            </p>
+            <div class="p-4 mt-4 bg-white border rounded-lg shadow">
+              <h4 class="mb-2 text-xl font-semibold text-gray-800">Hvad er HTTP?</h4>
+              <p class="text-lg leading-relaxed text-gray-700">
+                HTTP (Hyper Text Transfer Protocol) er en protokol, der bruges til
+                informationsudveksling på internettet. Når du tilgår en hjemmeside eller interagerer
+                med webtjenester, kommunikerer din browser med servere via HTTP.
+              </p>
+              <p class="mt-2 text-lg leading-relaxed text-gray-700">
+                HTTP fungerer i en klient-server-arkitektur, hvor klienten anmoder om ressourcer, og
+                serveren leverer disse.
+              </p>
+            </div>
+            <div class="p-4 mt-4 bg-white border rounded-lg shadow">
+              <h4 class="mb-2 text-xl font-semibold text-gray-800">Hvad gør HTTP?</h4>
+              <ul class="pl-6 text-lg leading-relaxed text-gray-700 list-disc">
+                <li>
+                  <strong>Datatransmission:</strong> Overførsel af websider, billeder og andre
+                  mediefiler.
+                </li>
+                <li>
+                  <strong>Anmodning og svar:</strong> Klienten anmoder om ressourcer, serveren
+                  leverer dem.
+                </li>
+                <li><strong>Hypertekst:</strong> Gør det muligt at navigere mellem websider.</li>
+                <li><strong>Stateless protokol:</strong> Hver anmodning behandles uafhængigt.</li>
+              </ul>
+            </div>
+          </div>
+          <!-- //TODO - tillægs forklaring -->
+          <section class="p-6 bg-gray-100 rounded-lg shadow">
+            <h2 class="mb-6 text-4xl font-bold text-accent">
+              Brugen af Node.js Moduler: http og fs
+            </h2>
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <!-- Forklaring af http og fs -->
+              <div class="p-6 bg-white border rounded-lg shadow">
+                <h3 class="mb-4 text-2xl font-semibold text-gray-800">Hvad er http-modulet?</h3>
+                <p class="text-lg leading-relaxed text-gray-700">
+                  <strong>http:</strong> Dette modul bruges til at oprette og håndtere HTTP-servere.
+                  Det er en del af Node.js's kernebibliotek og kræver ingen yderligere installation
+                  via npm.
+                </p>
+                <p class="mt-4 text-lg leading-relaxed text-gray-700">
+                  <strong>Hvorfor bruges det?</strong> Det giver udviklere mulighed for at bygge
+                  webservere uden afhængighed af eksterne biblioteker. Det er fundamentalt for
+                  HTTP-kommunikation.
+                </p>
+              </div>
+
+              <div class="p-6 bg-white border rounded-lg shadow">
+                <h3 class="mb-4 text-2xl font-semibold text-gray-800">Hvad er fs-modulet?</h3>
+                <p class="text-lg leading-relaxed text-gray-700">
+                  <strong>fs:</strong> Dette modul står for "File System" og bruges til at læse,
+                  skrive og håndtere filer på serversystemet.
+                </p>
+                <p class="mt-4 text-lg leading-relaxed text-gray-700">
+                  <strong>Hvorfor bruges det?</strong> Det muliggør håndtering af filer direkte fra
+                  serversystemet, hvilket er ideelt til opgaver som at læse statiske filer eller
+                  gemme data.
+                </p>
+              </div>
+            </div>
+
+            <!-- Eksempelkode med fold-ud -->
+            <details class="mt-6">
+              <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+                <span class="before:content-['\1F4D6'] before:mr-2"></span>
+                Eksempel: Brug af http og fs i Node.js
+              </summary>
+              <div class="mt-4 text-lg leading-relaxed text-gray-700">
+                <pre class="p-4 mb-4 text-sm bg-gray-800 rounded text-gray-50">
+<span class="text-green-400">// Importer nødvendige moduler</span>
+const http = require("http");
+const fs = require("fs");
+
+<span class="text-green-400">// Opret en simpel HTTP-server</span>
+const server = http.createServer((req, res) => {
+  if (req.url === "/") {
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end("Velkommen til vores HTTP-server!");
+  } else if (req.url === "/fil") {
+    fs.readFile("eksempel.txt", "utf8", (err, data) => {
+      if (err) {
+        res.writeHead(404, { "Content-Type": "text/plain" });
+        res.end("Fil ikke fundet");
+      } else {
+        res.writeHead(200, { "Content-Type": "text/plain" });
+        res.end(data);
+      }
+    });
+  } else {
+    res.writeHead(404, { "Content-Type": "text/plain" });
+    res.end("Side ikke fundet");
+  }
+});
+
+<span class="text-green-400">// Start serveren på port 3000</span>
+server.listen(3000, () => {
+  console.log("Server kører på http://localhost:3000");
+});
+      </pre>
+                <p>
+                  <strong>Forklaring:</strong> Denne kode opretter en simpel HTTP-server, der kan
+                  vise en velkomstbesked eller læse en fil fra serveren afhængigt af URL'en.
+                </p>
+                <p class="mt-2">
+                  <strong>Billedsprog:</strong> Tænk på <code>http</code> som selve motoren, der
+                  håndterer serverens anmodninger og svar, mens <code>fs</code> fungerer som
+                  serverens bibliotekar, der henter filer efter behov.
+                </p>
+              </div>
+            </details>
+          </section>
+          <!-- //TODO - tillægs forklaring -->
+        </details>
+
+        <!-- //TODO - punkt 2. - Definer port og hostname -->
+        <details class="mb-6">
+          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+            <span class="before:content-['\1F3E0'] before:mr-2"></span>
+            2. Definer port og hostname
+          </summary>
+          <div class="mt-4 text-lg leading-relaxed text-gray-700">
+            <pre class="p-4 mb-4 text-sm bg-gray-800 rounded text-gray-50">
+<span class="text-green-400">// Definer port og hostname</span>
+const port = 3000, hostname = "127.0.0.1";
+      </pre>
+            <p>
+              <strong>Hvad sker der her?</strong><br />
+              <code>port</code>: Døren, som klienter skal bruge for at kommunikere med serveren.<br />
+              <code>hostname</code>: Loopback-adressen til lokal udvikling.
+            </p>
+            <p>
+              <strong>Billedsprog:</strong> Tænk på <code>hostname</code> som serverens adresse, og
+              <code>port</code> som døren til bygningen.
+            </p>
+          </div>
+        </details>
+
+        <!-- //TODO - punkt 3. - Opret en HTTP-server -->
+        <details class="mb-6">
+          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+            <span class="before:content-['\1F528'] before:mr-2"></span>
+            3. Opret en HTTP-server
+          </summary>
+          <div class="mt-4 text-lg leading-relaxed text-gray-700">
+            <pre class="p-4 mb-4 text-sm bg-gray-800 rounded text-gray-50">
+<span class="text-green-400">// Opret en HTTP-server</span>
+const server = http.createServer();
+      </pre>
+            <p>
+              <strong>Hvad sker der her?</strong><br />
+              <code>http.createServer()</code>: Opretter en ny serverinstans, der er klar til at
+              håndtere klientanmodninger.
+            </p>
+            <p>
+              <strong>Billedsprog:</strong> Serveren er som en receptionist, der står klar til at
+              tage imod gæster.
+            </p>
+          </div>
+        </details>
+
+        <!-- //TODO - punkt 4. - Registrer callback-funktion -->
+        <details class="mb-6">
+          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+            <span class="before:content-['\1F4E6'] before:mr-2"></span>
+            4. Registrer callback-funktion
+          </summary>
+          <div class="mt-4 text-lg leading-relaxed text-gray-700">
+            <pre class="p-4 mb-4 text-sm bg-gray-800 rounded text-gray-50">
+<span class="text-green-400">// Registrer callback-funktion</span>
+server.on("request", callback);
+      </pre>
+            <p>
+              <strong>Hvad sker der her?</strong><br />
+              Callback-funktionen bliver aktiveret, når serveren modtager en anmodning.
+            </p>
+            <p>
+              <strong>Billedsprog:</strong> Tænk på dette som receptionistens protokol for, hvordan
+              gæster skal håndteres.
+            </p>
+          </div>
+        </details>
+
+        <!-- //TODO - punkt 5. - Start serveren -->
+        <details class="mb-6">
+          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+            <span class="before:content-['\1F680'] before:mr-2"></span>
+            5. Start serveren
+          </summary>
+          <div class="mt-4 text-lg leading-relaxed text-gray-700">
+            <pre class="p-4 mb-4 text-sm bg-gray-800 rounded text-gray-50">
+<span class="text-green-400">// Start serveren</span>
+server.listen(port, hostname, () => {
+  console.log("Lokalserveren kører på http://127.0.0.1:3000");
+});
+      </pre>
+            <p>
+              <strong>Hvad sker der her?</strong><br />
+              Serveren starter og lytter på den angivne port og hostname.
+            </p>
+            <p>
+              <strong>Billedsprog:</strong> Tænk på dette som at åbne dørene til en butik. Butikken
+              er nu klar til at modtage kunder.
+            </p>
+          </div>
+        </details>
+
+        <!-- //TODO - punkt 6. - Callback-funktion -->
+        <details class="mb-6">
+          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+            <span class="before:content-['\1F4BB'] before:mr-2"></span>
+            6. Callback-funktion
+          </summary>
+          <div class="mt-4 text-lg leading-relaxed text-gray-700">
+            <pre class="p-4 mb-4 text-sm bg-gray-800 rounded text-gray-50">
+<span class="text-green-400">// Callback-funktion</span>
+function callback(request, response) {
+  response.writeHead(200, { "Content-Type": "text/html; charset=UTF-8" });
+  let filnavn = sti(request.url);
+  let filMappe = "/Users/emilroed/Desktop/Del 9 - UM/";
+  let t = ""; // Tom variabel til filindhold
+  try {
+    switch (filnavn) {
+      case "hej":
+      case "opgave_1":
+      case "farvel":
+      case "om":
+        t = fs.readFileSync(filMappe + filnavn + ".html", "utf-8");
+        break;
+      default:
+        t = fs.readFileSync(filMappe + "fejl.html", "utf-8");
+    }
+  } catch (e) {
+    console.error("Fejl under læsning af fil:", e.message);
+    t = "<h1>500 Intern Server Error</h1><p>Der opstod en fejl.</p>";
+    response.writeHead(500, { "Content-Type": "text/html; charset=UTF-8" });
+  }
+  response.write(t);
+  response.end();
+}
+      </pre>
+            <p>
+              <strong>Hvad sker der her?</strong><br />
+              Funktionen analyserer URL'en, finder filen og sender dens indhold som svar til
+              klienten.
+            </p>
+            <p>
+              <strong>Billedsprog:</strong> Receptionisten (serveren) finder gæstens ønskede
+              dokument og leverer det. Hvis dokumentet mangler, giver receptionisten en undskyldning
+              (500-fejl).
+            </p>
+          </div>
+        </details>
+
+        <!-- //TODO - punkt 7. - Funktion til at finde filnavn -->
+        <details class="mb-6">
+          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+            <span class="before:content-['\1F50E'] before:mr-2"></span>
+            7. Funktion til at finde filnavn fra URL
+          </summary>
+          <div class="mt-4 text-lg leading-relaxed text-gray-700">
+            <pre class="p-4 mb-4 text-sm bg-gray-800 rounded text-gray-50">
+<span class="text-green-400">// Funktion til at finde filnavn</span>
+function sti(url) {
+  let spørgsmålstegn = url.indexOf("?");
+  if (spørgsmålstegn < 0) spørgsmålstegn = url.length;
+  let dobbeltSkråstreg = url.indexOf("//");
+  if (dobbeltSkråstreg > -1) dobbeltSkråstreg += 2;
+  else dobbeltSkråstreg = 0;
+  let skråstreg = url.indexOf("/", dobbeltSkråstreg);
+  return url.substring(skråstreg + 1, spørgsmålstegn);
+}
+      </pre>
+            <p>
+              <strong>Hvad sker der her?</strong><br />
+              Funktionen analyserer URL'en og udtrækker filnavnet ved at ignorere query-strings.
+            </p>
+            <p>
+              <strong>Billedsprog:</strong> Tænk på dette som en GPS-enhed, der finder den præcise
+              lokation baseret på URL'en.
+            </p>
+          </div>
+        </details>
+
+        <!-- //TODO - punkt 8. - Visualisering af mappe- og filstruktur -->
+        <details class="mb-6">
+          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+            <span class="before:content-['\1F5C2'] before:mr-2"></span>
+            8. Visualisering af mappe- og filstruktur
+          </summary>
+          <div class="mt-4 text-lg leading-relaxed text-gray-700">
+            <pre class="p-4 mb-4 text-sm bg-gray-800 rounded text-gray-50">
+Projektstruktur:
+  ├── server.js        // Serverkode
+  ├── hej.html         // Eksempel på HTML-fil
+  ├── opgave_1.html    // Eksempel på HTML-fil
+  ├── farvel.html      // Eksempel på HTML-fil
+  ├── fejl.html        // Fejlmeddelelse, hvis filen ikke findes
+  ├── om.html          // Eksempel på HTML-fil
+      </pre
+            >
+            <p>
+              <strong>Hvad viser dette?</strong><br />
+              Dette er en simpel mappe- og filstruktur til dit Node.js-projekt, hvor serveren
+              leverer forskellige HTML-filer baseret på URL'en.
+            </p>
+            <p>
+              <strong>Billedsprog:</strong> Forestil dig dette som et kontorarkiv, hvor hver fil er
+              en mappe, som serveren (receptionisten) henter dokumenter fra.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <!-- //TODO - Hvordan kunne node_env og udviklingsmiljøer forbedre tidligere opgaver-->
+      <section class="p-6 bg-gray-100 rounded-lg shadow">
+        <h2 class="mb-6 text-4xl font-bold text-accent">NODE_ENV og Miljøkonfiguration</h2>
+
+        <!-- Hvad er NODE_ENV? -->
+        <details class="mb-6">
+          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+            <span class="before:content-['\1F4BB'] before:mr-2"></span>
+            1. Hvad er NODE_ENV, og hvorfor er det vigtigt?
+          </summary>
+          <div class="mt-4 text-lg leading-relaxed text-gray-700">
+            <p>
+              <strong>NODE_ENV:</strong><br />
+              NODE_ENV er en miljøvariabel, der bruges til at angive, hvilket miljø din
+              Node.js-applikation kører i. Typisk bruges den til at definere fire standardmiljøer:
+            </p>
+            <ul class="pl-6 list-disc">
+              <li><strong>Development:</strong> Til udvikling og test af nye funktioner.</li>
+              <li><strong>Testing:</strong> Til automatiserede tests.</li>
+              <li><strong>Staging:</strong> Til forberedelse og godkendelse inden produktion.</li>
+              <li>
+                <strong>Production:</strong> Det miljø, hvor applikationen er live og tilgængelig
+                for brugere.
+              </li>
+            </ul>
+            <p>
+              <strong>Billedsprog:</strong> Tænk på miljøer som forskellige køkkener i en
+              restaurant: ét køkken til prøvesmagning (development), ét til test (testing), ét til
+              øvelse (staging), og ét hvor maden serveres til gæster (production).
+            </p>
+          </div>
+        </details>
+
+        <!-- Praktisk brug af NODE_ENV -->
+        <details class="mb-6">
+          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+            <span class="before:content-['\1F6E0'] before:mr-2"></span>
+            2. Praktisk brug af NODE_ENV i projekter
+          </summary>
+          <div class="mt-4 text-lg leading-relaxed text-gray-700">
+            <p>
+              NODE_ENV kan bruges til at kontrollere, hvordan din applikation opfører sig i
+              forskellige miljøer. Her er et eksempel:
+            </p>
+            <pre class="p-4 mb-4 text-sm bg-gray-800 rounded text-gray-50">
+<span class="text-green-400">// Opsætning baseret på miljø</span>
+if (process.env.NODE_ENV === "development") {
+  console.log("Applikationen kører i udviklingsmiljø");
+} else if (process.env.NODE_ENV === "production") {
+  console.log("Applikationen kører i produktionsmiljø");
+}
+      </pre>
+
+            <strong>Fordele:</strong>
+            <ul class="pl-6 list-disc">
+              <li>Giver mulighed for at have forskellige konfigurationer til hvert miljø.</li>
+              <li>
+                Forhindrer utilsigtede fejl i produktion ved at skifte til produktionsindstillinger.
+              </li>
+            </ul>
+
+            <p>
+              <strong>Billedsprog:</strong> Tænk på NODE_ENV som en lyskontakt, der skifter mellem
+              forskellige stemninger i et rum, afhængigt af om det er dag eller nat (development
+              eller production).
+            </p>
+          </div>
+        </details>
+
+        <!-- NODE_ENV og teamwork -->
+        <details class="mb-6">
+          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+            <span class="before:content-['\1F91D'] before:mr-2"></span>
+            3. Hvordan NODE_ENV hjælper i gruppeprojekter og fremtidige opgaver
+          </summary>
+          <div class="mt-4 text-lg leading-relaxed text-gray-700">
+            <p>
+              I gruppeprojekter eller større teams sikrer brugen af NODE_ENV, at alle arbejder under
+              de samme betingelser og reducerer risikoen for fejl i produktionen.
+            </p>
+
+            <strong>Best practices:</strong>
+            <ul class="pl-6 list-disc">
+              <li>
+                Del konfigurationsfiler via Git, men ekskluder følsomme data ved at bruge
+                <code>.env</code>-filer.
+              </li>
+              <li>Definer en standard <code>NODE_ENV=production</code> i produktionsmiljøer.</li>
+              <li>
+                Brug værktøjer som Docker eller CI/CD-pipelines til automatisk at sætte miljøer op.
+              </li>
+            </ul>
+
+            <p>
+              <strong>Eksempel på brug med Git:</strong>
+            </p>
+            <pre class="p-4 mb-4 text-sm bg-gray-800 rounded text-gray-50">
+<span class="text-green-400">// Tilføj en .env-fil</span>
+NODE_ENV=development
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=secret
+
+<span class="text-green-400">// Tilføj .env til .gitignore</span>
+.env
+      </pre>
+            <p>
+              <strong>Billedsprog:</strong> Tænk på NODE_ENV og .env som en "manual" og "hemmelige
+              noter", der hjælper teamet med at holde styr på applikationens adfærd.
+            </p>
+          </div>
+        </details>
+
+        <!-- NODE_ENV som antipattern -->
+        <details class="mb-6">
+          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+            <span class="before:content-['\1F6AB'] before:mr-2"></span>
+            4. Hvorfor kan NODE_ENV være en udfordring?
+          </summary>
+          <div class="mt-4 text-lg leading-relaxed text-gray-700">
+            <p>
+              Selvom NODE_ENV er nyttigt, kan det føre til problemer, hvis det bruges forkert. For
+              eksempel:
+            </p>
+            <ul class="pl-6 list-disc">
+              <li>
+                Forskellige opførsel i production og staging kan føre til uforudsigelige fejl.
+              </li>
+              <li>Hardcoding af NODE_ENV-logik i kode kan gøre test og debugging vanskelig.</li>
+            </ul>
+            <p>
+              <strong>Eksempel på antipattern:</strong>
+            </p>
+            <pre class="p-4 mb-4 text-sm bg-gray-800 rounded text-gray-50">
+<span class="text-green-400">// Hardcoding af miljølogik</span>
+if (process.env.NODE_ENV === "development") {
+  console.log("Dette kører kun i udviklingsmiljø!");
+}
+      </pre>
+            <p>
+              <strong>Løsning:</strong>
+              Brug et ensartet miljø som <code>production</code>, og skift kun adfærd via
+              konfigurationsfiler.
+            </p>
+            <p>
+              <strong>Billedsprog:</strong> Tænk på det som at have forskellige opskrifter til samme
+              ret, men kun én af dem er korrekt – de andre kan føre til fejl.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <!-- //TODO - Node.js vs. Browsere -->
+      <section class="p-6 bg-gray-100 rounded-lg shadow">
+        <h2 class="mb-4 text-3xl font-bold text-accent">Node.js vs. Browsere</h2>
+        <p class="mb-4 text-lg leading-relaxed">
+          Her er de vigtigste forskelle mellem JavaScript i Node.js og i browsere:
+        </p>
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr>
+              <th class="px-4 py-2 bg-gray-200">Egenskab</th>
+              <th class="px-4 py-2 bg-gray-200">Node.js</th>
+              <th class="px-4 py-2 bg-gray-200">Browsere</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-4 py-2">DOM-manipulation</td>
+              <td class="px-4 py-2">Ingen</td>
+              <td class="px-4 py-2">Ja</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2">Filhåndtering</td>
+              <td class="px-4 py-2">Ja</td>
+              <td class="px-4 py-2">Begrænset</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2">Asynkronitet</td>
+              <td class="px-4 py-2">Event-loop</td>
+              <td class="px-4 py-2">Promises og callbacks</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- //TODO - Fordele og Ulemper ved Node.js -->
+      <section class="p-6 bg-gray-100 rounded-lg shadow">
+        <h2 class="mb-4 text-3xl font-bold text-accent">Fordele og Ulemper ved Node.js</h2>
+        <div class="grid gap-4 md:grid-cols-2">
+          <div>
+            <h3 class="mb-2 text-xl font-semibold text-green-600">Fordele</h3>
+            <ul class="pl-6 list-disc">
+              <li>Hurtig og effektiv.</li>
+              <li>Stor community-support og mange NPM-pakker.</li>
+              <li>Brug af samme sprog til backend og frontend.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="mb-2 text-xl font-semibold text-red-600">Ulemper</h3>
+            <ul class="pl-6 list-disc">
+              <li>Ikke velegnet til CPU-tunge opgaver.</li>
+              <li>Kan være komplekst for nybegyndere.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- //TODO - Tilføj dine links her som listeelementer -->
+      <section class="py-8 bg-gray-100 dark:bg-gray-800">
+        <div class="container px-4 mx-auto">
+          <h2 class="mb-4 text-2xl font-semibold text-gray-800 dark:text-gray-200">Referencer</h2>
+          <ul class="space-y-2">
+            <!-- Tilføj dine links her som listeelementer -->
+            <li>
+              <a
+                href="https://medium.com/bursa-bili%C5%9Fim-toplulu%C4%9Fu/introduction-to-the-world-wide-web-%EF%B8%8F-696caa5b6716"
+                target="_blank"
+                class="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                Link 1 - web og http machanics
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://medium.com/bursa-bili%C5%9Fim-toplulu%C4%9Fu/speaking-the-language-of-the-internet-http-%EF%B8%8F-bb909dcf1dfa"
+                target="_blank"
+                class="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                Link 2 - web - server - http
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://codeburst.io/the-only-nodejs-introduction-youll-ever-need-d969a47ef219"
+                target="_blank"
+                class="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                Link 3 - mere web http
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="py-4 text-center text-white bg-accent">
+      <p>Serveren kører på <strong>Node.js</strong>!</p>
+    </footer>
+  </body>
 </html>

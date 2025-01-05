@@ -1,43 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Canvas</title>
-		<link href="/dist/styles.css" rel="stylesheet" />
-		<link href="/dist/styles.css" rel="stylesheet" />
-		<script src="/src/js/pages/opg-2_canvas.js" defer></script>
-	</head>
-	<body>
-		<canvas id="staticDrawing" width="999" height="600"></canvas>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas</title>
+    <link href="/dist/styles.css" rel="stylesheet" />
+    <!-- Eksterne scripts -->
+    <script src="/src/js/loadComponents.js" defer></script>
+    <script src="/src/js/activeLinks.js" defer></script>
+    <script src="/src/js/pages/opg-2_canvas.js" defer></script>
+  </head>
+  <body>
+    <header id="header"></header>
+    <main>
+      <canvas id="staticDrawing" width="999" height="600"></canvas>
 
-		<canvas id="animatetClock" width="150" height="150"></canvas>
+      <canvas id="animatetClock" width="150" height="150"></canvas>
 
-		<div class="editor flex h-screen text-offwhite pt-2 bg-bgui">
-			<div class="toolbar bg-bgui" style="width: 12.5rem">
-				<div class="toolbar-item p-4 text-xs flex-wrap">
-					<input type="file" id="imageFileInput" />
-				</div>
-				<div class="toolbar-item p-4">
-					<label class="tool-label block mb-1 text-sm" for="brightness">Brightness</label>
-					<input class="tool-input" type="range" id="brightness" min="0" max="200" />
-				</div>
-				<div class="toolbar-item p-4">
-					<label class="tool-label block mb-1 text-sm" for="saturation">Saturation</label>
-					<input class="tool-input" type="range" id="saturation" min="0" max="200" />
-				</div>
-				<div class="toolbar-item p-4">
-					<label class="tool-label block mb-1 text-sm" for="blur">Blur</label>
-					<input class="tool-input" type="range" id="blur" min="0" max="25" />
-				</div>
-				<div class="toolbar-item p-4">
-					<label class="tool-label block mb-1 text-sm" for="inversion">Inversion</label>
-					<input class="tool-input" type="range" id="inversion" min="0" max="100" />
-				</div>
-			</div>
-			<div class="image-area flex-grow p-5 bg-bgdarkmode">
-				<canvas id="billedbehandling" height="100%" width="100%"></canvas>
-			</div>
-		</div>
-	</body>
+      <div class="flex h-screen pt-2 editor text-offwhite bg-bgui">
+        <div class="toolbar bg-bgui" style="width: 12.5rem">
+          <div class="flex-wrap p-4 text-xs toolbar-item">
+            <input type="file" id="imageFileInput" />
+          </div>
+          <div class="p-4 toolbar-item">
+            <label class="block mb-1 text-sm tool-label" for="brightness">Brightness</label>
+            <input class="tool-input" type="range" id="brightness" min="0" max="200" />
+          </div>
+          <div class="p-4 toolbar-item">
+            <label class="block mb-1 text-sm tool-label" for="saturation">Saturation</label>
+            <input class="tool-input" type="range" id="saturation" min="0" max="200" />
+          </div>
+          <div class="p-4 toolbar-item">
+            <label class="block mb-1 text-sm tool-label" for="blur">Blur</label>
+            <input class="tool-input" type="range" id="blur" min="0" max="25" />
+          </div>
+          <div class="p-4 toolbar-item">
+            <label class="block mb-1 text-sm tool-label" for="inversion">Inversion</label>
+            <input class="tool-input" type="range" id="inversion" min="0" max="100" />
+          </div>
+        </div>
+        <div class="flex-grow p-5 image-area bg-bgdarkmode">
+          <canvas id="billedbehandling" height="100%" width="100%"></canvas>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="py-4 text-center text-white bg-accent">
+      <p>Serveren kører på <strong>Node.js</strong>!</p>
+    </footer>
+  </body>
 </html>
