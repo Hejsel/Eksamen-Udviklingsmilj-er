@@ -15,10 +15,11 @@
     <header id="header"></header>
 
     <main class="container">
+      <!-- //TODO - HERO Section -->
       <div id="carousel-container" class="relative overflow-hidden rounded-lg">
-        <!-- Carousel-sektioner -->
+        <!-- //TODO - Carousel-sektioner -->
         <div id="carousel-sections" class="flex w-full transition-transform duration-500">
-          <!-- Slide 1 -->
+          <!-- //TODO - Slide 1 -->
           <section
             id="what-is-git"
             class="flex-shrink-0 w-full py-12 text-white bg-gradient-to-r from-teal-500 to-teal-700"
@@ -63,7 +64,7 @@
             </div>
           </section>
 
-          <!-- Slide 2 -->
+          <!-- //TODO - Slide 2 -->
           <section id="snapshots-vs-differences" class="flex-shrink-0 w-full py-12 bg-white">
             <div class="container mx-auto text-center">
               <h3 class="text-3xl font-bold">Snapshots vs. Differences</h3>
@@ -101,7 +102,7 @@
             </div>
           </section>
 
-          <!-- Slide 3 -->
+          <!-- //TODO - Slide 3 -->
           <section id="centralized-vs-distributed" class="flex-shrink-0 w-full py-12 bg-gray-100">
             <div class="container mx-auto text-center">
               <h3 class="text-3xl font-bold">Centraliseret vs. Distribueret Versionsstyring</h3>
@@ -139,7 +140,7 @@
             </div>
           </section>
 
-          <!-- Slide 4 -->
+          <!-- //TODO Slide 4 -->
           <section id="three-states" class="flex-shrink-0 w-full py-12 bg-teal-50">
             <div class="container mx-auto text-center">
               <h3 class="text-3xl font-bold text-teal-700">De Tre Tilstande i Git</h3>
@@ -187,7 +188,7 @@
           </section>
         </div>
 
-        <!-- Navigationsknapper -->
+        <!-- //TODO - Navigationsknapper -->
         <button
           id="prev-btn"
           class="absolute left-0 px-4 py-2 text-white transform -translate-y-1/2 bg-teal-600 rounded-l top-1/2"
@@ -202,6 +203,7 @@
         </button>
       </div>
 
+      <!-- //TODO - script for hero sectionen -->
       <script>
         document.addEventListener("DOMContentLoaded", () => {
           const sections = document.getElementById("carousel-sections");
@@ -227,6 +229,7 @@
         });
       </script>
 
+      <!-- //TODO - GIT Guide Banner -->
       <div class="py-6 text-white bg-accent">
         <div class="container px-4 mx-auto text-center">
           <h1 class="text-4xl font-bold">Git Cheat Sheet</h1>
@@ -497,7 +500,7 @@ git status
           </div>
           <!-- Plads til billede -->
           <div class="mt-6 md:mt-0 md:w-1/3">
-            <img
+            1<img
               src="/src/assets/images/git/git-be5-add-status.png"
               alt="Illustration af Git-staging"
               class="w-full rounded shadow cursor-pointer"
@@ -582,11 +585,17 @@ git log
 
           <!-- Plads til billede -->
           <div class="mt-6 md:mt-0 md:w-1/3">
-            <img
+            1<img
               src="/src/assets/images/git/git-be6-commit.png"
               alt="Illustration af Git-staging"
               class="w-full rounded shadow cursor-pointer"
               onclick="openModal('/src/assets/images/git/git-be6-commit.png')"
+            />2
+            <img
+              src="/src/assets/images/git/git-log.png"
+              alt="Illustration af Git-staging"
+              class="w-full rounded shadow cursor-pointer"
+              onclick="openModal('/src/assets/images/git/git-log.png')"
             />
           </div>
         </div>
@@ -684,7 +693,7 @@ git status
 
           <!-- Plads til billede -->
           <div class="mt-6 md:mt-0 md:w-1/3">
-            <img
+            1<img
               src="/src/assets/images/git/git-be7-status-push-status.png"
               alt="Illustration af Git-staging"
               class="w-full rounded shadow cursor-pointer"
@@ -797,9 +806,9 @@ git status
       </div>
       <!-- SLUT -->
 
-      <!-- Section: Branching og Merging -->
+      <!-- //TODO - Section: Branching og Merging -->
       <section id="branching-merging" class="p-6 bg-white rounded-lg shadow-md">
-        <h2 class="text-2xl font-semibold text-blue-600">5. Branching og Merging</h2>
+        <h2 class="text-2xl font-semibold text-blue-600">7. Branching og Merging</h2>
         <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
           <!-- Tekst og fold-ud-kasser -->
           <div class="flex-1">
@@ -893,18 +902,32 @@ git branch -d [branch-navn]
 
           <!-- Plads til billede -->
           <div class="mt-6 md:mt-0 md:w-1/3">
-            <img
-              src="/src/assets/images/branching-merging.png"
-              alt="Illustration af Branching og Merging"
-              class="w-full rounded shadow"
+            1<img
+              src="/src/assets/images/git/git-merge-branch-graf.png"
+              alt="Illustration af Git-staging"
+              class="w-full rounded shadow cursor-pointer"
+              onclick="openModal('/src/assets/images/git/git-merge-branch-graf.png')"
             />
           </div>
         </div>
       </section>
+      <!-- Modal -->
+      <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75">
+        <div class="flex items-center justify-center w-full h-full">
+          <img id="modal-img" src="" alt="Stort billede" class="max-w-full max-h-full" />
+        </div>
+        <button
+          class="absolute px-3 py-2 text-white bg-red-600 rounded top-4 right-4"
+          onclick="closeModal()"
+        >
+          Luk
+        </button>
+      </div>
+      <!-- SLUT -->
 
-      <!-- Section: Remote Repositories -->
+      <!-- //TODO - Section: Remote Repositories -->
       <section id="remote-repositories" class="p-6 bg-white rounded-lg shadow-md">
-        <h2 class="text-2xl font-semibold text-blue-600">6. Remote Repositories</h2>
+        <h2 class="text-2xl font-semibold text-blue-600">8. Remote Repositories</h2>
         <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
           <!-- Tekst og fold-ud-kasser -->
           <div class="flex-1">
@@ -979,18 +1002,38 @@ git pull origin main
 
           <!-- Plads til billede -->
           <div class="mt-6 md:mt-0 md:w-1/3">
-            <img
-              src="/src/assets/images/remote-repositories.png"
-              alt="Illustration af Remote Repositories"
-              class="w-full rounded shadow"
+            1<img
+              src="/src/assets/images/git/git-remote-pull.png"
+              alt="Illustration af Git-staging"
+              class="w-full rounded shadow cursor-pointer"
+              onclick="openModal('/src/assets/images/git/git-remote-pull.png')"
+            />
+            2<img
+              src="/src/assets/images/git/git-remote-pussie.png"
+              alt="Illustration af Git-staging"
+              class="w-full rounded shadow cursor-pointer"
+              onclick="openModal('/src/assets/images/git/git-remote-pussie.png')"
             />
           </div>
         </div>
       </section>
+      <!-- Modal -->
+      <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75">
+        <div class="flex items-center justify-center w-full h-full">
+          <img id="modal-img" src="" alt="Stort billede" class="max-w-full max-h-full" />
+        </div>
+        <button
+          class="absolute px-3 py-2 text-white bg-red-600 rounded top-4 right-4"
+          onclick="closeModal()"
+        >
+          Luk
+        </button>
+      </div>
+      <!-- SLUT -->
 
-      <!-- Section: Konflikthåndtering -->
+      <!-- //TODO - Section: Konflikthåndtering -->
       <section id="conflicts" class="p-6 bg-white rounded-lg shadow-md">
-        <h2 class="text-2xl font-semibold text-blue-600">7. Konflikthåndtering</h2>
+        <h2 class="text-2xl font-semibold text-blue-600">9. Konflikthåndtering</h2>
         <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
           <!-- Tekst og fold-ud-kasser -->
           <div class="flex-1">
@@ -1026,21 +1069,40 @@ git commit -m "Konflikt løst"
               </details>
             </div>
           </div>
-
           <!-- Plads til billede -->
           <div class="mt-6 md:mt-0 md:w-1/3">
-            <img
-              src="/src/assets/images/conflicts.png"
-              alt="Illustration af Konflikthåndtering"
-              class="w-full rounded shadow"
+            1<img
+              src="/src/assets/images/git/git-merge-branch.png"
+              alt="Illustration af Git-staging"
+              class="w-full rounded shadow cursor-pointer"
+              onclick="openModal('/src/assets/images/git/git-merge-branch.png')"
+            />
+            2<img
+              src="/src/assets/images/git/git-merging-1.png"
+              alt="Illustration af Git-staging"
+              class="w-full rounded shadow cursor-pointer"
+              onclick="openModal('/src/assets/images/git/git-merging-1.png')"
             />
           </div>
         </div>
       </section>
+      <!-- Modal -->
+      <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75">
+        <div class="flex items-center justify-center w-full h-full">
+          <img id="modal-img" src="" alt="Stort billede" class="max-w-full max-h-full" />
+        </div>
+        <button
+          class="absolute px-3 py-2 text-white bg-red-600 rounded top-4 right-4"
+          onclick="closeModal()"
+        >
+          Luk
+        </button>
+      </div>
+      <!-- SLUT -->
 
-      <!-- Section: Ignorering af Filer -->
+      <!-- //TODO - Section: Ignorering af Filer -->
       <section id="ignoring-files" class="p-6 bg-white rounded-lg shadow-md">
-        <h2 class="text-2xl font-semibold text-blue-600">8. Ignorering af Filer</h2>
+        <h2 class="text-2xl font-semibold text-blue-600">10. Ignorering af Filer</h2>
         <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
           <!-- Tekst og fold-ud-kasser -->
           <div class="flex-1">
@@ -1081,18 +1143,32 @@ logs/
 
           <!-- Plads til billede -->
           <div class="mt-6 md:mt-0 md:w-1/3">
-            <img
-              src="/src/assets/images/ignoring-files.png"
-              alt="Illustration af Ignorering af Filer"
-              class="w-full rounded shadow"
+            1<img
+              src="/src/assets/images/git/git-ignore.png"
+              alt="Illustration af Git-staging"
+              class="w-full rounded shadow cursor-pointer"
+              onclick="openModal('/src/assets/images/git/git-ignore.png')"
             />
           </div>
         </div>
       </section>
+      <!-- Modal -->
+      <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75">
+        <div class="flex items-center justify-center w-full h-full">
+          <img id="modal-img" src="" alt="Stort billede" class="max-w-full max-h-full" />
+        </div>
+        <button
+          class="absolute px-3 py-2 text-white bg-red-600 rounded top-4 right-4"
+          onclick="closeModal()"
+        >
+          Luk
+        </button>
+      </div>
+      <!-- SLUT -->
 
-      <!-- Section: Git Commands -->
+      <!-- //TODO - Section: (BONUS) Git Commands -->
       <section id="git-commands" class="p-6 bg-white rounded-lg shadow-md">
-        <h2 class="text-2xl font-semibold text-blue-600">4. Git Kommandoer</h2>
+        <h2 class="text-2xl font-semibold text-blue-600">12. (BONUS) Git Kommandoer</h2>
         <div class="flex flex-col items-start mt-4 md:flex-row md:space-x-6">
           <!-- Tekst og fold-ud-kasser -->
           <div class="flex-1">
@@ -1190,14 +1266,28 @@ git commit -m "[beskrivende besked]"
 
           <!-- Plads til billede -->
           <div class="mt-6 md:mt-0 md:w-1/3">
-            <img
-              src="/src/assets/images/git-commands.png"
-              alt="Illustration af Git kommandoer"
-              class="w-full rounded shadow"
+            1<img
+              src="/src/assets/images/git/git-diff.png"
+              alt="Illustration af Git-staging"
+              class="w-full rounded shadow cursor-pointer"
+              onclick="openModal('/src/assets/images/git/git-diff.png')"
             />
           </div>
         </div>
       </section>
+      <!-- Modal -->
+      <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75">
+        <div class="flex items-center justify-center w-full h-full">
+          <img id="modal-img" src="" alt="Stort billede" class="max-w-full max-h-full" />
+        </div>
+        <button
+          class="absolute px-3 py-2 text-white bg-red-600 rounded top-4 right-4"
+          onclick="closeModal()"
+        >
+          Luk
+        </button>
+      </div>
+      <!-- SLUT -->
     </main>
 
     <!-- FOOTER -->
