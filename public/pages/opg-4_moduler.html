@@ -30,6 +30,498 @@
           bruge uddrag fra egne projekter og opgaver som eksempler i din gennemgang.
         </p>
       </div>
+
+      <section>
+        <div>
+          <h2>Formålet med moduler i softwareudvikling:</h2>
+          <p>
+            Moduler i softwareudvikling bruges til at organisere, strukturere og genbruge kode. De
+            gør det lettere at udvikle, vedligeholde og udvide applikationer ved at dele
+            funktionalitet op i mindre, uafhængige komponenter. Dette forbedrer koden ved at gøre
+            den mere læselig og testbar, samtidig med at man kan undgå gentagelser (DRY-princip).
+          </p>
+        </div>
+      </section>
+
+      <section class="px-6 py-8 bg-gray-100 rounded-lg shadow-lg">
+        <h2 class="mb-4 text-2xl font-bold text-gray-800">
+          Formålet med moduler i softwareudvikling
+        </h2>
+        <p class="mb-4 text-gray-700">
+          Moduler bruges til at opdele koden i mindre, selvstændige dele, der kan genbruges, testes
+          og vedligeholdes uafhængigt af hinanden. De hjælper med at holde kodebasen organiseret og
+          reducerer kompleksiteten i store projekter. Formålet med moduler er at:
+        </p>
+        <ul class="space-y-2 text-gray-700 list-disc list-inside">
+          <li>
+            <span class="font-semibold">Genbruge kode:</span> Undgå gentagelser (DRY-princippet).
+          </li>
+          <li>
+            <span class="font-semibold">Forbedre læsbarhed:</span> Opdele funktionalitet i
+            meningsfulde dele.
+          </li>
+          <li>
+            <span class="font-semibold">Forenkle vedligeholdelse:</span> Ændringer i ét modul
+            påvirker ikke resten af systemet.
+          </li>
+          <li>
+            <span class="font-semibold">Understøtte teamwork:</span> Udviklere kan arbejde på
+            separate moduler uden konflikter.
+          </li>
+        </ul>
+      </section>
+
+      <section class="p-8 rounded-lg shadow-lg bg-gray-50">
+        <h2 class="pb-2 mb-8 text-3xl font-bold text-blue-600 border-b-4 border-blue-300">
+          CommonJS: Mappestruktur og Forklaring
+        </h2>
+
+        <!-- Mappestruktur -->
+        <div class="mb-6">
+          <h3 class="text-2xl font-semibold text-gray-800">Mappestruktur</h3>
+          <pre class="p-4 text-sm bg-gray-800 rounded-lg text-gray-50">
+project/
+├── server.cjs
+├── src/
+│   ├── app.cjs
+│   ├── modules/
+│       ├── aggregator.cjs
+│       ├── common-js-modules/
+│           ├── mimeTypes.cjs
+│           ├── pathConstructor.cjs
+    </pre
+          >
+          <p class="mt-4 text-gray-700">
+            Denne mappestruktur organiserer CommonJS-moduler. Roden indeholder
+            <code>server.cjs</code>, som fungerer som hovedindgangspunkt for serveren. Under
+            <code>src/</code> findes <code>app.cjs</code>, der definerer app-logikken, og
+            <code>modules/</code>, som indeholder alle modulære komponenter:
+          </p>
+          <ul class="pl-6 mt-2 space-y-2 list-disc">
+            <li>
+              <code>aggregator.cjs</code>: Samler og eksporterer funktioner fra underliggende
+              moduler.
+            </li>
+            <li>
+              <code>common-js-modules/</code>: Indeholder modulopdelte filer som
+              <code>mimeTypes.cjs</code> og <code>pathConstructor.cjs</code>.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Import af moduler -->
+        <details class="mb-6">
+          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+            <span class="before:content-['\1F4D6'] before:mr-2"></span>
+            Import af Moduler med CommonJS
+          </summary>
+          <div class="mt-4 text-lg text-gray-700">
+            <pre class="p-4 text-sm bg-gray-800 rounded-lg text-gray-50">
+<span class="text-green-400">// Importer moduler</span>
+const aggregator = require("./src/modules/aggregator.cjs");
+const mimeTypes = require("./src/modules/common-js-modules/mimeTypes.cjs");
+const pathConstructor = require("./src/modules/common-js-modules/pathConstructor.cjs");
+      </pre>
+            <p>
+              <strong>Hvad sker der?</strong> Vi bruger <code>require</code> til at importere
+              moduler. Disse moduler samler funktionaliteten fra de mindre komponenter i
+              <code>common-js-modules</code>.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section class="p-8 rounded-lg shadow-lg bg-gray-50">
+        <h2 class="pb-2 mb-8 text-3xl font-bold text-green-600 border-b-4 border-green-300">
+          EcmaScript-moduler: Moderne Modulopbygning
+        </h2>
+
+        <!-- Mappestruktur -->
+        <div class="mb-6">
+          <h3 class="text-2xl font-semibold text-gray-800">Mappestruktur</h3>
+          <pre class="p-4 text-sm bg-gray-800 rounded-lg text-gray-50">
+project/
+├── server.mjs
+├── src/
+│   ├── app.mjs
+│   ├── modules/
+│       ├── aggregator.mjs
+│       ├── es-modules/
+│           ├── mimeTypes.mjs
+│           ├── pathConstructor.mjs
+    </pre
+          >
+          <p class="mt-4 text-gray-700">
+            Denne mappestruktur følger EcmaScript-modulstandarden. Roden indeholder
+            <code>server.mjs</code>, som fungerer som hovedindgangspunkt for serveren. Under
+            <code>src/</code> findes <code>app.mjs</code>, der definerer app-logikken, og
+            <code>modules/</code>, som indeholder modulære komponenter:
+          </p>
+          <ul class="pl-6 mt-2 space-y-2 list-disc">
+            <li>
+              <code>aggregator.mjs</code>: Samler og eksporterer funktioner fra underliggende
+              moduler.
+            </li>
+            <li>
+              <code>es-modules/</code>: Indeholder modulopdelte filer som
+              <code>mimeTypes.mjs</code> og <code>pathConstructor.mjs</code>.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Import af moduler -->
+        <details class="mb-6">
+          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
+            <span class="before:content-['\1F4D6'] before:mr-2"></span>
+            Import af Moduler med ESM
+          </summary>
+          <div class="mt-4 text-lg text-gray-700">
+            <pre class="p-4 text-sm bg-gray-800 rounded-lg text-gray-50">
+<span class="text-green-400">// Importer moduler</span>
+import { mimeTypes } from "./src/modules/es-modules/mimeTypes.mjs";
+import { pathConstructor } from "./src/modules/es-modules/pathConstructor.mjs";
+import aggregator from "./src/modules/aggregator.mjs";
+      </pre>
+            <p>
+              <strong>Hvad sker der?</strong> Vi bruger <code>import</code> til at hente moduler.
+              Disse moduler bruger navngivne eksportelementer fra <code>es-modules</code>.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section class="px-6 py-8 space-y-6 rounded-lg shadow-lg bg-gray-50">
+        <!-- Forskelle mellem ESM og CJS -->
+        <h2 class="text-2xl font-bold text-gray-800">Forskelle mellem ESM og CJS</h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
+            <thead>
+              <tr class="text-gray-700 bg-gray-200">
+                <th class="px-4 py-2 text-left border-b border-gray-300">Funktion</th>
+                <th class="px-4 py-2 text-left border-b border-gray-300">CommonJS (CJS)</th>
+                <th class="px-4 py-2 text-left border-b border-gray-300">
+                  EcmaScript-moduler (ESM)
+                </th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-600">
+              <tr>
+                <td class="px-4 py-2 border-b border-gray-300">Syntaks</td>
+                <td class="px-4 py-2 border-b border-gray-300">require og module.exports</td>
+                <td class="px-4 py-2 border-b border-gray-300">import og export</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-b border-gray-300">Anvendelse</td>
+                <td class="px-4 py-2 border-b border-gray-300">Node.js</td>
+                <td class="px-4 py-2 border-b border-gray-300">Browsere og Node.js</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-b border-gray-300">Dynamisk import</td>
+                <td class="px-4 py-2 border-b border-gray-300">Muligt</td>
+                <td class="px-4 py-2 border-b border-gray-300">Begrænset (import())</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-b border-gray-300">Asynkronitet</td>
+                <td class="px-4 py-2 border-b border-gray-300">Synkront</td>
+                <td class="px-4 py-2 border-b border-gray-300">Asynkront</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2">Tree-shaking</td>
+                <td class="px-4 py-2">Ikke understøttet</td>
+                <td class="px-4 py-2">Understøttet</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Omdøbning af modulelementer -->
+        <h3 class="text-xl font-semibold text-gray-800">Omdøbning af modulelementer</h3>
+        <p class="text-gray-700">
+          Når man importerer moduler, kan man omdøbe elementer for at gøre dem mere intuitive eller
+          undgå konflikter.
+        </p>
+        <div class="p-4 bg-gray-100 rounded-lg shadow-inner">
+          <h4 class="font-semibold text-gray-800">ESM:</h4>
+          <pre class="p-4 overflow-x-auto text-sm bg-gray-200 rounded">
+import &#123; mimeTypes as typer &#125; from './common-js-modules/mimeTypes.mjs';
+console.log(typer['html']); // 'text/html'
+    </pre
+          >
+          <h4 class="mt-4 font-semibold text-gray-800">CJS:</h4>
+          <pre class="p-4 overflow-x-auto text-sm bg-gray-200 rounded">
+const typer = require('./common-js-modules/mimeTypes.cjs');
+console.log(typer['html']); // 'text/html'
+    </pre
+          >
+        </div>
+
+        <!-- Fordele ved din modulopbygning -->
+        <h3 class="text-xl font-semibold text-gray-800">Fordele ved din modulopbygning</h3>
+        <ul class="space-y-2 text-gray-700 list-disc list-inside">
+          <li>
+            <span class="font-semibold">Modularitet:</span> Funktionalitet er opdelt i selvstændige
+            dele som <code>pathConstructor</code> og <code>mimeTypes</code>, hvilket gør dem nemme
+            at genbruge og teste.
+          </li>
+          <li>
+            <span class="font-semibold">Fleksibilitet:</span> Projektet understøtter både CommonJS
+            og ESM, så du kan skifte mellem standarder afhængigt af behov.
+          </li>
+          <li>
+            <span class="font-semibold">Skalerbarhed:</span> Nye MIME-typer eller
+            stihåndteringsfunktioner kan let tilføjes uden at påvirke eksisterende funktionalitet.
+          </li>
+          <li>
+            <span class="font-semibold">Robusthed:</span> Fejlhåndtering er implementeret i
+            <code>pathConstructor</code> og serverfilerne, hvilket sikrer stabil drift.
+          </li>
+        </ul>
+
+        <!-- Samlet konklusion -->
+        <h3 class="text-xl font-semibold text-gray-800">Samlet konklusion</h3>
+        <p class="text-gray-700">
+          Din modulopbygning er et fremragende eksempel på, hvordan man strukturerer kode effektivt
+          i JavaScript. Med brugen af både CommonJS og ESM demonstrerer projektet evnen til at
+          tilpasse sig forskellige miljøer. Dette er en solid løsning til både små og store
+          projekter.
+        </p>
+      </section>
+
+      <section class="container px-6 py-8 space-y-6 rounded-lg shadow-lg bg-gray-50">
+        <!-- Overskrift -->
+        <h2 class="text-2xl font-bold text-gray-800">Forskelle mellem ESM og CJS</h2>
+
+        <!-- Foldbar tabel -->
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
+            <thead>
+              <tr class="text-gray-700 bg-gray-200">
+                <th class="px-4 py-2 text-left border-b border-gray-300">Funktion</th>
+                <th class="px-4 py-2 text-left border-b border-gray-300">CommonJS (CJS)</th>
+                <th class="px-4 py-2 text-left border-b border-gray-300">
+                  EcmaScript-moduler (ESM)
+                </th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-600">
+              <!-- Row 1 -->
+              <tr class="cursor-pointer" onclick="toggleRow(1)">
+                <td class="px-4 py-2 border-b border-gray-300">Syntaks</td>
+                <td class="px-4 py-2 border-b border-gray-300">require og module.exports</td>
+                <td class="px-4 py-2 border-b border-gray-300">import og export</td>
+              </tr>
+              <tr id="row-1" class="hidden">
+                <td
+                  colspan="3"
+                  class="px-4 py-2 text-gray-700 bg-gray-100 border-b border-gray-300"
+                >
+                  <p>
+                    CommonJS bruger `require` og `module.exports` til at håndtere moduler, mens ESM
+                    bruger `import` og `export`, som er mere moderne og understøtter tree-shaking.
+                  </p>
+                </td>
+              </tr>
+
+              <!-- Row 2 -->
+              <tr class="cursor-pointer" onclick="toggleRow(2)">
+                <td class="px-4 py-2 border-b border-gray-300">Anvendelse</td>
+                <td class="px-4 py-2 border-b border-gray-300">Node.js</td>
+                <td class="px-4 py-2 border-b border-gray-300">Browsere og Node.js</td>
+              </tr>
+              <tr id="row-2" class="hidden">
+                <td
+                  colspan="3"
+                  class="px-4 py-2 text-gray-700 bg-gray-100 border-b border-gray-300"
+                >
+                  <p>
+                    CommonJS blev designet til Node.js-miljøet, mens ESM fungerer i både browsere og
+                    moderne versioner af Node.js.
+                  </p>
+                </td>
+              </tr>
+
+              <!-- Row 3 -->
+              <tr class="cursor-pointer" onclick="toggleRow(3)">
+                <td class="px-4 py-2 border-b border-gray-300">Dynamisk import</td>
+                <td class="px-4 py-2 border-b border-gray-300">Muligt</td>
+                <td class="px-4 py-2 border-b border-gray-300">Begrænset (import())</td>
+              </tr>
+              <tr id="row-3" class="hidden">
+                <td
+                  colspan="3"
+                  class="px-4 py-2 text-gray-700 bg-gray-100 border-b border-gray-300"
+                >
+                  <p>
+                    CommonJS tillader dynamisk import hvor som helst i koden med `require`. ESM
+                    kræver brug af `import()`, som er mere begrænset.
+                  </p>
+                </td>
+              </tr>
+
+              <!-- Row 4 -->
+              <tr class="cursor-pointer" onclick="toggleRow(4)">
+                <td class="px-4 py-2 border-b border-gray-300">Asynkronitet</td>
+                <td class="px-4 py-2 border-b border-gray-300">Synkront</td>
+                <td class="px-4 py-2 border-b border-gray-300">Asynkront</td>
+              </tr>
+              <tr id="row-4" class="hidden">
+                <td
+                  colspan="3"
+                  class="px-4 py-2 text-gray-700 bg-gray-100 border-b border-gray-300"
+                >
+                  <p>
+                    CommonJS er synkront, hvilket betyder, at moduler indlæses sekventielt. ESM er
+                    asynkront, hvilket gør det bedre egnet til moderne applikationer.
+                  </p>
+                </td>
+              </tr>
+
+              <!-- Row 5 -->
+              <tr class="cursor-pointer" onclick="toggleRow(5)">
+                <td class="px-4 py-2">Tree-shaking</td>
+                <td class="px-4 py-2">Ikke understøttet</td>
+                <td class="px-4 py-2">Understøttet</td>
+              </tr>
+              <tr id="row-5" class="hidden">
+                <td
+                  colspan="3"
+                  class="px-4 py-2 text-gray-700 bg-gray-100 border-b border-gray-300"
+                >
+                  <p>
+                    ESM understøtter tree-shaking, så kun de moduler, der bruges, inkluderes i det
+                    endelige bundt. Dette reducerer filstørrelsen og forbedrer ydeevnen.
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Beskrivelse af funktionerne -->
+        <div class="pt-6 space-y-8">
+          <h3 class="pb-4 text-2xl font-bold text-gray-800 border-b">
+            Beskrivelse af funktionerne
+          </h3>
+
+          <!-- Syntaks -->
+          <div class="p-6 bg-white border-l-4 border-blue-500 rounded-lg shadow-lg">
+            <h4 class="mb-2 text-xl font-semibold text-blue-600">Syntaks</h4>
+            <p class="text-gray-700">
+              Hvordan moduler importeres og eksporteres i CommonJS og ESM.
+            </p>
+            <ul class="pl-6 mt-4 space-y-2 text-gray-700 list-disc">
+              <li>
+                <span class="font-semibold">CommonJS (CJS):</span> Bruger <code>require</code> til
+                at importere og <code>module.exports</code> til at eksportere moduler. Det er
+                simpelt og velegnet til Node.js.
+              </li>
+              <li>
+                <span class="font-semibold">ESM (EcmaScript-moduler):</span> Bruger
+                <code>import</code> og <code>export</code>, som er mere moderne og understøtter
+                optimering, såsom tree-shaking.
+              </li>
+              <li>
+                <span class="font-semibold">Fagtermer:</span> <code>require</code>: Synkron import i
+                CJS. <code>export/import</code>: Modulopdeling i ESM.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Anvendelse -->
+          <div class="p-6 bg-white border-l-4 border-green-500 rounded-lg shadow-lg">
+            <h4 class="mb-2 text-xl font-semibold text-green-600">Anvendelse</h4>
+            <p class="text-gray-700">
+              Hvilke miljøer (Node.js eller browsere) de to modultyper kan bruges i.
+            </p>
+            <ul class="pl-6 mt-4 space-y-2 text-gray-700 list-disc">
+              <li>
+                <span class="font-semibold">CommonJS:</span> Designet til Node.js og fungerer ikke
+                nativt i browsere uden bundling.
+              </li>
+              <li>
+                <span class="font-semibold">ESM:</span> Understøttes både i moderne browsere og i
+                Node.js.
+              </li>
+              <li>
+                <span class="font-semibold">Fagtermer:</span> <code>miljø</code>: Omhandler hvor
+                JavaScript eksekveres (browser eller server).
+              </li>
+            </ul>
+          </div>
+
+          <!-- Dynamisk import -->
+          <div class="p-6 bg-white border-l-4 border-yellow-500 rounded-lg shadow-lg">
+            <h4 class="mb-2 text-xl font-semibold text-yellow-600">Dynamisk import</h4>
+            <p class="text-gray-700">
+              Evnen til at importere moduler dynamisk, mens programmet kører.
+            </p>
+            <ul class="pl-6 mt-4 space-y-2 text-gray-700 list-disc">
+              <li>
+                <span class="font-semibold">CommonJS:</span> Tillader dynamisk import med
+                <code>require</code>.
+              </li>
+              <li>
+                <span class="font-semibold">ESM:</span> Kræver brug af <code>import()</code>, som
+                returnerer et promise.
+              </li>
+              <li>
+                <span class="font-semibold">Fagtermer:</span> <code>dynamisk import</code>: Import
+                under kørselstid. <code>promise:</code> Et objekt, der repræsenterer en asynkron
+                operation.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Asynkronitet -->
+          <div class="p-6 bg-white border-l-4 border-red-500 rounded-lg shadow-lg">
+            <h4 class="mb-2 text-xl font-semibold text-red-600">Asynkronitet</h4>
+            <p class="text-gray-700">Om modulhåndteringen er synkron (CJS) eller asynkron (ESM).</p>
+            <ul class="pl-6 mt-4 space-y-2 text-gray-700 list-disc">
+              <li>
+                <span class="font-semibold">CommonJS:</span> Arbejder synkront og kan blokere
+                programmet.
+              </li>
+              <li>
+                <span class="font-semibold">ESM:</span> Arbejder asynkront, hvilket gør det bedre
+                til moderne applikationer.
+              </li>
+              <li>
+                <span class="font-semibold">Fagtermer:</span> <code>synkron:</code> Handlinger sker
+                i rækkefølge. <code>asynkron:</code> Handlinger sker parallelt uden blokering.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tree-shaking -->
+          <div class="p-6 bg-white border-l-4 border-purple-500 rounded-lg shadow-lg">
+            <h4 class="mb-2 text-xl font-semibold text-purple-600">Tree-shaking</h4>
+            <p class="text-gray-700">
+              En optimering, hvor ubrugte dele af koden fjernes i ESM, men ikke i CJS.
+            </p>
+            <ul class="pl-6 mt-4 space-y-2 text-gray-700 list-disc">
+              <li>
+                <span class="font-semibold">CommonJS:</span> Understøtter ikke tree-shaking, da hele
+                modulet indlæses.
+              </li>
+              <li>
+                <span class="font-semibold">ESM:</span> Understøtter tree-shaking for at optimere
+                bundling.
+              </li>
+              <li>
+                <span class="font-semibold">Fagtermer:</span> <code>tree-shaking:</code> Fjerner
+                ubrugte eksport-elementer. <code>bundle:</code> Kombinerer flere filer til én.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        function toggleRow(rowId) {
+          const row = document.getElementById(`row-${rowId}`);
+          row.classList.toggle("hidden");
+        }
+      </script>
     </main>
     <!-- Footer -->
     <footer class="py-4 text-center text-white bg-accent">
