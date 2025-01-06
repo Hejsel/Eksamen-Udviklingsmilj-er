@@ -14,247 +14,669 @@
     <header id="header"></header>
 
     <main>
-      <!-- Header -->
-      <div class="p-6 text-white bg-blue-600">
-        <div class="container mx-auto">
-          <h1 class="text-3xl font-bold">Moduler i Softwareudvikling</h1>
-          <p class="mt-2 text-lg">
-            En dybdegående gennemgang af formål, typer og anvendelse af moduler i JavaScript
-          </p>
-        </div>
-        <p>
-          Fortæl generelt om formålet med moduler i softwareudvikling. Beskriv dernæst konkret
-          hvordan moduler opbygges og anvendes i JavaScript. Kom ind på forskellen på CommonJS- og
-          EcmaScript-moduler. Nævn bl.a. mulighederne for at omdøbe modulelementer. Fragmenter af
-          kode til illustration af dine overvejelser skal være en del af præsentationen. Du bør
-          bruge uddrag fra egne projekter og opgaver som eksempler i din gennemgang.
-        </p>
-      </div>
+      <!-- //TODO - HERO banner og agenda + opgavebeskrivelse -->
+      <section class="container px-8 py-16 rounded-lg shadow-lg bg-gray-50">
+        <div
+          class="flex flex-col items-center mx-auto space-y-8 max-w-7xl md:flex-row md:space-y-0 md:space-x-16"
+        >
+          <!-- Venstre kolonne: Tekst -->
+          <div class="md:w-2/3">
+            <!-- Opgavebeskrivelse -->
+            <h1 class="mb-6 text-4xl font-bold text-blue-600">
+              Forståelse og Implementering af Moduler i JavaScript
+            </h1>
+            <p class="mb-6 text-lg leading-relaxed text-gray-700">
+              Moduler er en central del af moderne softwareudvikling. De hjælper med at strukturere
+              og genbruge kode på tværs af projekter. Denne præsentation vil dække:
+            </p>
 
-      <section>
-        <div>
-          <h2>Formålet med moduler i softwareudvikling:</h2>
-          <p>
-            Moduler i softwareudvikling bruges til at organisere, strukturere og genbruge kode. De
-            gør det lettere at udvikle, vedligeholde og udvide applikationer ved at dele
-            funktionalitet op i mindre, uafhængige komponenter. Dette forbedrer koden ved at gøre
-            den mere læselig og testbar, samtidig med at man kan undgå gentagelser (DRY-princip).
-          </p>
+            <!-- Agenda -->
+            <ul class="pl-6 mb-6 space-y-4 text-gray-700 list-disc">
+              <li>
+                <strong>Formål med moduler:</strong> Hvorfor moduler er essentielle i
+                softwareudvikling.
+              </li>
+              <li>
+                <strong>Opbygning og brug:</strong> Hvordan moduler oprettes og anvendes i
+                JavaScript.
+              </li>
+              <li>
+                <strong>CommonJS vs. EcmaScript-moduler:</strong> Forskelle, fordele og ulemper.
+              </li>
+              <li>
+                <strong>Omdøbning:</strong> Sådan omdøbes elementer fra moduler for bedre læsbarhed.
+              </li>
+              <li><strong>Kodeeksempler:</strong> Praktiske eksempler fra egne projekter.</li>
+            </ul>
+
+            <!-- Fold ud-knap -->
+            <details class="p-4 bg-blue-100 rounded-lg shadow">
+              <summary class="text-lg font-semibold text-blue-600 cursor-pointer">
+                Klik her for at læse hele opgavebeskrivelsen
+              </summary>
+              <div class="mt-4 leading-relaxed text-gray-700">
+                <p>
+                  <strong>Moduler</strong><br />
+                  Fortæl generelt om formålet med moduler i softwareudvikling. Beskriv dernæst
+                  konkret hvordan moduler opbygges og anvendes i JavaScript. Kom ind på forskellen
+                  på CommonJS- og EcmaScript-moduler. Nævn bl.a. mulighederne for at omdøbe
+                  modulelementer.
+                </p>
+                <p class="mt-4">
+                  Fragmenter af kode til illustration af dine overvejelser skal være en del af
+                  præsentationen. Du bør bruge uddrag fra egne projekter og opgaver som eksempler i
+                  din gennemgang.
+                </p>
+              </div>
+            </details>
+          </div>
+
+          <!-- Højre kolonne: Billede -->
+          <div class="md:w-1/3">
+            <div
+              class="flex items-center justify-center w-full h-64 bg-blue-100 rounded-lg shadow-lg"
+            >
+              <!-- Pladsholder til billede -->
+
+              <p class="text-2xl font-bold text-blue-700">4. Moduler</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="px-6 py-8 bg-gray-100 rounded-lg shadow-lg">
-        <h2 class="mb-4 text-2xl font-bold text-gray-800">
+      <!-- //TODO - Formålet med sectioner -->
+      <section class="container px-6 py-8 bg-gray-100 rounded-lg shadow-lg">
+        <h2 class="mb-6 text-2xl font-bold text-gray-800">
           Formålet med moduler i softwareudvikling
         </h2>
-        <p class="mb-4 text-gray-700">
+        <p class="mb-6 text-gray-700">
           Moduler bruges til at opdele koden i mindre, selvstændige dele, der kan genbruges, testes
           og vedligeholdes uafhængigt af hinanden. De hjælper med at holde kodebasen organiseret og
           reducerer kompleksiteten i store projekter. Formålet med moduler er at:
         </p>
-        <ul class="space-y-2 text-gray-700 list-disc list-inside">
-          <li>
-            <span class="font-semibold">Genbruge kode:</span> Undgå gentagelser (DRY-princippet).
-          </li>
-          <li>
-            <span class="font-semibold">Forbedre læsbarhed:</span> Opdele funktionalitet i
-            meningsfulde dele.
-          </li>
-          <li>
-            <span class="font-semibold">Forenkle vedligeholdelse:</span> Ændringer i ét modul
-            påvirker ikke resten af systemet.
-          </li>
-          <li>
-            <span class="font-semibold">Understøtte teamwork:</span> Udviklere kan arbejde på
-            separate moduler uden konflikter.
-          </li>
-        </ul>
+
+        <!-- Kasser med formål -->
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <!-- Kasse 1 -->
+          <div class="p-4 bg-white rounded-lg shadow-md">
+            <h3 class="text-lg font-semibold text-blue-600">Genbruge kode</h3>
+            <p class="text-gray-700">
+              Undgå gentagelser (DRY-princippet) ved at dele funktionalitet mellem forskellige dele
+              af applikationen.
+            </p>
+          </div>
+
+          <!-- Kasse 2 -->
+          <div class="p-4 bg-white rounded-lg shadow-md">
+            <h3 class="text-lg font-semibold text-green-600">Forbedre læsbarhed</h3>
+            <p class="text-gray-700">
+              Opdel funktionalitet i meningsfulde dele, så koden bliver lettere at forstå og
+              navigere i.
+            </p>
+          </div>
+
+          <!-- Kasse 3 -->
+          <div class="p-4 bg-white rounded-lg shadow-md">
+            <h3 class="text-lg font-semibold text-orange-600">Forenkle vedligeholdelse</h3>
+            <p class="text-gray-700">
+              Ændringer i ét modul påvirker ikke resten af systemet, hvilket gør fejlrettelse og
+              opdatering nemmere.
+            </p>
+          </div>
+
+          <!-- Kasse 4 -->
+          <div class="p-4 bg-white rounded-lg shadow-md">
+            <h3 class="text-lg font-semibold text-purple-600">Understøtte teamwork</h3>
+            <p class="text-gray-700">
+              Udviklere kan arbejde på separate moduler uden konflikter, hvilket forbedrer
+              samarbejdet i større teams.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- //TODO - Moduler i JS -->
+      <section class="container px-8 py-16 rounded-lg shadow-lg bg-gray-50">
+        <div class="mx-auto space-y-12 max-w-7xl">
+          <!-- Overskrift -->
+          <h2 class="text-4xl font-bold text-blue-600">Moduler i JavaScript</h2>
+
+          <!-- Introduktion -->
+          <div class="space-y-6 text-lg text-gray-700">
+            <p>
+              Moduler er essentielle for at strukturere, organisere og genanvende kode i JavaScript.
+              Et modul er en fil, der indeholder funktioner, variabler eller objekter, som kan
+              eksporteres og importeres i andre filer.
+            </p>
+            <p>
+              I JavaScript er der to primære modulformater:
+              <strong>CommonJS (CJS)</strong>, som bruges i Node.js, og
+              <strong>EcmaScript-moduler (ESM)</strong>, som er den moderne standard og fungerer i
+              både browsere og Node.js.
+            </p>
+          </div>
+
+          <!-- Opbygning af Moduler -->
+          <div>
+            <h3 class="mb-4 text-2xl font-semibold text-gray-800">Opbygning af Moduler</h3>
+            <p class="mb-6 text-gray-700">
+              Moduler opbygges ved at eksportere funktioner, variabler eller objekter fra en fil.
+              Her er eksempler på, hvordan du opbygger moduler med både CommonJS og
+              EcmaScript-moduler:
+            </p>
+
+            <!-- Eksempel: CommonJS -->
+            <details class="p-4 mb-6 bg-blue-100 rounded-lg shadow">
+              <summary class="text-lg font-semibold text-blue-600 cursor-pointer">
+                Eksempel: CommonJS-modul
+              </summary>
+              <div class="mt-4">
+                <pre class="p-4 text-sm bg-gray-800 rounded-lg text-gray-50">
+<span class="text-green-400">// src/modules/common-js-modules/pathConstructor.cjs</span>
+const path = require("path");
+
+const pathConstructor = (url) => {
+  const projectRoot = path.resolve(__dirname, "../../..");
+  return path.join(projectRoot, url);
+};
+
+module.exports = { pathConstructor };
+          </pre>
+                <p class="mt-4 text-gray-700">
+                  I CommonJS bruges <code>module.exports</code> til at eksportere funktioner, som
+                  derefter kan importeres med <code>require()</code>.
+                </p>
+              </div>
+            </details>
+
+            <!-- Eksempel: EcmaScript -->
+            <details class="p-4 bg-green-100 rounded-lg shadow">
+              <summary class="text-lg font-semibold text-green-600 cursor-pointer">
+                Eksempel: EcmaScript-modul
+              </summary>
+              <div class="mt-4">
+                <pre class="p-4 text-sm bg-gray-800 rounded-lg text-gray-50">
+<span class="text-green-400">// src/modules/es-modules/pathConstructor.mjs</span>
+import path from "path";
+
+export const pathConstructor = (url) => {
+  const projectRoot = new URL("../../..", import.meta.url).pathname;
+  return `${projectRoot}/${url}`;
+};
+          </pre>
+                <p class="mt-4 text-gray-700">
+                  I EcmaScript-moduler bruges <code>export</code> til at eksportere funktioner, og
+                  <code>import</code> bruges til at hente dem i andre filer.
+                </p>
+              </div>
+            </details>
+          </div>
+
+          <!-- Anvendelse af Moduler -->
+          <div>
+            <h3 class="mb-4 text-2xl font-semibold text-gray-800">Anvendelse af Moduler</h3>
+            <p class="mb-6 text-gray-700">
+              Når et modul er opbygget, kan det importeres og bruges i andre filer. Her er eksempler
+              på anvendelse med både CommonJS og EcmaScript-moduler:
+            </p>
+
+            <!-- Eksempel: Brug af CommonJS-modul -->
+            <details class="p-4 mb-6 bg-blue-100 rounded-lg shadow">
+              <summary class="text-lg font-semibold text-blue-600 cursor-pointer">
+                Eksempel: Brug af CommonJS-modul
+              </summary>
+              <div class="mt-4">
+                <pre class="p-4 text-sm bg-gray-800 rounded-lg text-gray-50">
+<span class="text-green-400">// src/app.cjs</span>
+const { pathConstructor } = require("./modules/common-js-modules/pathConstructor.cjs");
+
+const filePath = pathConstructor("/public/index.html");
+console.log(`Filsti: ${filePath}`);
+          </pre>
+                <p class="mt-4 text-gray-700">
+                  CommonJS-moduler importeres med <code>require()</code>, og funktioner bruges
+                  direkte i koden.
+                </p>
+              </div>
+            </details>
+
+            <!-- Eksempel: Brug af EcmaScript-modul -->
+            <details class="p-4 bg-green-100 rounded-lg shadow">
+              <summary class="text-lg font-semibold text-green-600 cursor-pointer">
+                Eksempel: Brug af EcmaScript-modul
+              </summary>
+              <div class="mt-4">
+                <pre class="p-4 text-sm bg-gray-800 rounded-lg text-gray-50">
+<span class="text-green-400">// src/app.mjs</span>
+import { pathConstructor } from "./modules/es-modules/pathConstructor.mjs";
+
+const filePath = pathConstructor("/public/index.html");
+console.log(`Filsti: ${filePath}`);
+          </pre>
+                <p class="mt-4 text-gray-700">
+                  EcmaScript-moduler importeres med <code>import</code>, og funktioner bruges
+                  direkte i koden.
+                </p>
+              </div>
+            </details>
+          </div>
+
+          <!-- Fordele ved Moduler -->
+          <div>
+            <h3 class="mb-4 text-2xl font-semibold text-gray-800">Fordele ved Moduler</h3>
+            <ul class="pl-6 space-y-4 text-gray-700 list-disc">
+              <li><strong>Genanvendelighed:</strong> Koden kan bruges på tværs af projekter.</li>
+              <li>
+                <strong>Modularitet:</strong> Koden opdeles i mindre og mere overskuelige enheder.
+              </li>
+              <li>
+                <strong>Skalerbarhed:</strong> Nye funktioner kan tilføjes som separate moduler.
+              </li>
+              <li>
+                <strong>Vedligeholdelse:</strong> Hver fil har et klart ansvar, hvilket gør fejl
+                lettere at rette.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Mappestruktur -->
+          <div>
+            <h3 class="mb-4 text-2xl font-semibold text-gray-800">Projektets Mappestruktur</h3>
+            <pre class="p-4 text-sm bg-gray-800 rounded-lg text-gray-50">
+project/
+├── server.cjs
+├── server.mjs
+├── src/
+│   ├── app.cjs
+│   ├── app.mjs
+│   ├── modules/
+│       ├── aggregator.cjs
+│       ├── aggregator.mjs
+│       ├── common-js-modules/
+│           ├── mimeTypes.cjs
+│           ├── pathConstructor.cjs
+│       ├── es-modules/
+│           ├── mimeTypes.mjs
+│           ├── pathConstructor.mjs
+      </pre
+            >
+            <p class="mt-4 text-gray-700">
+              Denne mappestruktur organiserer filer og moduler, hvilket gør det nemt at finde og
+              genbruge kode.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container px-6 py-8 mx-auto space-y-12 bg-gray-50">
+        <!-- Overskrift -->
+        <h2 class="mb-12 text-4xl font-bold text-center text-blue-600">
+          Projektstruktur og Modulopbygning
+        </h2>
+
+        <!-- Grid layout til kort -->
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Kort: Projektets Rod -->
+          <div class="p-6 bg-white rounded-lg shadow-lg">
+            <div class="flex items-center mb-4">
+              <span class="mr-3 text-4xl text-blue-500">📂</span>
+              <h3 class="text-xl font-bold text-gray-800">Projektets Rod</h3>
+            </div>
+            <p class="mb-4 text-gray-700">
+              Indeholder de centrale serverfiler, der starter applikationen:
+            </p>
+            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
+              <li><strong>server.cjs:</strong> CommonJS-server.</li>
+              <li><strong>server.mjs:</strong> ESM-server.</li>
+            </ul>
+          </div>
+
+          <!-- Kort: src/ -->
+          <div class="p-6 bg-white rounded-lg shadow-lg">
+            <div class="flex items-center mb-4">
+              <span class="mr-3 text-4xl text-green-500">📁</span>
+              <h3 class="text-xl font-bold text-gray-800">src/: Applikationsfiler</h3>
+            </div>
+            <p class="mb-4 text-gray-700">Indeholder applikationens kernefiler og logik:</p>
+            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
+              <li><strong>app.cjs:</strong> Logik for CommonJS-serveren.</li>
+              <li><strong>app.mjs:</strong> Logik for ESM-serveren.</li>
+            </ul>
+          </div>
+
+          <!-- Kort: src/modules -->
+          <div class="p-6 bg-white rounded-lg shadow-lg">
+            <div class="flex items-center mb-4">
+              <span class="mr-3 text-4xl text-orange-500">🔧</span>
+              <h3 class="text-xl font-bold text-gray-800">src/modules/: Moduler</h3>
+            </div>
+            <p class="mb-4 text-gray-700">Indeholder moduler, der opdeler funktionaliteten:</p>
+            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
+              <li><strong>aggregator.cjs:</strong> Samler funktioner fra `common-js-modules`.</li>
+              <li><strong>aggregator.mjs:</strong> Samler funktioner fra `es-modules`.</li>
+            </ul>
+          </div>
+
+          <!-- Kort: src/modules/common-js-modules -->
+          <div class="p-6 bg-white rounded-lg shadow-lg">
+            <div class="flex items-center mb-4">
+              <span class="mr-3 text-4xl text-purple-500">🗂️</span>
+              <h3 class="text-xl font-bold text-gray-800">common-js-modules</h3>
+            </div>
+            <p class="mb-4 text-gray-700">Indeholder moduler i CommonJS-format:</p>
+            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
+              <li><strong>mimeTypes.cjs:</strong> Liste over MIME-typer.</li>
+              <li><strong>pathConstructor.cjs:</strong> Funktion til at konstruere filstier.</li>
+            </ul>
+          </div>
+
+          <!-- Kort: src/modules/es-modules -->
+          <div class="p-6 bg-white rounded-lg shadow-lg">
+            <div class="flex items-center mb-4">
+              <span class="mr-3 text-4xl text-teal-500">📜</span>
+              <h3 class="text-xl font-bold text-gray-800">es-modules</h3>
+            </div>
+            <p class="mb-4 text-gray-700">Indeholder moduler i ESM-format:</p>
+            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
+              <li><strong>mimeTypes.mjs:</strong> Liste over MIME-typer.</li>
+              <li><strong>pathConstructor.mjs:</strong> Funktion til at konstruere filstier.</li>
+            </ul>
+          </div>
+
+          <!-- Kort: Overordnet Struktur -->
+          <div class="p-6 bg-white rounded-lg shadow-lg">
+            <div class="flex items-center mb-4">
+              <span class="mr-3 text-4xl text-gray-800">🗺️</span>
+              <h3 class="text-xl font-bold text-gray-800">Overordnet Struktur</h3>
+            </div>
+            <p class="mb-4 text-gray-700">
+              Projektet er struktureret med en klar opdeling af ansvar:
+            </p>
+            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
+              <li><strong>Serverfiler:</strong> Starter applikationen.</li>
+              <li><strong>Applikationsfiler:</strong> Indeholder serverlogikken.</li>
+              <li>
+                <strong>Moduler:</strong> Genanvendelige funktioner som `mimeTypes` og
+                `pathConstructor`.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="container px-6 py-8 mx-auto space-y-12 bg-gray-50">
+        <!-- Sektionens overskrift -->
+        <h2 class="mb-12 text-4xl font-bold text-center text-blue-600">
+          Projektstruktur og Modulopbygning i JavaScript
+        </h2>
+
+        <!-- Grid layout til kort -->
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Kort: Projektets Rod -->
+          <div class="p-6 bg-white rounded-lg shadow-lg">
+            <div class="flex items-center mb-4">
+              <span class="mr-3 text-4xl text-blue-500">📂</span>
+              <h3 class="text-xl font-bold text-gray-800">Projektets Rod</h3>
+            </div>
+            <p class="mb-4 text-gray-700">
+              Rodmappen er startpunktet for projektet og indeholder essentielle filer, som gør det
+              muligt at køre applikationen:
+            </p>
+            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
+              <li>
+                <strong>server.cjs:</strong> Starter serveren ved brug af CommonJS-standard. Den
+                integrerer moduler og applikationslogik.
+              </li>
+              <li>
+                <strong>server.mjs:</strong> Starter serveren ved brug af EcmaScript-moduler, der
+                giver moderne syntaks og bedre tree-shaking.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kort: src/ -->
+          <div class="p-6 bg-white rounded-lg shadow-lg">
+            <div class="flex items-center mb-4">
+              <span class="mr-3 text-4xl text-green-500">📁</span>
+              <h3 class="text-xl font-bold text-gray-800">src/: Applikationsfiler</h3>
+            </div>
+            <p class="mb-4 text-gray-700">
+              <code>src/</code> mappen indeholder applikationens kernefiler, som definerer, hvordan
+              serveren fungerer:
+            </p>
+            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
+              <li>
+                <strong>app.cjs:</strong> Implementerer serverlogikken ved brug af CommonJS-moduler.
+                Filer håndteres via <code>fs</code>, og stier konstrueres dynamisk.
+              </li>
+              <li>
+                <strong>app.mjs:</strong> Gør det samme som <code>app.cjs</code>, men bruger
+                ESM-syntaks for bedre kompatibilitet med moderne standarder.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kort: src/modules -->
+          <div class="p-6 bg-white rounded-lg shadow-lg">
+            <div class="flex items-center mb-4">
+              <span class="mr-3 text-4xl text-orange-500">🔧</span>
+              <h3 class="text-xl font-bold text-gray-800">src/modules/: Moduler</h3>
+            </div>
+            <p class="mb-4 text-gray-700">
+              <code>src/modules/</code> mappen organiserer kode i mindre moduler, hvilket gør det
+              muligt at genbruge funktioner og holde applikationen skalerbar:
+            </p>
+            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
+              <li>
+                <strong>aggregator.cjs:</strong> Samler funktioner fra moduler i `common-js-modules`
+                og eksporterer dem som én samlet enhed.
+              </li>
+              <li>
+                <strong>aggregator.mjs:</strong> Gør det samme som <code>aggregator.cjs</code>, men
+                understøtter EcmaScript-moduler.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kort: src/modules/common-js-modules -->
+          <div class="p-6 bg-white rounded-lg shadow-lg">
+            <div class="flex items-center mb-4">
+              <span class="mr-3 text-4xl text-purple-500">🗂️</span>
+              <h3 class="text-xl font-bold text-gray-800">common-js-modules</h3>
+            </div>
+            <p class="mb-4 text-gray-700">
+              Indeholder moduler skrevet i CommonJS-format, som fokuserer på grundlæggende
+              funktioner:
+            </p>
+            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
+              <li>
+                <strong>mimeTypes.cjs:</strong> Indeholder en liste over MIME-typer, der bruges til
+                at bestemme indholdstyper baseret på filendelser (f.eks. <code>.html</code> eller
+                <code>.png</code>).
+              </li>
+              <li>
+                <strong>pathConstructor.cjs:</strong> Funktion, der dynamisk opretter filstier
+                baseret på URL'er, hvilket sikrer korrekt filhåndtering.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kort: src/modules/es-modules -->
+          <div class="p-6 bg-white rounded-lg shadow-lg">
+            <div class="flex items-center mb-4">
+              <span class="mr-3 text-4xl text-teal-500">📜</span>
+              <h3 class="text-xl font-bold text-gray-800">es-modules</h3>
+            </div>
+            <p class="mb-4 text-gray-700">
+              Indeholder moduler skrevet i EcmaScript-modulstandard (ESM), der giver forbedret
+              kompatibilitet med moderne værktøjer:
+            </p>
+            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
+              <li>
+                <strong>mimeTypes.mjs:</strong> Ligner <code>mimeTypes.cjs</code>, men bruger
+                ESM-syntaks med <code>export</code> og <code>import</code>.
+              </li>
+              <li>
+                <strong>pathConstructor.mjs:</strong> Gør det samme som
+                <code>pathConstructor.cjs</code>, men implementeret med ESM.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kort: Overordnet Struktur -->
+          <div class="p-6 bg-white rounded-lg shadow-lg">
+            <div class="flex items-center mb-4">
+              <span class="mr-3 text-4xl text-gray-800">🗺️</span>
+              <h3 class="text-xl font-bold text-gray-800">Overordnet Struktur</h3>
+            </div>
+            <p class="mb-4 text-gray-700">
+              Projektets struktur er designet til at være modulær og skalerbar. Hver del har et
+              klart ansvar:
+            </p>
+            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
+              <li>
+                <strong>Serverfiler:</strong> <code>server.cjs</code> og
+                <code>server.mjs</code> starter applikationen og binder alt sammen.
+              </li>
+              <li>
+                <strong>Applikationsfiler:</strong> <code>app.cjs</code> og <code>app.mjs</code>
+                håndterer serverlogikken.
+              </li>
+              <li>
+                <strong>Moduler:</strong> `aggregator` samler funktionaliteten fra
+                <code>mimeTypes</code> og <code>pathConstructor</code>.
+              </li>
+              <li>
+                <strong>Genanvendelige moduler:</strong> Filer i `common-js-modules` og `es-modules`
+                leverer grundlæggende funktioner som MIME-typer og sti-konstruktion.
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section class="p-8 rounded-lg shadow-lg bg-gray-50">
         <h2 class="pb-2 mb-8 text-3xl font-bold text-blue-600 border-b-4 border-blue-300">
-          CommonJS: Mappestruktur og Forklaring
+          Projektets Rod
         </h2>
-
-        <!-- Mappestruktur -->
-        <div class="mb-6">
-          <h3 class="text-2xl font-semibold text-gray-800">Mappestruktur</h3>
-          <pre class="p-4 text-sm bg-gray-800 rounded-lg text-gray-50">
-project/
-├── server.cjs
-├── src/
-│   ├── app.cjs
-│   ├── modules/
-│       ├── aggregator.cjs
-│       ├── common-js-modules/
-│           ├── mimeTypes.cjs
-│           ├── pathConstructor.cjs
-    </pre
-          >
-          <p class="mt-4 text-gray-700">
-            Denne mappestruktur organiserer CommonJS-moduler. Roden indeholder
-            <code>server.cjs</code>, som fungerer som hovedindgangspunkt for serveren. Under
-            <code>src/</code> findes <code>app.cjs</code>, der definerer app-logikken, og
-            <code>modules/</code>, som indeholder alle modulære komponenter:
-          </p>
-          <ul class="pl-6 mt-2 space-y-2 list-disc">
+        <div class="space-y-4 text-lg text-gray-700">
+          <p>Projektets rod indeholder de centrale serverfiler, der starter applikationen:</p>
+          <ul class="pl-6 space-y-2 list-disc">
             <li>
-              <code>aggregator.cjs</code>: Samler og eksporterer funktioner fra underliggende
-              moduler.
+              <strong>server.cjs:</strong> CommonJS-server, som fungerer som hovedindgang for
+              applikationen ved brug af CommonJS.
             </li>
             <li>
-              <code>common-js-modules/</code>: Indeholder modulopdelte filer som
-              <code>mimeTypes.cjs</code> og <code>pathConstructor.cjs</code>.
+              <strong>server.mjs:</strong> EcmaScript-modulserver, som bruger moderne ESM-syntaks
+              til at starte applikationen.
             </li>
           </ul>
         </div>
-
-        <!-- Import af moduler -->
-        <details class="mb-6">
-          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
-            <span class="before:content-['\1F4D6'] before:mr-2"></span>
-            Import af Moduler med CommonJS
-          </summary>
-          <div class="mt-4 text-lg text-gray-700">
-            <pre class="p-4 text-sm bg-gray-800 rounded-lg text-gray-50">
-<span class="text-green-400">// Importer moduler</span>
-const aggregator = require("./src/modules/aggregator.cjs");
-const mimeTypes = require("./src/modules/common-js-modules/mimeTypes.cjs");
-const pathConstructor = require("./src/modules/common-js-modules/pathConstructor.cjs");
-      </pre>
-            <p>
-              <strong>Hvad sker der?</strong> Vi bruger <code>require</code> til at importere
-              moduler. Disse moduler samler funktionaliteten fra de mindre komponenter i
-              <code>common-js-modules</code>.
-            </p>
-          </div>
-        </details>
       </section>
 
       <section class="p-8 rounded-lg shadow-lg bg-gray-50">
         <h2 class="pb-2 mb-8 text-3xl font-bold text-green-600 border-b-4 border-green-300">
-          EcmaScript-moduler: Moderne Modulopbygning
+          src/: Applikationsfiler
         </h2>
-
-        <!-- Mappestruktur -->
-        <div class="mb-6">
-          <h3 class="text-2xl font-semibold text-gray-800">Mappestruktur</h3>
-          <pre class="p-4 text-sm bg-gray-800 rounded-lg text-gray-50">
-project/
-├── server.mjs
-├── src/
-│   ├── app.mjs
-│   ├── modules/
-│       ├── aggregator.mjs
-│       ├── es-modules/
-│           ├── mimeTypes.mjs
-│           ├── pathConstructor.mjs
-    </pre
-          >
-          <p class="mt-4 text-gray-700">
-            Denne mappestruktur følger EcmaScript-modulstandarden. Roden indeholder
-            <code>server.mjs</code>, som fungerer som hovedindgangspunkt for serveren. Under
-            <code>src/</code> findes <code>app.mjs</code>, der definerer app-logikken, og
-            <code>modules/</code>, som indeholder modulære komponenter:
-          </p>
-          <ul class="pl-6 mt-2 space-y-2 list-disc">
+        <div class="space-y-4 text-lg text-gray-700">
+          <p><code>src/</code> mappen indeholder applikationens kernefiler og logik:</p>
+          <ul class="pl-6 space-y-2 list-disc">
             <li>
-              <code>aggregator.mjs</code>: Samler og eksporterer funktioner fra underliggende
-              moduler.
+              <strong>app.cjs:</strong> Indeholder applikationslogikken for serveren ved brug af
+              CommonJS.
             </li>
             <li>
-              <code>es-modules/</code>: Indeholder modulopdelte filer som
-              <code>mimeTypes.mjs</code> og <code>pathConstructor.mjs</code>.
+              <strong>app.mjs:</strong> Indeholder applikationslogikken for serveren ved brug af
+              EcmaScript-moduler.
             </li>
           </ul>
         </div>
-
-        <!-- Import af moduler -->
-        <details class="mb-6">
-          <summary class="text-2xl font-semibold text-gray-800 cursor-pointer">
-            <span class="before:content-['\1F4D6'] before:mr-2"></span>
-            Import af Moduler med ESM
-          </summary>
-          <div class="mt-4 text-lg text-gray-700">
-            <pre class="p-4 text-sm bg-gray-800 rounded-lg text-gray-50">
-<span class="text-green-400">// Importer moduler</span>
-import { mimeTypes } from "./src/modules/es-modules/mimeTypes.mjs";
-import { pathConstructor } from "./src/modules/es-modules/pathConstructor.mjs";
-import aggregator from "./src/modules/aggregator.mjs";
-      </pre>
-            <p>
-              <strong>Hvad sker der?</strong> Vi bruger <code>import</code> til at hente moduler.
-              Disse moduler bruger navngivne eksportelementer fra <code>es-modules</code>.
-            </p>
-          </div>
-        </details>
       </section>
 
-      <section class="px-6 py-8 space-y-6 rounded-lg shadow-lg bg-gray-50">
-        <!-- Forskelle mellem ESM og CJS -->
-        <h2 class="text-2xl font-bold text-gray-800">Forskelle mellem ESM og CJS</h2>
-        <div class="overflow-x-auto">
-          <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
-            <thead>
-              <tr class="text-gray-700 bg-gray-200">
-                <th class="px-4 py-2 text-left border-b border-gray-300">Funktion</th>
-                <th class="px-4 py-2 text-left border-b border-gray-300">CommonJS (CJS)</th>
-                <th class="px-4 py-2 text-left border-b border-gray-300">
-                  EcmaScript-moduler (ESM)
-                </th>
-              </tr>
-            </thead>
-            <tbody class="text-gray-600">
-              <tr>
-                <td class="px-4 py-2 border-b border-gray-300">Syntaks</td>
-                <td class="px-4 py-2 border-b border-gray-300">require og module.exports</td>
-                <td class="px-4 py-2 border-b border-gray-300">import og export</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-2 border-b border-gray-300">Anvendelse</td>
-                <td class="px-4 py-2 border-b border-gray-300">Node.js</td>
-                <td class="px-4 py-2 border-b border-gray-300">Browsere og Node.js</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-2 border-b border-gray-300">Dynamisk import</td>
-                <td class="px-4 py-2 border-b border-gray-300">Muligt</td>
-                <td class="px-4 py-2 border-b border-gray-300">Begrænset (import())</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-2 border-b border-gray-300">Asynkronitet</td>
-                <td class="px-4 py-2 border-b border-gray-300">Synkront</td>
-                <td class="px-4 py-2 border-b border-gray-300">Asynkront</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-2">Tree-shaking</td>
-                <td class="px-4 py-2">Ikke understøttet</td>
-                <td class="px-4 py-2">Understøttet</td>
-              </tr>
-            </tbody>
-          </table>
+      <section class="p-8 rounded-lg shadow-lg bg-gray-50">
+        <h2 class="pb-2 mb-8 text-3xl font-bold text-orange-600 border-b-4 border-orange-300">
+          src/modules/: Moduler
+        </h2>
+        <div class="space-y-4 text-lg text-gray-700">
+          <p>
+            <code>src/modules/</code> mappen indeholder moduler, der opdeler funktionaliteten i
+            mindre komponenter:
+          </p>
+          <ul class="pl-6 space-y-2 list-disc">
+            <li>
+              <strong>aggregator.cjs:</strong> Samler og eksporterer funktioner fra
+              `common-js-modules`.
+            </li>
+            <li>
+              <strong>aggregator.mjs:</strong> Samler og eksporterer funktioner fra `es-modules`.
+            </li>
+          </ul>
         </div>
+      </section>
 
-        <!-- Omdøbning af modulelementer -->
-        <h3 class="text-xl font-semibold text-gray-800">Omdøbning af modulelementer</h3>
-        <p class="text-gray-700">
-          Når man importerer moduler, kan man omdøbe elementer for at gøre dem mere intuitive eller
-          undgå konflikter.
-        </p>
-        <div class="p-4 bg-gray-100 rounded-lg shadow-inner">
-          <h4 class="font-semibold text-gray-800">ESM:</h4>
-          <pre class="p-4 overflow-x-auto text-sm bg-gray-200 rounded">
-import &#123; mimeTypes as typer &#125; from './common-js-modules/mimeTypes.mjs';
-console.log(typer['html']); // 'text/html'
-    </pre
-          >
-          <h4 class="mt-4 font-semibold text-gray-800">CJS:</h4>
-          <pre class="p-4 overflow-x-auto text-sm bg-gray-200 rounded">
-const typer = require('./common-js-modules/mimeTypes.cjs');
-console.log(typer['html']); // 'text/html'
-    </pre
-          >
+      <section class="p-8 rounded-lg shadow-lg bg-gray-50">
+        <h2 class="pb-2 mb-8 text-3xl font-bold text-purple-600 border-b-4 border-purple-300">
+          src/modules/common-js-modules/: CommonJS Moduler
+        </h2>
+        <div class="space-y-4 text-lg text-gray-700">
+          <p>Denne mappe indeholder moduler i CommonJS-format:</p>
+          <ul class="pl-6 space-y-2 list-disc">
+            <li>
+              <strong>mimeTypes.cjs:</strong> Indeholder en liste over MIME-typer til at
+              identificere indholdstyper for forskellige filer.
+            </li>
+            <li>
+              <strong>pathConstructor.cjs:</strong> En funktion, der konstruerer filstier baseret på
+              URL'er.
+            </li>
+          </ul>
         </div>
+      </section>
 
+      <section class="p-8 rounded-lg shadow-lg bg-gray-50">
+        <h2 class="pb-2 mb-8 text-3xl font-bold text-teal-600 border-b-4 border-teal-300">
+          src/modules/es-modules/: EcmaScript Moduler
+        </h2>
+        <div class="space-y-4 text-lg text-gray-700">
+          <p>Denne mappe indeholder moduler i ESM-format:</p>
+          <ul class="pl-6 space-y-2 list-disc">
+            <li>
+              <strong>mimeTypes.mjs:</strong> Indeholder en liste over MIME-typer og bruger moderne
+              eksportmetoder.
+            </li>
+            <li>
+              <strong>pathConstructor.mjs:</strong> En funktion, der konstruerer filstier baseret på
+              URL'er ved brug af ESM-syntaks.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="p-8 rounded-lg shadow-lg bg-gray-50">
+        <h2 class="pb-2 mb-8 text-3xl font-bold text-gray-800 border-b-4 border-gray-400">
+          Overordnet Struktur og Sammenhæng
+        </h2>
+        <div class="space-y-4 text-lg text-gray-700">
+          <p>Projektet er struktureret med en klar opdeling af ansvar:</p>
+          <ul class="pl-6 space-y-2 list-disc">
+            <li>
+              **Serverfiler:** <code>server.cjs</code> og <code>server.mjs</code> starter serveren
+              og binder alt sammen.
+            </li>
+            <li>
+              **Applikationsfiler:** <code>app.cjs</code> og <code>app.mjs</code> håndterer logikken
+              for serveranmodninger.
+            </li>
+            <li>
+              **Moduler:** `aggregator.cjs`/`aggregator.mjs` samler funktionaliteten fra
+              individuelle moduler som <code>mimeTypes</code> og <code>pathConstructor</code>.
+            </li>
+            <li>
+              **Genanvendelige moduler:** `common-js-modules` og `es-modules` leverer grundlæggende
+              funktioner som MIME-typer og sti-konstruktion.
+            </li>
+          </ul>
+        </div>
         <!-- Fordele ved din modulopbygning -->
         <h3 class="text-xl font-semibold text-gray-800">Fordele ved din modulopbygning</h3>
         <ul class="space-y-2 text-gray-700 list-disc list-inside">
@@ -276,17 +698,9 @@ console.log(typer['html']); // 'text/html'
             <code>pathConstructor</code> og serverfilerne, hvilket sikrer stabil drift.
           </li>
         </ul>
-
-        <!-- Samlet konklusion -->
-        <h3 class="text-xl font-semibold text-gray-800">Samlet konklusion</h3>
-        <p class="text-gray-700">
-          Din modulopbygning er et fremragende eksempel på, hvordan man strukturerer kode effektivt
-          i JavaScript. Med brugen af både CommonJS og ESM demonstrerer projektet evnen til at
-          tilpasse sig forskellige miljøer. Dette er en solid løsning til både små og store
-          projekter.
-        </p>
       </section>
 
+      <!-- //TODO - Forskelle mellem ESM og CJS -->
       <section class="container px-6 py-8 space-y-6 rounded-lg shadow-lg bg-gray-50">
         <!-- Overskrift -->
         <h2 class="text-2xl font-bold text-gray-800">Forskelle mellem ESM og CJS</h2>
@@ -522,6 +936,149 @@ console.log(typer['html']); // 'text/html'
           row.classList.toggle("hidden");
         }
       </script>
+
+      <!-- //TODO - Omdøbning af Moduler og Brug af Aliaser -->
+      <section class="container px-8 py-16 rounded-lg shadow-lg bg-gray-50">
+        <div class="mx-auto space-y-12 max-w-7xl">
+          <!-- Overskrift -->
+          <h2 class="text-4xl font-bold text-purple-600">
+            Omdøbning af Moduler og Brug af Aliaser
+          </h2>
+
+          <!-- Introduktion -->
+          <div class="space-y-6 text-lg text-gray-700">
+            <p>
+              Når du importerer filer eller funktioner fra moduler, kan det være nødvendigt at
+              omdøbe dem. Dette gøres for at:
+            </p>
+            <ul class="pl-6 space-y-4 list-disc">
+              <li>
+                <strong>Forbedre læsbarhed:</strong> Giv importeret funktionalitet et mere intuitivt
+                navn.
+              </li>
+              <li>
+                <strong>Undgå konflikter:</strong> Hvis flere moduler har samme navn, kan du omdøbe
+                dem.
+              </li>
+              <li>
+                <strong>Skjule stier:</strong> Brug aliaser for at gøre stier kortere og lettere at
+                forstå.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Eksempler -->
+          <div>
+            <h3 class="mb-4 text-2xl font-semibold text-gray-800">
+              Eksempler på Omdøbning og Brug af Aliaser
+            </h3>
+            <p class="mb-6 text-gray-700">
+              Her er eksempler på, hvordan du omdøber importerede moduler og bruger aliaser i både
+              CommonJS og EcmaScript-moduler.
+            </p>
+
+            <!-- Eksempel: CommonJS -->
+            <details class="p-4 mb-6 bg-blue-100 rounded-lg shadow">
+              <summary class="text-lg font-semibold text-blue-600 cursor-pointer">
+                Eksempel: Omdøbning med CommonJS
+              </summary>
+              <div class="mt-4">
+                <pre class="p-4 text-sm bg-gray-800 rounded-lg text-gray-50">
+<span class="text-green-400">// Import af modul og omdøbning</span>
+const { pathConstructor: buildPath } = require("./modules/common-js-modules/pathConstructor.cjs");
+
+<span class="text-green-400">// Brug af omdøbt funktion</span>
+const filePath = buildPath("/public/index.html");
+console.log(`Filsti: ${filePath}`);
+          </pre>
+                <p class="mt-4 text-gray-700">
+                  Her importeres <code>pathConstructor</code> fra modulet, men omdøbes til
+                  <code>buildPath</code> for bedre læsbarhed.
+                </p>
+              </div>
+            </details>
+
+            <!-- Eksempel: EcmaScript -->
+            <details class="p-4 mb-6 bg-green-100 rounded-lg shadow">
+              <summary class="text-lg font-semibold text-green-600 cursor-pointer">
+                Eksempel: Omdøbning med EcmaScript
+              </summary>
+              <div class="mt-4">
+                <pre class="p-4 text-sm bg-gray-800 rounded-lg text-gray-50">
+<span class="text-green-400">// Import af modul og omdøbning</span>
+import { pathConstructor as buildPath } from "./modules/es-modules/pathConstructor.mjs";
+
+<span class="text-green-400">// Brug af omdøbt funktion</span>
+const filePath = buildPath("/public/index.html");
+console.log(`Filsti: ${filePath}`);
+          </pre>
+                <p class="mt-4 text-gray-700">
+                  Her omdøbes <code>pathConstructor</code> til <code>buildPath</code>, hvilket kan
+                  gøre koden mere intuitiv og undgå konflikter med andre moduler.
+                </p>
+              </div>
+            </details>
+
+            <!-- Eksempel: Brug af Alias -->
+            <details class="p-4 bg-yellow-100 rounded-lg shadow">
+              <summary class="text-lg font-semibold text-yellow-600 cursor-pointer">
+                Eksempel: Brug af Alias for at Skjule Stier
+              </summary>
+              <div class="mt-4">
+                <pre class="p-4 text-sm bg-gray-800 rounded-lg text-gray-50">
+<span class="text-green-400">// Opsætning af alias i package.json (EcmaScript)</span>
+{
+  "name": "projekt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "type": "module",
+  "imports": {
+    "#utils/*": "./src/utils/*"
+  }
+}
+
+<span class="text-green-400">// Import ved brug af alias</span>
+import { pathConstructor } from "#utils/pathConstructor.mjs";
+
+const filePath = pathConstructor("/public/index.html");
+console.log(`Filsti: ${filePath}`);
+          </pre>
+                <p class="mt-4 text-gray-700">
+                  Alias-konfiguration i <code>package.json</code> giver mulighed for at bruge
+                  <code>#utils/*</code> i stedet for lange relative stier som
+                  <code>./src/utils/*</code>. Dette forbedrer læsbarheden og gør vedligeholdelse
+                  lettere.
+                </p>
+              </div>
+            </details>
+          </div>
+
+          <!-- Fordele ved Omdøbning og Aliaser -->
+          <div>
+            <h3 class="mb-4 text-2xl font-semibold text-gray-800">
+              Fordele ved Omdøbning og Aliaser
+            </h3>
+            <ul class="pl-6 space-y-4 text-gray-700 list-disc">
+              <li>
+                <strong>Bedre læsbarhed:</strong> Intuitive navne gør koden lettere at forstå og
+                navigere.
+              </li>
+              <li>
+                <strong>Konflikthåndtering:</strong> Undgå problemer, når moduler har samme navne.
+              </li>
+              <li>
+                <strong>Effektiv navigation:</strong> Skjul komplekse stistrukturer med aliaser.
+              </li>
+              <li>
+                <strong>Skalerbarhed:</strong> Styr store projekter med velorganiserede stier.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- Footer -->
     <footer class="py-4 text-center text-white bg-accent">
