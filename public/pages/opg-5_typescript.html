@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="da">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Moduler</title>
-    <link href="/dist/styles.css" rel="stylesheet" />
-    <script src="/src/js/loadComponents.js" defer></script>
-    <script src="/src/js/activeLinks.js" defer></script>
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Moduler</title>
+		<link href="/dist/styles.css" rel="stylesheet" />
+		<script src="/src/js/loadComponents.js" defer></script>
+		<script src="/src/js/activeLinks.js" defer></script>
+		<script src="/dist/js/app.js" defer></script>
+	</head>
 
-  <body>
-    <!-- HEADER som henter header.html ind på siden!!! -->
-    <header id="header"></header>
-    <p>
-      Præsenter TypeScript med fokus på typer, gerne sammenlignet med JavaScript, og type inference.
-      Eksemplificer opbygningen af komplekse typer. Anvendelse af TypeScript i projekter fra
-      opsætning til compiling/transpiling skal også indgå i præsentationen. Fragmenter af kode til
-      illustration af dine overvejelser skal være en del af præsentationen. Du bør bruge uddrag fra
-      egne projekter og opgaver som eksempler i din gennemgang.
-    </p>
-    <!-- Footer -->
-    <footer class="py-4 text-center text-white bg-accent">
-      <p>Serveren kører på <strong>Node.js</strong>!</p>
-    </footer>
-  </body>
+	<body>
+		<!-- HEADER som henter header.html ind på siden!!! -->
+		<header id="header"></header>
+		<p>
+			Præsenter TypeScript med fokus på typer, gerne sammenlignet med JavaScript, og type inference. Eksemplificer
+			opbygningen af komplekse typer. Anvendelse af TypeScript i projekter fra opsætning til compiling/transpiling
+			skal også indgå i præsentationen. Fragmenter af kode til illustration af dine overvejelser skal være en del
+			af præsentationen. Du bør bruge uddrag fra egne projekter og opgaver som eksempler i din gennemgang.
+		</p>
+
+		<div>
+			<input type="text" id="navn" placeholder="Indtast dit navn" />
+			<button id="hils">Sig Hej</button>
+		</div>
+		<div id="hilsen"></div>
+
+		<!-- Footer -->
+		<footer class="py-4 text-center text-white bg-accent">
+			<p>Serveren kører på <strong>Node.js</strong>!</p>
+		</footer>
+	</body>
 </html>
