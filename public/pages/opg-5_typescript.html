@@ -7,7 +7,7 @@
 		<link href="/dist/styles.css" rel="stylesheet" />
 		<script src="/src/js/loadComponents.js" defer></script>
 		<script src="/src/js/activeLinks.js" defer></script>
-		<script src="/dist/js/app.js" defer></script>
+		<script type="module" src="/dist/js/app.mjs" defer></script>
 	</head>
 
 	<body>
@@ -20,11 +20,30 @@
 			af præsentationen. Du bør bruge uddrag fra egne projekter og opgaver som eksempler i din gennemgang.
 		</p>
 
-		<div>
-			<input type="text" id="navn" placeholder="Indtast dit navn" />
-			<button id="hils">Sig Hej</button>
+		<div class="container mx-auto p-6">
+			<header class="mb-8">
+				<h1 class="text-3xl font-semibold">Bank Applikation</h1>
+				<p class="text-lg text-gray-700">Administrer dine konti</p>
+			</header>
+
+			<section id="bruger-info" class="bg-white p-6 rounded-lg shadow-md mb-6">
+				<h2 class="text-2xl font-semibold">Bruger Information</h2>
+				<p id="bruger-navn" class="text-lg"></p>
+				<p id="bruger-alder" class="text-lg"></p>
+			</section>
+
+			<section id="konto-info" class="bg-white p-6 rounded-lg shadow-md mb-6">
+				<h2 class="text-2xl font-semibold">Konto Information</h2>
+				<p id="konto-id" class="text-lg"></p>
+				<p id="konto-saldo" class="text-lg"></p>
+			</section>
+
+			<section id="transaktion-info" class="bg-white p-6 rounded-lg shadow-md">
+				<h2 class="text-2xl font-semibold">Transaktioner</h2>
+				<button id="indbetaling" class="bg-blue-500 text-white py-2 px-4 rounded-md">Indbetal 500</button>
+				<button id="hævning" class="bg-red-500 text-white py-2 px-4 rounded-md mt-4">Hæv 2000</button>
+			</section>
 		</div>
-		<div id="hilsen"></div>
 
 		<!-- Footer -->
 		<footer class="py-4 text-center text-white bg-accent">
