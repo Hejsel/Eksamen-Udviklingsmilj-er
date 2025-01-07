@@ -77,19 +77,26 @@
             <div class="container mx-auto text-center">
               <h3 class="text-3xl font-bold">Snapshots vs. Differences</h3>
               <p class="max-w-2xl mx-auto mt-6 text-lg leading-relaxed">
-                1.Git adskiller sig fra traditionelle versionsstyringssystemer ved at gemme
+                Git adskiller sig fra traditionelle versionsstyringssystemer ved at gemme snapshots
+                af hele projektet i stedet for forskelle mellem filer. Snapshots, ikke forskelle:
+                Traditionelle systemer som Subversion gemmer ændringer mellem filer (delta-baseret
+                versionering). Git gemmer derimod snapshots af hele projektets tilstand. Hvis en fil
+                ikke ændres, opretter Git blot en reference til den tidligere version.
+              </p>
+              <!-- <p>
+                              1.Git adskiller sig fra traditionelle versionsstyringssystemer ved at gemme
                 snapshots af hele projektet i stedet for forskelle mellem filer. <br />
                 <br />
                 2. Snapshots, ikke forskelle: Traditionelle systemer som Subversion gemmer ændringer
                 mellem filer (delta-baseret versionering). Git gemmer derimod snapshots af hele
                 projektets tilstand. Hvis en fil ikke ændres, opretter Git blot en reference til den
                 tidligere version.
-              </p>
+              </p> -->
             </div>
             <div class="container grid grid-cols-1 gap-8 mx-auto mt-12 md:grid-cols-2">
               <figure class="text-center">
                 <img
-                  src="/src/assets/images/git-storing-data2.png"
+                  src="/src/assets/images/git-illu-proces/git-storing-data2.png"
                   alt="Traditionelle forskelle"
                   class="w-full max-w-md mx-auto rounded-lg shadow-lg"
                 />
@@ -99,7 +106,7 @@
               </figure>
               <figure class="text-center">
                 <img
-                  src="/src/assets/images/git-storing-version.png"
+                  src="/src/assets/images/git-illu-proces/git-storing-version.png"
                   alt="Snapshots af projektet"
                   class="w-full max-w-md mx-auto rounded-lg shadow-lg"
                 />
