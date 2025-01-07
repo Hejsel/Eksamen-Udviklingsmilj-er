@@ -308,102 +308,7 @@ project/
         </div>
       </section>
 
-      <section class="container px-6 py-8 mx-auto space-y-12 bg-gray-50">
-        <!-- Overskrift -->
-        <h2 class="mb-12 text-4xl font-bold text-center text-blue-600">
-          Projektstruktur og Modulopbygning
-        </h2>
-
-        <!-- Grid layout til kort -->
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <!-- Kort: Projektets Rod -->
-          <div class="p-6 bg-white rounded-lg shadow-lg">
-            <div class="flex items-center mb-4">
-              <span class="mr-3 text-4xl text-blue-500">📂</span>
-              <h3 class="text-xl font-bold text-gray-800">Projektets Rod</h3>
-            </div>
-            <p class="mb-4 text-gray-700">
-              Indeholder de centrale serverfiler, der starter applikationen:
-            </p>
-            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
-              <li><strong>server.cjs:</strong> CommonJS-server.</li>
-              <li><strong>server.mjs:</strong> ESM-server.</li>
-            </ul>
-          </div>
-
-          <!-- Kort: src/ -->
-          <div class="p-6 bg-white rounded-lg shadow-lg">
-            <div class="flex items-center mb-4">
-              <span class="mr-3 text-4xl text-green-500">📁</span>
-              <h3 class="text-xl font-bold text-gray-800">src/: Applikationsfiler</h3>
-            </div>
-            <p class="mb-4 text-gray-700">Indeholder applikationens kernefiler og logik:</p>
-            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
-              <li><strong>app.cjs:</strong> Logik for CommonJS-serveren.</li>
-              <li><strong>app.mjs:</strong> Logik for ESM-serveren.</li>
-            </ul>
-          </div>
-
-          <!-- Kort: src/modules -->
-          <div class="p-6 bg-white rounded-lg shadow-lg">
-            <div class="flex items-center mb-4">
-              <span class="mr-3 text-4xl text-orange-500">🔧</span>
-              <h3 class="text-xl font-bold text-gray-800">src/modules/: Moduler</h3>
-            </div>
-            <p class="mb-4 text-gray-700">Indeholder moduler, der opdeler funktionaliteten:</p>
-            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
-              <li><strong>aggregator.cjs:</strong> Samler funktioner fra `common-js-modules`.</li>
-              <li><strong>aggregator.mjs:</strong> Samler funktioner fra `es-modules`.</li>
-            </ul>
-          </div>
-
-          <!-- Kort: src/modules/common-js-modules -->
-          <div class="p-6 bg-white rounded-lg shadow-lg">
-            <div class="flex items-center mb-4">
-              <span class="mr-3 text-4xl text-purple-500">🗂️</span>
-              <h3 class="text-xl font-bold text-gray-800">common-js-modules</h3>
-            </div>
-            <p class="mb-4 text-gray-700">Indeholder moduler i CommonJS-format:</p>
-            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
-              <li><strong>mimeTypes.cjs:</strong> Liste over MIME-typer.</li>
-              <li><strong>pathConstructor.cjs:</strong> Funktion til at konstruere filstier.</li>
-            </ul>
-          </div>
-
-          <!-- Kort: src/modules/es-modules -->
-          <div class="p-6 bg-white rounded-lg shadow-lg">
-            <div class="flex items-center mb-4">
-              <span class="mr-3 text-4xl text-teal-500">📜</span>
-              <h3 class="text-xl font-bold text-gray-800">es-modules</h3>
-            </div>
-            <p class="mb-4 text-gray-700">Indeholder moduler i ESM-format:</p>
-            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
-              <li><strong>mimeTypes.mjs:</strong> Liste over MIME-typer.</li>
-              <li><strong>pathConstructor.mjs:</strong> Funktion til at konstruere filstier.</li>
-            </ul>
-          </div>
-
-          <!-- Kort: Overordnet Struktur -->
-          <div class="p-6 bg-white rounded-lg shadow-lg">
-            <div class="flex items-center mb-4">
-              <span class="mr-3 text-4xl text-gray-800">🗺️</span>
-              <h3 class="text-xl font-bold text-gray-800">Overordnet Struktur</h3>
-            </div>
-            <p class="mb-4 text-gray-700">
-              Projektet er struktureret med en klar opdeling af ansvar:
-            </p>
-            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
-              <li><strong>Serverfiler:</strong> Starter applikationen.</li>
-              <li><strong>Applikationsfiler:</strong> Indeholder serverlogikken.</li>
-              <li>
-                <strong>Moduler:</strong> Genanvendelige funktioner som `mimeTypes` og
-                `pathConstructor`.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
+      <!-- //TODO - Projektstruktur i JS -->
       <section class="container px-6 py-8 mx-auto space-y-12 bg-gray-50">
         <!-- Sektionens overskrift -->
         <h2 class="mb-12 text-4xl font-bold text-center text-blue-600">
@@ -555,149 +460,301 @@ project/
         </div>
       </section>
 
-      <section class="p-8 rounded-lg shadow-lg bg-gray-50">
-        <h2 class="pb-2 mb-8 text-3xl font-bold text-blue-600 border-b-4 border-blue-300">
-          Projektets Rod
+      <section class="container px-6 py-8 mx-auto bg-gray-50">
+        <h2 class="mb-12 text-4xl font-bold text-center text-blue-600">
+          Projektstruktur og Forklaringer
         </h2>
-        <div class="space-y-4 text-lg text-gray-700">
-          <p>Projektets rod indeholder de centrale serverfiler, der starter applikationen:</p>
-          <ul class="pl-6 space-y-2 list-disc">
-            <li>
-              <strong>server.cjs:</strong> CommonJS-server, som fungerer som hovedindgang for
-              applikationen ved brug af CommonJS.
-            </li>
-            <li>
-              <strong>server.mjs:</strong> EcmaScript-modulserver, som bruger moderne ESM-syntaks
-              til at starte applikationen.
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      <section class="p-8 rounded-lg shadow-lg bg-gray-50">
-        <h2 class="pb-2 mb-8 text-3xl font-bold text-green-600 border-b-4 border-green-300">
-          src/: Applikationsfiler
-        </h2>
-        <div class="space-y-4 text-lg text-gray-700">
-          <p><code>src/</code> mappen indeholder applikationens kernefiler og logik:</p>
-          <ul class="pl-6 space-y-2 list-disc">
-            <li>
-              <strong>app.cjs:</strong> Indeholder applikationslogikken for serveren ved brug af
-              CommonJS.
-            </li>
-            <li>
-              <strong>app.mjs:</strong> Indeholder applikationslogikken for serveren ved brug af
-              EcmaScript-moduler.
-            </li>
-          </ul>
-        </div>
-      </section>
+        <!-- Fold-ud: Projektets Rod -->
+        <details class="mb-6 bg-white rounded-lg shadow">
+          <summary class="p-4 text-2xl font-semibold text-blue-600 cursor-pointer">
+            Projektets Rod
+          </summary>
+          <div class="p-6 space-y-4">
+            <p class="text-lg text-gray-700">
+              Rodmappen indeholder de centrale serverfiler, der starter applikationen:
+            </p>
+            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
+              <li>
+                <strong>server.cjs:</strong> CommonJS-server, som fungerer som hovedindgang for
+                applikationen ved brug af CommonJS.
+              </li>
+              <li>
+                <strong>server.mjs:</strong> EcmaScript-modulserver, som bruger moderne ESM-syntaks
+                til at starte applikationen.
+              </li>
+            </ul>
+            <h3 class="mt-4 text-xl font-bold text-gray-800">Eksempel: server.mjs</h3>
+            <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Importer server-logik fra app.mjs</span>
+import { createServer } from './src/app.mjs';
 
-      <section class="p-8 rounded-lg shadow-lg bg-gray-50">
-        <h2 class="pb-2 mb-8 text-3xl font-bold text-orange-600 border-b-4 border-orange-300">
-          src/modules/: Moduler
-        </h2>
-        <div class="space-y-4 text-lg text-gray-700">
-          <p>
-            <code>src/modules/</code> mappen indeholder moduler, der opdeler funktionaliteten i
-            mindre komponenter:
-          </p>
-          <ul class="pl-6 space-y-2 list-disc">
-            <li>
-              <strong>aggregator.cjs:</strong> Samler og eksporterer funktioner fra
-              `common-js-modules`.
-            </li>
-            <li>
-              <strong>aggregator.mjs:</strong> Samler og eksporterer funktioner fra `es-modules`.
-            </li>
-          </ul>
-        </div>
-      </section>
+<span class="text-green-400">// Definer port og hostname</span>
+const port = 8080;
+const hostname = 'localhost';
 
-      <section class="p-8 rounded-lg shadow-lg bg-gray-50">
-        <h2 class="pb-2 mb-8 text-3xl font-bold text-purple-600 border-b-4 border-purple-300">
-          src/modules/common-js-modules/: CommonJS Moduler
-        </h2>
-        <div class="space-y-4 text-lg text-gray-700">
-          <p>Denne mappe indeholder moduler i CommonJS-format:</p>
-          <ul class="pl-6 space-y-2 list-disc">
-            <li>
-              <strong>mimeTypes.cjs:</strong> Indeholder en liste over MIME-typer til at
-              identificere indholdstyper for forskellige filer.
-            </li>
-            <li>
-              <strong>pathConstructor.cjs:</strong> En funktion, der konstruerer filstier baseret på
-              URL'er.
-            </li>
-          </ul>
-        </div>
-      </section>
+<span class="text-green-400">// Start serveren</span>
+createServer(port, hostname);
+      </pre>
+            <p class="mt-4 text-gray-700">
+              - <code>import</code>: Importerer <code>createServer</code> fra app.mjs.<br />
+              - <code>port</code> og <code>hostname</code>: Definerer, hvor serveren kører.<br />
+              - <code>createServer</code>: Starter serveren ved hjælp af app.mjs.
+            </p>
+          </div>
+        </details>
 
-      <section class="p-8 rounded-lg shadow-lg bg-gray-50">
-        <h2 class="pb-2 mb-8 text-3xl font-bold text-teal-600 border-b-4 border-teal-300">
-          src/modules/es-modules/: EcmaScript Moduler
-        </h2>
-        <div class="space-y-4 text-lg text-gray-700">
-          <p>Denne mappe indeholder moduler i ESM-format:</p>
-          <ul class="pl-6 space-y-2 list-disc">
-            <li>
-              <strong>mimeTypes.mjs:</strong> Indeholder en liste over MIME-typer og bruger moderne
-              eksportmetoder.
-            </li>
-            <li>
-              <strong>pathConstructor.mjs:</strong> En funktion, der konstruerer filstier baseret på
-              URL'er ved brug af ESM-syntaks.
-            </li>
-          </ul>
-        </div>
-      </section>
+        <!-- Fold-ud: src/ -->
+        <details class="mb-6 bg-white rounded-lg shadow">
+          <summary class="p-4 text-2xl font-semibold text-green-600 cursor-pointer">
+            src/: Applikationsfiler
+          </summary>
+          <div class="p-6 space-y-4">
+            <p class="text-lg text-gray-700">
+              <code>src/</code> mappen indeholder applikationens kernefiler og logik:
+            </p>
+            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
+              <li>
+                <strong>app.cjs:</strong> Indeholder applikationslogikken for serveren ved brug af
+                CommonJS.
+              </li>
+              <li>
+                <strong>app.mjs:</strong> Indeholder applikationslogikken for serveren ved brug af
+                EcmaScript-moduler.
+              </li>
+            </ul>
+            <h3 class="mt-4 text-xl font-bold text-gray-800">Eksempel: app.mjs</h3>
+            <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Importer nødvendige moduler</span>
+import http from 'http';
+import fs from 'fs';
+import path from 'path';
+import { filHaandteringESM } from './modules/aggregator.mjs';
 
-      <section class="p-8 rounded-lg shadow-lg bg-gray-50">
-        <h2 class="pb-2 mb-8 text-3xl font-bold text-gray-800 border-b-4 border-gray-400">
-          Overordnet Struktur og Sammenhæng
-        </h2>
-        <div class="space-y-4 text-lg text-gray-700">
-          <p>Projektet er struktureret med en klar opdeling af ansvar:</p>
-          <ul class="pl-6 space-y-2 list-disc">
-            <li>
-              **Serverfiler:** <code>server.cjs</code> og <code>server.mjs</code> starter serveren
-              og binder alt sammen.
-            </li>
-            <li>
-              **Applikationsfiler:** <code>app.cjs</code> og <code>app.mjs</code> håndterer logikken
-              for serveranmodninger.
-            </li>
-            <li>
-              **Moduler:** `aggregator.cjs`/`aggregator.mjs` samler funktionaliteten fra
-              individuelle moduler som <code>mimeTypes</code> og <code>pathConstructor</code>.
-            </li>
-            <li>
-              **Genanvendelige moduler:** `common-js-modules` og `es-modules` leverer grundlæggende
-              funktioner som MIME-typer og sti-konstruktion.
-            </li>
-          </ul>
-        </div>
-        <!-- Fordele ved din modulopbygning -->
-        <h3 class="text-xl font-semibold text-gray-800">Fordele ved din modulopbygning</h3>
-        <ul class="space-y-2 text-gray-700 list-disc list-inside">
-          <li>
-            <span class="font-semibold">Modularitet:</span> Funktionalitet er opdelt i selvstændige
-            dele som <code>pathConstructor</code> og <code>mimeTypes</code>, hvilket gør dem nemme
-            at genbruge og teste.
-          </li>
-          <li>
-            <span class="font-semibold">Fleksibilitet:</span> Projektet understøtter både CommonJS
-            og ESM, så du kan skifte mellem standarder afhængigt af behov.
-          </li>
-          <li>
-            <span class="font-semibold">Skalerbarhed:</span> Nye MIME-typer eller
-            stihåndteringsfunktioner kan let tilføjes uden at påvirke eksisterende funktionalitet.
-          </li>
-          <li>
-            <span class="font-semibold">Robusthed:</span> Fejlhåndtering er implementeret i
-            <code>pathConstructor</code> og serverfilerne, hvilket sikrer stabil drift.
-          </li>
-        </ul>
+<span class="text-green-400">// Eksporterer en funktion til at oprette serveren</span>
+export const createServer = (port, hostname) => {
+  http.createServer((request, response) => {
+    <span class="text-green-400">// Konstruer filstien fra URL'en</span>
+    let filsti = filHaandteringESM.pathConstructorESM(request.url);
+
+    <span class="text-green-400">// Tjek om URL'en peger på en mappe</span>
+    if (filsti.endsWith(path.sep)) {
+      filsti = path.join(filsti, 'index.html');
+    }
+
+    <span class="text-green-400">// Tjek om filen findes</span>
+    fs.access(filsti, fs.constants.F_OK, (err) => {
+      if (err) {
+        response.writeHead(404, { 'Content-Type': 'text/plain' });
+        response.end('404: Fil ikke fundet');
+        return;
+      }
+
+      <span class="text-green-400">// Find MIME-typen</span>
+      const ext = path.extname(filsti).substring(1);
+      const mimeType = filHaandteringESM.mimeTyperESM[ext] || 'application/octet-stream';
+
+      <span class="text-green-400">// Læs og send filen</span>
+      fs.readFile(filsti, (err, data) => {
+        if (err) {
+          response.writeHead(500, { 'Content-Type': 'text/plain' });
+          response.end('500: Serverfejl');
+          return;
+        }
+        response.writeHead(200, { 'Content-Type': mimeType });
+        response.end(data);
+      });
+    });
+  }).listen(port, hostname, () => {
+    console.log(\`Serveren kører på http://\${hostname}:\${port}/\`);
+  });
+};
+      </pre>
+            <p class="mt-4 text-gray-700">
+              - <code>http.createServer</code>: Opretter en HTTP-server, der lytter til
+              anmodninger.<br />
+              - <code>filHaandteringESM.pathConstructorESM</code>: Konverterer URL'er til lokale
+              filstier.<br />
+              - <code>fs.access</code>: Tjekker om filen findes.<br />
+              - <code>fs.readFile</code>: Læser filens indhold og sender det til klienten.
+            </p>
+          </div>
+        </details>
+
+        <!-- Fold-ud: src/modules -->
+        <details class="mb-6 bg-white rounded-lg shadow">
+          <summary class="p-4 text-2xl font-semibold text-orange-600 cursor-pointer">
+            src/modules/: Moduler
+          </summary>
+          <div class="p-6 space-y-4">
+            <p class="text-lg text-gray-700">
+              <code>src/modules/</code> mappen indeholder moduler, der opdeler funktionaliteten i
+              mindre komponenter:
+            </p>
+            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
+              <li>
+                <strong>aggregator.cjs:</strong> Samler og eksporterer funktioner fra
+                `common-js-modules`.
+              </li>
+              <li>
+                <strong>aggregator.mjs:</strong> Samler og eksporterer funktioner fra `es-modules`.
+              </li>
+            </ul>
+            <h3 class="mt-4 text-xl font-bold text-gray-800">Eksempel: aggregator.mjs</h3>
+            <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Importer moduler</span>
+import * as stiFunktionerESM from './es-modules/pathConstructor.mjs';
+import * as mimeTyperESM from './es-modules/mimeTypes.mjs';
+
+<span class="text-green-400">// Saml og eksporter funktionaliteten</span>
+export const filHaandteringESM = {
+  pathConstructorESM: stiFunktionerESM.pathConstructor,
+  mimeTyperESM: mimeTyperESM.default,
+};
+      </pre>
+            <p class="mt-4 text-gray-700">
+              - <code>pathConstructorESM</code>: Funktion til at håndtere URL'er og lave korrekte
+              filstier.<br />
+              - <code>mimeTyperESM</code>: Indeholder MIME-typer til at bestemme filindhold.
+            </p>
+          </div>
+        </details>
+        <!-- Fold-ud: src/modules/common-js-modules -->
+        <details class="mb-6 bg-white rounded-lg shadow">
+          <summary class="p-4 text-2xl font-semibold text-purple-600 cursor-pointer">
+            src/modules/common-js-modules/: CommonJS Moduler
+          </summary>
+          <div class="p-6 space-y-4">
+            <p class="text-lg text-gray-700">
+              Denne mappe indeholder moduler i CommonJS-format, der bruges til at håndtere
+              specifikke funktioner som filstier og MIME-typer:
+            </p>
+            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
+              <li>
+                <strong>mimeTypes.cjs:</strong> Indeholder en liste over MIME-typer til at
+                identificere indholdstyper for forskellige filer.
+              </li>
+              <li>
+                <strong>pathConstructor.cjs:</strong> En funktion, der konstruerer filstier baseret
+                på URL'er.
+              </li>
+            </ul>
+            <h3 class="mt-4 text-xl font-bold text-gray-800">Eksempel: pathConstructor.cjs</h3>
+            <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Importer path-modulet</span>
+const path = require('path');
+
+<span class="text-green-400">// Eksporter funktion til at konstruere filstier</span>
+module.exports = {
+  pathConstructor(url) {
+    const projectRoot = path.resolve(__dirname, '../../..');
+    const cleanUrl = url.split('?')[0];
+    if (cleanUrl === '/' || cleanUrl === '') {
+      return path.join(projectRoot, 'public', 'index.html');
+    }
+    return path.join(projectRoot, cleanUrl);
+  },
+};
+    </pre>
+            <p class="mt-4 text-gray-700">
+              - <code>path.resolve</code>: Finder projektets rodmappe.<br />
+              - <code>url.split('?')</code>: Fjerner query-parametre fra URL'en.<br />
+              - <code>path.join</code>: Konstruerer filstien.
+            </p>
+          </div>
+        </details>
+
+        <!-- Fold-ud: src/modules/es-modules -->
+        <details class="mb-6 bg-white rounded-lg shadow">
+          <summary class="p-4 text-2xl font-semibold text-teal-600 cursor-pointer">
+            src/modules/es-modules/: EcmaScript Moduler
+          </summary>
+          <div class="p-6 space-y-4">
+            <p class="text-lg text-gray-700">
+              Denne mappe indeholder moduler skrevet i EcmaScript-modulformat (ESM), der giver
+              forbedret kompatibilitet og understøtter moderne syntaks:
+            </p>
+            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
+              <li>
+                <strong>mimeTypes.mjs:</strong> Indeholder en liste over MIME-typer, der bruges til
+                at identificere indholdstyper for forskellige filer.
+              </li>
+              <li>
+                <strong>pathConstructor.mjs:</strong> En funktion, der konstruerer filstier baseret
+                på URL'er ved brug af moderne ESM-syntaks.
+              </li>
+            </ul>
+            <h3 class="mt-4 text-xl font-bold text-gray-800">Eksempel: mimeTypes.mjs</h3>
+            <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Eksporter liste over MIME-typer</span>
+export default {
+  html: 'text/html',
+  css: 'text/css',
+  js: 'text/javascript',
+  png: 'image/png',
+  svg: 'image/svg+xml',
+  jpg: 'image/jpeg',
+  ico: 'image/x-icon',
+};
+    </pre>
+            <p class="mt-4 text-gray-700">
+              - MIME-typer definerer, hvordan klienter (som browsere) skal håndtere forskellige
+              filtyper.<br />
+              - <code>export default</code>: Eksporterer MIME-typer som standardobjekt, så de kan
+              importeres direkte.
+            </p>
+          </div>
+        </details>
+
+        <!-- Fold-ud: Overordnet Struktur og Fordele -->
+        <details class="mb-6 bg-white rounded-lg shadow">
+          <summary class="p-4 text-2xl font-semibold text-gray-800 cursor-pointer">
+            Overordnet Struktur og Fordele
+          </summary>
+          <div class="p-6 space-y-4">
+            <p class="text-lg text-gray-700">
+              Projektets struktur er designet med fokus på modularitet, fleksibilitet og
+              genanvendelighed.
+            </p>
+            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
+              <li>
+                <strong>Serverfiler:</strong> <code>server.cjs</code> og
+                <code>server.mjs</code> binder applikationen sammen og starter serveren.
+              </li>
+              <li>
+                <strong>Applikationsfiler:</strong> <code>app.cjs</code> og
+                <code>app.mjs</code> håndterer serverens logik.
+              </li>
+              <li>
+                <strong>Moduler:</strong> aggregator-moduler samler funktionaliteten fra
+                individuelle moduler som <code>mimeTypes</code> og <code>pathConstructor</code>.
+              </li>
+              <li>
+                <strong>Genanvendelige moduler:</strong> Filer i `common-js-modules` og `es-modules`
+                leverer grundlæggende funktioner som MIME-typer og filsti-konstruktion.
+              </li>
+            </ul>
+            <h3 class="mt-4 text-xl font-bold text-gray-800">Fordele ved Modulopbygning</h3>
+            <ul class="pl-6 space-y-2 text-gray-700 list-disc">
+              <li>
+                <strong>Modularitet:</strong> Funktionalitet er opdelt i selvstændige dele som
+                pathConstructor og mimeTypes, hvilket gør dem nemme at genbruge og teste.
+              </li>
+              <li>
+                <strong>Fleksibilitet:</strong> Projektet understøtter både CommonJS og ESM, så du
+                kan skifte mellem standarder afhængigt af behov.
+              </li>
+              <li>
+                <strong>Skalerbarhed:</strong> Nye MIME-typer eller stihåndteringsfunktioner kan let
+                tilføjes uden at påvirke eksisterende funktionalitet.
+              </li>
+              <li>
+                <strong>Robusthed:</strong> Fejlhåndtering er implementeret i pathConstructor og
+                serverfilerne, hvilket sikrer stabil drift.
+              </li>
+            </ul>
+          </div>
+        </details>
       </section>
 
       <!-- //TODO - Forskelle mellem ESM og CJS -->

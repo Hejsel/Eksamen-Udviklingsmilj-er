@@ -1,53 +1,672 @@
 <!DOCTYPE html>
 <html lang="da">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Moduler</title>
-		<link href="/dist/styles.css" rel="stylesheet" />
-		<script src="/src/js/loadComponents.js" defer></script>
-		<script src="/src/js/activeLinks.js" defer></script>
-		<script type="module" src="/dist/js/app.mjs" defer></script>
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moduler</title>
+    <link href="/dist/styles.css" rel="stylesheet" />
+    <script src="/src/js/loadComponents.js" defer></script>
+    <script src="/src/js/activeLinks.js" defer></script>
+    <script type="module" src="/dist/js/app.mjs" defer></script>
+  </head>
 
-	<body>
-		<!-- HEADER som henter header.html ind på siden!!! -->
-		<header id="header"></header>
-		<p>
-			Præsenter TypeScript med fokus på typer, gerne sammenlignet med JavaScript, og type inference. Eksemplificer
-			opbygningen af komplekse typer. Anvendelse af TypeScript i projekter fra opsætning til compiling/transpiling
-			skal også indgå i præsentationen. Fragmenter af kode til illustration af dine overvejelser skal være en del
-			af præsentationen. Du bør bruge uddrag fra egne projekter og opgaver som eksempler i din gennemgang.
-		</p>
+  <body>
+    <!-- HEADER som henter header.html ind på siden!!! -->
+    <header id="header"></header>
 
-		<div class="container mx-auto p-6">
-			<header class="mb-8">
-				<h1 class="text-3xl font-semibold">Bank Applikation</h1>
-				<p class="text-lg text-gray-700">Administrer dine konti</p>
-			</header>
+    <!-- HERO Section -->
+    <section class="container px-8 py-16 rounded-lg shadow-lg bg-gray-50">
+      <div
+        class="flex flex-col items-center mx-auto space-y-8 max-w-7xl md:flex-row md:space-y-0 md:space-x-16"
+      >
+        <!-- Venstre kolonne: Tekst -->
+        <div class="md:w-2/3">
+          <!-- Opgavebeskrivelse -->
+          <h1 class="mb-6 text-4xl font-bold text-blue-600">Introduktion til TypeScript</h1>
+          <p class="mb-6 text-lg leading-relaxed text-gray-700">
+            TypeScript er et kraftfuldt værktøj, der bygger oven på JavaScript og tilføjer statisk
+            typing. Denne præsentation dækker:
+          </p>
 
-			<section id="bruger-info" class="bg-white p-6 rounded-lg shadow-md mb-6">
-				<h2 class="text-2xl font-semibold">Bruger Information</h2>
-				<p id="bruger-navn" class="text-lg"></p>
-				<p id="bruger-alder" class="text-lg"></p>
-			</section>
+          <!-- Agenda -->
+          <ul class="pl-6 mb-6 space-y-4 text-gray-700 list-disc">
+            <li>
+              <strong>Forskelle fra JavaScript:</strong> Hvordan TypeScript udvider JavaScript.
+            </li>
+            <li>
+              <strong>Type Inference:</strong> Hvordan TypeScript kan udlede typer automatisk.
+            </li>
+            <li><strong>Komplekse Typer:</strong> Eksempler på interfaces og union-typer.</li>
+            <li><strong>Opsætning:</strong> Hvordan TypeScript sættes op og kompileres.</li>
+            <li><strong>Kodeeksempler:</strong> Praktiske eksempler fra projekter og opgaver.</li>
+          </ul>
 
-			<section id="konto-info" class="bg-white p-6 rounded-lg shadow-md mb-6">
-				<h2 class="text-2xl font-semibold">Konto Information</h2>
-				<p id="konto-id" class="text-lg"></p>
-				<p id="konto-saldo" class="text-lg"></p>
-			</section>
+          <!-- Fold ud-knap -->
+          <details class="p-4 bg-blue-100 rounded-lg shadow">
+            <summary class="text-lg font-semibold text-blue-600 cursor-pointer">
+              Klik her for at læse hele opgavebeskrivelsen
+            </summary>
+            <div class="mt-4 leading-relaxed text-gray-700">
+              <p>
+                <strong>Opgaven:</strong><br />
+                Præsentationen skal fokusere på at forklare TypeScripts typer, sammenligning med
+                JavaScript, og hvordan man bygger komplekse typer. Derudover skal opsætning og
+                kompileringsprocessen beskrives med kodeeksempler, der illustrerer anvendelsen.
+              </p>
+              <p class="mt-4">
+                Fragmenter af kode skal inkluderes som en del af gennemgangen for at demonstrere
+                brugen og fordelene ved TypeScript.
+              </p>
+            </div>
+          </details>
+        </div>
 
-			<section id="transaktion-info" class="bg-white p-6 rounded-lg shadow-md">
-				<h2 class="text-2xl font-semibold">Transaktioner</h2>
-				<button id="indbetaling" class="bg-blue-500 text-white py-2 px-4 rounded-md">Indbetal 500</button>
-				<button id="hævning" class="bg-red-500 text-white py-2 px-4 rounded-md mt-4">Hæv 2000</button>
-			</section>
-		</div>
+        <!-- Højre kolonne: Billede -->
+        <div class="md:w-1/3">
+          <div
+            class="flex items-center justify-center w-full h-64 bg-blue-100 rounded-lg shadow-lg"
+          >
+            <!-- Pladsholder til billede -->
 
-		<!-- Footer -->
-		<footer class="py-4 text-center text-white bg-accent">
-			<p>Serveren kører på <strong>Node.js</strong>!</p>
-		</footer>
-	</body>
+            <p class="text-2xl font-bold text-blue-700">TypeScript</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduktion -->
+    <section class="py-8">
+      <div class="container px-4 mx-auto">
+        <h2 class="mb-4 text-2xl font-bold">Hvad er TypeScript?</h2>
+        <p class="mb-4">
+          TypeScript er et superset af JavaScript, der tilføjer statisk typing. Det hjælper med at
+          opdage fejl tidligere og gør koden mere læsbar og vedligeholdelig.
+        </p>
+        <p>
+          TypeScript er særligt nyttigt i større projekter, hvor mange udviklere arbejder sammen, og
+          hvor robust kode er nødvendig.
+        </p>
+      </div>
+    </section>
+
+    <!-- Type Inference -->
+    <section class="py-8 bg-gray-100">
+      <div class="container px-4 mx-auto">
+        <h2 class="mb-4 text-2xl font-bold">Type Inference</h2>
+        <p>TypeScript kan automatisk udlede typer baseret på tildelte værdier:</p>
+        <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
+let number = 5; // TypeScript ved, at dette er en 'number'
+let greeting = "Hej"; // TypeScript ved, at dette er en 'string'
+            </pre
+        >
+      </div>
+    </section>
+
+    <!-- Komplekse Typer -->
+    <section class="py-8">
+      <div class="container px-4 mx-auto">
+        <h2 class="mb-4 text-2xl font-bold">Komplekse Typer</h2>
+        <p>
+          TypeScript gør det muligt at definere avancerede typer, f.eks. interfaces og union-typer:
+        </p>
+        <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
+interface User {
+    id: number;
+    name: string;
+    email?: string; // Valgfri
+}
+
+const users: User[] = [
+    { id: 1, name: "Emil" },
+    { id: 2, name: "Sofie", email: "sofie@example.com" }
+];
+
+const getUserName = (user: User): string => user.name;
+            </pre
+        >
+      </div>
+    </section>
+
+    <!-- Sektion: Hvad er TypeScript -->
+    <section class="p-8 mb-8 rounded-lg shadow-lg bg-gray-50">
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">Hvad er TypeScript?</h2>
+      <p class="mb-4 text-gray-700">
+        TypeScript er et **superset** af JavaScript, som betyder, at alt gyldigt JavaScript også er
+        gyldigt TypeScript. TypeScript tilføjer ekstra funktioner som **statisk typesikkerhed**,
+        **avancerede typer**, og understøtter de nyeste JavaScript-standarder.
+      </p>
+      <p class="mb-4 text-gray-700">
+        Det kræver en kompilering til JavaScript, så det kan køre i browsere eller Node.js.
+      </p>
+      <p class="text-gray-700">
+        <strong>Billedsprog:</strong> Tænk på TypeScript som en sikkerhedsele, der beskytter dig mod
+        typiske fejl i JavaScript.
+      </p>
+    </section>
+
+    <!-- Sektion: Sådan fungerer TypeScript -->
+    <section class="p-8 mb-8 rounded-lg shadow-lg bg-gray-50">
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">Sådan fungerer TypeScript</h2>
+      <p class="mb-4 text-gray-700">
+        TypeScript skal kompileres til JavaScript, før det kan køre i browsere eller Node.js.
+      </p>
+      <pre class="p-4 mb-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Kompilering af TypeScript</span>
+tsc fil.ts
+  </pre>
+      <p class="text-gray-700">Kompileret TypeScript bliver til JavaScript:</p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Genereret JavaScript-kode</span>
+var navn = "Emil";
+  </pre>
+    </section>
+
+    <!-- Sektion: Primitiver -->
+    <section class="p-8 mb-8 rounded-lg shadow-lg bg-gray-50">
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">Primitiver</h2>
+      <table
+        class="w-full mb-6 bg-white border border-collapse border-gray-200 rounded-lg shadow-lg table-auto"
+      >
+        <thead>
+          <tr class="text-left bg-gray-100">
+            <th class="px-4 py-2 border border-gray-300">Type</th>
+            <th class="px-4 py-2 border border-gray-300">Beskrivelse</th>
+            <th class="px-4 py-2 border border-gray-300">Eksempel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="px-4 py-2 border border-gray-300">string</td>
+            <td class="px-4 py-2 border border-gray-300">Repræsenterer tekstværdier som navne.</td>
+            <td class="px-4 py-2 border border-gray-300">
+              <code>let navn: string = "Emil";</code>
+            </td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border border-gray-300">number</td>
+            <td class="px-4 py-2 border border-gray-300">
+              Repræsenterer tal, både heltal og decimaltal.
+            </td>
+            <td class="px-4 py-2 border border-gray-300">
+              <code>let alder: number = 25;</code>
+            </td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border border-gray-300">boolean</td>
+            <td class="px-4 py-2 border border-gray-300">Repræsenterer sandhedsværdier.</td>
+            <td class="px-4 py-2 border border-gray-300">
+              <code>let erAktiv: boolean = true;</code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="text-gray-700">
+        <strong>Bemærk:</strong> Primitiver sikrer, at data kun bruges på den måde, de er defineret.
+        For eksempel:
+      </p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-red-400">// Fejl: Forkert type</span>
+navn = 42; <span class="text-red-400">// Type 'number' er ikke kompatibel med typen 'string'.</span>
+  </pre>
+    </section>
+
+    <!-- Sektion: Arrays og Tuples -->
+    <section class="p-8 mb-8 rounded-lg shadow-lg bg-gray-50">
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">Arrays og Tuples</h2>
+      <p class="mb-4 text-gray-700">
+        Arrays og tuples giver mulighed for at gemme lister af data. Arrays indeholder elementer af
+        samme type, mens tuples kan have faste typer for hvert element.
+      </p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Arrays</span>
+let navne: string[] = ["Emil", "Marie"];
+
+<span class="text-green-400">// Tuples</span>
+let person: [string, number] = ["Emil", 25];
+  </pre>
+      <p class="text-gray-700">
+        <strong>Billedsprog:</strong> Arrays er som en liste af bøger med samme genre. Tuples er som
+        en boghylde, hvor hver hylde har en specifik type bog.
+      </p>
+    </section>
+
+    <!-- Sektion: Union Types -->
+    <section class="p-8 mb-8 rounded-lg shadow-lg bg-gray-50">
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">Union Types</h2>
+      <p class="mb-4 text-gray-700">
+        Med union types kan en variabel have flere mulige typer. Dette bruges, når data kan have
+        forskellig form afhængigt af situationen.
+      </p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Union type: Kan være en streng eller et nummer</span>
+let id: string | number = 42;
+
+<span class="text-green-400">// Kontrollér typen før brug</span>
+if (typeof id === "string") {
+  console.log("ID er en streng: " + id.toUpperCase());
+} else {
+  console.log("ID er et nummer: " + (id + 1));
+}
+  </pre>
+    </section>
+
+    <!-- Sektion: Funktionstyper -->
+    <section class="p-8 mb-8 rounded-lg shadow-lg bg-gray-50">
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">Funktionstyper</h2>
+      <p class="mb-4 text-gray-700">
+        TypeScript gør det muligt at definere typer for funktionens parametre og returværdi.
+      </p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Funktion med parametre og returværdi</span>
+function tilføj(a: number, b: number): number {
+  return a + b;
+}
+
+<span class="text-green-400">// Brug af funktionen</span>
+console.log(tilføj(5, 10)); <span class="text-green-400">// Output: 15</span>
+  </pre>
+      <p class="text-gray-700">
+        <strong>Billedsprog:</strong> Tænk på funktionstyper som en opskrift – de definerer, hvilke
+        ingredienser (parametre) der skal bruges, og hvad retten (returtypen) bliver.
+      </p>
+    </section>
+
+    <!-- Sektion: Interfaces -->
+    <section class="p-8 mb-8 rounded-lg shadow-lg bg-gray-50">
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">Interfaces</h2>
+      <p class="mb-4 text-gray-700">
+        Interfaces bruges til at definere strukturer for objekter og sikre, at de opfylder bestemte
+        krav.
+      </p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Definer et interface</span>
+interface Person {
+  navn: string;
+  alder: number;
+}
+
+<span class="text-green-400">// Brug af interfacet</span>
+let bruger: Person = { navn: "Emil", alder: 25 };
+  </pre>
+      <p class="text-gray-700">
+        <strong>Udvidelse af interfaces:</strong> Interfaces kan udvides for at tilføje yderligere
+        egenskaber.
+      </p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+interface Ansat extends Person {
+  titel: string;
+}
+
+let ansat: Ansat = { navn: "Marie", alder: 30, titel: "Udvikler" };
+  </pre
+      >
+    </section>
+
+    <!-- Opsætning og Kompilering -->
+    <section class="py-8 bg-gray-100">
+      <div class="container px-4 mx-auto">
+        <h2 class="mb-4 text-2xl font-bold">Opsætning og Kompilering</h2>
+        <ol class="list-decimal list-inside">
+          <li>
+            Installer TypeScript:
+            <code class="px-2 py-1 bg-gray-200 rounded">npm install -g typescript</code>
+          </li>
+          <li>Opret en <code class="px-2 py-1 bg-gray-200 rounded">tsconfig.json</code> fil:</li>
+        </ol>
+        <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "commonjs",
+        "strict": true
+    }
+}
+            </pre
+        >
+        <p class="mt-4">
+          Kompilér TypeScript med <code class="px-2 py-1 bg-gray-200 rounded">tsc</code> kommandoen.
+        </p>
+      </div>
+    </section>
+
+    <section class="p-8 rounded-lg shadow-lg bg-gray-50">
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">TypeScript: Primitiver</h2>
+      <p class="mb-4 text-gray-700">
+        Primitiver er de mest grundlæggende typer i TypeScript, som repræsenterer værdier som tekst,
+        tal, og sandhedsværdier.
+      </p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Definerer primitivtyper</span>
+let navn: string = "Emil"; <span class="text-green-400">// En tekststreng</span>
+let alder: number = 25; <span class="text-green-400">// Et tal</span>
+let erAktiv: boolean = true; <span class="text-green-400">// Sandhedsværdi</span>
+  </pre>
+      <p class="mt-4 text-gray-700">
+        - <code>string</code>: Bruges til tekstværdier, f.eks. navne.<br />
+        - <code>number</code>: Bruges til numeriske værdier, f.eks. alder.<br />
+        - <code>boolean</code>: Bruges til sandhedsværdier (<code>true</code> eller
+        <code>false</code>).
+      </p>
+      <p class="mt-4 text-gray-700">
+        <strong>Bemærk:</strong> TypeScript sikrer, at disse typer er korrekte. Hvis du forsøger at
+        tildele en forkert type, vil du få en fejl:
+      </p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-red-400">// Fejl: Forkert type</span>
+navn = 42; <span class="text-red-400">// Type 'number' kan ikke tildeles typen 'string'.</span>
+  </pre>
+    </section>
+
+    <section class="p-8 rounded-lg shadow-lg bg-gray-50">
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">TypeScript: Arrays og Tuples</h2>
+      <p class="mb-4 text-gray-700">
+        Arrays og tuples bruges til at gemme lister af værdier. Arrays indeholder elementer af samme
+        type, mens tuples kan have forskellige typer.
+      </p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Arrays</span>
+let navne: string[] = ["Emil", "Marie"]; <span class="text-green-400">// Liste af strenge</span>
+
+<span class="text-green-400">// Tuples</span>
+let person: [string, number] = ["Emil", 25]; <span class="text-green-400">// Streng og tal</span>
+  </pre>
+      <p class="mt-4 text-gray-700">
+        - <code>string[]</code>: Angiver en array, hvor alle elementer skal være strenge.<br />
+        - <code>[string, number]</code>: Angiver en tuple, hvor første element er en streng, og
+        andet element er et tal.
+      </p>
+      <p class="mt-4 text-gray-700">
+        <strong>Fordel:</strong> TypeScript sikrer, at du kun tilføjer elementer af den korrekte
+        type:
+      </p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-red-400">// Fejl: Forkert type</span>
+navne.push(42); <span class="text-red-400">// Type 'number' er ikke tildelbar til typen 'string'.</span>
+  </pre>
+    </section>
+
+    <section class="p-8 rounded-lg shadow-lg bg-gray-50">
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">TypeScript: Enums</h2>
+      <p class="mb-4 text-gray-700">
+        Enums bruges til at definere en liste over konstante værdier med navne. De bruges ofte til
+        at repræsentere roller, statusser eller kategorier.
+      </p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Definerer en enum</span>
+enum Rolle {
+  Admin,
+  Bruger,
+  Gæst,
+}
+
+<span class="text-green-400">// Tildeler en enum-værdi</span>
+let minRolle: Rolle = Rolle.Admin; <span class="text-green-400">// Admin er 0</span>
+  </pre>
+      <p class="mt-4 text-gray-700">
+        - <code>enum</code>: Opretter en navngivet samling af konstante værdier.<br />
+        - <code>Rolle.Admin</code>: Enum-værdien repræsenteret af `Admin`.
+      </p>
+      <p class="mt-4 text-gray-700">
+        <strong>Bemærk:</strong> TypeScript tildeler som standard numeriske værdier til enums,
+        startende fra 0:
+      </p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+console.log(Rolle.Admin); <span class="text-green-400">// Output: 0</span>
+console.log(Rolle.Bruger); <span class="text-green-400">// Output: 1</span>
+  </pre>
+    </section>
+
+    <section class="p-8 rounded-lg shadow-lg bg-gray-50">
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">TypeScript: Union Types</h2>
+      <p class="mb-4 text-gray-700">
+        Union Types bruges til at tillade flere typer for en variabel. Det betyder, at en variabel
+        kan være én af flere angivne typer.
+      </p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Union type: Kan være en streng eller et nummer</span>
+let id: string | number = 42;
+
+<span class="text-green-400">// Tjek typen før brug</span>
+if (typeof id === "string") {
+  console.log("ID er en streng: " + id.toUpperCase());
+} else {
+  console.log("ID er et nummer: " + (id + 1));
+}
+  </pre>
+      <p class="mt-4 text-gray-700">
+        - <code>|</code>: Bruges til at angive en union type.<br />
+        - <code>typeof</code>: Bruges til at finde ud af typen ved runtime.
+      </p>
+    </section>
+
+    <section class="p-8 rounded-lg shadow-lg bg-gray-50">
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">TypeScript: Funktionstyper</h2>
+      <p class="mb-4 text-gray-700">
+        Funktionstyper definerer typerne for en funktions argumenter og returværdi.
+      </p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Funktion med typer for argumenter og returværdi</span>
+function tilføj(a: number, b: number): number {
+  return a + b;
+}
+
+<span class="text-green-400">// Kald funktionen</span>
+console.log(tilføj(5, 10)); <span class="text-green-400">// Output: 15</span>
+  </pre>
+      <p class="mt-4 text-gray-700">
+        - <code>a: number</code>: Angiver, at argumentet `a` skal være et tal.<br />
+        - <code>: number</code>: Angiver, at funktionen returnerer et tal.
+      </p>
+      <p class="mt-4 text-gray-700">
+        <strong>Bemærk:</strong> Hvis du forsøger at bruge forkerte typer, vil TypeScript give en
+        fejl:
+      </p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-red-400">// Fejl: Forkert type</span>
+tilføj("5", 10); <span class="text-red-400">// Argumentet af typen 'string' er ikke tildelbart til typen 'number'.</span>
+  </pre>
+    </section>
+
+    <!-- Sektion: Hvad er TypeScript -->
+    <section class="p-8 rounded-lg shadow-lg bg-gray-50">
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">Hvad er TypeScript?</h2>
+      <p class="text-gray-700">
+        TypeScript er et programmeringssprog, der bygger oven på JavaScript. Det introducerer
+        **statisk typesikkerhed**, hvilket betyder, at du kan definere, hvilke typer data variabler,
+        funktioner og objekter skal have. TypeScript gør koden mere robust, lettere at vedligeholde
+        og hjælper med at finde fejl under udvikling fremfor ved runtime.
+      </p>
+      <p class="mt-4 text-gray-700">
+        TypeScript bliver kompilieret til JavaScript, så det kan køre i enhver browser eller
+        Node.js.
+      </p>
+    </section>
+
+    <!-- Sektion: Primitiver -->
+    <section class="p-8 rounded-lg shadow-lg bg-gray-50">
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">Primitiver</h2>
+      <p class="mb-4 text-gray-700">
+        Primitiver er de grundlæggende datatyper i TypeScript. De repræsenterer standardværdier som
+        tekst, tal og sandhedsværdier.
+      </p>
+      <table
+        class="w-full bg-white border border-collapse border-gray-200 rounded-lg shadow-lg table-auto"
+      >
+        <thead>
+          <tr class="text-left bg-gray-100">
+            <th class="px-4 py-2 border border-gray-300">Type</th>
+            <th class="px-4 py-2 border border-gray-300">Beskrivelse</th>
+            <th class="px-4 py-2 border border-gray-300">Eksempel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="px-4 py-2 border border-gray-300">string</td>
+            <td class="px-4 py-2 border border-gray-300">
+              Repræsenterer tekstværdier som navne eller sætninger.
+            </td>
+            <td class="px-4 py-2 border border-gray-300">
+              <code>let navn: string = "Emil";</code>
+            </td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border border-gray-300">number</td>
+            <td class="px-4 py-2 border border-gray-300">
+              Bruges til numeriske værdier, både heltal og decimaltal.
+            </td>
+            <td class="px-4 py-2 border border-gray-300">
+              <code>let alder: number = 25;</code>
+            </td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border border-gray-300">boolean</td>
+            <td class="px-4 py-2 border border-gray-300">
+              Repræsenterer sandhedsværdier (<code>true</code> eller <code>false</code>).
+            </td>
+            <td class="px-4 py-2 border border-gray-300">
+              <code>let erAktiv: boolean = true;</code>
+            </td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border border-gray-300">null</td>
+            <td class="px-4 py-2 border border-gray-300">Repræsenterer en tom værdi.</td>
+            <td class="px-4 py-2 border border-gray-300">
+              <code>let tom: null = null;</code>
+            </td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border border-gray-300">undefined</td>
+            <td class="px-4 py-2 border border-gray-300">
+              Indikerer, at en variabel ikke har en defineret værdi.
+            </td>
+            <td class="px-4 py-2 border border-gray-300">
+              <code>let udefineret: undefined;</code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Sektion: Arrays og Tuples -->
+    <section class="p-8 rounded-lg shadow-lg bg-gray-50">
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">Arrays og Tuples</h2>
+      <p class="mb-4 text-gray-700">
+        Arrays bruges til at gemme lister af værdier med samme type, mens tuples giver mulighed for
+        at blande typer i en struktureret liste.
+      </p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Arrays</span>
+let navne: string[] = ["Emil", "Marie"];
+
+<span class="text-green-400">// Tuples</span>
+let person: [string, number] = ["Emil", 25];
+  </pre>
+      <p class="mt-4 text-gray-700">
+        - <code>string[]</code>: Definerer en array, hvor alle elementer skal være strenge.<br />
+        - <code>[string, number]</code>: En tuple med en streng og et tal i korrekt rækkefølge.
+      </p>
+    </section>
+
+    <!-- Sektion: Union Types -->
+    <section class="p-8 rounded-lg shadow-lg bg-gray-50">
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">Union Types</h2>
+      <p class="mb-4 text-gray-700">
+        Union Types tillader variabler at have mere end én mulig type. Dette er nyttigt, når data
+        kan have forskellige former.
+      </p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Union Type: Kan være en streng eller et nummer</span>
+let id: string | number = 42;
+
+<span class="text-green-400">// Brug typeof til at tjekke typen</span>
+if (typeof id === "string") {
+  console.log("ID er en streng: " + id.toUpperCase());
+} else {
+  console.log("ID er et nummer: " + (id + 1));
+}
+  </pre>
+      <p class="mt-4 text-gray-700">
+        - <code>|</code>: Bruges til at angive, at en variabel kan være én af flere typer.
+      </p>
+    </section>
+
+    <!-- Sektion: Funktionstyper -->
+    <section class="p-8 rounded-lg shadow-lg bg-gray-50">
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">Funktionstyper</h2>
+      <p class="mb-4 text-gray-700">
+        Funktionstyper definerer både typerne for funktionens argumenter og dens returværdi.
+      </p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Funktion med typeannotationer</span>
+function tilføj(a: number, b: number): number {
+  return a + b;
+}
+
+<span class="text-green-400">// Kald funktionen</span>
+console.log(tilføj(5, 10)); <span class="text-green-400">// Output: 15</span>
+  </pre>
+      <p class="mt-4 text-gray-700">
+        - <code>a: number</code>: Angiver typen af argumentet `a`.<br />
+        - <code>: number</code>: Definerer returtypen for funktionen.
+      </p>
+    </section>
+
+    <!-- Sektion: Interfaces -->
+    <section class="p-8 rounded-lg shadow-lg bg-gray-50">
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">Interfaces</h2>
+      <p class="mb-4 text-gray-700">
+        Interfaces bruges til at definere strukturen af objekter. De gør det nemmere at specificere,
+        hvordan data skal se ud.
+      </p>
+      <pre class="p-4 text-sm text-gray-100 bg-gray-800 rounded-lg">
+<span class="text-green-400">// Definerer et interface</span>
+interface Person {
+  navn: string;
+  alder: number;
+}
+
+<span class="text-green-400">// Brug interfacet</span>
+let bruger: Person = { navn: "Emil", alder: 25 };
+  </pre>
+      <p class="mt-4 text-gray-700">
+        - <code>interface</code>: Definerer en struktur, som et objekt skal følge.<br />
+        - <code>Person</code>: Angiver, at et objekt skal have `navn` som en streng og `alder` som
+        et tal.
+      </p>
+    </section>
+
+    <div class="container p-6 mx-auto">
+      <header class="mb-8">
+        <h1 class="text-3xl font-semibold">Bank Applikation</h1>
+        <p class="text-lg text-gray-700">Administrer dine konti</p>
+      </header>
+
+      <section id="bruger-info" class="p-6 mb-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold">Bruger Information</h2>
+        <p id="bruger-navn" class="text-lg"></p>
+        <p id="bruger-alder" class="text-lg"></p>
+      </section>
+
+      <section id="konto-info" class="p-6 mb-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold">Konto Information</h2>
+        <p id="konto-id" class="text-lg"></p>
+        <p id="konto-saldo" class="text-lg"></p>
+      </section>
+
+      <section id="transaktion-info" class="p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold">Transaktioner</h2>
+        <button id="indbetaling" class="px-4 py-2 text-white bg-blue-500 rounded-md">
+          Indbetal 500
+        </button>
+        <button id="hævning" class="px-4 py-2 mt-4 text-white bg-red-500 rounded-md">
+          Hæv 2000
+        </button>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center text-white bg-accent">
+      <p>Serveren kører på <strong>Node.js</strong>!</p>
+    </footer>
+  </body>
 </html>
