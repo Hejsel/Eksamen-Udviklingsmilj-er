@@ -1,27 +1,120 @@
 <!DOCTYPE html>
 <html lang="da">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Moduler</title>
-    <link href="/dist/styles.css" rel="stylesheet" />
-    <script src="/src/js/loadComponents.js" defer></script>
-    <script src="/src/js/activeLinks.js" defer></script>
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Moduler</title>
+		<link href="/dist/styles.css" rel="stylesheet" />
+		<script src="/src/js/loadComponents.js" defer></script>
+		<script src="/src/js/activeLinks.js" defer></script>
+		<script src="/src/js/pages/opg-6_regexp.js" defer></script>
+	</head>
 
-  <body>
-    <!-- HEADER som henter header.html ind på siden!!! -->
-    <header id="header"></header>
-    <p>
-      Giv en præsentation af regular expressions og strengmetoder som de forekommer i JavaScript.
-      Udover den generelle gennemgang præsenter konkrete anvendelsesmuligheder fx i søgninger,
-      søg-og-erstat, udtrækning af delstrenge, strengmanipulation og validering i webudvikling.
-      Fragmenter af kode til illustration af dine overvejelser skal være en del af præsentationen.
-      Du bør bruge uddrag fra egne projekter og opgaver som eksempler i din gennemgang.
-    </p>
-    <!-- Footer -->
-    <footer class="py-4 text-center text-white bg-accent">
-      <p>Serveren kører på <strong>Node.js</strong>!</p>
-    </footer>
-  </body>
+	<body class="flex flex-wrap gap-4 justify-center">
+		<!-- HEADER som henter header.html ind på siden!!! -->
+		<header id="header"></header>
+		<p>
+			Giv en præsentation af regular expressions og strengmetoder som de forekommer i JavaScript. Udover den
+			generelle gennemgang præsenter konkrete anvendelsesmuligheder fx i søgninger, søg-og-erstat, udtrækning af
+			delstrenge, strengmanipulation og validering i webudvikling. Fragmenter af kode til illustration af dine
+			overvejelser skal være en del af præsentationen. Du bør bruge uddrag fra egne projekter og opgaver som
+			eksempler i din gennemgang.
+		</p>
+
+		<div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+			<h1 class="text-2xl font-bold mb-4">Søg og Erstat</h1>
+
+			<div class="mb-4">
+				<label for="source-text" class="block text-lg font-medium p-2">Kildetekst:</label>
+				<p id="source-text" class="mt-2 w-full border border-gray-300 p-3 rounded-md bg-gray-100">
+					Velkommen til vores side! Du kan kontakte os på følgende telefonnumre:
+					<b>71909150</b>, <b>22183680</b>.
+				</p>
+			</div>
+
+			<label for="search-pattern" class="block text-lg font-medium">Søgemønster:</label>
+
+			<div class="flex gap-4 mb-1">
+				<input
+					id="search-pattern"
+					type="text"
+					class="w-full border border-gray-300 rounded-md p-2"
+					placeholder="Indtast søgemønster eller RegEx" />
+
+				<button
+					id="search-btn"
+					class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none">
+					Søg
+				</button>
+			</div>
+
+			<div class="flex items-center mb-4">
+				<input id="use-regex" type="checkbox" class="mr-2" />
+				<label for="use-regex" class="text-xs font-medium">Brug RegEx</label>
+			</div>
+
+			<label for="replace-text" class="block text-lg font-medium">Erstatningstekst:</label>
+
+			<div class="mb-4 flex gap-4">
+				<input
+					id="replace-text"
+					type="text"
+					class="w-full border border-gray-300 p-2 rounded-md p-2"
+					placeholder="Indtast tekst til erstatning" />
+
+				<button
+					id="replace-btn"
+					class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none">
+					Erstat
+				</button>
+			</div>
+
+			<div id="result-text" class="mt-6 p-4 hidden"></div>
+		</div>
+
+		<div class="flex flex-wrap gap-4 justify-center" id="ascii-container">
+			<!-- Eksempel på en tom boks (struktur for alle bokse) -->
+			<div
+				class="ascii-box border border-gray-300 p-4 rounded-lg w-20 h-20 flex flex-col justify-center items-center text-center hover:bg-gray-50">
+				<div class="ascii-number font-bold"></div>
+				<div class="ascii-char"></div>
+			</div>
+		</div>
+
+		<script>
+			// Funktion til at generere ASCII-tabellen
+			const genererAsciiTabel = () => {
+				const container = document.getElementById('ascii-container');
+				const template = document.querySelector('.ascii-box');
+
+				// Ryd containeren for eventuelle eksisterende bokse
+				container.innerHTML = '';
+
+				// Loop gennem 0 til 255
+				for (let i = 0; i < 256; i++) {
+					// Klon boksen fra template
+					const box = template.cloneNode(true);
+
+					// Fyld indhold i boksen
+					const nummerElement = box.querySelector('.ascii-number');
+					const tegnElement = box.querySelector('.ascii-char');
+
+					nummerElement.textContent = i;
+					tegnElement.textContent =
+						i < 32 || i === 127 ? `\\x${i.toString(16).padStart(2, '0')}` : String.fromCharCode(i);
+
+					// Tilføj boksen til containeren
+					container.appendChild(box);
+				}
+			};
+
+			// Kald funktionen for at generere tabellen når siden er loadet
+			document.addEventListener('DOMContentLoaded', genererAsciiTabel);
+		</script>
+
+		<!-- Footer -->
+		<footer class="py-4 text-center text-white bg-accent">
+			<p>Serveren kører på <strong>Node.js</strong>!</p>
+		</footer>
+	</body>
 </html>
