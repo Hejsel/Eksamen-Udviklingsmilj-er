@@ -27,15 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				matches = text.match(regex);
 			}
 
-			// Hvis søgningen ikke er et dansk telefonnummer
-			if (!phoneRegex.test(pattern)) {
-				resultText.textContent = 'Søgemønstret skal være et gyldigt dansk telefonnummer (8 cifre).';
-				resultText.className = 'mt-6 p-4 bg-red-100 rounded-lg border border-red-300';
-				resultText.classList.remove('hidden');
-				return;
-			}
-
-			// Hvis søgningen er et dansk telefonnummer og matches
 			if (matches) {
 				resultText.textContent = `Fundet ${matches.length} match(es):\n${matches.join(', ')}`;
 				resultText.className = 'mt-6 p-4 bg-green-100 rounded-lg border border-green-300';
@@ -69,17 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
 				regex = new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'); // Escape specialtegn
 			}
 
-			// Valider, at søgningen matcher et dansk telefonnummer
+			// Valider, at mønstret matcher et dansk telefonnummer
 			if (!phoneRegex.test(pattern)) {
-				resultText.textContent = 'Søgemønstret skal være et gyldigt dansk telefonnummer (8 cifre).';
-				resultText.className = 'mt-6 p-4 bg-red-100 rounded-lg border border-red-300';
-				resultText.classList.remove('hidden');
-				return;
-			}
-
-			// Valider, at erstatningsteksten også er et gyldigt telefonnummer
-			if (!phoneRegex.test(replacement)) {
-				resultText.textContent = 'Erstatningsteksten skal være et gyldigt dansk telefonnummer (8 cifre).';
+				resultText.textContent = 'Kun danske telefonnumre kan erstattes.';
 				resultText.className = 'mt-6 p-4 bg-red-100 rounded-lg border border-red-300';
 				resultText.classList.remove('hidden');
 				return;
