@@ -76,293 +76,181 @@
         </div>
       </section>
 
-      <!-- Introduktion -->
-      <section class="py-8">
-        <div class="container px-4 mx-auto">
-          <h2 class="mb-4 text-2xl font-bold">Hvad er Testning?</h2>
-          <p class="mb-4">
-            Testning er en afgørende del af softwareudvikling. Formålet er at sikre, at koden
-            fungerer som forventet, og at fejl opdages og rettes tidligt i udviklingsprocessen.
+      <di class="max-w-5xl px-4 py-8 mx-auto">
+        <!-- Header -->
+        <header class="mb-10 text-center">
+          <h1 class="text-4xl font-bold text-gray-900">Testning og Jest</h1>
+          <p class="mt-2 text-lg text-gray-600">En guide til testning og brug af Jest</p>
+        </header>
+
+        <!-- Hvad er Testning -->
+        <section class="container mb-8">
+          <h2 class="pb-2 text-3xl font-semibold text-gray-800 border-b-2 border-gray-300">
+            Hvad er Testning?
+          </h2>
+          <p class="mt-4 text-lg">
+            Testning er en proces i softwareudvikling, der sikrer, at programmet opfører sig som
+            forventet, og at eventuelle fejl eller uforudsete opførsel identificeres og rettes. Det
+            er en afgørende del af softwareudviklingscyklussen, der hjælper med at forbedre
+            pålideligheden og kvaliteten af software.
           </p>
-          <p>
-            Testning kan opdeles i flere niveauer og metoder, der hver især tjener specifikke
-            formål. Her dykker vi ned i nogle af de mest anvendte.
+          <div class="mt-4 space-y-2">
+            <p>Formålet med testning er:</p>
+            <ul class="pl-6 text-lg list-disc">
+              <li>
+                <strong>At opdage fejl tidligt:</strong> Jo tidligere fejl opdages, desto billigere
+                og hurtigere er det at rette dem.
+              </li>
+              <li>
+                <strong>At sikre korrekt funktionalitet:</strong> Test sikrer, at funktioner lever
+                op til kravene.
+              </li>
+              <li>
+                <strong>At forhindre regression:</strong> Test forhindrer tidligere fungerende kode
+                i at bryde efter ændringer.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Testmetoder -->
+        <section class="container mb-8">
+          <h2 class="pb-2 text-3xl font-semibold text-gray-800 border-b-2 border-gray-300">
+            Testmetoder
+          </h2>
+          <div class="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2">
+            <!-- Manuel Testning -->
+            <div class="p-6 bg-white rounded shadow-lg">
+              <h3 class="mb-2 text-xl font-semibold text-gray-800">Manuel Testning</h3>
+              <p>
+                Tester udføres manuelt af udviklere eller testere. Velegnet til brugeroplevelser og
+                visuelle elementer.
+              </p>
+              <p class="mt-2 text-gray-600">
+                <strong>Ulempe:</strong> Tidskrævende og svært at gentage konsekvent.
+              </p>
+              <p class="mt-4">
+                <strong>Eksempel:</strong> En tester åbner en webapplikation, klikker på knapper og
+                tjekker resultatet.
+              </p>
+            </div>
+            <!-- Automatiseret Testning -->
+            <div class="p-6 bg-white rounded shadow-lg">
+              <h3 class="mb-2 text-xl font-semibold text-gray-800">Automatiseret Testning</h3>
+              <p>
+                Bruger scripts og værktøjer til hurtigt at teste applikationer. Velegnet til
+                gentagne tests og regressionstest.
+              </p>
+              <p class="mt-2 text-gray-600">
+                <strong>Fordel:</strong> Hurtigere og mere pålideligt end manuel testning.
+              </p>
+              <p class="mt-4">
+                <strong>Eksempel:</strong> Et script tester automatisk, om en "tilføj til
+                kurv"-funktion fungerer korrekt.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Testniveauer -->
+        <section class="container mb-8">
+          <h2 class="pb-2 text-3xl font-semibold text-gray-800 border-b-2 border-gray-300">
+            Testniveauer
+          </h2>
+          <div class="mt-4 space-y-6">
+            <!-- Enhedstest -->
+            <div class="p-4 rounded shadow bg-blue-50">
+              <h3 class="mb-2 text-xl font-semibold text-blue-900">1. Enhedstest (Unit Test)</h3>
+              <p>
+                Tester individuelle moduler eller funktioner i isolation. Hjælper med at sikre, at
+                hver del fungerer korrekt.
+              </p>
+              <p class="mt-2">
+                <strong>Eksempel:</strong> Test af en funktion, der beregner summen af to tal.
+              </p>
+            </div>
+            <!-- Integrationstest -->
+            <div class="p-4 rounded shadow bg-yellow-50">
+              <h3 class="mb-2 text-xl font-semibold text-yellow-900">2. Integrationstest</h3>
+              <p>Tester, hvordan forskellige moduler arbejder sammen.</p>
+              <p class="mt-2">
+                <strong>Eksempel:</strong> En integrationstest sikrer, at en databaseforespørgsel
+                returnerer korrekte data til en API.
+              </p>
+            </div>
+            <!-- Systemtest -->
+            <div class="p-4 rounded shadow bg-green-50">
+              <h3 class="mb-2 text-xl font-semibold text-green-900">3. Systemtest</h3>
+              <p>Tester hele systemet som en helhed. Fokus på funktionalitet og ydeevne.</p>
+              <p class="mt-2">
+                <strong>Eksempel:</strong> Systemtesten sikrer, at en e-handelsplatform korrekt
+                behandler ordrer.
+              </p>
+            </div>
+            <!-- Accepttest -->
+            <div class="p-4 rounded shadow bg-red-50">
+              <h3 class="mb-2 text-xl font-semibold text-red-900">4. Accepttest</h3>
+              <p>Validerer, at systemet opfylder krav og forventninger.</p>
+              <p class="mt-2">
+                <strong>Eksempel:</strong> Bruges til at bekræfte, at produktet er klar til
+                lancering.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Jest og Unittest -->
+        <section class="container mb-8">
+          <h2 class="pb-2 text-3xl font-semibold text-gray-800 border-b-2 border-gray-300">
+            Hvad er Unittest og Jest?
+          </h2>
+          <p class="mt-4 text-lg">
+            Unittest er en testmetode, der fokuserer på at teste mindre, isolerede dele af koden.
+            Jest er et populært JavaScript-testframework, der gør testning enkel og effektiv.
           </p>
-        </div>
-      </section>
+        </section>
 
-      <!-- Testmetoder og Testniveauer -->
-      <section class="py-8 bg-gray-100">
-        <div class="container px-4 mx-auto">
-          <h2 class="mb-4 text-2xl font-bold">Testmetoder og Testniveauer</h2>
-          <h3 class="mt-6 text-xl font-semibold">Testmetoder</h3>
-          <ul class="mb-4 list-disc list-inside">
-            <li>
-              <strong>Manuel Testning:</strong> Tester udføres manuelt af udviklere eller testere
-              for at finde fejl.
-            </li>
-            <li>
-              <strong>Automatiseret Testning:</strong> Skripter og værktøjer bruges til at teste
-              applikationer hurtigt og effektivt.
-            </li>
-          </ul>
-
-          <h3 class="mt-6 text-xl font-semibold">Testniveauer</h3>
-          <ul class="list-disc list-inside">
-            <li>
-              <strong>Enhedstest (Unit Test):</strong> Tester individuelle moduler eller funktioner.
-            </li>
-            <li>
-              <strong>Integrationstest:</strong> Tester hvordan forskellige moduler arbejder sammen.
-            </li>
-            <li><strong>Systemtest:</strong> Tester hele systemet som en helhed.</li>
-            <li>
-              <strong>Accepttest:</strong> Validerer, at systemet opfylder krav og forventninger.
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Unittest og Jest -->
-      <section class="py-8">
-        <div class="container px-4 mx-auto">
-          <h2 class="mb-4 text-2xl font-bold">Unittest og Jest</h2>
-          <p>
-            Unittest er en testmetode, der fokuserer på at teste mindre, isolerede dele af koden,
-            som for eksempel funktioner eller klasser. Et populært værktøj til unittest er Jest, som
-            er et JavaScript-testframework.
-          </p>
-
-          <h3 class="mt-6 text-xl font-semibold">Hvad er Jest?</h3>
-          <p>
-            Jest er et kraftfuldt værktøj til at skrive unittests for JavaScript- og
-            TypeScript-projekter. Det tilbyder funktioner som mockning, testdækning og asynkron
-            testning.
-          </p>
-
-          <h3 class="mt-6 text-xl font-semibold">Opsætning af Jest</h3>
-          <ol class="mb-4 list-decimal list-inside">
-            <li>
-              Installer Jest:
-              <code class="px-2 py-1 bg-gray-200 rounded">npm install --save-dev jest</code>
-            </li>
-            <li>
-              Tilføj en testscript i
-              <code class="px-2 py-1 bg-gray-200 rounded">package.json</code>:
-            </li>
-          </ol>
-          <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
-"scripts": {
-    "test": "jest"
-}
-            </pre
-          >
-
-          <h3 class="mt-6 text-xl font-semibold">Eksempel på Unittest</h3>
-          <p>Her er et eksempel på en funktion og dens unittest:</p>
-          <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
-// Funktion
+        <!-- Eksempel på Jest -->
+        <section class="container mb-8">
+          <h2 class="pb-2 text-3xl font-semibold text-gray-800 border-b-2 border-gray-300">
+            Eksempel på Jest
+          </h2>
+          <div class="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2">
+            <div class="p-4 bg-gray-100 rounded shadow">
+              <h3 class="mb-2 text-xl font-semibold text-gray-800">Funktion</h3>
+              <pre class="p-4 text-white bg-gray-900 rounded">
 const add = (a, b) => a + b;
-
-// Test
-test('add function should return the sum of two numbers', () => {
+          </pre
+              >
+            </div>
+            <div class="p-4 bg-gray-100 rounded shadow">
+              <h3 class="mb-2 text-xl font-semibold text-gray-800">Test</h3>
+              <pre class="p-4 text-white bg-gray-900 rounded">
+test("add function should return the sum of two numbers", () => {
     expect(add(2, 3)).toBe(5);
     expect(add(-1, 1)).toBe(0);
 });
-            </pre
-          >
-
-          <h3 class="mt-6 text-xl font-semibold">Mockning med Jest</h3>
-          <p>Jest gør det nemt at mocke funktioner, for eksempel API-kald:</p>
-          <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
-const fetchData = jest.fn().mockResolvedValue({ data: 'Hello, World!' });
-
-// Test
-test('fetchData should return mocked data', async () => {
-    const data = await fetchData();
-    expect(data).toEqual({ data: 'Hello, World!' });
-});
-            </pre
-          >
-        </div>
-      </section>
-
-      <!-- Fordele ved Testning -->
-      <section class="py-8 bg-gray-100">
-        <div class="container px-4 mx-auto">
-          <h2 class="mb-4 text-2xl font-bold">Fordele ved Testning</h2>
-          <ul class="list-disc list-inside">
-            <li>Reducerer risikoen for fejl i produktionen.</li>
-            <li>Øger vedligeholdelsesmulighederne for koden.</li>
-            <li>Sikrer bedre samarbejde i udviklingsteams.</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Header -->
-      <header class="py-6 text-white bg-blue-600">
-        <div class="container mx-auto text-center">
-          <h1 class="text-4xl font-bold">TypeScript: Stærkere Typing i JavaScript</h1>
-          <p class="mt-2">Fra opsætning til komplekse typer</p>
-        </div>
-      </header>
-
-      <!-- Introduktion -->
-      <section class="py-8">
-        <div class="container px-4 mx-auto">
-          <h2 class="mb-4 text-2xl font-bold">Hvad er TypeScript?</h2>
-          <p class="mb-4">
-            TypeScript er et superset af JavaScript, der tilføjer statisk typing. Det hjælper med at
-            opdage fejl tidligere og gør koden mere læsbar og vedligeholdelig.
-          </p>
-
-          <h3 class="mt-6 text-xl font-semibold">Sammenligning: JavaScript vs. TypeScript</h3>
-          <div class="grid grid-cols-1 gap-6 mt-4 md:grid-cols-2">
-            <div class="p-4 bg-gray-200 rounded shadow">
-              <h4 class="font-bold">JavaScript</h4>
-              <pre class="p-4 mt-2 text-white bg-gray-800 rounded">
-const greet = (name) => {
-    return `Hello, ${name}!`;
-};
-                    </pre
-              >
-            </div>
-            <div class="p-4 bg-gray-200 rounded shadow">
-              <h4 class="font-bold">TypeScript</h4>
-              <pre class="p-4 mt-2 text-white bg-gray-800 rounded">
-const greet = (name: string): string => {
-    return `Hello, ${name}!`;
-};
-                    </pre
+          </pre
               >
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Type Inference -->
-      <section class="py-8 bg-gray-100">
-        <div class="container px-4 mx-auto">
-          <h2 class="mb-4 text-2xl font-bold">Type Inference</h2>
-          <p>TypeScript kan automatisk udlede typer baseret på tildelte værdier:</p>
-          <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
-let number = 5; // TypeScript ved, at dette er en 'number'
-let greeting = "Hej"; // TypeScript ved, at dette er en 'string'
-            </pre
-          >
-        </div>
-      </section>
-
-      <!-- Komplekse Typer -->
-      <section class="py-8">
-        <div class="container px-4 mx-auto">
-          <h2 class="mb-4 text-2xl font-bold">Komplekse Typer</h2>
-          <p>
-            TypeScript gør det muligt at definere avancerede typer, f.eks. interfaces og
-            union-typer:
+        <!-- Konklusion -->
+        <section class="container mb-8">
+          <h2 class="pb-2 text-3xl font-semibold text-gray-800 border-b-2 border-gray-300">
+            Konklusion
+          </h2>
+          <p class="mt-4 text-lg">
+            Testning er afgørende for softwareudvikling. Manuel testning kan bruges til små
+            projekter, men automatiseret testning er essentiel for at sikre korrekt og konsistent
+            funktionalitet. Jest er et fremragende værktøj til unittests og gør processen enkel og
+            effektiv.
           </p>
-          <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
-interface User {
-    id: number;
-    name: string;
-    email?: string; // Valgfri
-}
-
-const users: User[] = [
-    { id: 1, name: "Emil" },
-    { id: 2, name: "Sofie", email: "sofie@example.com" }
-];
-
-const getUserName = (user: User): string => user.name;
-            </pre
-          >
-        </div>
-      </section>
-
-      <!-- Opsætning og Kompilering -->
-      <section class="py-8 bg-gray-100">
-        <div class="container px-4 mx-auto">
-          <h2 class="mb-4 text-2xl font-bold">Opsætning og Kompilering</h2>
-          <ol class="list-decimal list-inside">
-            <li>
-              Installer TypeScript:
-              <code class="px-2 py-1 bg-gray-200 rounded">npm install -g typescript</code>
-            </li>
-            <li>Opret en <code class="px-2 py-1 bg-gray-200 rounded">tsconfig.json</code> fil:</li>
-          </ol>
-          <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
-{
-    "compilerOptions": {
-        "target": "ES6",
-        "module": "commonjs",
-        "strict": true
-    }
-}
-            </pre
-          >
-          <p class="mt-4">
-            Kompilér TypeScript med
-            <code class="px-2 py-1 bg-gray-200 rounded">tsc</code> kommandoen.
-          </p>
-        </div>
-      </section>
-
-      <header class="py-6 text-white bg-green-600">
-        <div class="container mx-auto text-center">
-          <h1 class="text-4xl font-bold">Testning i Softwareudvikling</h1>
-          <p class="mt-2">Fra grundlæggende testmetoder til unittest med Jest</p>
-        </div>
-      </header>
-
-      <!-- Introduktion -->
-      <section class="py-8">
-        <div class="container px-4 mx-auto">
-          <h2 class="mb-4 text-2xl font-bold">Hvad er Testning?</h2>
-          <p class="mb-4">
-            Testning er en afgørende del af softwareudvikling. Formålet er at sikre, at koden
-            fungerer som forventet, og at fejl opdages og rettes tidligt i udviklingsprocessen.
-          </p>
-          <p>
-            Testning kan opdeles i flere niveauer og metoder, der hver især tjener specifikke
-            formål. Her dykker vi ned i nogle af de mest anvendte.
-          </p>
-        </div>
-      </section>
-
-      <!-- Testmetoder og Testniveauer -->
-      <section class="py-8 bg-gray-100">
-        <div class="container px-4 mx-auto">
-          <h2 class="mb-4 text-2xl font-bold">Testmetoder og Testniveauer</h2>
-          <h3 class="mt-6 text-xl font-semibold">Testmetoder</h3>
-          <ul class="mb-4 list-disc list-inside">
-            <li>
-              <strong>Manuel Testning:</strong> Tester udføres manuelt af udviklere eller testere
-              for at finde fejl.
-            </li>
-            <li>
-              <strong>Automatiseret Testning:</strong> Skripter og værktøjer bruges til at teste
-              applikationer hurtigt og effektivt.
-            </li>
-          </ul>
-
-          <h3 class="mt-6 text-xl font-semibold">Testniveauer</h3>
-          <ul class="list-disc list-inside">
-            <li>
-              <strong>Enhedstest (Unit Test):</strong> Tester individuelle moduler eller funktioner.
-            </li>
-            <li>
-              <strong>Integrationstest:</strong> Tester hvordan forskellige moduler arbejder sammen.
-            </li>
-            <li><strong>Systemtest:</strong> Tester hele systemet som en helhed.</li>
-            <li>
-              <strong>Accepttest:</strong> Validerer, at systemet opfylder krav og forventninger.
-            </li>
-          </ul>
-        </div>
-      </section>
-
+        </section>
+      </di>
       <!-- Unittest og Jest -->
-      <section class="py-8">
+      <section class="container py-8">
         <div class="container px-4 mx-auto">
           <h2 class="mb-4 text-2xl font-bold">Unittest og Jest</h2>
           <p>
@@ -424,6 +312,69 @@ test('fetchData should return mocked data', async () => {
           >
         </div>
       </section>
+
+      <div class="max-w-4xl p-4 mx-auto">
+        <!-- Header -->
+        <h1 class="mb-6 text-3xl font-bold text-center">Server Test Setup</h1>
+
+        <!-- Section: package.json -->
+        <section class="mb-8">
+          <h2 class="mb-2 text-2xl font-semibold">package.json</h2>
+          <pre class="p-4 text-white bg-gray-800 rounded">
+{
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
+      </pre
+          >
+          <p class="mt-2">
+            Denne konfiguration gør det muligt at bruge <code>jest</code> til tests og
+            <code>supertest</code> til HTTP-anmodninger.
+          </p>
+        </section>
+
+        <!-- Section: Testkode -->
+        <section class="container mb-8">
+          <h2 class="mb-2 text-2xl font-semibold">Testkode</h2>
+          <pre class="p-4 text-white bg-gray-800 rounded">
+const request = require("supertest");
+const app = require("../server"); // Din app
+let server;
+
+beforeAll((done) => {
+  server = app.listen(3000, done);
+});
+
+afterAll((done) => {
+  server.close(done);
+});
+
+describe("Test server", () => {
+  it("skal returnere status 200 for hjemmet (index)", async () => {
+    const response = await request(app).get("/");
+    expect(response.status).toBe(200);
+  });
+
+  it("skal returnere status 404 for ikke-eksisterende ruter", async () => {
+    const response = await request(app).get("/non-existent-page");
+    expect(response.status).toBe(404);
+  });
+});
+      </pre
+          >
+          <p class="mt-2">
+            Denne test sikrer, at din server reagerer korrekt på kendte og ukendte ruter.
+          </p>
+        </section>
+      </div>
 
       <!-- Fordele ved Testning -->
       <section class="py-8 bg-gray-100">
