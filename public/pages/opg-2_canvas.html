@@ -13,7 +13,684 @@
   <body>
     <header id="header"></header>
     <main>
-      <canvas id="staticDrawing" width="999" height="600"></canvas>
+      <!-- HERO Section -->
+      <section class="container px-8 py-16 rounded-lg shadow-lg bg-gray-50">
+        <div
+          class="flex flex-col items-center mx-auto space-y-8 max-w-7xl md:flex-row md:space-y-0 md:space-x-16"
+        >
+          <!-- Venstre kolonne: Tekst -->
+          <div class="md:w-2/3">
+            <!-- Opgavebeskrivelse -->
+            <h1 class="mb-6 text-4xl font-bold text-blue-600">Introduktion til HTML Canvas</h1>
+            <p class="mb-6 text-lg leading-relaxed text-gray-700">
+              HTML-elementet <code>&lt;canvas&gt;</code> giver mulighed for at tegne grafik, lave
+              animationer og udføre billedbehandling direkte i browseren. Denne præsentation dækker:
+            </p>
+
+            <!-- Agenda -->
+            <ul class="pl-6 mb-6 space-y-4 text-gray-700 list-disc">
+              <li>
+                <strong>Formål:</strong> Overblik over <code>&lt;canvas&gt;</code> og dets
+                anvendelser.
+              </li>
+              <li><strong>Statisk Tegning:</strong> Hvordan man tegner figurer og billeder.</li>
+              <li><strong>Animationer:</strong> Dynamisk grafik med JavaScript.</li>
+              <li><strong>Billedbehandling:</strong> Manipulation af billeder og effekter.</li>
+              <li><strong>Kodeeksempler:</strong> Praktiske eksempler fra projekter.</li>
+            </ul>
+
+            <!-- Fold ud-knap -->
+            <details class="p-4 bg-blue-100 rounded-lg shadow">
+              <summary class="text-lg font-semibold text-blue-600 cursor-pointer">
+                Klik her for at læse hele opgavebeskrivelsen
+              </summary>
+              <div class="mt-4 leading-relaxed text-gray-700">
+                <p>
+                  <strong>Opgaven:</strong><br />
+                  Beskriv HTML-elementet <code>&lt;canvas&gt;</code> med dets overordnede formål.
+                  Beskriv både hvordan man tegner statiske billeder på det (kom ind på både direkte
+                  og stitegning), og hvordan man laver animationer. Fortæl ydermere om hvordan
+                  canvas kan bruges til billedbehandling og filmlavning.
+                </p>
+                <p class="mt-4">
+                  Fragmenter af kode til illustration af dine overvejelser skal inkluderes. Brug
+                  eksempler fra egne projekter.
+                </p>
+              </div>
+            </details>
+          </div>
+
+          <!-- Højre kolonne: Billede -->
+          <div class="md:w-1/3">
+            <div
+              class="flex items-center justify-center w-full h-64 bg-blue-100 rounded-lg shadow-lg"
+            >
+              <!-- Pladsholder til billede -->
+
+              <p class="text-2xl font-bold text-blue-700">HTML Canvas</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Introduktion -->
+      <section class="py-8">
+        <div class="container px-4 mx-auto">
+          <h2 class="mb-4 text-2xl font-bold">Hvad er HTML Canvas?</h2>
+          <p class="mb-4">
+            HTML-elementet <code>&lt;canvas&gt;</code> er et kraftfuldt værktøj, der bruges til at
+            tegne grafik og skabe animationer direkte i browseren. Det fungerer ved at tillade
+            JavaScript at manipulere individuelle pixels, hvilket giver høj fleksibilitet.
+          </p>
+        </div>
+      </section>
+
+      <!-- Besvarelse af Opgaven -->
+      <section class="py-8 bg-gray-100">
+        <div class="container px-4 mx-auto">
+          <h2 class="mb-4 text-2xl font-bold">Hvordan fungerer Canvas?</h2>
+          <p class="mb-4">
+            Canvas-elementet bruges primært til dynamisk rendering af grafik og animationer via
+            JavaScript. Den centrale metode er at få adgang til en
+            <strong>tegningskontekst</strong>, som tilbyder et API til at tegne grundlæggende
+            former, billeder og til at manipulere pixels direkte. Her er en detaljeret gennemgang af
+            anvendelserne:
+          </p>
+
+
+
+      <!-- Introduktion -->
+      <section class="py-8">
+        <div class="container px-4 mx-auto">
+          <h2 class="mb-4 text-2xl font-bold">Hvad er HTML Canvas?</h2>
+          <p class="mb-4">
+            HTML-elementet <code>&lt;canvas&gt;</code> er et kraftfuldt værktøj, der bruges til at
+            tegne grafik og skabe animationer direkte i browseren. Det fungerer ved at tillade
+            JavaScript at manipulere individuelle pixels, hvilket giver høj fleksibilitet.
+          </p>
+        </div>
+      </section>
+
+
+
+        <div class="container p-6 mx-auto">
+
+
+            <div class="container p-6 mx-auto">
+    <h1 class="mb-8 text-3xl font-bold text-center">Canvas og JavaScript Eksempler</h1>
+
+    <!-- Introduktion -->
+    <section class="p-6 mb-8 rounded-lg shadow-lg bg-gradient-to-r from-blue-100 to-white">
+      <h2 class="mb-4 text-3xl font-extrabold text-blue-700">Introduktion til Canvas</h2>
+      <p class="mb-4 text-gray-700">
+        Canvas-elementet er en <span class="font-semibold text-blue-600">bitmap-baseret grafikflade</span>, der tillader <span class="font-semibold text-blue-600">lav-niveau grafisk rendering</span> direkte i browseren. Det bruges især til at skabe <span class="font-semibold text-blue-600">to-dimensionelle tegninger (2D-grafik)</span> og til mere avancerede grafiske operationer som animationer, billedmanipulation og interaktive brugeroplevelser.
+      </p>
+      <p class="mb-4 text-gray-700">
+        For at forstå canvas, kan du forestille dig det som et tomt <span class="italic text-blue-500">maleri-lærred</span>, hvor du (gennem JavaScript) er kunstneren, der skaber alt fra simple geometriske former til komplekse interaktive scener.
+      </p>
+      <div class="p-4 border-l-4 border-blue-400 bg-blue-50">
+        <p class="mb-2 font-semibold text-blue-600">Fagbegreber:</p>
+        <ul class="text-gray-700 list-disc list-inside">
+          <li><span class="font-semibold">Bitmap</span></li>
+          <li><span class="font-semibold">2D-grafik</span></li>
+          <li><span class="font-semibold">Rendering</span></li>
+          <li><span class="font-semibold">Grafikflade</span></li>
+        </ul>
+      </div>
+      <div class="p-4 mt-4 border-l-4 border-blue-400 bg-blue-50">
+        <p class="mb-2 font-semibold text-blue-600">Billedsprog:</p>
+        <p class="text-gray-700">
+          Canvas er som en digital version af en kunstners lærred. Hver pixel er som en penselstrøg, som du styrer gennem kode.
+        </p>
+      </div>
+    </section>
+
+    <section class="p-6 mb-8 rounded-lg shadow-lg bg-gradient-to-r from-green-100 to-white">
+  <h2 class="mb-4 text-3xl font-extrabold text-green-700">1. Oprettelse af Canvas-element</h2>
+  <p class="mb-4 text-gray-700">
+    Canvas-elementet oprettes i HTML ved hjælp af <code class="px-1 bg-green-200 rounded">&lt;canvas&gt;</code>-tagget. For at sikre korrekt visning, defineres elementets dimensioner enten direkte som <span class="font-semibold text-green-600">attributter</span> (<code class="px-1 bg-green-200 rounded">width</code> og <code class="px-1 bg-green-200 rounded">height</code>) eller via CSS-styling. Hvis dimensionerne ikke defineres, har canvas en <span class="font-semibold text-green-600">standardstørrelse</span> på 300x150 pixels.
+  </p>
+  <pre class="p-4 overflow-auto text-sm text-white bg-gray-900 rounded-md">
+    <code>&lt;canvas id="myCanvas" width="500" height="400"&gt;&lt;/canvas&gt;</code>
+  </pre>
+  <details class="mt-4">
+    <summary class="px-4 py-2 font-semibold text-green-600 bg-green-100 rounded-md cursor-pointer hover:bg-green-200">
+      Læs mere
+    </summary>
+    <div class="p-4 mt-4 border-l-4 border-green-400 bg-green-50">
+      <p class="mb-2 font-semibold text-green-600">Her:</p>
+      <ul class="text-gray-700 list-disc list-inside">
+        <li><span class="font-semibold">id</span> bruges til at identificere canvas i JavaScript.</li>
+        <li><span class="font-semibold">width</span> og <span class="font-semibold">height</span> definerer lærredets fysiske dimensioner, som påvirker grafikkens skarphed og layout.</li>
+      </ul>
+    </div>
+    <p class="mt-4 text-gray-700">
+      Det er vigtigt at huske, at canvas-elementet i sig selv ikke indeholder nogen grafik eller interaktivitet – det er udelukkende en <span class="font-semibold text-green-600">beholder</span>.
+    </p>
+    <div class="p-4 mt-4 border-l-4 border-green-400 bg-green-50">
+      <p class="mb-2 font-semibold text-green-600">Fagbegreber:</p>
+      <ul class="text-gray-700 list-disc list-inside">
+        <li><span class="font-semibold">Attributter</span></li>
+        <li><span class="font-semibold">Dimensioner</span></li>
+        <li><span class="font-semibold">Skarphed</span></li>
+        <li><span class="font-semibold">Standardstørrelse</span></li>
+      </ul>
+    </div>
+    <div class="p-4 mt-4 border-l-4 border-green-400 bg-green-50">
+      <p class="mb-2 font-semibold text-green-600">Billedsprog:</p>
+      <p class="text-gray-700">
+        Canvas-elementet er som at sætte rammen på dit maleri – du fastlægger, hvor stort lærredet skal være, inden du begynder at male.
+      </p>
+    </div>
+  </details>
+</section>
+
+<section class="p-6 mb-8 rounded-lg shadow-lg bg-gradient-to-r from-blue-100 to-white">
+  <h2 class="mb-4 text-3xl font-extrabold text-blue-700">2. Adgang til Canvas med JavaScript</h2>
+  <p class="mb-4 text-gray-700">
+    Når canvas-elementet er oprettet, skal du bruge JavaScript til at få adgang til dets <span class="font-semibold text-blue-600">tegningskontekst</span>. Tegningskonteksten er et objekt, der leverer et <span class="font-semibold text-blue-600">API (Application Programming Interface)</span> til at tegne grafik. Der findes to typer af kontekster: <span class="font-semibold text-blue-600">2D</span> (for flade tegninger) og <span class="font-semibold text-blue-600">WebGL</span> (for 3D-rendering).
+  </p>
+  <pre class="p-4 overflow-auto text-sm text-white bg-gray-900 rounded-md">
+    <code>const canvas = document.getElementById("myCanvas");\nconst ctx = canvas.getContext("2d");</code>
+  </pre>
+  <details class="mt-4">
+    <summary class="px-4 py-2 font-semibold text-blue-600 bg-blue-100 rounded-md cursor-pointer hover:bg-blue-200">
+      Læs mere
+    </summary>
+    <div class="p-4 mt-4 border-l-4 border-blue-400 bg-blue-50">
+      <p class="mb-2 font-semibold text-blue-600">Her:</p>
+      <ul class="text-gray-700 list-disc list-inside">
+        <li><span class="font-semibold">document.getElementById()</span> bruges til at finde canvas-elementet i <span class="italic">DOM'en</span> (Document Object Model).</li>
+        <li><span class="font-semibold">getContext("2d")</span> returnerer en 2D-tegningskontekst, som giver adgang til metoder som <code>fillRect()</code> og <code>arc()</code>.</li>
+      </ul>
+    </div>
+    <p class="mt-4 text-gray-700">
+      Tegningskonteksten kan ses som værktøjskassen, der indeholder alle pensler og farver, du har brug for til at tegne på lærredet.
+    </p>
+    <div class="p-4 mt-4 border-l-4 border-blue-400 bg-blue-50">
+      <p class="mb-2 font-semibold text-blue-600">Fagbegreber:</p>
+      <ul class="text-gray-700 list-disc list-inside">
+        <li><span class="font-semibold">DOM</span></li>
+        <li><span class="font-semibold">Tegningskontekst</span></li>
+        <li><span class="font-semibold">API</span></li>
+        <li><span class="font-semibold">2D</span></li>
+        <li><span class="font-semibold">WebGL</span></li>
+      </ul>
+    </div>
+    <div class="p-4 mt-4 border-l-4 border-blue-400 bg-blue-50">
+      <p class="mb-2 font-semibold text-blue-600">Billedsprog:</p>
+      <p class="text-gray-700">
+        Tegningskonteksten er som en samling af malerpensler, farvepaletter og linealer, der gør det muligt at skabe grafiske mesterværker.
+      </p>
+    </div>
+  </details>
+</section>
+
+
+<section class="p-6 mb-8 bg-white rounded-lg shadow-lg">
+  <h2 class="mb-4 text-3xl font-extrabold text-gray-800">3. Tegning af Grundlæggende Figurer</h2>
+  <p class="mb-6 text-gray-700">
+    Når du har adgang til konteksten, kan du begynde at tegne grundlæggende figurer som rektangler, cirkler og linjer. Her lærer vi om <span class="font-semibold text-blue-600">stregtegning (stroke)</span>, <span class="font-semibold text-green-600">udfyldning (fill)</span> og <span class="font-semibold text-purple-600">paths</span> i canvas.
+  </p>
+
+  <!-- Fyldt rektangel -->
+  <div class="grid grid-cols-1 gap-6 mb-8 md:grid-cols-2">
+    <div class="p-4 bg-gray-100 rounded-lg shadow">
+      <canvas id="filledRectCanvas" class="w-full h-64 border border-gray-300"></canvas>
+    </div>
+    <div class="p-4 overflow-auto text-sm text-white bg-gray-900 rounded-lg shadow">
+      <h3 class="text-lg font-bold text-blue-400">Fyldt Rektangel</h3>
+      <p class="mb-4">
+        Et <span class="font-semibold text-blue-400">fyldt rektangel</span> oprettes med metoden <code>fillRect()</code>. Her definerer vi farven med <code>fillStyle</code> som "blue" for at vise en tydelig kontrast på canvas.
+      </p>
+      <p class="mb-4">Rektanglets position bestemmes af:</p>
+      <ul class="list-disc list-inside">
+        <li><span class="font-semibold">x</span>: 50 (vandret startposition).</li>
+        <li><span class="font-semibold">y</span>: 50 (lodret startposition).</li>
+        <li><span class="font-semibold">bredde</span>: 100 (rektanglets bredde).</li>
+        <li><span class="font-semibold">højde</span>: 100 (rektanglets højde).</li>
+      </ul>
+      <pre><code>ctx.fillStyle = "blue";
+ctx.fillRect(50, 50, 100, 100);</code></pre>
+    </div>
+  </div>
+
+  <!-- Omrids af rektangel -->
+  <div class="grid grid-cols-1 gap-6 mb-8 md:grid-cols-2">
+    <div class="p-4 bg-gray-100 rounded-lg shadow">
+      <canvas id="outlinedRectCanvas" class="w-full h-64 border border-gray-300"></canvas>
+    </div>
+    <div class="p-4 overflow-auto text-sm text-white bg-gray-900 rounded-lg shadow">
+      <h3 class="text-lg font-bold text-red-400">Omrids af Rektangel</h3>
+      <p class="mb-4">
+        Et <span class="font-semibold text-red-400">omrids</span> af et rektangel oprettes med metoden <code>strokeRect()</code>. Farven defineres med <code>strokeStyle</code> som "red".
+      </p>
+      <p class="mb-4">
+        Omrids bruges ofte til at fremhæve en grænse eller skabe en kontrast. Her er positionen forskudt fra det fyldte rektangel for at vise forskellen.
+      </p>
+      <ul class="list-disc list-inside">
+        <li><span class="font-semibold">x</span>: 200.</li>
+        <li><span class="font-semibold">y</span>: 50.</li>
+        <li><span class="font-semibold">bredde</span>: 100.</li>
+        <li><span class="font-semibold">højde</span>: 100.</li>
+      </ul>
+      <pre><code>ctx.strokeStyle = "red";
+ctx.strokeRect(200, 50, 100, 100);</code></pre>
+    </div>
+  </div>
+
+  <!-- Cirkler og buede figurer -->
+  <div class="grid grid-cols-1 gap-6 mb-8 md:grid-cols-2">
+    <div class="p-4 bg-gray-100 rounded-lg shadow">
+      <canvas id="circleCanvas" class="w-full h-64 border border-gray-300"></canvas>
+    </div>
+    <div class="p-4 overflow-auto text-sm text-white bg-gray-900 rounded-lg shadow">
+      <h3 class="text-lg font-bold text-green-400">Cirkler og Buede Figurer</h3>
+      <p class="mb-4">
+        En cirkel oprettes med metoden <code>arc()</code>, som er en del af en <span class="font-semibold text-green-400">path</span>. Vi bruger <code>beginPath()</code> for at starte en ny tegning.
+      </p>
+      <p class="mb-4">
+        Cirklens position og form defineres af:
+      </p>
+      <ul class="list-disc list-inside">
+        <li><span class="font-semibold">x</span>: 150 (centrum for cirklen).</li>
+        <li><span class="font-semibold">y</span>: 150.</li>
+        <li><span class="font-semibold">radius</span>: 50.</li>
+        <li><span class="font-semibold">startvinkel</span>: 0.</li>
+        <li><span class="font-semibold">slutvinkel</span>: 2 * Math.PI (fuld cirkel).</li>
+      </ul>
+      <p class="mb-4">Vi udfylder cirklen med <code>fill()</code> og tilføjer en streg med <code>stroke()</code>.</p>
+      <pre><code>ctx.beginPath();
+ctx.arc(150, 150, 50, 0, 2 * Math.PI);
+ctx.fillStyle = "green";
+ctx.fill();
+ctx.stroke();</code></pre>
+    </div>
+  </div>
+
+  <!-- Linjer -->
+  <div class="grid grid-cols-1 gap-6 mb-8 md:grid-cols-2">
+    <div class="p-4 bg-gray-100 rounded-lg shadow">
+      <canvas id="lineCanvas" class="w-full h-64 border border-gray-300"></canvas>
+    </div>
+    <div class="p-4 overflow-auto text-sm text-white bg-gray-900 rounded-lg shadow">
+      <h3 class="text-lg font-bold text-purple-400">Linjer</h3>
+      <p class="mb-4">
+        En linje oprettes med <code>moveTo()</code> (startpunkt) og <code>lineTo()</code> (slutpunkt). Linjer er en del af en <span class="font-semibold text-purple-400">path</span>.
+      </p>
+<p class="mb-4">Farven sættes med <code>strokeStyle</code>, og tykkelsen justeres med <code>lineWidth</code>.</p>
+<ul class="list-disc list-inside">
+  <li><span class="font-semibold">startpunkt</span>: (10, 10).</li>
+  <li><span class="font-semibold">slutpunkt</span>: (300, 150).</li>
+  <li><span class="font-semibold">farve</span>: purple.</li>
+  <li><span class="font-semibold">tykkelse</span>: 3.</li>
+</ul>
+<pre><code>ctx.beginPath();
+ctx.moveTo(10, 10); // Startpunkt
+ctx.lineTo(300, 150); // Slutpunkt
+ctx.strokeStyle = "purple";
+ctx.lineWidth = 3;
+ctx.stroke();</code></pre>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  // Fyldt rektangel
+  const filledRectCanvas = document.getElementById("filledRectCanvas");
+  const filledRectCtx = filledRectCanvas.getContext("2d");
+  filledRectCtx.fillStyle = "blue";
+  filledRectCtx.fillRect(50, 50, 100, 100);
+
+  // Omrids af rektangel
+  const outlinedRectCanvas = document.getElementById("outlinedRectCanvas");
+  const outlinedRectCtx = outlinedRectCanvas.getContext("2d");
+  outlinedRectCtx.strokeStyle = "red";
+  outlinedRectCtx.strokeRect(200, 50, 100, 100);
+
+  // Cirkler og buede figurer
+  const circleCanvas = document.getElementById("circleCanvas");
+  const circleCtx = circleCanvas.getContext("2d");
+  circleCtx.beginPath();
+  circleCtx.arc(150, 150, 50, 0, 2 * Math.PI);
+  circleCtx.fillStyle = "green";
+  circleCtx.fill();
+  circleCtx.stroke();
+
+  // Linjer
+  const lineCanvas = document.getElementById("lineCanvas");
+  const lineCtx = lineCanvas.getContext("2d");
+  // lineCtx.beginPath();
+  // lineCtx.moveTo(50, 200);
+  // lineCtx.lineTo(200, 300);
+  // lineCtx.strokeStyle = "purple";
+  // lineCtx.lineWidth = 3;
+  // lineCtx.stroke();
+  lineCtx.beginPath();
+lineCtx.moveTo(10, 10); // Startpunkt (indenfor canvas)
+lineCtx.lineTo(300, 150); // Slutpunkt (indenfor canvas)
+lineCtx.strokeStyle = "purple";
+lineCtx.lineWidth = 3;
+lineCtx.stroke();
+
+</script>
+
+<section class="p-6 mb-8 bg-white rounded-lg shadow-lg">
+  <h2 class="mb-4 text-3xl font-extrabold text-gray-800">4. Tekst</h2>
+  <p class="mb-6 text-gray-700">
+    Canvas giver mulighed for at tilføje tekst med forskellige stilarter. Her kan vi vise <span class="font-semibold text-blue-600">fyldt tekst</span> og <span class="font-semibold text-blue-600">omrids</span> af tekst.
+  </p>
+
+  <!-- Fyldt tekst -->
+  <div class="grid grid-cols-1 gap-6 mb-8 md:grid-cols-2">
+    <div class="p-4 bg-gray-100 rounded-lg shadow">
+      <canvas id="filledTextCanvas" class="w-full h-64 border border-gray-300"></canvas>
+    </div>
+    <div class="p-4 overflow-auto text-sm text-white bg-gray-900 rounded-lg shadow">
+      <h3 class="text-lg font-bold text-blue-400">Fyldt Tekst</h3>
+      <p class="mb-4">
+        Metoden <code>fillText()</code> bruges til at tegne tekst med fyldfarve. Tekstens skrifttype og størrelse sættes med <code>font</code>.
+      </p>
+      <pre><code>ctx.font = "20px Arial";
+ctx.fillStyle = "black";
+ctx.fillText("Hej Canvas!", 50, 50);</code></pre>
+    </div>
+  </div>
+
+  <!-- Omrids af tekst -->
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+    <div class="p-4 bg-gray-100 rounded-lg shadow">
+      <canvas id="outlinedTextCanvas" class="w-full h-64 border border-gray-300"></canvas>
+    </div>
+    <div class="p-4 overflow-auto text-sm text-white bg-gray-900 rounded-lg shadow">
+      <h3 class="text-lg font-bold text-blue-400">Omrids af Tekst</h3>
+      <p class="mb-4">
+        Metoden <code>strokeText()</code> tegner kun teksten som omrids, hvilket skaber en visuel kontrast.
+      </p>
+      <pre><code>ctx.strokeText("Hej Canvas!", 50, 80);</code></pre>
+    </div>
+  </div>
+  <details class="mt-4">
+  <summary class="px-4 py-2 font-semibold text-blue-600 bg-blue-100 rounded-md cursor-pointer hover:bg-blue-200">
+    Yderligere Forklaring
+  </summary>
+  <div class="p-4 mt-4 border-l-4 border-blue-400 bg-blue-50">
+    <p class="mb-2 font-semibold text-blue-600">Forklaring:</p>
+    <p class="text-gray-700">
+      Canvas giver dig mulighed for at tilføje tekst med forskellige stilarter. Metoden <code>fillText()</code> bruges til at tegne tekst med fyldfarve, og <code>strokeText()</code> bruges til kun at tegne tekstens omrids. Du kan ændre skrifttype og størrelse med <code>font</code>.
+    </p>
+
+    <p class="mt-4 mb-2 font-semibold text-blue-600">Billedsprog:</p>
+    <p class="text-gray-700">
+      Forestil dig, at du skriver bogstaver med en pensel. Fyldt tekst er som farvede bogstaver, mens omrids er som bogstaver tegnet med en fin streg.
+    </p>
+
+    <p class="mt-4 mb-2 font-semibold text-blue-600">Fagbegreber:</p>
+    <ul class="text-gray-700 list-disc list-inside">
+      <li><span class="font-semibold">fillText()</span>: Tegner tekst fyldt med farve.</li>
+      <li><span class="font-semibold">strokeText()</span>: Tegner kun omridset af teksten.</li>
+      <li><span class="font-semibold">font</span>: Angiver skrifttype og størrelse, f.eks. <code>20px Arial</code>.</li>
+    </ul>
+  </div>
+</details>
+
+</section>
+
+<script>
+  const filledTextCanvas = document.getElementById("filledTextCanvas");
+  const filledTextCtx = filledTextCanvas.getContext("2d");
+  filledTextCtx.font = "20px Arial";
+  filledTextCtx.fillStyle = "black";
+  filledTextCtx.fillText("Hej Canvas!", 50, 50);
+
+  const outlinedTextCanvas = document.getElementById("outlinedTextCanvas");
+  const outlinedTextCtx = outlinedTextCanvas.getContext("2d");
+  outlinedTextCtx.font = "20px Arial";
+  outlinedTextCtx.strokeText("Hej Canvas!", 50, 80);
+</script>
+
+<section class="p-6 mb-8 bg-white rounded-lg shadow-lg">
+  <h2 class="mb-4 text-3xl font-extrabold text-gray-800">5. Billeder</h2>
+  <p class="mb-6 text-gray-700">
+    Canvas kan bruges til at vise billeder. Metoden <code>drawImage()</code> tegner et billede fra en kilde til canvas.
+  </p>
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+    <div class="p-4 bg-gray-100 rounded-lg shadow">
+      <canvas id="imageCanvas" class="w-full h-64 border border-gray-300"></canvas>
+    </div>
+    <div class="p-4 overflow-auto text-sm text-white bg-gray-900 rounded-lg shadow">
+      <h3 class="text-lg font-bold text-green-400">Indlæsning af Billede</h3>
+      <p class="mb-4">
+        Metoden <code>drawImage()</code> tegner billedet på canvas. Det kræver en <code>Image</code>-instans, som skal indlæses først.
+      </p>
+      <pre><code>const img = new Image();
+img.src = "billede.jpg"; // Angiv billedstien
+img.onload = () => {
+  ctx.drawImage(img, 0, 0, 200, 150); // x, y, bredde, højde
+};</code></pre>
+    </div>
+    <details class="mt-4">
+  <summary class="px-4 py-2 font-semibold text-green-600 bg-green-100 rounded-md cursor-pointer hover:bg-green-200">
+    Yderligere Forklaring
+  </summary>
+  <div class="p-4 mt-4 border-l-4 border-green-400 bg-green-50">
+    <p class="mb-2 font-semibold text-green-600">Fagbegreber:</p>
+    <ul class="text-gray-700 list-disc list-inside">
+      <li><span class="font-semibold">drawImage()</span>: Bruges til at placere et billede på canvas.</li>
+      <li><span class="font-semibold">Image</span>: Et JavaScript-objekt, der repræsenterer billedet.</li>
+    </ul>
+    <p class="mt-4 text-gray-700">
+      Canvas fungerer som et tomt album, hvor du kan indsætte billeder. Ved hjælp af koordinater bestemmer du billedets placering og størrelse.
+    </p>
+  </div>
+</details>
+
+  </div>
+  <details class="mt-4">
+  <summary class="px-4 py-2 font-semibold text-green-600 bg-green-100 rounded-md cursor-pointer hover:bg-green-200">
+    Yderligere Forklaring
+  </summary>
+  <div class="p-4 mt-4 border-l-4 border-green-400 bg-green-50">
+    <p class="mb-2 font-semibold text-green-600">Forklaring:</p>
+    <p class="text-gray-700">
+      Med metoden <code>drawImage()</code> kan du placere billeder på canvas. Billedet skal først indlæses med en <code>Image</code>-instans. Når billedet er klar, kan du bestemme dets placering og størrelse på canvas.
+    </p>
+
+    <p class="mt-4 mb-2 font-semibold text-green-600">Billedsprog:</p>
+    <p class="text-gray-700">
+      Forestil dig canvas som en fotobog, hvor du kan indsætte billeder på specifikke sider og bestemme, hvor store eller små de skal være.
+    </p>
+
+    <p class="mt-4 mb-2 font-semibold text-green-600">Fagbegreber:</p>
+    <ul class="text-gray-700 list-disc list-inside">
+      <li><span class="font-semibold">drawImage()</span>: Tegner billedet på canvas.</li>
+      <li><span class="font-semibold">Image</span>: Et JavaScript-objekt, der repræsenterer billedet.</li>
+      <li><span class="font-semibold">x, y</span>: Bestemmer billedets placering.</li>
+      <li><span class="font-semibold">bredde og højde</span>: Angiver billedets størrelse.</li>
+    </ul>
+  </div>
+</details>
+
+</section>
+
+<script>
+  const imageCanvas = document.getElementById("imageCanvas");
+  const imageCtx = imageCanvas.getContext("2d");
+  const img = new Image();
+  // img.src = "https://via.placeholder.com/200x150"; // Placeholder-billede
+  img.src = "/src/assets/images/git/git-illu-proces/git-storing-version.png"; // Placeholder-billede
+  img.onload = () => {
+    imageCtx.drawImage(img, 0, 0, 200, 150);
+  };
+</script>
+
+
+<section class="p-6 mb-8 bg-white rounded-lg shadow-lg">
+  <h2 class="mb-4 text-3xl font-extrabold text-gray-800">6. Animation</h2>
+  <p class="mb-6 text-gray-700">
+    Animationer skabes med metoden <code>requestAnimationFrame()</code>, som kører en funktion rekursivt for at opdatere canvas.
+  </p>
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+    <div class="p-4 bg-gray-100 rounded-lg shadow">
+      <canvas id="animationCanvas" class="w-full h-64 border border-gray-300"></canvas>
+    </div>
+    <div class="p-4 overflow-auto text-sm text-white bg-gray-900 rounded-lg shadow">
+      <h3 class="text-lg font-bold text-purple-400">Animation med Rektangel</h3>
+      <p class="mb-4">
+        Vi bruger <code>clearRect()</code> til at rydde lærredet og opdatere positionen for rektanglet ved at ændre koordinaterne i en løkke.
+      </p>
+      <pre><code>let x = 0;
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "blue";
+  ctx.fillRect(x, 50, 50, 50); // x, y, bredde, højde
+  x += 2;
+  requestAnimationFrame(animate);
+}
+animate();</code></pre>
+    </div>
+    <details class="mt-4">
+    <summary class="px-4 py-2 font-semibold text-purple-600 bg-purple-100 rounded-md cursor-pointer hover:bg-purple-200">
+      Yderligere Forklaring
+    </summary>
+    <div class="p-4 mt-4 border-l-4 border-purple-400 bg-purple-50">
+      <p class="mb-2 font-semibold text-purple-600">Fagbegreber:</p>
+      <ul class="text-gray-700 list-disc list-inside">
+        <li><span class="font-semibold">requestAnimationFrame()</span>: En metode til at lave flydende animationer.</li>
+        <li><span class="font-semibold">clearRect()</span>: Rydder en del af canvas, så vi kan tegne på ny.</li>
+      </ul>
+      <p class="mt-4 text-gray-700">
+        Forestil dig animationen som en tegnefilm, hvor hver ramme er et billede. Når rammene vises hurtigt efter hinanden, ser det ud, som om figuren bevæger sig.
+      </p>
+    </div>
+  </details>
+  </div>
+<details class="mt-4">
+  <summary class="px-4 py-2 font-semibold text-purple-600 bg-purple-100 rounded-md cursor-pointer hover:bg-purple-200">
+    Yderligere Forklaring
+  </summary>
+  <div class="p-4 mt-4 border-l-4 border-purple-400 bg-purple-50">
+    <p class="mb-2 font-semibold text-purple-600">Forklaring:</p>
+    <p class="text-gray-700">
+      Animation i canvas opnås ved at opdatere canvas gentagne gange. Metoden <code>requestAnimationFrame()</code> sørger for, at opdateringen sker så glat som muligt. Før hver opdatering rydder vi canvas med <code>clearRect()</code>, så vi kan tegne figuren på sin nye position.
+    </p>
+
+    <p class="mt-4 mb-2 font-semibold text-purple-600">Billedsprog:</p>
+    <p class="text-gray-700">
+      Forestil dig animationen som en tegnefilm, hvor hvert billede er en ramme. Når billederne vises hurtigt efter hinanden, ser det ud som om, figuren bevæger sig.
+    </p>
+
+    <p class="mt-4 mb-2 font-semibold text-purple-600">Fagbegreber:</p>
+    <ul class="text-gray-700 list-disc list-inside">
+      <li><span class="font-semibold">requestAnimationFrame()</span>: En metode, der kører en funktion i et loop for at skabe animation.</li>
+      <li><span class="font-semibold">clearRect()</span>: Rydder en del af canvas, så det kan opdateres.</li>
+      <li><span class="font-semibold">koordination</span>: Opdateres konstant for at flytte figuren.</li>
+    </ul>
+  </div>
+</details>
+
+</section>
+
+<script>
+  const animationCanvas = document.getElementById("animationCanvas");
+  const animationCtx = animationCanvas.getContext("2d");
+  let x = 0;
+
+  function animate() {
+    animationCtx.clearRect(0, 0, animationCanvas.width, animationCanvas.height);
+    animationCtx.fillStyle = "blue";
+    animationCtx.fillRect(x, 50, 50, 50);
+    x += 2;
+    if (x > animationCanvas.width) x = 0; // Reset når udenfor canvas
+    requestAnimationFrame(animate);
+  }
+  animate();
+</script>
+
+
+
+<section class="p-6 mb-8 bg-white rounded-lg shadow-lg">
+  <h2 class="mb-4 text-3xl font-extrabold text-gray-800">7. Pixel-manipulation</h2>
+  <p class="mb-6 text-gray-700">
+    Metoder som <code>getImageData()</code> og <code>putImageData()</code> gør det muligt at manipulere individuelle pixels i canvas.
+  </p>
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+    <div class="p-4 bg-gray-100 rounded-lg shadow">
+      <canvas id="pixelCanvas" class="w-full h-64 border border-gray-300"></canvas>
+    </div>
+    <div class="p-4 overflow-auto text-sm text-white bg-gray-900 rounded-lg shadow">
+      <h3 class="text-lg font-bold text-red-400">Ændring af Pixeldata</h3>
+      <p class="mb-4">
+        Vi kan hente pixeldata med <code>getImageData()</code>, ændre dem og gemme dem tilbage med <code>putImageData()</code>.
+      </p>
+      <pre><code>const imageData = ctx.getImageData(0, 0, width, height);
+// Manipuler pixels her
+ctx.putImageData(imageData, 0, 0);</code></pre>
+    </div>
+  </div>
+  <details class="mt-4">
+  <summary class="px-4 py-2 font-semibold text-red-600 bg-red-100 rounded-md cursor-pointer hover:bg-red-200">
+    Yderligere Forklaring
+  </summary>
+  <div class="p-4 mt-4 border-l-4 border-red-400 bg-red-50">
+    <p class="mb-2 font-semibold text-red-600">Forklaring:</p>
+    <p class="text-gray-700">
+      Pixel-manipulation giver mulighed for at ændre hver enkelt pixel på canvas. Med <code>getImageData()</code> kan vi hente pixeldata, og med <code>putImageData()</code> kan vi skrive ændringerne tilbage til canvas.
+    </p>
+
+    <p class="mt-4 mb-2 font-semibold text-red-600">Billedsprog:</p>
+    <p class="text-gray-700">
+      Forestil dig canvas som en mosaik, hvor hver pixel er en lille flise. Ved at ændre hver enkelt flise kan vi skabe mønstre, effekter eller tilpasse farver i detaljen.
+    </p>
+
+    <p class="mt-4 mb-2 font-semibold text-red-600">Fagbegreber:</p>
+    <ul class="text-gray-700 list-disc list-inside">
+      <li><span class="font-semibold">getImageData()</span>: Henter pixeldata fra en bestemt del af canvas.</li>
+      <li><span class="font-semibold">putImageData()</span>: Skriver ændringerne tilbage til canvas.</li>
+      <li><span class="font-semibold">RGBA</span>: Farveformat, hvor hver pixel består af fire værdier (Rød, Grøn, Blå, Alfa).</li>
+    </ul>
+
+    <p class="mt-4 mb-2 font-semibold text-red-600">Alternativt Eksempel:</p>
+    <p class="text-gray-700">
+      Vi kan ændre hver anden pixel til en grøn farve for at skabe et mønster, eller vi kan ændre bestemte farvekanaler (f.eks. fjerne rød) for at opnå en visuel effekt.
+    </p>
+    <pre class="p-4 overflow-auto text-sm text-white bg-gray-900 rounded-md">
+      <code>const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+for (let i = 0; i < imageData.data.length; i += 4) {
+  if (i % 8 === 0) { // Hver anden pixel
+    imageData.data[i] = 0;   // Sæt rød kanal til 0
+    imageData.data[i + 1] = 255; // Grøn kanal
+    imageData.data[i + 2] = 0;   // Blå kanal
+  }
+}
+ctx.putImageData(imageData, 0, 0);</code>
+    </pre>
+    <p class="mt-4 text-gray-700">
+      Dette mønster viser, hvordan vi kan skabe simple visuelle effekter ved at manipulere pixeldata direkte.
+    </p>
+  </div>
+</details>
+
+</section>
+
+<script>
+  const pixelCanvas = document.getElementById("pixelCanvas");
+  const pixelCtx = pixelCanvas.getContext("2d");
+  pixelCtx.fillStyle = "red";
+  pixelCtx.fillRect(0, 0, pixelCanvas.width, pixelCanvas.height);
+
+  const imageData = pixelCtx.getImageData(0, 0, pixelCanvas.width, pixelCanvas.height);
+  for (let i = 0; i < imageData.data.length; i += 4) {
+    imageData.data[i] = 0; // Fjerner rød kanal
+  }
+  pixelCtx.putImageData(imageData, 0, 0);
+</script>
+
+  </div>
+
+        <canvas id="staticDrawing" width="999" height="600"></canvas>
 
       <canvas id="animatetClock" width="150" height="150"></canvas>
 
@@ -43,6 +720,7 @@
           <canvas id="billedbehandling" height="100%" width="100%"></canvas>
         </div>
       </div>
+        
     </main>
     <!-- Footer -->
     <footer class="py-4 text-center text-white bg-accent">

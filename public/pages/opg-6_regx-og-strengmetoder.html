@@ -1,120 +1,1064 @@
 <!DOCTYPE html>
 <html lang="da">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Moduler</title>
-		<link href="/dist/styles.css" rel="stylesheet" />
-		<script src="/src/js/loadComponents.js" defer></script>
-		<script src="/src/js/activeLinks.js" defer></script>
-		<script src="/src/js/pages/opg-6_regexp.js" defer></script>
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RegEx og strengmetoder</title>
+    <link href="/dist/styles.css" rel="stylesheet" />
+    <script src="/src/js/loadComponents.js" defer></script>
+    <script src="/src/js/activeLinks.js" defer></script>
+    <script src="/src/js/pages/opg-6_regexp.js" defer></script>
+  </head>
 
-	<body>
-		<!-- HEADER som henter header.html ind på siden!!! -->
-		<header id="header"></header>
-		<p>
-			Giv en præsentation af regular expressions og strengmetoder som de forekommer i JavaScript. Udover den
-			generelle gennemgang præsenter konkrete anvendelsesmuligheder fx i søgninger, søg-og-erstat, udtrækning af
-			delstrenge, strengmanipulation og validering i webudvikling. Fragmenter af kode til illustration af dine
-			overvejelser skal være en del af præsentationen. Du bør bruge uddrag fra egne projekter og opgaver som
-			eksempler i din gennemgang.
-		</p>
+  <body>
+    <!-- HEADER som henter header.html ind på siden!!! -->
+    <header id="header"></header>
+	<main>
+		    <!-- HERO Section -->
+    <section class="container px-8 py-16 rounded-lg shadow-lg bg-gray-50">
+        <div
+            class="flex flex-col items-center mx-auto space-y-8 max-w-7xl md:flex-row md:space-y-0 md:space-x-16"
+        >
+            <!-- Venstre kolonne: Tekst -->
+            <div class="md:w-2/3">
+                <!-- Opgavebeskrivelse -->
+                <h1 class="mb-6 text-4xl font-bold text-blue-600">Regular Expressions og Strengmetoder</h1>
+                <p class="mb-6 text-lg leading-relaxed text-gray-700">
+                    Regular expressions og strengmetoder er essentielle værktøjer i JavaScript, der bruges til effektiv
+                    manipulation og behandling af tekst. Denne præsentation dækker:
+                </p>
 
-		<div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-			<h1 class="text-2xl font-bold mb-4">Søg og Erstat</h1>
+                <!-- Agenda -->
+                <ul class="pl-6 mb-6 space-y-4 text-gray-700 list-disc">
+                    <li>
+                        <strong>Grundlæggende brug:</strong> Introduktion til syntaks og funktion af regular expressions.
+                    </li>
+                    <li>
+                        <strong>Praktiske anvendelser:</strong> Søgninger, søg-og-erstat, og udtrækning af tekst.
+                    </li>
+                    <li>
+                        <strong>Strengmanipulation:</strong> Kombination med JavaScript-strengmetoder.
+                    </li>
+                    <li>
+                        <strong>Validering:</strong> Effektiv brug af regular expressions til input-validering.
+                    </li>
+                    <li><strong>Kodeeksempler:</strong> Praktiske eksempler fra projekter og opgaver.</li>
+                </ul>
 
-			<div class="mb-4">
-				<label for="source-text" class="block text-lg font-medium p-2">Kildetekst:</label>
-				<p id="source-text" class="mt-2 w-full border border-gray-300 p-3 rounded-md bg-gray-100">
-					Velkommen til vores side! Du kan kontakte os på følgende telefonnumre:
-					<b>71909150</b>, <b>22183680</b>.
-				</p>
-			</div>
+                <!-- Fold ud-knap -->
+                <details class="p-4 bg-blue-100 rounded-lg shadow">
+                    <summary class="text-lg font-semibold text-blue-600 cursor-pointer">
+                        Klik her for at læse hele opgavebeskrivelsen
+                    </summary>
+                    <div class="mt-4 leading-relaxed text-gray-700">
+                        <p>
+                            <strong>Opgaven:</strong><br />
+                            Giv en præsentation af regular expressions og strengmetoder som de forekommer i JavaScript. Udover
+                            den generelle gennemgang præsenter konkrete anvendelsesmuligheder fx i søgninger, søg-og-erstat,
+                            udtrækning af delstrenge, strengmanipulation og validering i webudvikling.
+                        </p>
+                        <p class="mt-4">
+                            Fragmenter af kode til illustration af dine overvejelser skal være en del af præsentationen. Du bør
+                            bruge uddrag fra egne projekter og opgaver som eksempler i din gennemgang.
+                        </p>
+                    </div>
+                </details>
+            </div>
 
-			<label for="search-pattern" class="block text-lg font-medium">Søgemønster:</label>
+            <!-- Højre kolonne: Billede -->
+            <div class="md:w-1/3">
+                <div
+                    class="flex items-center justify-center w-full h-64 bg-blue-100 rounded-lg shadow-lg"
+                >
+                    <!-- Pladsholder til billede -->
 
-			<div class="flex gap-4 mb-1">
-				<input
-					id="search-pattern"
-					type="text"
-					class="w-full border border-gray-300 rounded-md p-2"
-					placeholder="Indtast søgemønster eller RegEx" />
+                    <p class="text-2xl font-bold text-blue-700">Regex & Strenge</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<button
-					id="search-btn"
-					class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none">
-					Søg
-				</button>
-			</div>
+	    <!-- Historien bag Regular Expressions -->
 
-			<div class="flex items-center mb-4">
-				<input id="use-regex" type="checkbox" class="mr-2" />
-				<label for="use-regex" class="text-xs font-medium">Brug RegEx</label>
-			</div>
+	<section class="py-12 bg-gray-50">
+  <div class="container max-w-5xl px-6 mx-auto">
+    <h2 class="mb-6 text-3xl font-bold text-blue-600">Historien bag Regular Expressions</h2>
+    <p class="mb-6 text-lg leading-relaxed text-gray-700">
+      Regular Expressions (RegEx) blev introduceret i 1951 af matematikeren <strong>Stephen Cole Kleene</strong> som en del af teorien om finit-tilstands-automater. 
+      RegEx bygger på en matematisk ramme, der beskriver, hvordan mønstre kan genkendes i tekst og data. Dette fundament blev senere implementeret i programmeringssprog og værktøjer til tekstbehandling.
+    </p>
 
-			<label for="replace-text" class="block text-lg font-medium">Erstatningstekst:</label>
+    <!-- Grundlæggende Komponenter -->
+    <div class="p-6 bg-white rounded-lg shadow-md">
+      <h3 class="mb-4 text-2xl font-semibold text-blue-500">Grundlæggende Komponenter</h3>
+      <ul class="pl-5 space-y-4 text-gray-700 list-disc">
+        <li>
+          <strong>Literals:</strong> Almindelige tegn som <code>'a'</code> eller <code>'b'</code>, der matcher præcis hvad de repræsenterer.
+        </li>
+        <li>
+          <strong>Operatorer:</strong>
+          <ul class="mt-2 text-gray-600 list-disc list-inside">
+            <li>
+              <strong>Kleene-stjerne (<code>*</code>):</strong> Matcher nul eller flere forekomster af et mønster. For eksempel matcher <code>a*</code> både "" (tom streng) og "aaaa".
+            </li>
+            <li>
+              <strong>Kleene-plus (<code>+</code>):</strong> Matcher én eller flere forekomster af et mønster. For eksempel matcher <code>a+</code> kun "a", "aa", osv.
+            </li>
+            <li>
+              <strong>Alternativer (<code>|</code>):</strong> Matcher enten det ene eller det andet. For eksempel matcher <code>a|b</code> enten "a" eller "b".
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
 
-			<div class="mb-4 flex gap-4">
-				<input
-					id="replace-text"
-					type="text"
-					class="w-full border border-gray-300 p-2 rounded-md p-2"
-					placeholder="Indtast tekst til erstatning" />
+    <!-- Ekstra teknisk forklaring -->
+    <details class="p-6 mt-8 bg-blue-100 rounded-lg shadow">
+      <summary class="text-lg font-semibold text-blue-600 cursor-pointer">
+        Klik her for at læse en dybere teknisk forklaring
+      </summary>
+      <div class="mt-4 text-gray-700">
+        <p class="mb-4">
+          Regular Expressions stammer fra en matematisk model kaldet finit-tilstands-automater. I denne model repræsenterer en tilstand en situation, mens overgange mellem tilstande repræsenterer mulige input. 
+          For eksempel kan en automat, der genkender mønsteret <code>a*</code>, starte i en tilstand og forblive i den samme tilstand, uanset hvor mange gange "a" optræder, inklusive nul gange.
+        </p>
+        <p class="mb-4">
+          Operatorerne som <code>*</code> og <code>+</code> fungerer som gentagelsesmekanismer i RegEx, der svarer til looping-strukturer i programmeringssprog. Alternativer (<code>|</code>) kan sammenlignes med logiske OR-udtryk.
+        </p>
+        <p>
+          Denne fleksibilitet gør Regular Expressions til en vigtig komponent i tekstbehandling, inputvalidering og avanceret dataanalyse.
+        </p>
+      </div>
+    </details>
+  </div>
+</section>
 
-				<button
-					id="replace-btn"
-					class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none">
-					Erstat
-				</button>
-			</div>
 
-			<div id="result-text" class="mt-6 p-4 hidden"></div>
-		</div>
 
-		<div class="flex flex-wrap gap-4 justify-center" id="ascii-container">
-			<!-- Eksempel på en tom boks (struktur for alle bokse) -->
-			<div
-				class="ascii-box border border-gray-300 p-4 rounded-lg w-20 h-20 flex flex-col justify-center items-center text-center hover:bg-gray-50">
-				<div class="ascii-number font-bold"></div>
-				<div class="ascii-char"></div>
-			</div>
-		</div>
 
-		<script>
-			// Funktion til at generere ASCII-tabellen
-			const genererAsciiTabel = () => {
-				const container = document.getElementById('ascii-container');
-				const template = document.querySelector('.ascii-box');
+<section class="py-12 bg-gray-100">
+  <div class="container max-w-4xl px-6 mx-auto">
+    <div class="p-6 bg-white rounded-lg shadow-md">
+      <!-- Overskrift -->
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">Praktiske Anvendelser</h2>
 
-				// Ryd containeren for eventuelle eksisterende bokse
-				container.innerHTML = '';
+      <!-- Introduktion -->
+      <p class="mb-6 text-lg leading-relaxed text-gray-700">
+        Regular Expressions er kraftfulde værktøjer, der kan bruges til tekstmanipulation som 
+        søgning og erstatning. Her viser vi et eksempel på, hvordan telefonnumre kan maskeres 
+        for anonymisering.
+      </p>
 
-				// Loop gennem 0 til 255
-				for (let i = 0; i < 256; i++) {
-					// Klon boksen fra template
-					const box = template.cloneNode(true);
+      <!-- Kodeeksempel -->
+      <h3 class="mb-4 text-2xl font-semibold text-blue-500">Hvad koden viser</h3>
+      <pre class="p-4 text-white bg-gray-800 rounded">
+const text = "Tlf: 123-456-7890";
+const result = text.replace(/\d{3}-\d{3}-\d{4}/, "XXX-XXX-XXXX");
+console.log(result); // "Tlf: XXX-XXX-XXXX"
+      </pre>
 
-					// Fyld indhold i boksen
-					const nummerElement = box.querySelector('.ascii-number');
-					const tegnElement = box.querySelector('.ascii-char');
+      <!-- Forklaring -->
+      <h3 class="mt-6 mb-4 text-2xl font-semibold text-blue-500">Forklaring</h3>
+      <ul class="pl-5 space-y-2 text-gray-700 list-disc">
+        <li><code>\d</code> matcher enhver ciffer (0-9).</li>
+        <li><code>\d{3}</code> matcher præcis 3 cifre.</li>
+        <li><code>-</code> matcher bindestreg som separator.</li>
+        <li>Hele mønstret <code>\d{3}-\d{3}-\d{4}</code> matcher et typisk amerikansk telefonnummer.</li>
+      </ul>
 
-					nummerElement.textContent = i;
-					tegnElement.textContent =
-						i < 32 || i === 127 ? `\\x${i.toString(16).padStart(2, '0')}` : String.fromCharCode(i);
+      <!-- Billedsprog -->
+      <h3 class="mt-6 mb-4 text-2xl font-semibold text-blue-500">Billedsprog</h3>
+      <p class="text-gray-700">
+        Forestil dig en "detektiv", der leder efter telefonnumre i en tekst. Når detektiven finder 
+        et nummer, bliver det "maskeret" med <code>XXX-XXX-XXXX</code>, som at sætte en 
+        usynlighedskappe på. Dette sikrer privatliv og anonymitet.
+      </p>
+    </div>
+  </div>
+</section>
 
-					// Tilføj boksen til containeren
-					container.appendChild(box);
-				}
-			};
 
-			// Kald funktionen for at generere tabellen når siden er loadet
-			document.addEventListener('DOMContentLoaded', genererAsciiTabel);
-		</script>
+<section class="py-12 bg-gray-50">
+  <div class="container max-w-4xl px-6 mx-auto">
+    <div class="p-6 bg-white rounded-lg shadow-md">
+      <!-- Overskrift -->
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">Strengmanipulation</h2>
 
-		<!-- Footer -->
-		<footer class="py-4 text-center text-white bg-accent">
-			<p>Serveren kører på <strong>Node.js</strong>!</p>
-		</footer>
-	</body>
+      <!-- Introduktion -->
+      <p class="mb-6 text-lg leading-relaxed text-gray-700">
+        Ved hjælp af Regular Expressions kan strengmanipulation kombineres med JavaScript-metoder som 
+        <code>split()</code>. Dette gør det muligt at dele tekst i dele baseret på komplekse mønstre, hvilket er særligt nyttigt i databehandling.
+      </p>
+
+      <!-- Kodeeksempel -->
+      <h3 class="mb-4 text-2xl font-semibold text-blue-500">Hvad koden viser</h3>
+      <pre class="p-4 text-white bg-gray-800 rounded">
+const text = "Ord1, Ord2. Ord3!";
+const words = text.split(/[,!. ]+/);
+console.log(words); // ["Ord1", "Ord2", "Ord3"]
+      </pre>
+
+      <!-- Forklaring -->
+      <h3 class="mt-6 mb-4 text-2xl font-semibold text-blue-500">Forklaring</h3>
+      <ul class="pl-5 space-y-2 text-gray-700 list-disc">
+        <li><code>[,!. ]+</code>: Matcher ethvert komma, punktum, udråbstegn eller mellemrum én eller flere gange.</li>
+        <li><code>split()</code>: Deler teksten op i dele baseret på det angivne mønster.</li>
+      </ul>
+
+      <!-- Billedsprog -->
+      <h3 class="mt-6 mb-4 text-2xl font-semibold text-blue-500">Billedsprog</h3>
+      <p class="text-gray-700">
+        Forestil dig en "tekstklipper", der skærer en sætning op i individuelle ord, hver gang den møder 
+        et tegnsætningstegn som et komma eller punktum. Resultatet er en organiseret bunke ord, klar til 
+        at blive brugt separat.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="py-12 bg-gray-50">
+  <div class="container max-w-4xl px-6 mx-auto">
+    <div class="p-6 bg-white rounded-lg shadow-md">
+      <!-- Overskrift -->
+      <h2 class="mb-6 text-3xl font-bold text-blue-600">Validering med Regular Expressions</h2>
+
+      <!-- Introduktion -->
+      <p class="mb-6 text-lg leading-relaxed text-gray-700">
+        Regular Expressions er et kraftfuldt værktøj til at validere input som e-mail-adresser. Med en 
+        enkel kode kan du sikre, at input følger de nødvendige formater og reducerer fejl i systemet.
+      </p>
+
+      <!-- Kodeeksempel -->
+      <h3 class="mb-4 text-2xl font-semibold text-blue-500">Hvad koden viser</h3>
+      <pre class="p-4 text-white bg-gray-800 rounded">
+const emailPattern = /^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,}$/;
+const email = "eksempel@domæne.dk";
+console.log(emailPattern.test(email)); // true
+      </pre>
+
+      <!-- Forklaring -->
+      <h3 class="mt-6 mb-4 text-2xl font-semibold text-blue-500">Forklaring</h3>
+      <ul class="pl-5 space-y-2 text-gray-700 list-disc">
+        <li><code>^[\w.-]+</code>: Matcher starten af en e-mail med alfanumeriske tegn, bindestreger og punktummer.</li>
+        <li><code>@</code>: Matcher "snabela"-tegnet.</li>
+        <li><code>[\w.-]+</code>: Matcher domænedelen (fx <code>domæne</code>).</li>
+        <li><code>\.[a-zA-Z]{2,}$</code>: Matcher domænesuffixet (fx <code>.dk</code>), som skal være mindst 2 tegn langt.</li>
+      </ul>
+
+      <!-- Billedsprog -->
+      <h3 class="mt-6 mb-4 text-2xl font-semibold text-blue-500">Billedsprog</h3>
+      <p class="text-gray-700">
+        Tænk på RegEx'en som en "scanner" ved en lufthavnssikkerhed, der kontrollerer hver e-mail for 
+        at sikre, at den overholder reglerne. Hvis e-mailen er korrekt, slipper den igennem; ellers 
+        bliver den stoppet og afvist.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- jnihi -->
+
+<section class="py-12 bg-gray-50">
+  <div class="container max-w-5xl px-6 mx-auto">
+    <h2 class="mb-6 text-3xl font-bold text-green-600">Strengmetoder i JavaScript</h2>
+    <p class="mb-6 text-lg leading-relaxed text-gray-700">
+      En streng i JavaScript er en sekvens af tegn kodet i UTF-16. JavaScript tilbyder en bred vifte af metoder til at manipulere tekst effektivt og præcist.
+    </p>
+
+    <!-- Populære metoder -->
+    <div class="p-6 bg-white rounded-lg shadow-md">
+      <h3 class="mb-4 text-2xl font-semibold text-green-500">Populære Metoder</h3>
+      <ul class="pl-5 space-y-4 text-gray-700 list-disc">
+        <li>
+          <strong><code>charAt()</code> og <code>charCodeAt()</code>:</strong> Henter henholdsvis et specifikt tegn og dets Unicode-kode.
+        </li>
+        <li>
+          <strong><code>indexOf()</code> og <code>lastIndexOf()</code>:</strong> Finder positionen af det første eller sidste forekomst af tegn eller tekst.
+        </li>
+        <li>
+          <strong><code>slice()</code>:</strong> Uddrager en del af en streng baseret på start- og slutpositioner.
+        </li>
+        <li>
+          <strong><code>split()</code>:</strong> Deler en streng i en liste baseret på en separator, fx <code>","</code>.
+        </li>
+        <li>
+          <strong><code>toUpperCase()</code> og <code>toLowerCase()</code>:</strong> Konverterer tekst til store eller små bogstaver.
+        </li>
+        <li>
+          <strong><code>trim()</code>:</strong> Fjerner blanktegn i starten og slutningen af en streng.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Tekniske Uddybninger -->
+    <div class="p-6 mt-8 bg-green-100 rounded-lg shadow">
+      <h3 class="mb-4 text-xl font-semibold text-green-600">Tekniske Uddybninger</h3>
+      <p class="mb-4 leading-relaxed text-gray-700">
+        Strengmetoder giver enorm fleksibilitet i tekstmanipulation, hvilket gør dem essentielle i daglige udviklingsopgaver. Forestil dig en tekststreng som en "perlekæde", hvor hver perle repræsenterer et tegn. Metoder som <code>slice()</code> fungerer som en "saks", der klipper perlekæden i specifikke dele, mens <code>split()</code> opdeler kæden ved bestemte markører.
+      </p>
+      <p class="text-gray-700">
+        Eksempel: Del en liste af navne i separate elementer:
+      </p>
+      <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
+const names = "Anna, Brian, Carl";\nconst nameList = names.split(", ");\nconsole.log(nameList); // ["Anna", "Brian", "Carl"]
+      </pre>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-12 bg-white">
+  <div class="container max-w-5xl px-6 mx-auto">
+    <h2 class="mb-6 text-3xl font-bold text-blue-600">Metoder der bruger Regular Expressions</h2>
+    <p class="mb-6 text-lg leading-relaxed text-gray-700">
+      JavaScript understøtter flere metoder, der udnytter Regular Expressions til effektiv tekstsøgning, udtrækning og manipulation.
+    </p>
+
+    <!-- String-metoder -->
+    <div class="p-6 mb-8 rounded-lg shadow-md bg-gray-50">
+      <h3 class="mb-4 text-2xl font-semibold text-blue-500">String-metoder</h3>
+      <ul class="pl-5 space-y-4 text-gray-700 list-disc">
+        <li>
+          <strong><code>match()</code>:</strong> Returnerer alle matches for en RegEx i en tekst.
+        </li>
+        <li>
+          <strong><code>replace()</code>:</strong> Erstatter matches med ny tekst.
+        </li>
+        <li>
+          <strong><code>split()</code>:</strong> Deler en tekst i en liste baseret på en RegEx.
+        </li>
+        <li>
+          <strong><code>search()</code>:</strong> Returnerer positionen for det første match.
+        </li>
+      </ul>
+    </div>
+
+    <!-- RegEx-metoder -->
+    <div class="p-6 rounded-lg shadow-md bg-gray-50">
+      <h3 class="mb-4 text-2xl font-semibold text-blue-500">RegEx-metoder</h3>
+      <ul class="pl-5 space-y-4 text-gray-700 list-disc">
+        <li>
+          <strong><code>test()</code>:</strong> Returnerer <code>true</code> eller <code>false</code>, hvis et mønster matcher.
+        </li>
+        <li>
+          <strong><code>exec()</code>:</strong> Returnerer et array med detaljer om det første match.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Tekniske Uddybninger -->
+    <div class="p-6 mt-8 bg-blue-100 rounded-lg shadow">
+      <h3 class="mb-4 text-xl font-semibold text-blue-600">Tekniske Uddybninger</h3>
+      <p class="mb-4 leading-relaxed text-gray-700">
+        Kombinationen af string-metoder og Regular Expressions gør det muligt at udføre avancerede tekstoperationer. Tænk på Regular Expressions som en "forstørrelsesglas", der leder efter specifikke mønstre i en tekst. Metoder som <code>replace()</code> virker som en "pensel", der ændrer disse mønstre.
+      </p>
+      <p class="text-gray-700">
+        Eksempel: Maskering af telefonnumre:
+      </p>
+      <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
+const phone = "123-456-7890";\nconst masked = phone.replace(/\\d{3}-\\d{3}-\\d{4}/, "XXX-XXX-XXXX");\nconsole.log(masked); // "XXX-XXX-XXXX"
+      </pre>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-12 bg-gray-50">
+  <div class="container max-w-5xl px-6 mx-auto">
+    <h2 class="mb-6 text-3xl font-bold text-purple-600">Praktiske Anvendelser af Regular Expressions</h2>
+    <p class="mb-6 text-lg leading-relaxed text-gray-700">
+      Regular Expressions er et alsidigt værktøj, der bruges i mange aspekter af webudvikling. Her er nogle af de mest almindelige anvendelser.
+    </p>
+
+    <!-- Validering -->
+    <div class="p-6 mb-8 bg-white rounded-lg shadow-md">
+      <h3 class="mb-4 text-2xl font-semibold text-purple-500">Validering</h3>
+      <ul class="pl-5 space-y-4 text-gray-700 list-disc">
+        <li>
+          <strong>Valider e-mail:</strong> Matcher gyldige e-mail-adresser.
+          <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
+const emailPattern = /^[\\w.-]+@[\\w.-]+\\.[a-z]{2,}$/;\nconsole.log(emailPattern.test(\"test@example.com\")); // true
+          </pre>
+        </li>
+        <li>
+          <strong>Valider telefonnummer:</strong> Matcher danske telefonnumre i forskellige formater.
+          <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
+const phonePattern = /^\\d{8}$|^\\d{4}\\s\\d{4}$|^\\d{2}\\s\\d{2}\\s\\d{2}\\s\\d{2}$/;\nconsole.log(phonePattern.test(\"1234 5678\")); // true
+          </pre>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Udtrækning -->
+    <div class="p-6 mb-8 bg-white rounded-lg shadow-md">
+      <h3 class="mb-4 text-2xl font-semibold text-purple-500">Udtrækning</h3>
+      <p class="mb-4 text-gray-700">
+        Regular Expressions kan bruges til at udtrække specifikke dele af en tekst, fx domænenavne fra URL'er.
+      </p>
+      <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
+const urlPattern = /^(?:https?:\\/\\/)?(?:www\\.)?([^\\/]+)/;\nconst url = \"https://www.example.com/page\";\nconst domain = url.match(urlPattern)[1];\nconsole.log(domain); // \"example.com\"
+      </pre>
+    </div>
+
+    <!-- Erstatning -->
+    <div class="p-6 bg-white rounded-lg shadow-md">
+      <h3 class="mb-4 text-2xl font-semibold text-purple-500">Erstatning</h3>
+      <p class="mb-4 text-gray-700">
+        Brug RegEx til at erstatte bestemte mønstre i en tekst. Fx kan 'ss' erstattes med 'ß', hvis det efterfølges af en konsonant.
+      </p>
+      <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
+const text = \"grosses\";\nconst replaced = text.replace(/ss(?=[b-df-hj-np-tv-z])/g, \"ß\");\nconsole.log(replaced); // \"großes\"
+      </pre>
+    </div>
+
+    <!-- Tekniske Uddybninger -->
+    <div class="p-6 mt-8 bg-purple-100 rounded-lg shadow">
+      <h3 class="mb-4 text-xl font-semibold text-purple-600">Tekniske Uddybninger</h3>
+      <p class="mb-4 leading-relaxed text-gray-700">
+        Regular Expressions fungerer som en "detektor", der finder bestemte mønstre i en tekst. For eksempel fungerer validering som en "dørmand", der sikrer, at kun korrekt formateret input slipper igennem. Udtrækning er som en "fiskekrog", der hiver specifikke dele ud af et større datasæt. Erstatning kan sammenlignes med en "find og erstat"-funktion, der målrettet ændrer tekst.
+      </p>
+      <p class="text-gray-700">
+        Eksempel: Maskering af dele af en e-mail-adresse for at skjule sensitive oplysninger:
+      </p>
+      <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
+const email = \"user@example.com\";\nconst masked = email.replace(/(\\w{1,3})\\w*@/, \"$1***@\");\nconsole.log(masked); // \"use***@example.com\"
+      </pre>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-12 bg-gray-50">
+  <div class="container max-w-5xl px-6 mx-auto">
+    <h2 class="mb-6 text-3xl font-bold text-indigo-600">Forståelse og Tekniske Eksempler</h2>
+    <p class="mb-6 text-lg leading-relaxed text-gray-700">
+      Denne sektion forklarer Regular Expressions gennem både billedsprog og tekniske eksempler, så konceptet bliver nemt at forstå og praktisk at anvende.
+    </p>
+
+    <!-- Foldbare bokse -->
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <!-- Validering - Billedsprog -->
+      <details class="p-4 bg-white rounded-lg shadow-md">
+        <summary class="text-lg font-semibold text-indigo-600 cursor-pointer">
+          Validering: Forståelse gennem Billedsprog
+        </summary>
+        <p class="mt-4 text-gray-700">
+          Forestil dig en "sikkerhedsvagt", der tjekker, om input som e-mails og telefonnumre opfylder kravene, før de slipper igennem. Hvis input ikke overholder reglerne, bliver det afvist.
+        </p>
+      </details>
+
+      <!-- Udtrækning - Billedsprog -->
+      <details class="p-4 bg-white rounded-lg shadow-md">
+        <summary class="text-lg font-semibold text-indigo-600 cursor-pointer">
+          Udtrækning: Forståelse gennem Billedsprog
+        </summary>
+        <p class="mt-4 text-gray-700">
+          Tænk på en "søgelygte", der scanner teksten og fremhæver specifikke dele, som fx domænenavne fra URL'er. Kun de relevante dele trækkes frem.
+        </p>
+      </details>
+
+      <!-- Erstatning - Billedsprog -->
+      <details class="p-4 bg-white rounded-lg shadow-md">
+        <summary class="text-lg font-semibold text-indigo-600 cursor-pointer">
+          Erstatning: Forståelse gennem Billedsprog
+        </summary>
+        <p class="mt-4 text-gray-700">
+          Som en "pensel", der kun maler over bestemte områder af teksten uden at ændre resten. Dette er nyttigt til at rette fejl eller formatere tekst.
+        </p>
+      </details>
+
+      <!-- Validering - Teknisk Eksempel -->
+      <details class="p-4 bg-white rounded-lg shadow-md">
+        <summary class="text-lg font-semibold text-indigo-600 cursor-pointer">
+          Validering: Teknisk Eksempel
+        </summary>
+        <p class="mt-4 text-gray-700">
+          RegEx bruges ofte i formularer for at sikre, at input følger et korrekt format. Eksempel:
+        </p>
+        <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
+const emailPattern = /^[\\w.-]+@[\\w.-]+\\.[a-z]{2,}$/;\nconsole.log(emailPattern.test("test@example.com")); // true
+        </pre>
+      </details>
+
+      <!-- Udtrækning - Teknisk Eksempel -->
+      <details class="p-4 bg-white rounded-lg shadow-md">
+        <summary class="text-lg font-semibold text-indigo-600 cursor-pointer">
+          Udtrækning: Teknisk Eksempel
+        </summary>
+        <p class="mt-4 text-gray-700">
+          Udtrækning anvendes til at finde specifikke data, fx domænenavne i en liste af URL'er. Eksempel:
+        </p>
+        <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
+const urlPattern = /^(?:https?:\\/\\/)?(?:www\\.)?([^\\/]+)/;\nconst url = "https://www.example.com/page";\nconst domain = url.match(urlPattern)[1];\nconsole.log(domain); // "example.com"
+        </pre>
+      </details>
+
+      <!-- Erstatning - Teknisk Eksempel -->
+      <details class="p-4 bg-white rounded-lg shadow-md">
+        <summary class="text-lg font-semibold text-indigo-600 cursor-pointer">
+          Erstatning: Teknisk Eksempel
+        </summary>
+        <p class="mt-4 text-gray-700">
+          Brug RegEx til at ændre bestemte dele af en tekst. For eksempel at erstatte 'ss' med 'ß', hvis det efterfølges af en konsonant:
+        </p>
+        <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
+const text = "grosses";\nconst replaced = text.replace(/ss(?=[b-df-hj-np-tv-z])/g, "ß");\nconsole.log(replaced); // "großes"
+        </pre>
+      </details>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-12 bg-gray-50">
+  <div class="container max-w-5xl px-6 mx-auto">
+    <h2 class="mb-6 text-3xl font-bold text-purple-600">Specieltegn, Karakterklasser og Assertions</h2>
+    <p class="mb-6 text-lg leading-relaxed text-gray-700">
+      Regular Expressions indeholder en lang række specialtegn og karakterklasser, der gør det muligt at matche komplekse mønstre effektivt. Denne sektion giver en oversigt over de vigtigste elementer.
+    </p>
+
+    <!-- Foldbare bokse -->
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <!-- Tegnklasser -->
+      <details class="p-4 bg-white rounded-lg shadow-md">
+        <summary class="text-lg font-semibold text-purple-600 cursor-pointer">
+          Tegnklasser
+        </summary>
+        <ul class="mt-4 space-y-2 text-gray-700">
+          <li><code>\\d</code>: Matcher cifre (0-9).</li>
+          <li><code>\\w</code>: Matcher alfanumeriske tegn og <code>_</code>.</li>
+          <li><code>\\s</code>: Matcher alle whitespace-tegn.</li>
+          <li><code>[^...]</code>: Matcher tegn, der ikke er inkluderet.</li>
+        </ul>
+        <p class="mt-4 text-gray-700">
+          Eksempel: Match alle cifre i en tekst:
+        </p>
+        <pre class="p-4 text-white bg-gray-800 rounded">
+const pattern = /\\d+/g;\nconst text = "Der er 123 æbler og 456 pærer.";\nconsole.log(text.match(pattern)); // ["123", "456"]
+        </pre>
+      </details>
+
+      <!-- Grænser -->
+      <details class="p-4 bg-white rounded-lg shadow-md">
+        <summary class="text-lg font-semibold text-purple-600 cursor-pointer">
+          Grænser
+        </summary>
+        <ul class="mt-4 space-y-2 text-gray-700">
+          <li><code>^</code>: Matcher starten af en streng.</li>
+          <li><code>$</code>: Matcher slutningen af en streng.</li>
+          <li><code>\\b</code>: Matcher en ordgrænse.</li>
+        </ul>
+        <p class="mt-4 text-gray-700">
+          Eksempel: Match tekst, der starter med "Hej":
+        </p>
+        <pre class="p-4 text-white bg-gray-800 rounded">
+const pattern = /^Hej/;\nconst text = "Hej verden!";\nconsole.log(pattern.test(text)); // true
+        </pre>
+      </details>
+
+      <!-- Quantifiers -->
+      <details class="p-4 bg-white rounded-lg shadow-md">
+        <summary class="text-lg font-semibold text-purple-600 cursor-pointer">
+          Quantifiers (Gentagelser)
+        </summary>
+        <ul class="mt-4 space-y-2 text-gray-700">
+          <li><code>*</code>: Matcher nul eller flere forekomster.</li>
+          <li><code>+</code>: Matcher én eller flere forekomster.</li>
+          <li><code>?</code>: Matcher nul eller én forekomst.</li>
+          <li><code>{n}</code>: Matcher præcist n forekomster.</li>
+          <li><code>{n,}</code>: Matcher mindst n forekomster.</li>
+          <li><code>{n,m}</code>: Matcher mellem n og m forekomster.</li>
+        </ul>
+        <p class="mt-4 text-gray-700">
+          Eksempel: Match ord, der består af mindst 3 bogstaver:
+        </p>
+        <pre class="p-4 text-white bg-gray-800 rounded">
+const pattern = /\\b\\w{3,}\\b/g;\nconst text = "Hej til dig";\nconsole.log(text.match(pattern)); // ["Hej", "dig"]
+        </pre>
+      </details>
+
+      <!-- Lookaheads -->
+      <details class="p-4 bg-white rounded-lg shadow-md">
+        <summary class="text-lg font-semibold text-purple-600 cursor-pointer">
+          Assertions: Lookaheads
+        </summary>
+        <ul class="mt-4 space-y-2 text-gray-700">
+          <li>
+            <strong>Positiv:</strong> <code>x(?=y)</code> matcher x, hvis det efterfølges af y.
+          </li>
+          <li>
+            <strong>Negativ:</strong> <code>x(?!y)</code> matcher x, hvis det ikke efterfølges af y.
+          </li>
+        </ul>
+        <p class="mt-4 text-gray-700">
+          Eksempel: Match "abc", hvis det efterfølges af "123":
+        </p>
+        <pre class="p-4 text-white bg-gray-800 rounded">
+const pattern = /abc(?=123)/;\nconst text = "abc123";\nconsole.log(pattern.test(text)); // true
+        </pre>
+      </details>
+
+      <!-- Lookbehinds -->
+      <details class="p-4 bg-white rounded-lg shadow-md">
+        <summary class="text-lg font-semibold text-purple-600 cursor-pointer">
+          Assertions: Lookbehinds
+        </summary>
+        <ul class="mt-4 space-y-2 text-gray-700">
+          <li>
+            <strong>Positiv:</strong> <code>(?<=y)x</code> matcher x, hvis det foregår af y.
+          </li>
+          <li>
+            <strong>Negativ:</strong> <code>(?<!y)x</code> matcher x, hvis det ikke foregår af y.
+          </li>
+        </ul>
+        <p class="mt-4 text-gray-700">
+          Eksempel: Match "123", hvis det foregår af "abc":
+        </p>
+        <pre class="p-4 text-white bg-gray-800 rounded">
+const pattern = /(?<=abc)123/;\nconst text = "abc123";\nconsole.log(pattern.test(text)); // true
+        </pre>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="py-12 bg-gray-50">
+  <div class="container max-w-5xl px-6 mx-auto">
+    <h2 class="mb-6 text-3xl font-bold text-blue-600">Specieltegn og Karakterklasser i Regular Expressions</h2>
+    <p class="mb-6 text-lg leading-relaxed text-gray-700">
+      Regular Expressions tilbyder en kraftfuld måde at arbejde med tekst. Nedenstående tabel opsummerer nøglefunktioner som tegnklasser, grænser, quantifiers og assertions.
+    </p>
+
+    <!-- Tabel -->
+    <div class="overflow-x-auto bg-white rounded-lg shadow-md">
+      <table class="min-w-full text-left table-auto">
+        <thead>
+          <tr class="bg-blue-100">
+            <th class="px-6 py-4 text-lg font-semibold text-blue-600">Kategori</th>
+            <th class="px-6 py-4 text-lg font-semibold text-blue-600">Symbol</th>
+            <th class="px-6 py-4 text-lg font-semibold text-blue-600">Beskrivelse</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          <!-- Tegnklasser -->
+          <tr>
+            <td class="px-6 py-4 font-semibold">Tegnklasser</td>
+            <td class="px-6 py-4">\\d</td>
+            <td class="px-6 py-4">Matcher cifre (0-9).</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4"></td>
+            <td class="px-6 py-4">\\w</td>
+            <td class="px-6 py-4">Matcher alfanumeriske tegn og <code>_</code>.</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4"></td>
+            <td class="px-6 py-4">\\s</td>
+            <td class="px-6 py-4">Matcher whitespace-tegn som mellemrum og tabulator.</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4"></td>
+            <td class="px-6 py-4">[^...]</td>
+            <td class="px-6 py-4">Matcher tegn, der ikke er inkluderet.</td>
+          </tr>
+
+          <!-- Grænser -->
+          <tr>
+            <td class="px-6 py-4 font-semibold">Grænser</td>
+            <td class="px-6 py-4">^</td>
+            <td class="px-6 py-4">Matcher starten af en streng.</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4"></td>
+            <td class="px-6 py-4">$</td>
+            <td class="px-6 py-4">Matcher slutningen af en streng.</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4"></td>
+            <td class="px-6 py-4">\\b</td>
+            <td class="px-6 py-4">Matcher en ordgrænse.</td>
+          </tr>
+
+          <!-- Quantifiers -->
+          <tr>
+            <td class="px-6 py-4 font-semibold">Quantifiers</td>
+            <td class="px-6 py-4">*</td>
+            <td class="px-6 py-4">Matcher nul eller flere forekomster.</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4"></td>
+            <td class="px-6 py-4">+</td>
+            <td class="px-6 py-4">Matcher én eller flere forekomster.</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4"></td>
+            <td class="px-6 py-4">?</td>
+            <td class="px-6 py-4">Matcher nul eller én forekomst.</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4"></td>
+            <td class="px-6 py-4">{n}</td>
+            <td class="px-6 py-4">Matcher præcist <code>n</code> forekomster.</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4"></td>
+            <td class="px-6 py-4">{n,}</td>
+            <td class="px-6 py-4">Matcher mindst <code>n</code> forekomster.</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4"></td>
+            <td class="px-6 py-4">{n,m}</td>
+            <td class="px-6 py-4">Matcher mellem <code>n</code> og <code>m</code> forekomster.</td>
+          </tr>
+
+          <!-- Assertions -->
+          <tr>
+            <td class="px-6 py-4 font-semibold">Assertions</td>
+            <td class="px-6 py-4">x(?=y)</td>
+            <td class="px-6 py-4">Positiv lookahead: Matcher <code>x</code>, hvis det efterfølges af <code>y</code>.</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4"></td>
+            <td class="px-6 py-4">x(?!y)</td>
+            <td class="px-6 py-4">Negativ lookahead: Matcher <code>x</code>, hvis det ikke efterfølges af <code>y</code>.</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4"></td>
+            <td class="px-6 py-4">(?<=y)x</td>
+            <td class="px-6 py-4">Positiv lookbehind: Matcher <code>x</code>, hvis det foregår af <code>y</code>.</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4"></td>
+            <td class="px-6 py-4">(?<!y)x</td>
+            <td class="px-6 py-4">Negativ lookbehind: Matcher <code>x</code>, hvis det ikke foregår af <code>y</code>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Forklaringer -->
+    <div class="p-6 mt-8 bg-blue-100 rounded-lg shadow">
+      <h3 class="mb-4 text-xl font-semibold text-blue-600">Tekniske Forklaringer</h3>
+      <p class="mb-4 text-gray-700">
+        Regular Expressions er som en "sprogdetektor", der hurtigt og effektivt kan finde, validere og manipulere tekstmønstre. Tegnklasser fungerer som "filtre", der vælger specifikke typer tegn, mens grænser sikrer, at mønstre kun findes på bestemte positioner i teksten.
+      </p>
+      <p class="mb-4 text-gray-700">
+        Quantifiers giver dig kontrol over, hvor mange forekomster af et mønster der skal matches. Assertions fungerer som "betingelser", der tjekker, hvad der er før eller efter et mønster, uden at inkludere det i det endelige match.
+      </p>
+      <p class="text-gray-700">
+        Eksempel: En positiv lookahead, der finder "abc", hvis det efterfølges af "123":
+      </p>
+      <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
+const pattern = /abc(?=123)/;\nconst text = "abc123";\nconsole.log(pattern.test(text)); // true
+      </pre>
+    </div>
+  </div>
+</section>
+
+    <!-- Sektion: Grundlæggende Brug -->
+    <section class="py-8">
+        <div class="container px-4 mx-auto">
+            <h2 class="mb-4 text-2xl font-bold">Grundlæggende Brug af Regular Expressions</h2>
+            <p class="mb-4">
+                Regular expressions (RegEx) er mønstre, der bruges til at matche kombinationer af tegn i tekst. De anvendes typisk
+                til søgninger, udtrækning og validering. En RegEx starter og slutter med skråstreger <code>/</code> og kan
+                inkludere specielle tegn for mere præcise matches.
+            </p>
+            <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
+// En simpel RegEx til at matche ordet "test"
+const pattern = /test/;
+const text = "Dette er en testtekst.";
+console.log(pattern.test(text)); // true
+            </pre>
+        </div>
+    </section>
+
+	<section class="py-12 bg-white">
+  <div class="container max-w-5xl px-6 mx-auto">
+    <h2 class="mb-6 text-3xl font-bold text-blue-600">Metoder der bruger Regular Expressions</h2>
+    <p class="mb-6 text-lg leading-relaxed text-gray-700">
+      JavaScript understøtter flere metoder, der udnytter Regular Expressions til effektiv tekstsøgning, udtrækning og manipulation.
+    </p>
+
+    <!-- String-metoder -->
+    <div class="p-6 mb-8 rounded-lg shadow-md bg-gray-50">
+      <h3 class="mb-4 text-2xl font-semibold text-blue-500">String-metoder</h3>
+      <ul class="pl-5 space-y-4 text-gray-700 list-disc">
+        <li>
+          <strong><code>match()</code>:</strong> Returnerer alle matches for en RegEx i en tekst.
+        </li>
+        <li>
+          <strong><code>replace()</code>:</strong> Erstatter matches med ny tekst.
+        </li>
+        <li>
+          <strong><code>split()</code>:</strong> Deler en tekst i en liste baseret på en RegEx.
+        </li>
+        <li>
+          <strong><code>search()</code>:</strong> Returnerer positionen for det første match.
+        </li>
+      </ul>
+    </div>
+
+    <!-- RegEx-metoder -->
+    <div class="p-6 rounded-lg shadow-md bg-gray-50">
+      <h3 class="mb-4 text-2xl font-semibold text-blue-500">RegEx-metoder</h3>
+      <ul class="pl-5 space-y-4 text-gray-700 list-disc">
+        <li>
+          <strong><code>test()</code>:</strong> Returnerer <code>true</code> eller <code>false</code>, hvis et mønster matcher.
+        </li>
+        <li>
+          <strong><code>exec()</code>:</strong> Returnerer et array med detaljer om det første match.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Ekstra teknisk forklaring -->
+    <details class="p-6 mt-8 bg-blue-100 rounded-lg shadow">
+      <summary class="text-lg font-semibold text-blue-600 cursor-pointer">
+        Klik her for at læse en dybere teknisk forklaring
+      </summary>
+      <div class="mt-4 text-gray-700">
+        <p class="mb-4">
+          Metoder som <code>match()</code> og <code>replace()</code> gør det muligt at kombinere Regular Expressions med JavaScripts tekstmanipulation. For eksempel:
+        </p>
+        <pre class="p-4 mb-4 text-white bg-gray-800 rounded">
+const text = \"Tlf: 123-456-7890\";\nconst newText = text.replace(/\\d{3}-\\d{3}-\\d{4}/, \"XXX-XXX-XXXX\");\nconsole.log(newText); // \"Tlf: XXX-XXX-XXXX\"
+        </pre>
+        <p class="mb-4">
+          RegEx-metoder som <code>test()</code> bruges typisk til validering, mens <code>exec()</code> giver detaljerede data om matches.
+        </p>
+        <pre class="p-4 text-white bg-gray-800 rounded">
+const pattern = /\\d{3}/g;\nconst result = pattern.exec(\"Nummer: 456\");\nconsole.log(result[0]); // \"456\"
+        </pre>
+      </div>
+    </details>
+  </div>
+</section>
+
+    <!-- Sektion: Praktiske Anvendelser -->
+    <section class="py-8 bg-gray-100">
+        <div class="container px-4 mx-auto">
+            <h2 class="mb-4 text-2xl font-bold">Praktiske Anvendelser</h2>
+            <p class="mb-4">
+                Regular expressions kan bruges til:
+                <ul class="pl-5 list-disc">
+                    <li>Søgning efter specifikke mønstre i tekst</li>
+                    <li>Søg-og-erstat operationer</li>
+                    <li>Udtrækning af specifikke dele af tekst</li>
+                </ul>
+            </p>
+            <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
+// Søg og erstat med RegEx
+const text = "Tlf: 123-456-7890";
+const result = text.replace(/\d{3}-\d{3}-\d{4}/, "XXX-XXX-XXXX");
+console.log(result); // "Tlf: XXX-XXX-XXXX"
+            </pre>
+        </div>
+    </section>
+
+    <!-- Sektion: Strengmanipulation -->
+    <section class="py-8">
+        <div class="container px-4 mx-auto">
+            <h2 class="mb-4 text-2xl font-bold">Strengmanipulation</h2>
+            <p class="mb-4">
+                Kombinationen af RegEx og JavaScript-strengmetoder gør det muligt at udføre avancerede operationer på tekst. For
+                eksempel kan <code>split()</code> bruges med en RegEx til at dele en streng baseret på et komplekst mønster.
+            </p>
+            <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
+// Del en tekst baseret på tegnsætning
+const text = "Ord1, Ord2. Ord3!";
+const words = text.split(/[,!. ]+/);
+console.log(words); // ["Ord1", "Ord2", "Ord3"]
+            </pre>
+        </div>
+    </section>
+
+    <!-- Sektion: Validering -->
+    <section class="py-8 bg-gray-100">
+        <div class="container px-4 mx-auto">
+            <h2 class="mb-4 text-2xl font-bold">Validering med Regular Expressions</h2>
+            <p class="mb-4">
+                RegEx er et kraftfuldt værktøj til validering af input, fx e-mail-adresser, telefonnumre og adgangskoder. Med
+                mønstre kan du sikre, at input følger bestemte formater.
+            </p>
+            <pre class="p-4 mt-4 text-white bg-gray-800 rounded">
+// Valider en e-mail-adresse
+const emailPattern = /^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,}$/;
+const email = "eksempel@domæne.dk";
+console.log(emailPattern.test(email)); // true
+            </pre>
+        </div>
+    </section>
+	</main>
+
+    <!-- HERO Section -->
+    <section class="container px-8 py-16 rounded-lg shadow-lg bg-gray-50">
+      <div
+        class="flex flex-col items-center mx-auto space-y-8 max-w-7xl md:flex-row md:space-y-0 md:space-x-16"
+      >
+        <!-- Venstre kolonne: Tekst -->
+        <div class="md:w-2/3">
+          <!-- Opgavebeskrivelse -->
+          <h1 class="mb-6 text-4xl font-bold text-blue-600">
+            Regular Expressions og Strengmetoder
+          </h1>
+          <p class="mb-6 text-lg leading-relaxed text-gray-700">
+            Regular expressions og strengmetoder er essentielle værktøjer i JavaScript, der bruges
+            til effektiv manipulation og behandling af tekst. Denne præsentation dækker:
+          </p>
+
+          <!-- Agenda -->
+          <ul class="pl-6 mb-6 space-y-4 text-gray-700 list-disc">
+            <li>
+              <strong>Grundlæggende brug:</strong> Introduktion til syntaks og funktion af regular
+              expressions.
+            </li>
+            <li>
+              <strong>Praktiske anvendelser:</strong> Søgninger, søg-og-erstat, og udtrækning af
+              tekst.
+            </li>
+            <li><strong>Strengmanipulation:</strong> Kombination med JavaScript-strengmetoder.</li>
+            <li>
+              <strong>Validering:</strong> Effektiv brug af regular expressions til
+              input-validering.
+            </li>
+            <li><strong>Kodeeksempler:</strong> Praktiske eksempler fra projekter og opgaver.</li>
+          </ul>
+
+          <!-- Fold ud-knap -->
+          <details class="p-4 bg-blue-100 rounded-lg shadow">
+            <summary class="text-lg font-semibold text-blue-600 cursor-pointer">
+              Klik her for at læse hele opgavebeskrivelsen
+            </summary>
+            <div class="mt-4 leading-relaxed text-gray-700">
+              <p>
+                <strong>Opgaven:</strong><br />
+                Giv en præsentation af regular expressions og strengmetoder som de forekommer i
+                JavaScript. Udover den generelle gennemgang præsenter konkrete anvendelsesmuligheder
+                fx i søgninger, søg-og-erstat, udtrækning af delstrenge, strengmanipulation og
+                validering i webudvikling.
+              </p>
+              <p class="mt-4">
+                Fragmenter af kode til illustration af dine overvejelser skal være en del af
+                præsentationen. Du bør bruge uddrag fra egne projekter og opgaver som eksempler i
+                din gennemgang.
+              </p>
+            </div>
+          </details>
+        </div>
+
+        <!-- Højre kolonne: Billede -->
+        <div class="md:w-1/3">
+          <div
+            class="flex items-center justify-center w-full h-64 bg-blue-100 rounded-lg shadow-lg"
+          >
+            <!-- Pladsholder til billede -->
+
+            <p class="text-2xl font-bold text-blue-700">Regex & Strenge</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-3xl p-6 mx-auto bg-white rounded-lg shadow-lg">
+      <h1 class="mb-4 text-2xl font-bold">Søg og Erstat</h1>
+
+      <div class="mb-4">
+        <label for="source-text" class="block p-2 text-lg font-medium">Kildetekst:</label>
+        <p id="source-text" class="w-full p-3 mt-2 bg-gray-100 border border-gray-300 rounded-md">
+          Velkommen til vores side! Du kan kontakte os på følgende telefonnumre:
+          <b>71909150</b>, <b>22183680</b>.
+        </p>
+      </div>
+
+      <label for="search-pattern" class="block text-lg font-medium">Søgemønster:</label>
+
+      <div class="flex gap-4 mb-1">
+        <input
+          id="search-pattern"
+          type="text"
+          class="w-full p-2 border border-gray-300 rounded-md"
+          placeholder="Indtast søgemønster eller RegEx"
+        />
+
+        <button
+          id="search-btn"
+          class="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none"
+        >
+          Søg
+        </button>
+      </div>
+
+      <div class="flex items-center mb-4">
+        <input id="use-regex" type="checkbox" class="mr-2" />
+        <label for="use-regex" class="text-xs font-medium">Brug RegEx</label>
+      </div>
+
+      <label for="replace-text" class="block text-lg font-medium">Erstatningstekst:</label>
+
+      <div class="flex gap-4 mb-4">
+        <input
+          id="replace-text"
+          type="text"
+          class="w-full p-2 border border-gray-300 rounded-md"
+          placeholder="Indtast tekst til erstatning"
+        />
+
+        <button
+          id="replace-btn"
+          class="px-4 py-2 text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none"
+        >
+          Erstat
+        </button>
+      </div>
+
+      <div id="result-text" class="hidden p-4 mt-6"></div>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-4" id="ascii-container">
+      <!-- Eksempel på en tom boks (struktur for alle bokse) -->
+      <div
+        class="flex flex-col items-center justify-center w-20 h-20 p-4 text-center border border-gray-300 rounded-lg ascii-box hover:bg-gray-50"
+      >
+        <div class="font-bold ascii-number"></div>
+        <div class="ascii-char"></div>
+      </div>
+    </div>
+
+    <script>
+      // Funktion til at generere ASCII-tabellen
+      const genererAsciiTabel = () => {
+        const container = document.getElementById("ascii-container");
+        const template = document.querySelector(".ascii-box");
+
+        // Ryd containeren for eventuelle eksisterende bokse
+        container.innerHTML = "";
+
+        // Loop gennem 0 til 255
+        for (let i = 0; i < 256; i++) {
+          // Klon boksen fra template
+          const box = template.cloneNode(true);
+
+          // Fyld indhold i boksen
+          const nummerElement = box.querySelector(".ascii-number");
+          const tegnElement = box.querySelector(".ascii-char");
+
+          nummerElement.textContent = i;
+          tegnElement.textContent =
+            i < 32 || i === 127 ? `\\x${i.toString(16).padStart(2, "0")}` : String.fromCharCode(i);
+
+          // Tilføj boksen til containeren
+          container.appendChild(box);
+        }
+      };
+
+      // Kald funktionen for at generere tabellen når siden er loadet
+      document.addEventListener("DOMContentLoaded", genererAsciiTabel);
+    </script>
+
+
+    <!-- Footer -->
+    <footer class="py-4 text-center text-white bg-accent">
+      <p>Serveren kører på <strong>Node.js</strong>!</p>
+    </footer>
+  </body>
 </html>
